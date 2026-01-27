@@ -1,4 +1,8 @@
 import { useState, useEffect } from 'react';
+import virginUniteLogo from '@/app/logos/virgin_unite.png';
+import oceanUniteLogo from '@/app/logos/icf.png';
+import bransonCentreLogo from '@/app/logos/ntf.png';
+import eldersLogo from '@/app/logos/sfct.png';
 
 interface CharityPageProps {
   onNavigateHome: () => void;
@@ -17,31 +21,39 @@ export function CharityPage({ onNavigateHome, onNavigate }: CharityPageProps) {
   const beneficiaries = [
     {
       name: 'Virgin Unite',
-      logo: 'VU',
+      logo: virginUniteLogo,
+      logoText: 'VU',
       description: 'Supporting entrepreneurial approaches to social and environmental issues',
       impact: '$2.4M raised since 2012',
-      color: 'bg-red-600'
+      color: 'bg-red-600',
+      isCircular: true
     },
     {
       name: 'Ocean Unite',
-      logo: 'OU',
+      logo: oceanUniteLogo,
+      logoText: 'OU',
       description: 'Protecting and restoring the ocean for future generations',
       impact: '15 marine reserves established',
-      color: 'bg-blue-600'
+      color: 'bg-blue-600',
+      isCircular: false
     },
     {
-      name: 'The Branson Centre',
-      logo: 'BC',
+      name: 'National Tennis Foundation',
+      logo: bransonCentreLogo,
+      logoText: 'NTF',
       description: 'Supporting Caribbean entrepreneurs through mentorship and funding',
       impact: '450+ businesses supported',
-      color: 'bg-emerald-600'
+      color: 'bg-emerald-600',
+      isCircular: false
     },
     {
-      name: 'The Elders',
-      logo: 'TE',
+      name: 'Community Tennis',
+      logo: eldersLogo,
+      logoText: 'CT',
       description: 'Independent leaders working for peace, justice and human rights',
       impact: 'Global conflict resolution',
-      color: 'bg-amber-600'
+      color: 'bg-amber-600',
+      isCircular: false
     },
   ];
 
@@ -242,12 +254,26 @@ export function CharityPage({ onNavigateHome, onNavigate }: CharityPageProps) {
                 className="group bg-stone-50 rounded-3xl p-8 lg:p-10 hover:shadow-xl transition-all duration-500 hover:scale-[1.02]"
               >
                 <div className="flex items-start gap-6 mb-6">
-                  <div className={`w-16 h-16 rounded-2xl ${charity.color} flex items-center justify-center flex-shrink-0`}>
-                    <span className="font-display text-white text-xl font-semibold">{charity.logo}</span>
-                  </div>
-                  <div>
+                  {charity.isCircular ? (
+                    <div className={`w-20 h-20 rounded-full ${charity.color} flex items-center justify-center flex-shrink-0 p-3`}>
+                      <img 
+                        src={charity.logo} 
+                        alt={`${charity.name} logo`}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-40 h-28 bg-white rounded-xl flex items-center justify-center flex-shrink-0 p-5 shadow-md border border-stone-200 hover:shadow-lg transition-shadow">
+                      <img 
+                        src={charity.logo} 
+                        alt={`${charity.name} logo`}
+                        className="max-w-full max-h-full object-contain"
+                      />
+                    </div>
+                  )}
+                  <div className="flex-1">
                     <h3 className="font-display text-2xl text-stone-900 mb-2">{charity.name}</h3>
-                    <p className="font-body text-emerald-700 text-sm font-medium">{charity.impact}</p>
+                    <p className="font-body text-emerald-700 text-sm font-medium mb-3">{charity.impact}</p>
                   </div>
                 </div>
                 <p className="font-body text-stone-600 leading-relaxed">{charity.description}</p>
