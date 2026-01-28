@@ -225,7 +225,7 @@ export default function App() {
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 pb-20 lg:pb-32">
           <div className="max-w-3xl">
             <p className="font-body text-white/70 text-sm tracking-[0.3em] uppercase mb-6 animate-fade-up">
-              November 30 – December 5, 2026
+              November 29 – December 4, 2026
             </p>
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-white leading-[0.95] mb-8 animate-fade-up-delay-1 text-shadow-hero">
               Where Tennis <br /><span className="italic">Meets Paradise</span>
