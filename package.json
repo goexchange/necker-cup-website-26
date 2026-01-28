@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "echo 'Skipping build - using standalone HTML'",
     "preview": "vite preview"
   },
   "dependencies": {
