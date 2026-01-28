@@ -1,19 +1,8 @@
 {
-  "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "index-standalone.html",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/index-standalone.html"
-    },
-    {
-      "src": "/index-standalone.html",
-      "dest": "/index-standalone.html"
+      "source": "/",
+      "destination": "/index-standalone.html"
     }
   ],
   "headers": [
