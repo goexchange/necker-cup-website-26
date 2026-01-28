@@ -17,67 +17,111 @@ export function AgendaPage({ onNavigateHome, onNavigate }: AgendaPageProps) {
 
   const agenda = [
     {
+      day: 'Sunday',
+      date: 'November 29',
+      events: [
+        { time: '4:00 PM', title: 'Champagne Arrival - Beach House', desc: 'Welcome to Necker Island! Arrive at the Beach House Pavilion for champagne reception.', icon: '🥂', location: 'Beach House Pavilion' },
+        { time: '4:30 PM', title: 'Pick Up Tennis', desc: 'Gather tennis equipment and make final preparations before the tournament briefing.', icon: '🎾', location: 'Beach House Pavilion' },
+        { time: '7:00 PM', title: 'Welcome Cocktails', desc: 'Welcome cocktails will be served at the Great House ahead of the evening program.', icon: '🍸', location: 'Great House' },
+        { time: '8:00 PM', title: 'Welcome Dinner Served', desc: 'Join us for the Opening Night Dinner at the Great House — a great chance to meet fellow guests and pros, and get a quick overview of the exciting five days of tennis and fun ahead. Great House Family Style (Dessert served around bar area to get everyone up and dancing!)', icon: '🍽️', location: 'Great House' },
+        { time: '8:30 PM', title: 'Welcome Speech', desc: 'Listen to Richard and the Founders welcome all guests to the 15th annual Necker Cup.', icon: '🎤', location: 'Great House' },
+        { time: '10:00 PM', title: 'After Party with DJ - Will', desc: 'After-Party to close out the evening.', icon: '🎵', location: 'Great House' },
+      ]
+    },
+    {
       day: 'Monday',
       date: 'November 30',
       events: [
-        { time: '2:00 PM', title: 'Guest Arrival & Welcome', desc: 'Check-in to your private villa with personal concierge greeting', icon: '🏝️' },
-        { time: '6:00 PM', title: 'Opening Reception', desc: 'Champagne welcome on the beach with canapés and live steel drums', icon: '🥂' },
-        { time: '8:00 PM', title: 'Welcome Dinner', desc: 'Beachside dining under the stars featuring Caribbean-fusion cuisine', icon: '🍽️' },
+        { time: '7:30 AM', title: 'Breakfast on Necker Island', desc: 'Enjoy Breakfast at the Great House on Necker Island', icon: '☕', location: 'Great House' },
+        { time: '8:00 AM', title: 'Yoga', desc: 'Morning yoga session to help guests relax and start the day with focus and energy.', icon: '🧘', location: 'Great House' },
+        { time: '8:00 AM', title: 'Guided Island Walk & Animal Tour', desc: 'Guided walk around Necker Island. Approximately 90 minutes - wear your sneakers.', icon: '🚶', location: 'Great House' },
+        { time: '9:00 AM', title: 'Inspire Cards', desc: 'Start your day with meaningful conversation led by Foundation youth and staff.', icon: '💬', location: 'Great House' },
+        { time: '9:00 AM', title: 'Golf Nail Bay', desc: 'Head to Red Dock to catch a boat to Nail Bay Resort. No clubs required. Barefoot golf with a Butler to cater to your every need. Semi-competitive format and rules. Spots are limited, so call the concierge to reserve your spot. First come, first served.', icon: '⛳', location: 'Nail Bay Golf Course' },
+        { time: '9:30 AM', title: 'Leisure Day - Water Sports - Tennis - Beach', desc: 'Open leisure day where guests can enjoy water sports, tennis activities, or time at the beach.', icon: '🏖️', location: 'Various Locations' },
+        { time: '10:00 AM', title: 'Tennis Clinic', desc: 'Instructional tennis clinic led by professionals to help guests improve their skills.', icon: '🎾', location: 'Tennis Courts' },
+        { time: '12:00 PM', title: 'Sailboat Race to Turtle Beach', desc: 'Sail around Necker to lunch at Turtle Beach.', icon: '⛵', location: 'Watersports Center' },
+        { time: '12:45 PM', title: 'Lunch - Turtle Beach', desc: 'Turtle Beach; Pizza Inspired, Family Style.', icon: '🍕', location: 'Turtle Beach' },
+        { time: '3:00 PM', title: 'Lemur Feeding', desc: 'Interactive lemur-feeding experience. (Two groups if needed)', icon: '🐒', location: 'Lemur Habitat' },
+        { time: '3:00 PM', title: 'Meditation', desc: 'Join us at Eve\'s Memorial for an afternoon Guided Meditation.', icon: '🧘', location: 'Temple' },
+        { time: '3:15 PM', title: 'Amateur Tennis Tryout and Rating for Pro-Am', desc: 'If you are playing in the pro-am for the first time, please come to the courts to get rated. You can join the tennis clinic afterward at 3 PM.', icon: '🎾', location: 'Tennis Courts' },
+        { time: '4:00 PM', title: 'Tipsy Team Tennis', desc: 'Enjoy lighthearted, cocktail-inspired tennis games with a mix of fun activities, open to all levels from 4 p.m. onwards.', icon: '🎾', location: 'Centre Court' },
+        { time: '5:00 PM', title: 'Soul Bowl Hot Tub Meet Up', desc: 'Casual meet-up at the Soul Bowl hot tub for guests to relax and connect.', icon: '🛁', location: 'Crocodile Pool' },
+        { time: '7:00 PM', title: 'Poker', desc: 'If you like Poker contact rem@premierlive.com and we will add you to the game. (Limited to 8 Guests)', icon: '🃏', location: 'Beach House Pavilion' },
+        { time: '7:00 PM', title: 'Cocktails at Palm Beach', desc: 'Evening cocktails at Palm Beach', icon: '🍹', location: 'Beach House Pavilion' },
+        { time: '8:00 PM', title: 'Dinner – Palm Beach', desc: 'Mexican Inspired, Buffet', icon: '🌮', location: 'Palm Beach' },
+        { time: '9:00 PM', title: 'Sax & DJ Afterparty', desc: 'Kam and his DJ bring energy to any party. Get ready to dance.', icon: '🎷', location: 'Palm Beach' },
       ]
     },
     {
       day: 'Tuesday',
       date: 'December 1',
       events: [
-        { time: '8:00 AM', title: 'Breakfast & Warm-up', desc: 'Light training session with professional coaches on the practice court', icon: '🎾' },
-        { time: '10:00 AM', title: 'Pro-Am Matches Begin', desc: 'Round-robin tournament starts - Play alongside tennis legends', icon: '🏆' },
-        { time: '1:00 PM', title: 'Lunch on the Lawn', desc: 'Casual island cuisine with fresh seafood and tropical refreshments', icon: '🌴' },
-        { time: '4:00 PM', title: 'Afternoon Matches', desc: 'Doubles competition with rotating partnerships', icon: '🎾' },
-        { time: '7:00 PM', title: 'Cocktails & Sunset', desc: 'Clifftop bar gathering with signature island cocktails', icon: '🌅' },
+        { time: '8:00 AM', title: 'Yoga', desc: 'Morning yoga session to help guests relax and start the day with focus and energy.', icon: '🧘', location: 'Temple' },
+        { time: '8:00 AM', title: 'Breakfast', desc: 'Start your day with a delicious breakfast', icon: '☕', location: 'Great House' },
+        { time: '8:30 AM', title: 'Start of Necker Cup - Tennis Session 1', desc: 'Watch the opening rounds of the 2026 Necker Cup Pro-Am.', icon: '🏆', location: 'Centre Court' },
+        { time: '9:00 AM', title: 'Inspire Cards', desc: 'Start your day with meaningful conversation led by Foundation youth and staff.', icon: '💬', location: 'Great House' },
+        { time: '12:30 PM', title: 'Lunch – Crocodile Table & Upper Beach House', desc: 'Light and Fresh; Family Style', icon: '🥗', location: 'Crocodile Table & Upper Beach House' },
+        { time: '1:30 PM', title: 'Necker Cup - Day 1 - Afternoon Rounds', desc: 'Continue watching the exciting Pro-Am tournament matches.', icon: '🎾', location: 'Tennis Courts' },
+        { time: '4:00 PM', title: 'Meditation', desc: 'Afternoon meditation session for relaxation and mindfulness.', icon: '🧘', location: 'Temple' },
+        { time: '6:00 PM', title: 'Cocktails – Great House', desc: 'Evening cocktails at the Great House', icon: '🍸', location: 'Great House' },
+        { time: '7:00 PM', title: 'Bocelli Dinner', desc: 'Special dinner before the evening performance', icon: '🍽️', location: 'Great House Upper Roof Deck' },
+        { time: '9:00 PM', title: 'Bocelli Performance', desc: 'Join us in the Great House after dinner for an intimate live performance by Andrea Bocelli. It will be a rare and unforgettable evening of music in one of the most magical settings on Necker Island.', icon: '🎤', location: 'Great House' },
       ]
     },
     {
       day: 'Wednesday',
       date: 'December 2',
       events: [
-        { time: '9:00 AM', title: 'Tennis Clinic', desc: 'Private coaching with pros - technique refinement and strategy sessions', icon: '🎾' },
-        { time: '12:00 PM', title: 'Free Time', desc: 'Beach, spa treatments, water sports, or simply relax by the pool', icon: '☀️' },
-        { time: '6:00 PM', title: 'Bocelli Rehearsal', desc: 'Exclusive behind-the-scenes access to Andrea Bocelli\'s soundcheck', icon: '🎵' },
-        { time: '8:30 PM', title: 'Andrea Bocelli Concert', desc: 'Intimate performance on the Great Lawn under Caribbean stars', icon: '🎤' },
+        { time: '7:30 AM', title: 'Breakfast', desc: 'Morning breakfast to fuel your day', icon: '☕', location: 'Great House' },
+        { time: '8:00 AM', title: 'Yoga', desc: 'Morning yoga session', icon: '🧘', location: 'Great House' },
+        { time: '8:45 AM', title: 'Necker Cup – Day 2 - Morning Rounds', desc: 'Day 2 of the Necker Cup Pro-Am tournament', icon: '🎾', location: 'Tennis Courts' },
+        { time: '9:00 AM', title: 'Inspire Cards', desc: 'Start your day with meaningful conversation led by Foundation youth and staff.', icon: '💬', location: 'Great House' },
+        { time: '12:30 PM', title: 'Lunch', desc: 'Eastern Med, Buffet', icon: '🥙', location: 'Crocodile Pool' },
+        { time: '2:00 PM', title: 'Padel Tournament', desc: 'Join us for a competitive padel tournament - teams of two.', icon: '🎾', location: 'Padel Court' },
+        { time: '3:00 PM', title: 'Great House Golf Challenge', desc: 'Compete in the Great House Golf Challenge. Hit balls off the great house to a floating target.', icon: '⛳', location: 'Great House' },
+        { time: '3:00 PM', title: 'Tennis Clinic w Tim Blenkiron', desc: 'Professional tennis clinic with Tim Blenkiron', icon: '🎾', location: 'Centre Court' },
+        { time: '5:00 PM', title: 'Soul Bowl Hot Tub Meet Up', desc: 'Relax and connect at the hot tub', icon: '🛁', location: 'Crocodile Pool & Bar Hot Tub' },
+        { time: '7:00 PM', title: 'Cocktails', desc: 'Evening cocktails', icon: '🍹', location: 'Turtle Beach' },
+        { time: '8:00 PM', title: 'White Night Dinner', desc: 'Turtle Beach, Caribbean, Buffet (White Clothing Night)', icon: '🍽️', location: 'Turtle Beach' },
+        { time: '9:30 PM', title: 'Live Performance TBD', desc: 'Evening live performance', icon: '🎵', location: 'Turtle Beach' },
+        { time: '9:30 PM', title: 'After Party', desc: 'Continue the celebration with the after party', icon: '🎉', location: 'Turtle Beach' },
       ]
     },
     {
       day: 'Thursday',
       date: 'December 3',
       events: [
-        { time: '10:00 AM', title: 'Semi-Final Matches', desc: 'Championship bracket begins - The competition heats up', icon: '🔥' },
-        { time: '2:00 PM', title: 'Island Excursion', desc: 'Snorkeling & sailing adventure around the British Virgin Islands', icon: '⛵' },
-        { time: '7:00 PM', title: 'Darius Rucker Performance', desc: 'Acoustic beachside concert featuring country and Hootie classics', icon: '🎸' },
-        { time: '10:00 PM', title: 'Bonfire & Stargazing', desc: 'Beach celebration with s\'mores and rum cocktails', icon: '🔥' },
+        { time: '7:30 AM', title: 'Breakfast', desc: 'Morning breakfast', icon: '☕', location: 'Great House' },
+        { time: '8:00 AM', title: 'Yoga', desc: 'Join us for morning yoga and meditation.', icon: '🧘', location: 'Great House' },
+        { time: '9:00 AM', title: 'Golf Nail Bay', desc: 'Head to Red Dock to catch a boat to Nail Bay Resort. No clubs required. Barefoot golf with a Butler to cater to your every need. Semi-competitive format and rules. Spots are limited, so call the concierge to reserve your spot. First come, first served.', icon: '⛳', location: 'Red Dock' },
+        { time: '9:00 AM', title: 'Inspire Cards', desc: 'Start your day with meaningful conversation led by Foundation youth and staff.', icon: '💬', location: 'Great House' },
+        { time: '9:30 AM', title: 'At Leisure / Treatments / Water Sports', desc: 'Free time for spa treatments, water sports, or relaxation', icon: '🏖️', location: 'Various Locations' },
+        { time: '12:30 PM', title: 'Sushi Lunch', desc: 'Join us at the Crocodile Pool for a relaxed sushi lunch with a DJ.', icon: '🍣', location: 'Crocodile Pool' },
+        { time: '1:30 PM', title: 'Beach Volleyball', desc: 'Beach volleyball tournament', icon: '🏐', location: 'Beach Volleyball Court' },
+        { time: '3:45 PM', title: 'Necker Cup Finals & Exhibition Match', desc: 'Watch the championship matches and exhibition games', icon: '🏆', location: 'Centre Court' },
+        { time: '4:15 PM', title: 'Live Video From Richard', desc: 'Special message from Richard Branson', icon: '📹', location: 'Beach House Pavilion' },
+        { time: '4:20 PM', title: 'Group Picture All Guests', desc: 'Group photo with all Necker Cup guests', icon: '📸', location: 'Centre Court' },
+        { time: '4:30 PM', title: 'Men\'s Exo', desc: 'Men\'s exhibition match', icon: '🎾', location: 'Centre Court' },
+        { time: '5:00 PM', title: 'Necker Cup Finals', desc: 'The championship finals of the Necker Cup', icon: '🏆', location: 'Centre Court' },
+        { time: '5:45 PM', title: 'Necker Cup Group Picture', desc: 'Come out to center court right after the Pro-Exo for the Necker Cup all group picture.', icon: '📸', location: 'Centre Court' },
+        { time: '6:00 PM', title: 'Cocktails Reception', desc: 'Meet at the Great House after the tennis exhibition to get the Charity Dinner and Auction kicked off.', icon: '🍸', location: 'Great House' },
+        { time: '7:00 PM', title: 'Charity Dinner & Live Auction', desc: 'Join us for the charity dinner and live auction to support our charitable partners.', icon: '🎗️', location: 'Great House' },
+        { time: '9:30 PM', title: 'End of the World Party with Darius Rucker and DJ Mehow', desc: 'The ultimate celebration with live performance by Darius Rucker and DJ Mehow', icon: '🎸', location: 'Cabana Stage / Pool Bar' },
       ]
     },
     {
       day: 'Friday',
       date: 'December 4',
       events: [
-        { time: '10:00 AM', title: 'Championship Finals', desc: 'Trophy matches - Singles and doubles championships decided', icon: '🏆' },
-        { time: '1:00 PM', title: 'Awards Luncheon', desc: 'Celebration & trophy presentation with Richard Branson', icon: '🥇' },
-        { time: '4:00 PM', title: 'Free Afternoon', desc: 'Relax and enjoy the island - final moments in paradise', icon: '🌺' },
-        { time: '8:00 PM', title: 'Farewell Gala', desc: 'Black-tie dinner celebration with live music and dancing', icon: '🎩' },
-      ]
-    },
-    {
-      day: 'Saturday',
-      date: 'December 5',
-      events: [
-        { time: '10:00 AM', title: 'Departure Day', desc: 'Breakfast & fond farewells - Until we meet again', icon: '👋' },
+        { time: '8:00 AM', title: 'Breakfast & Checkout Support', desc: 'Final breakfast and assistance with checkout', icon: '☕', location: 'Great House' },
+        { time: '8:30 AM', title: 'Boat transfers to respective airports based on flights', desc: 'Departure transfers arranged based on your flight schedule', icon: '⛵', location: 'Red Dock' },
       ]
     },
   ];
 
   const highlights = [
-    { icon: Calendar, title: '6 Days', desc: 'Of unforgettable moments' },
-    { icon: Clock, title: '40+ Events', desc: 'Curated experiences' },
+    { icon: Calendar, title: '6 Days', desc: 'November 29 - December 4, 2026' },
+    { icon: Clock, title: '50+ Events', desc: 'Curated experiences' },
   ];
 
   return (
@@ -125,7 +169,7 @@ export function AgendaPage({ onNavigateHome, onNavigate }: AgendaPageProps) {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,255,255,0.1)_0%,_transparent_50%)]" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12 text-center text-white">
           <p className="font-body text-white/70 text-sm tracking-[0.3em] uppercase mb-6">
-            November 30 – December 5, 2026
+            November 29 – December 4, 2026
           </p>
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl mb-8 leading-[0.95]">
             Your Week in <br /><span className="italic">Paradise</span>
@@ -205,7 +249,10 @@ export function AgendaPage({ onNavigateHome, onNavigate }: AgendaPageProps) {
                             <h4 className="font-display text-2xl md:text-3xl text-stone-900 mb-3 group-hover:text-emerald-800 transition-colors">
                               {event.title}
                             </h4>
-                            <p className="font-body text-stone-600 text-lg leading-relaxed">{event.desc}</p>
+                            <p className="font-body text-stone-600 text-lg leading-relaxed mb-2">{event.desc}</p>
+                            {event.location && (
+                              <p className="font-body text-stone-500 text-sm italic">📍 {event.location}</p>
+                            )}
                           </div>
                         </div>
                       </div>
