@@ -2,22 +2,5 @@
   "buildCommand": "",
   "installCommand": "",
   "outputDirectory": ".",
-  "framework": null,
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/index-standalone.html"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        }
-      ]
-    }
-  ]
+  "framework": null
 }
