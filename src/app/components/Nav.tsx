@@ -45,13 +45,16 @@ export function Nav() {
         </Link>
 
         <div className="hidden lg:flex items-center gap-6">
-          <Link to="/#experience" className={`font-body text-sm tracking-wide transition-colors ${linkClass}`}>
+          <Link to="/" className={`font-body text-sm tracking-wide transition-colors ${linkClass}`}>
+            Home
+          </Link>
+          <Link to="/experience" className={`font-body text-sm tracking-wide transition-colors ${linkClass}`}>
             Experience
           </Link>
-          <Link to="/#packages" className={`font-body text-sm tracking-wide transition-colors ${linkClass}`}>
+          <Link to="/packages" className={`font-body text-sm tracking-wide transition-colors ${linkClass}`}>
             Packages
           </Link>
-          <Link to="/#artists" className={`font-body text-sm tracking-wide transition-colors ${linkClass}`}>
+          <Link to="/talent" className={`font-body text-sm tracking-wide transition-colors ${linkClass}`}>
             Talent
           </Link>
           <Link to="/gallery" className={`font-body text-sm tracking-wide transition-colors ${linkClass}`}>

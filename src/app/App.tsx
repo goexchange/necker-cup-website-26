@@ -1,14 +1,14 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ReservationFormProvider } from '@/app/context/ReservationFormContext';
 import { Layout } from '@/app/components/Layout';
-import { HomePage } from '@/app/pages/HomePage';
-import { AgendaPage } from '@/app/pages/AgendaPage';
-import { CharityPage } from '@/app/pages/CharityPage';
-import { ExperiencePage } from '@/app/pages/ExperiencePage';
-import { GalleryPage } from '@/app/pages/GalleryPage';
-import { PackagesPage } from '@/app/pages/PackagesPage';
-import { SponsorshipPage } from '@/app/pages/SponsorshipPage';
-import { TalentPage } from '@/app/pages/TalentPage';
+import { HomePage } from '@pages/HomePage';
+import { AgendaPage } from '@pages/AgendaPage';
+import { CharityPage } from '@pages/CharityPage';
+import { ExperiencePage } from '@pages/ExperiencePage';
+import { GalleryPage } from '@pages/GalleryPage';
+import { PackagesPage } from '@pages/PackagesPage';
+import { SponsorshipPage } from '@pages/SponsorshipPage';
+import { TalentPage } from '@pages/TalentPage';
 
 export default function App() {
   return (

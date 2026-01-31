@@ -71,7 +71,8 @@ See **Makefile** for more Docker commands (`make help`).
 
 ## Project structure
 
-- **`src/app/`** – React app: `App.tsx` (router), `pages/` (one page per section), `components/` (shared UI, Nav, Layout, ReservationForm), `context/`, `logos/`.
+- **`pages/`** – Route pages (Home, Experience, Packages, Talent, Gallery, Sponsorship, Charity, Agenda).
+- **`src/app/`** – React app: `App.tsx` (router), `components/` (shared UI, Nav, Layout, ReservationForm), `context/`, `logos/`.
 - **`docs/`** – Setup guides, Docker docs, Supabase, Vercel, troubleshooting.
 - **`sql/`** – Supabase SQL scripts (tables, RLS, policies).
 

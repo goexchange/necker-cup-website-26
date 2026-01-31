@@ -22,6 +22,8 @@ export default defineConfig({
     alias: {
       // Alias @ to the src directory
       '@': path.resolve(__dirname, './src'),
+      // Pages at project root
+      '@pages': path.resolve(__dirname, './pages'),
     },
   },
 })
