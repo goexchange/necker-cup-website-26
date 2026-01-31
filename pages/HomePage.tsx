@@ -58,7 +58,7 @@ export function HomePage() {
       `}</style>
 
       <section className="relative h-screen min-h-[700px] flex items-end overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1729645014815-b9dbc61809de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cm9waWNhbCUyMGlzbGFuZCUyMGFlcmlhbHxlbnwxfHx8fDE3Njk0NTMzNjJ8MA&ixlib=rb-4.1.0&q=80&w=1080')` }}>
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('/images/banner_image.jpg')` }}>
           <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/60 via-teal-800/50 to-cyan-900/60" />
           <div className="absolute inset-0 gradient-radial" />
           <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/40 to-transparent" />

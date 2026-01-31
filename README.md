@@ -17,7 +17,9 @@ npm install
 npm run dev
 ```
 
-Open **http://localhost:5173**.
+Open **http://localhost:5173** in your browser (use this URL, not a file path).
+
+**Seeing old content?** Use the dev server above and open **http://localhost:5173** only. Do not open `index-standalone.html` (that’s the old single-page version). If the app still looks old, hard-refresh: **Cmd+Shift+R** (Mac) or **Ctrl+Shift+R** (Windows), or clear the site’s cache in DevTools.
 
 ### With Docker
 
