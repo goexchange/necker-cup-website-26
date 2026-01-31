@@ -140,7 +140,7 @@ export function CharityPage({ onNavigateHome, onNavigate }: CharityPageProps) {
               <span className={`font-display text-xl tracking-wide transition-colors ${
                 scrolled ? 'text-stone-900' : 'text-white'
               }`}>
-                Necker Cup
+                Necker Cup 26
               </span>
             </button>
             

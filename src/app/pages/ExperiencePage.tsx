@@ -1,0 +1,165 @@
+import { useReservationForm } from '@/app/context/ReservationFormContext';
+
+const highlights = [
+  { number: '48', label: 'Exclusive Guests', desc: 'Ultra-high-net-worth individuals and celebrities' },
+  { number: '5', label: 'Days of Tennis', desc: 'World-class competition and Pro-Am matches' },
+  { number: '2', label: 'World-Class Artists', desc: 'Intimate performances under Caribbean stars' },
+  { number: '1', label: 'Private Island', desc: "Sir Richard Branson's exclusive Necker Island" },
+];
+
+const experiences = [
+  {
+    title: 'Tennis Excellence',
+    description: 'Play alongside tennis legends in Pro-Am matches, receive private coaching from world-class professionals, and watch championship-level competition.',
+    image: 'https://images.unsplash.com/photo-1767634854859-db8255389e64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjB0ZW5uaXMlMjBjb3VydHxlbnwxfHx8fDE3Njk0NTMzNjN8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    features: ['Pro-Am tournament participation', 'Private coaching sessions', 'Championship viewing', 'Meet tennis legends']
+  },
+  {
+    title: 'Musical Performances',
+    description: 'Experience intimate concerts featuring world-renowned artists in the most exclusive setting imaginable.',
+    image: 'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvdXRkb29yJTIwY29uY2VydCUyMGV2ZW5pbmd8ZW58MXx8fHwxNzM3OTU3MjA1fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    features: ['Andrea Bocelli concert', 'Darius Rucker performance', 'Exclusive artist meet & greets', 'Behind-the-scenes access']
+  },
+  {
+    title: 'Island Paradise',
+    description: 'Relax in private villas, enjoy pristine beaches, world-class dining, and every luxury amenity on Necker Island.',
+    image: 'https://images.unsplash.com/photo-1622816951464-df6fc7ab2ced?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJpYmJlYW4lMjBiZWFjaCUyMHN1bnNldHxlbnwxfHx8fDE3Njk0NTMzNjN8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    features: ['Private villa accommodation', 'Beach access and water sports', 'Gourmet dining experiences', 'Spa and wellness facilities']
+  },
+  {
+    title: 'Exclusive Access',
+    description: 'Connect with fellow guests, tennis legends, and artists in intimate settings designed for meaningful connections.',
+    image: 'https://images.unsplash.com/photo-1566737236500-c8ac43014a67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBkaW5pbmclMjBvdXRkb29yfGVufDF8fHx8MTczNzk1NzI5MXww&ixlib=rb-4.1.0&q=80&w=1080',
+    features: ['VIP networking events', 'Private receptions', 'Exclusive island tours', 'Personal concierge service']
+  },
+];
+
+export function ExperiencePage() {
+  const { openForm } = useReservationForm();
+
+  return (
+    <div className="min-h-screen bg-stone-50 antialiased pt-[72px]">
+      <style>{`
+        .font-display { font-family: 'Playfair Display', Georgia, serif; }
+        .font-body { font-family: 'DM Sans', system-ui, sans-serif; }
+      `}</style>
+
+      {/* HERO */}
+      <section className="relative py-24 lg:py-32 bg-gradient-to-br from-emerald-900 via-teal-800 to-cyan-900 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,255,255,0.1)_0%,_transparent_50%)]" />
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 text-center text-white">
+          <p className="font-body text-white/70 text-sm tracking-[0.3em] uppercase mb-6">
+            The Experience
+          </p>
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl mb-8 leading-[0.95]">
+            More than a tournament. <br /><span className="italic">A transformation.</span>
+          </h1>
+          <p className="font-body text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+            For one extraordinary week, the world's most exclusive private island becomes
+            the backdrop for tennis excellence, musical performances that move the soul,
+            and connections that last a lifetime.
+          </p>
+        </div>
+      </section>
+
+      {/* HIGHLIGHTS */}
+      <section className="py-16 bg-white border-b border-stone-200">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+            {highlights.map((item, i) => (
+              <div key={i} className="text-center">
+                <p className="font-display text-5xl lg:text-6xl text-emerald-800 mb-2">{item.number}</p>
+                <p className="font-body text-stone-900 font-medium mb-1">{item.label}</p>
+                <p className="font-body text-stone-500 text-sm">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* EXPERIENCE DETAILS */}
+      <section className="py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="text-center mb-16">
+            <p className="font-body text-emerald-800 text-sm tracking-[0.2em] uppercase mb-4">What Awaits You</p>
+            <h2 className="font-display text-4xl md:text-5xl text-stone-900 mb-4">
+              Every Moment <span className="italic text-emerald-800">Designed</span>
+            </h2>
+            <p className="font-body text-stone-600 max-w-2xl mx-auto">
+              From championship tennis to world-class performances, every detail is crafted
+              to create an unforgettable experience.
+            </p>
+          </div>
+
+          <div className="space-y-24">
+            {experiences.map((experience, idx) => (
+              <div
+                key={idx}
+                className={`grid lg:grid-cols-2 gap-12 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+              >
+                <div className={idx % 2 === 1 ? 'lg:order-2' : ''}>
+                  <div
+                    className="aspect-[4/3] rounded-3xl bg-cover bg-center shadow-2xl hover:scale-[1.02] transition-transform duration-500"
+                    style={{ backgroundImage: `url('${experience.image}')` }}
+                  />
+                </div>
+                <div className={idx % 2 === 1 ? 'lg:order-1' : ''}>
+                  <h3 className="font-display text-4xl md:text-5xl text-stone-900 mb-6">
+                    {experience.title}
+                  </h3>
+                  <p className="font-body text-stone-600 text-lg leading-relaxed mb-8">
+                    {experience.description}
+                  </p>
+                  <div className="space-y-3">
+                    {experience.features.map((feature, fIdx) => (
+                      <div key={fIdx} className="flex items-center gap-3">
+                        <div className="w-2 h-2 rounded-full bg-emerald-800 flex-shrink-0" />
+                        <p className="font-body text-stone-700">{feature}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIAL */}
+      <section className="py-24 lg:py-32 bg-stone-100">
+        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+          <div className="w-16 h-px bg-emerald-800 mx-auto mb-12" />
+          <blockquote className="font-display text-3xl md:text-4xl lg:text-5xl text-stone-900 leading-[1.2] mb-10">
+            "A mix of tennis legends, current stars, and a wonderful group of amateurs
+            playing our favourite sport in the most <span className="italic text-emerald-800">perfect setting</span>."
+          </blockquote>
+          <div className="flex items-center justify-center gap-4">
+            <div className="w-px h-12 bg-stone-200" />
+            <div className="text-left">
+              <p className="font-body text-stone-900 font-medium">Richard Branson</p>
+              <p className="font-body text-stone-500 text-sm">Founder, Necker Cup</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 bg-gradient-to-br from-emerald-900 to-teal-800 text-white">
+        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+          <h2 className="font-display text-4xl md:text-5xl mb-6">
+            Ready to experience <span className="italic">paradise</span>?
+          </h2>
+          <p className="font-body text-white/80 text-lg mb-10">
+            Limited to 48 guests. Spaces fill quickly for this once-in-a-lifetime experience.
+          </p>
+          <button
+            onClick={openForm}
+            className="font-body bg-white text-stone-900 px-10 py-4 rounded-full font-medium hover:bg-stone-100 transition-all duration-300 hover:shadow-2xl hover:scale-105"
+          >
+            Reserve Your Spot Now
+          </button>
+        </div>
+      </section>
+    </div>
+  );
+}

@@ -4,12 +4,19 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "echo 'Skipping build - using standalone HTML'",
-    "preview": "vite preview"
+    "build": "vite build",
+    "preview": "vite preview",
+    "docker:dev": "docker-compose up dev",
+    "docker:prod": "docker-compose --profile production up prod",
+    "docker:build:dev": "docker-compose build dev",
+    "docker:build:prod": "docker-compose build prod",
+    "docker:down": "docker-compose down",
+    "docker:clean": "docker-compose down -v && docker-compose rm -f"
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
     "lucide-react": "^0.344.0"
   },
   "devDependencies": {
