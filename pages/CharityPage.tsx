@@ -1,27 +1,18 @@
 import { useReservationForm } from '@/app/context/ReservationFormContext';
 import virginUniteLogo from '@/app/logos/virgin_unite.png';
-import oceanUniteLogo from '@/app/logos/icf.png';
-import bransonCentreLogo from '@/app/logos/ntf.png';
-import eldersLogo from '@/app/logos/sfct.png';
+import ntfLogo from '@/app/logos/ntf.png';
+import icfLogo from '@/app/logos/icf.png';
 
 const beneficiaries = [
-  { name: 'Virgin Unite', logo: virginUniteLogo, logoText: 'VU', description: 'Supporting entrepreneurial approaches to social and environmental issues', impact: '$2.4M raised since 2012', color: 'bg-red-600', isCircular: true },
-  { name: 'Ocean Unite', logo: oceanUniteLogo, logoText: 'OU', description: 'Protecting and restoring the ocean for future generations', impact: '15 marine reserves established', color: 'bg-blue-600', isCircular: false },
-  { name: 'National Tennis Foundation', logo: bransonCentreLogo, logoText: 'NTF', description: 'Supporting Caribbean entrepreneurs through mentorship and funding', impact: '450+ businesses supported', color: 'bg-emerald-600', isCircular: false },
-  { name: 'Community Tennis', logo: eldersLogo, logoText: 'CT', description: 'Independent leaders working for peace, justice and human rights', impact: 'Global conflict resolution', color: 'bg-amber-600', isCircular: false },
-];
-
-const initiatives = [
-  { title: 'Pro-Am Tournament', description: 'All entry fees contribute directly to our charitable partners', amount: '$850K' },
-  { title: 'Exclusive Auction', description: 'Unique experiences and memorabilia donated by artists and athletes', amount: '$620K' },
-  { title: 'Performance Donations', description: 'Artists donate proceeds from exclusive concerts', amount: '$380K' },
-  { title: 'Sponsor Matching', description: 'Premier partners match guest contributions dollar-for-dollar', amount: '$550K' },
+  { name: 'Virgin Unite', logo: virginUniteLogo, description: 'The entrepreneurial foundation of the Virgin Group. Richard Branson and the Virgin Group cover all overheads, meaning 100% of donations go directly to the frontline. Virgin Unite focuses on shining a spotlight on unacceptable issues, incubating disruptive collaborations, and empowering entrepreneurs to change business for good.', link: 'https://www.virgin.com/virgin-unite', color: 'bg-red-600', isCircular: true },
+  { name: 'National Tennis Foundation (NTF)', logo: ntfLogo, description: 'A nationally recognized 501(c)(3) that provides scholarships and training opportunities to exceptional student athletes regardless of race or economic means. NTF is based in Las Vegas and has been supported at every single Necker Cup since the event\'s founding.', link: 'https://www.nationaltennisfoundation.org', color: 'bg-emerald-600', isCircular: false },
+  { name: 'BVI Lawn Tennis Association', description: 'Dedicated to youth tennis development in the British Virgin Islands territory.', link: null, color: 'bg-amber-600', isCircular: false },
+  { name: 'Inspiring Children Foundation', logo: icfLogo, description: 'Co-founded by Ryan Wolfington, focused on providing comprehensive programs for underprivileged young people in academics, athletics, leadership and character development. Has provided over 70 scholarships to colleges including Harvard, Stanford, West Point, Princeton, and Georgetown.', link: 'https://inspiringchildren.org', color: 'bg-blue-600', isCircular: false },
 ];
 
 const stories = [
-  { year: '2024', title: 'Caribbean Youth Education Fund', description: 'Provided scholarships to 150 students across the British Virgin Islands, enabling access to higher education and vocational training.', image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGxlYXJuaW5nfGVufDF8fHx8MTczNzk1NzgzNHww&ixlib=rb-4.1.0&q=80&w=1080' },
-  { year: '2023', title: 'Coral Reef Restoration', description: 'Funded the restoration of 5 hectares of coral reef around Necker Island, creating sustainable marine habitats.', image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3JhbCUyMHJlZWYlMjB1bmRlcndhdGVyfGVufDF8fHx8MTczNzk1Nzg1N3ww&ixlib=rb-4.1.0&q=80&w=1080' },
-  { year: '2022', title: 'Small Business Recovery', description: 'Supported 75 island businesses with recovery grants following hurricane season, preserving local livelihoods.', image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWFsbCUyMGJ1c2luZXNzJTIwb3duZXJ8ZW58MXx8fHwxNzM3OTU3ODgyfDA&ixlib=rb-4.1.0&q=80&w=1080' },
+  { year: '2022', title: 'Single Edition Impact', description: 'In 2022 alone, over $900,000 was raised in a single edition of the Necker Cup through the Charity Dinner & Auction and guest generosity.', image: 'https://www.virgin.com/sites/virgin.com/files/necker-cup-charity-auction.jpg' },
+  { year: '2017', title: 'Hurricane Irma & BVI Rebuilding', description: 'When Hurricane Irma destroyed much of Necker Island, the Cup temporarily relocated to Baha Mar Resort in Nassau, Bahamas, and directed the majority of that year\'s fundraising toward Virgin Unite\'s BVI Community Support Appeal for rebuilding efforts.', image: 'https://www.virgin.com/sites/virgin.com/files/necker-cup-charity-auction.jpg' },
 ];
 
 export function CharityPage() {
@@ -39,7 +30,7 @@ export function CharityPage() {
       <section className="relative h-[70vh] min-h-[500px] flex items-end overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWxwaW5nJTIwaGFuZHMlMjBjb21tdW5pdHl8ZW58MXx8fHwxNzM3OTU3OTA3fDA&ixlib=rb-4.1.0&q=80&w=1080')` }}
+          style={{ backgroundImage: `url('https://www.virgin.com/sites/virgin.com/files/necker-cup-charity-auction.jpg')` }}
         >
           <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/80 via-teal-800/70 to-cyan-900/80" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -51,7 +42,7 @@ export function CharityPage() {
           </h1>
           <p className="font-body text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl">
             Every serve, every match, every moment contributes to creating lasting change.
-            Since 2012, the Necker Cup has raised over $12 million for charitable causes.
+            The Necker Cup has distributed over $7 million to charitable causes over its first decade-plus. In 2022 alone, over $900,000 was raised in a single edition.
           </p>
         </div>
       </section>
@@ -60,7 +51,7 @@ export function CharityPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid md:grid-cols-4 gap-12">
-            {[['$12M+', 'Total Raised'], ['24', 'Charities Supported'], ['12', 'Years of Impact'], ['100%', 'Funds Donated']].map(([stat, label], idx) => (
+            {[['$7M+', 'Total Distributed'], ['$900K+', '2022 Single Edition'], ['15', 'Years of Impact'], ['100%', 'To Frontline (Virgin Unite)']].map(([stat, label], idx) => (
               <div key={idx} className="text-center">
                 <p className="font-display text-5xl lg:text-6xl text-emerald-800 mb-3">{stat}</p>
                 <p className="font-body text-stone-600 text-sm tracking-wide uppercase">{label}</p>
@@ -79,14 +70,14 @@ export function CharityPage() {
           </h2>
           <p className="font-body text-stone-600 text-lg leading-relaxed mb-6">
             The Necker Cup is more than an exclusive tennis tournament—it's a platform for
-            meaningful change. Every year, we bring together tennis legends, world-class artists,
-            and philanthropic guests to create unforgettable experiences while generating
-            significant impact for communities and causes that need it most.
+            meaningful change. The primary beneficiaries include Virgin Unite (100% of donations
+            go to the frontline; Branson and Virgin Group cover all overheads), the National Tennis
+            Foundation, the BVI Lawn Tennis Association, and the Inspiring Children Foundation.
           </p>
           <p className="font-body text-stone-600 text-lg leading-relaxed">
-            From ocean conservation to education initiatives, from supporting local Caribbean
-            entrepreneurs to global peace efforts, every dollar raised goes directly to our
-            charitable partners with zero administrative overhead.
+            In 2017, when Hurricane Irma destroyed much of Necker Island, the Cup temporarily
+            relocated to Baha Mar Resort in Nassau, Bahamas, and directed the majority of that
+            year's fundraising toward Virgin Unite's BVI Community Support Appeal for rebuilding efforts.
           </p>
         </div>
       </section>
@@ -107,7 +98,7 @@ export function CharityPage() {
             {beneficiaries.map((charity, idx) => (
               <div key={idx} className="group bg-stone-50 rounded-3xl p-8 lg:p-10 hover:shadow-xl transition-all duration-500 hover:scale-[1.02]">
                 <div className="flex items-start gap-6 mb-6">
-                  {charity.isCircular ? (
+                  {charity.logo && (charity.isCircular ? (
                     <div className={`w-20 h-20 rounded-full ${charity.color} flex items-center justify-center flex-shrink-0 p-3`}>
                       <img src={charity.logo} alt={`${charity.name} logo`} className="w-full h-full object-contain" />
                     </div>
@@ -115,10 +106,11 @@ export function CharityPage() {
                     <div className="w-40 h-28 bg-white rounded-xl flex items-center justify-center flex-shrink-0 p-5 shadow-md border border-stone-200 hover:shadow-lg transition-shadow">
                       <img src={charity.logo} alt={`${charity.name} logo`} className="max-w-full max-h-full object-contain" />
                     </div>
-                  )}
+                  ))}
                   <div className="flex-1">
-                    <h3 className="font-display text-2xl text-stone-900 mb-2">{charity.name}</h3>
-                    <p className="font-body text-emerald-700 text-sm font-medium mb-3">{charity.impact}</p>
+                    <h3 className="font-display text-2xl text-stone-900 mb-2">
+                      {charity.link ? <a href={charity.link} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-800">{charity.name}</a> : charity.name}
+                    </h3>
                   </div>
                 </div>
                 <p className="font-body text-stone-600 leading-relaxed">{charity.description}</p>
@@ -128,7 +120,7 @@ export function CharityPage() {
         </div>
       </section>
 
-      {/* HOW WE RAISE FUNDS */}
+      {/* IMPACT HIGHLIGHT */}
       <section className="py-24 lg:py-32 bg-stone-900 text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
@@ -137,22 +129,14 @@ export function CharityPage() {
               Every Moment <span className="italic">Matters</span>
             </h2>
             <p className="font-body text-stone-300 max-w-2xl mx-auto">
-              From tournament entry fees to exclusive auctions, every aspect of the Necker Cup
-              contributes to our charitable mission.
+              The Charity Dinner & Auction on the final evening, together with guest generosity and event initiatives,
+              drives the Necker Cup's impact. 100% of Virgin Unite donations go directly to the frontline.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {initiatives.map((initiative, idx) => (
-              <div key={idx} className="bg-stone-800/50 border border-stone-700/50 rounded-2xl p-8 hover:bg-stone-800 transition-all duration-300">
-                <p className="font-display text-4xl text-emerald-400 mb-4">{initiative.amount}</p>
-                <h3 className="font-display text-xl text-white mb-3">{initiative.title}</h3>
-                <p className="font-body text-stone-400 text-sm leading-relaxed">{initiative.description}</p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-16">
-            <p className="font-body text-stone-400 text-lg mb-2">2024 Total Impact</p>
-            <p className="font-display text-6xl lg:text-7xl text-emerald-400">$2.4 Million</p>
+          <div className="text-center">
+            <p className="font-body text-stone-400 text-lg mb-2">Total distributed over the first decade-plus</p>
+            <p className="font-display text-6xl lg:text-7xl text-emerald-400">$7 Million+</p>
+            <p className="font-body text-stone-400 text-sm mt-4">2022 single edition: $900,000+</p>
           </div>
         </div>
       </section>

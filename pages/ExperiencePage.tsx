@@ -10,27 +10,27 @@ const highlights = [
 const experiences = [
   {
     title: 'Tennis Excellence',
-    description: 'Play alongside tennis legends in Pro-Am matches, receive private coaching from world-class professionals, and watch championship-level competition.',
-    image: 'https://images.unsplash.com/photo-1767634854859-db8255389e64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjB0ZW5uaXMlMjBjb3VydHxlbnwxfHx8fDE3Njk0NTMzNjN8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    features: ['Pro-Am tournament participation', 'Private coaching sessions', 'Championship viewing', 'Meet tennis legends']
+    description: 'ATP and WTA tour players and legends are paired with amateur teams of all skill levels. A handicapped scoring format keeps things competitive for everyone. The tournament director is Vasek Pospisil, 2014 Wimbledon doubles champion. The week builds toward a Pro Exhibition match on the final day, then the Charity Dinner & Auction.',
+    image: 'https://www.virgin.com/sites/virgin.com/files/necker-cup-2019-courts-night.jpg',
+    features: ['Pro-Am round-robin tournament', 'Handicapped scoring for all levels', 'Pro Exhibition match', 'Necker Cup trophy finals']
   },
   {
-    title: 'Musical Performances',
-    description: 'Experience intimate concerts featuring world-renowned artists in the most exclusive setting imaginable.',
-    image: 'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvdXRkb29yJTIwY29uY2VydCUyMGV2ZW5pbmd8ZW58MXx8fHwxNzM3OTU3MjA1fDA&ixlib=rb-4.1.0&q=80&w=1080',
-    features: ['Andrea Bocelli concert', 'Darius Rucker performance', 'Exclusive artist meet & greets', 'Behind-the-scenes access']
+    title: 'The End of the World Party',
+    description: 'The signature closing event of every Necker Cup. Past performances have included Florida Georgia Line on the beach, Pitbull, Jamie Foxx DJing and performing, and Kenny Chesney under the stars. Followed by the Charity Dinner & Auction.',
+    image: 'https://www.virgin.com/sites/virgin.com/files/necker-cup-end-of-world-party.jpg',
+    features: ['Exhibition match', 'Charity Dinner & Auction', 'Legendary closing party', 'World-class live performances']
   },
   {
-    title: 'Island Paradise',
-    description: 'Relax in private villas, enjoy pristine beaches, world-class dining, and every luxury amenity on Necker Island.',
-    image: 'https://images.unsplash.com/photo-1622816951464-df6fc7ab2ced?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJpYmJlYW4lMjBiZWFjaCUyMHN1bnNldHxlbnwxfHx8fDE3Njk0NTMzNjN8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    features: ['Private villa accommodation', 'Beach access and water sports', 'Gourmet dining experiences', 'Spa and wellness facilities']
+    title: 'Necker Island',
+    description: 'A 74-acre private island in turquoise Caribbean waters with the iconic Great House, Balinese-style villas, championship tennis courts, coral reefs, and white sandy beaches. All tennis, meals, dinners, and parties take place on Necker.',
+    image: 'https://www.virginlimitededition.com/media/kz0fgcjl/necker-island-great-house-exterior.jpg',
+    features: ['Great House & villas', 'Championship courts', 'Beach and water activities', 'All events on-island']
   },
   {
-    title: 'Exclusive Access',
-    description: 'Connect with fellow guests, tennis legends, and artists in intimate settings designed for meaningful connections.',
-    image: 'https://images.unsplash.com/photo-1566737236500-c8ac43014a67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBkaW5pbmclMjBvdXRkb29yfGVufDF8fHx8MTczNzk1NzI5MXww&ixlib=rb-4.1.0&q=80&w=1080',
-    features: ['VIP networking events', 'Private receptions', 'Exclusive island tours', 'Personal concierge service']
+    title: 'Moskito Island & Beyond',
+    description: 'Guests can stay at The Branson Beach Estate on Moskito Island—just a 5–7 minute boat ride away. The Necker Open Pro-Am golf runs alongside the tennis at Nail Bay\'s private course; past participants include Sir Nick Faldo, Greg Norman, and Bryson DeChambeau.',
+    image: 'https://www.virginlimitededition.com/media/r1qphnpn/moskito-island-aerial.jpg',
+    features: ['Branson Beach Estate option', 'Necker Open golf', 'Boat transfer to Necker', 'Private pools & ocean views']
   },
 ];
 
@@ -86,8 +86,8 @@ export function ExperiencePage() {
               Every Moment <span className="italic text-emerald-800">Designed</span>
             </h2>
             <p className="font-body text-stone-600 max-w-2xl mx-auto">
-              From championship tennis to world-class performances, every detail is crafted
-              to create an unforgettable experience.
+              Six days, five nights. Pro-Am tennis, the End of the World party, world-class
+              entertainment, and the full Necker Island experience.
             </p>
           </div>
 
@@ -122,6 +122,27 @@ export function ExperiencePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ACTIVITIES BEYOND TENNIS */}
+      <section className="py-24 lg:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="text-center mb-12">
+            <p className="font-body text-emerald-800 text-sm tracking-[0.2em] uppercase mb-4">At Leisure</p>
+            <h2 className="font-display text-4xl md:text-5xl text-stone-900 mb-4">
+              Activities <span className="italic text-emerald-800">Beyond Tennis</span>
+            </h2>
+            <p className="font-body text-stone-600 max-w-2xl mx-auto">
+              When they say "at leisure," guests have full access to everything the island has to offer.
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4">
+            {['Kiteboarding and kite surfing', 'Sailing (Hobie Cat races)', 'Wakeboarding', 'Snorkeling and scuba diving', 'Paddleboarding', 'Beach tennis and pickleball', 'Swimming pools and hot tubs', 'Lemur feeding', 'Tortoise encounters', 'Island walks and hiking'].map((activity) => (
+              <span key={activity} className="font-body bg-stone-100 text-stone-700 px-5 py-2.5 rounded-full text-sm">{activity}</span>
+            ))}
+          </div>
+          <p className="font-body text-stone-500 text-sm text-center mt-6">Spa services are one of the few things not included.</p>
         </div>
       </section>
 

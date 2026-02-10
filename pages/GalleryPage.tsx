@@ -2,49 +2,47 @@ import { X } from 'lucide-react';
 import { useState } from 'react';
 import { useReservationForm } from '@/app/context/ReservationFormContext';
 
+// All image URLs from docs/NECKER-CUP-CONTENT.md
+const GALLERY_IMAGES = {
+  neckerAerial: 'https://www.virginlimitededition.com/media/fqxjncjn/necker-island-aerial-6.jpg',
+  greatHouse: 'https://www.virginlimitededition.com/media/kz0fgcjl/necker-island-great-house-exterior.jpg',
+  moskitoAerial: 'https://www.virginlimitededition.com/media/r1qphnpn/moskito-island-aerial.jpg',
+  courtsNight: 'https://www.virgin.com/sites/virgin.com/files/necker-cup-2019-courts-night.jpg',
+  groupPhoto: 'https://www.virgin.com/sites/virgin.com/files/necker-cup-2022-group.jpg',
+  endOfWorldParty: 'https://www.virgin.com/sites/virgin.com/files/necker-cup-end-of-world-party.jpg',
+  charityAuction: 'https://www.virgin.com/sites/virgin.com/files/necker-cup-charity-auction.jpg',
+};
+
 const galleryCategories = [
   {
     title: 'The Island',
     subtitle: 'Paradise Found',
     images: [
-      'https://images.unsplash.com/photo-1729645014815-b9dbc61809de?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cm9waWNhbCUyMGlzbGFuZCUyMGFlcmlhbHxlbnwxfHx8fDE3Njk0NTMzNjJ8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      'https://images.unsplash.com/photo-1622816951464-df6fc7ab2ced?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJpYmJlYW4lMjBiZWFjaCUyMHN1bnNldHxlbnwxfHx8fDE3Njk0NTMzNjN8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      'https://images.unsplash.com/photo-1722409195473-d322e99621e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjByZXNvcnQlMjBwb29sfGVufDF8fHx8MTc2OTQ0MDUxNHww&ixlib=rb-4.1.0&q=80&w=1080',
-      'https://images.unsplash.com/photo-1559827260-dc66d52bef19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cm9waWNhbCUyMGJlYWNoJTIwcGFsbXN8ZW58MXx8fHwxNzM3OTU3MDE5fDA&ixlib=rb-4.1.0&q=80&w=1080',
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBpc2xhbmQlMjB2aWxsYXxlbnwxfHx8fDE3Mzc5NTcwNDN8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      'https://images.unsplash.com/photo-1571896349842-33c89424de2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJpYmJlYW4lMjBvY2VhbiUyMHZpZXd8ZW58MXx8fHwxNzM3OTU3MDU4fDA&ixlib=rb-4.1.0&q=80&w=1080',
+      GALLERY_IMAGES.neckerAerial,
+      GALLERY_IMAGES.greatHouse,
+      GALLERY_IMAGES.moskitoAerial,
+      GALLERY_IMAGES.courtsNight,
+      GALLERY_IMAGES.groupPhoto,
     ]
   },
   {
     title: 'On Court',
     subtitle: 'Where Legends Play',
     images: [
-      'https://images.unsplash.com/photo-1767634854859-db8255389e64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjB0ZW5uaXMlMjBjb3VydHxlbnwxfHx8fDE3Njk0NTMzNjN8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      'https://images.unsplash.com/photo-1761286753856-2f39b4413c1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZW5uaXMlMjBwbGF5ZXJzJTIwYWN0aW9ufGVufDF8fHx8MTc2OTQ1MzM2NHww&ixlib=rb-4.1.0&q=80&w=1080',
-      'https://images.unsplash.com/photo-1759819699495-d112601c0d24?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZW5uaXMlMjByYWNrZXQlMjBjbG9zZXVwfGVufDF8fHx8MTc2OTQwMzAyMnww&ixlib=rb-4.1.0&q=80&w=1080',
-      'https://images.unsplash.com/photo-1554068865-24cecd4e34b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZW5uaXMlMjBuZXQlMjBjb3VydHxlbnwxfHx8fDE3Mzc5NTcxNTB8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      'https://images.unsplash.com/photo-1622163642998-1ea32b0bbc67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZW5uaXMlMjBtYXRjaCUyMGFjdGlvbnxlbnwxfHx8fDE3Mzc5NTcxNjh8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      GALLERY_IMAGES.courtsNight,
+      GALLERY_IMAGES.groupPhoto,
+      GALLERY_IMAGES.greatHouse,
+      GALLERY_IMAGES.neckerAerial,
     ]
   },
   {
-    title: 'Performances',
-    subtitle: 'Music Under the Stars',
+    title: 'Parties & Events',
+    subtitle: 'End of the World',
     images: [
-      'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvdXRkb29yJTIwY29uY2VydCUyMGV2ZW5pbmd8ZW58MXx8fHwxNzM3OTU3MjA1fDA&ixlib=rb-4.1.0&q=80&w=1080',
-      'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsaXZlJTIwbXVzaWMlMjBwZXJmb3JtYW5jZXxlbnwxfHx8fDE3Mzc5NTcyMjN8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25jZXJ0JTIwc3RhZ2UlMjBsaWdodHN8ZW58MXx8fHwxNzM3OTU3MjM5fDA&ixlib=rb-4.1.0&q=80&w=1080',
-      'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhY291c3RpYyUyMGd1aXRhciUyMHBlcmZvcm1hbmNlfGVufDF8fHx8MTczNzk1NzI2MHww&ixlib=rb-4.1.0&q=80&w=1080',
-    ]
-  },
-  {
-    title: 'The Experience',
-    subtitle: 'Moments to Remember',
-    images: [
-      'https://images.unsplash.com/photo-1566737236500-c8ac43014a67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBkaW5pbmclMjBvdXRkb29yfGVufDF8fHx8MTczNzk1NzI5MXww&ixlib=rb-4.1.0&q=80&w=1080',
-      'https://images.unsplash.com/photo-1540555700478-4be289fbecef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGFtcGFnbmUlMjB0b2FzdCUyMHN1bnNldHxlbnwxfHx8fDE3Mzc5NTczMTF8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      'https://images.unsplash.com/photo-1559827260-dc66d52bef19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiZWFjaCUyMHJlbGF4YXRpb258ZW58MXx8fHwxNzM3OTU3MzMwfDA&ixlib=rb-4.1.0&q=80&w=1080',
-      'https://images.unsplash.com/photo-1559827260-dc66d52bef19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5YWNodCUyMHNhaWxpbmd8ZW58MXx8fHwxNzM3OTU3MzQ3fDA&ixlib=rb-4.1.0&q=80&w=1080',
-      'https://images.unsplash.com/photo-1578675437406-d5eb7726c6e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGElMjBsdXh1cnklMjB3ZWxsbmVzc3xlbnwxfHx8fDE3Mzc5NTczNjR8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      GALLERY_IMAGES.endOfWorldParty,
+      GALLERY_IMAGES.charityAuction,
+      GALLERY_IMAGES.groupPhoto,
+      GALLERY_IMAGES.courtsNight,
     ]
   },
 ];
@@ -59,12 +57,13 @@ export function GalleryPage() {
         .font-body { font-family: 'DM Sans', system-ui, sans-serif; }
       `}</style>
 
-      {/* VIDEO BANNER - Nav is in Layout */}
+      {/* HERO BANNER - Necker Island from MD */}
       <section className="relative h-[70vh] min-h-[500px] flex items-end overflow-hidden pt-[72px]">
-        <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
-          <source src="https://videos.pexels.com/video-files/4053080/4053080-uhd_2560_1440_30fps.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/70 via-teal-800/60 to-cyan-900/70" />
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url('${GALLERY_IMAGES.neckerAerial}')` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/60 via-teal-800/50 to-cyan-900/60" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 pb-16 lg:pb-24">

@@ -1,12 +1,62 @@
 import { useReservationForm } from '@/app/context/ReservationFormContext';
 
-const tennisLegendsAndPros = [
-  'Bjorn Borg', 'Juan Martin Del Potro', 'Tommy Haas', 'Rod Laver', 'Caroline Wozniacki',
-  'Heather Watson', 'Rafael Nadal', 'Novak Djokovic', 'Jack Sock', 'Vasek Pospisil (Tournament Director)',
+const tennisPros = [
+  { name: 'Novak Djokovic', achievement: '24-time Grand Slam champion' },
+  { name: 'Rafael Nadal', achievement: '22-time Grand Slam champion' },
+  { name: 'Bjorn Borg', achievement: '11-time Grand Slam champion' },
+  { name: 'Rod Laver', achievement: 'Only player to win two calendar-year Grand Slams' },
+  { name: 'Caroline Wozniacki', achievement: 'Former World No. 1, Australian Open champion' },
+  { name: 'Juan Martin Del Potro', achievement: '2009 US Open champion' },
+  { name: 'Dominic Thiem', achievement: '2020 US Open champion' },
+  { name: 'Martina Navratilova', achievement: '18-time Grand Slam singles champion' },
+  { name: 'Jack Sock', achievement: 'Olympic Gold Medalist, 3-time Grand Slam doubles champion' },
+  { name: 'Mike Bryan', achievement: 'Most successful doubles player in history' },
+  { name: 'Stefan Edberg', achievement: '6-time Grand Slam champion' },
+  { name: 'Boris Becker', achievement: '6-time Grand Slam champion' },
+  { name: 'Tommy Haas', achievement: 'Former World No. 2' },
+  { name: 'Heather Watson', achievement: 'Grand Slam doubles champion' },
+  { name: 'Vasek Pospisil', achievement: 'Tournament Director, Wimbledon doubles champion' },
+  { name: 'Kim Clijsters', achievement: '4-time Grand Slam champion' },
+  { name: 'Grigor Dimitrov', achievement: 'Former World No. 3' },
+  { name: 'Eugenie Bouchard', achievement: '2014 Wimbledon finalist' },
+  { name: 'Kevin Anderson', achievement: '2-time Grand Slam finalist' },
+  { name: 'Arantxa Sanchez-Vicario', achievement: '4-time Grand Slam champion' },
 ];
-const musiciansAndCelebrities = [
-  'Andrea Bocelli', 'Florida Georgia Line', 'Jamie Foxx', 'Kate Upton', 'Pitbull', 'Kenny Chesney', 'Jimmy Buffett',
+
+const musiciansAndEntertainers = [
+  { name: 'Andrea Bocelli', knownFor: 'Legendary Italian tenor, 90M+ records sold' },
+  { name: 'Kenny Chesney', knownFor: 'Country music superstar' },
+  { name: 'Florida Georgia Line', knownFor: 'Country music duo' },
+  { name: 'Pitbull', knownFor: 'Global pop/hip-hop artist' },
+  { name: 'Jamie Foxx', knownFor: 'Actor, musician, comedian' },
+  { name: 'Jimmy Buffett', knownFor: 'Singer-songwriter (late)' },
+  { name: 'Darius Rucker', knownFor: 'Hootie & the Blowfish, country solo career' },
+  { name: 'Jewel', knownFor: 'Singer-songwriter' },
+  { name: 'Michael Franti', knownFor: 'Singer-songwriter, Spearhead' },
+  { name: 'Redfoo (LMFAO)', knownFor: 'DJ, musician' },
+  { name: 'Sean Paul', knownFor: 'Dancehall/reggae artist' },
 ];
+
+const celebrityGuests = [
+  { name: 'Kate Upton' },
+  { name: 'Kevin Costner' },
+];
+
+const celebrityGuestsText = 'Kate Upton, Kevin Costner, and numerous high-profile entrepreneurs and business leaders from around the world.';
+
+function TalentCard({ name, subtitle }: { name: string; subtitle?: string }) {
+  return (
+    <div
+      className="w-[200px] h-[200px] flex flex-col items-center justify-center p-4 rounded-xl bg-stone-100 border border-stone-200 hover:border-emerald-300 hover:shadow-md transition-all duration-300 text-center shrink-0"
+      style={{ width: 200, height: 200 }}
+    >
+      <span className="font-body text-stone-900 font-medium text-sm leading-tight">{name}</span>
+      {subtitle && (
+        <span className="font-body text-stone-500 text-xs mt-2 line-clamp-3">{subtitle}</span>
+      )}
+    </div>
+  );
+}
 
 export function TalentPage() {
   const { openForm } = useReservationForm();
@@ -20,44 +70,45 @@ export function TalentPage() {
 
       {/* HERO */}
       <section className="relative py-24 lg:py-40 bg-stone-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900" />
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="absolute inset-0 bg-cover bg-center opacity-40" style={{ backgroundImage: `url('https://www.virgin.com/sites/virgin.com/files/necker-cup-2022-group.jpg')` }} />
+        <div className="absolute inset-0 bg-gradient-to-br from-stone-900 via-stone-800/95 to-stone-900" />
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
           <p className="font-body text-stone-400 text-sm tracking-[0.2em] uppercase mb-8">Past Pros, Musicians & Celebrity Guests</p>
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl mb-12 leading-tight">
             Tennis Legends & Pros · <span className="italic text-emerald-400">Musicians & Celebrities</span>
           </h1>
+          <p className="font-body text-lg text-white/80 max-w-2xl">Over 14 years, the Necker Cup has attracted an incredible roster of tennis talent and entertainment.</p>
         </div>
       </section>
 
-      {/* TWO COLUMNS: TENNIS + MUSICIANS/CELEBS */}
+      {/* TENNIS PROS – 200px SQUARES */}
       <section className="py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            <div>
-              <h2 className="font-display text-3xl text-stone-900 mb-8">Tennis Legends & Pros</h2>
-              <div className="space-y-3">
-                {tennisLegendsAndPros.map((name) => (
-                  <p key={name} className="font-body text-lg text-stone-700 hover:text-emerald-800 transition-colors">
-                    {name}
-                  </p>
-                ))}
-              </div>
-            </div>
-            <div>
-              <h2 className="font-display text-3xl text-stone-900 mb-8">Musicians & Celebrities</h2>
-              <div className="space-y-3">
-                {musiciansAndCelebrities.map((name) => (
-                  <p key={name} className="font-body text-lg text-stone-700 hover:text-emerald-800 transition-colors">
-                    {name}
-                  </p>
-                ))}
-              </div>
-              <p className="font-body text-stone-500 text-sm mt-8">
-                For a complete list of past guests, visit{' '}
-                <a href="https://premierlive.com" target="_blank" rel="noopener noreferrer" className="text-emerald-800 hover:text-emerald-900 underline font-medium">premierlive.com</a>
-              </p>
-            </div>
+          <h2 className="font-display text-3xl md:text-4xl text-stone-900 mb-10">Tennis Legends & Pros</h2>
+          <div className="flex flex-wrap gap-4 justify-start">
+            {tennisPros.map((row, i) => (
+              <TalentCard key={i} name={row.name} subtitle={row.achievement} />
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* MUSICIANS & CELEBRITIES – 200px SQUARES */}
+      <section className="py-24 lg:py-32 bg-stone-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <h2 className="font-display text-3xl md:text-4xl text-stone-900 mb-10">Musicians & Celebrities</h2>
+          <div className="flex flex-wrap gap-4 justify-start">
+            {musiciansAndEntertainers.map((row, i) => (
+              <TalentCard key={i} name={row.name} subtitle={row.knownFor} />
+            ))}
+            {celebrityGuests.map((row, i) => (
+              <TalentCard key={`celebrity-${i}`} name={row.name} />
+            ))}
+          </div>
+          <p className="font-body text-stone-500 text-sm mt-8">
+            Plus numerous high-profile entrepreneurs and business leaders from around the world. For more, visit{' '}
+            <a href="https://premierlive.com" target="_blank" rel="noopener noreferrer" className="text-emerald-800 hover:text-emerald-900 underline font-medium">premierlive.com</a>
+          </p>
         </div>
       </section>
 

@@ -11,11 +11,12 @@ const packages = [
 ];
 
 const galleryImages = [
-  'https://images.unsplash.com/photo-1622816951464-df6fc7ab2ced?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJpYmJlYW4lMjBiZWFjaCUyMHN1bnNldHxlbnwxfHx8fDE3Njk0NTMzNjN8MA&ixlib=rb-4.1.0&q=80&w=1080',
-  'https://images.unsplash.com/photo-1761286753856-2f39b4413c1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZW5uaXMlMjBwbGF5ZXJzJTIwYWN0aW9ufGVufDF8fHx8MTc2OTQ1MzM2NHww&ixlib=rb-4.1.0&q=80&w=1080',
-  'https://images.unsplash.com/photo-1767634854859-db8255389e64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjB0ZW5uaXMlMjBjb3VydHxlbnwxfHx8fDE3Njk0NTMzNjN8MA&ixlib=rb-4.1.0&q=80&w=1080',
-  'https://images.unsplash.com/photo-1722409195473-d322e99621e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjByZXNvcnQlMjBwb29sfGVufDF8fHx8MTc2OTQ0MDUxNHww&ixlib=rb-4.1.0&q=80&w=1080',
-  'https://images.unsplash.com/photo-1759819699495-d112601c0d24?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZW5uaXMlMjByYWNrZXQlMjBjbG9zZXVwfGVufDF8fHx8MTc2OTQwMzAyMnww&ixlib=rb-4.1.0&q=80&w=1080',
+  'https://www.virginlimitededition.com/media/fqxjncjn/necker-island-aerial-6.jpg',
+  'https://www.virgin.com/sites/virgin.com/files/necker-cup-2019-courts-night.jpg',
+  'https://www.virginlimitededition.com/media/kz0fgcjl/necker-island-great-house-exterior.jpg',
+  'https://www.virginlimitededition.com/media/r1qphnpn/moskito-island-aerial.jpg',
+  'https://www.virgin.com/sites/virgin.com/files/necker-cup-2022-group.jpg',
+  'https://www.virgin.com/sites/virgin.com/files/necker-cup-end-of-world-party.jpg',
 ];
 
 const agenda = [
@@ -58,7 +59,7 @@ export function HomePage() {
       `}</style>
 
       <section className="relative h-screen min-h-[700px] flex items-end overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('/images/banner_image.jpg')` }}>
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('https://www.virginlimitededition.com/media/fqxjncjn/necker-island-aerial-6.jpg')` }}>
           <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/60 via-teal-800/50 to-cyan-900/60" />
           <div className="absolute inset-0 gradient-radial" />
           <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/40 to-transparent" />
@@ -91,9 +92,9 @@ export function HomePage() {
             <div>
               <p className="font-body text-emerald-800 text-sm tracking-[0.2em] uppercase mb-6">About the Necker Cup</p>
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-stone-900 leading-[1.1] mb-8">Fun, friendship, networking—<br /><span className="italic text-emerald-800">and tennis.</span></h2>
-              <p className="font-body text-stone-600 text-lg leading-relaxed mb-6">The Necker Cup brings together those with a passion for fun, friendship, networking and, of course tennis. Held over five nights and six days, it features world-class pro-am tennis, a charity dinner & End of the World party, and much more.</p>
-              <p className="font-body text-stone-600 text-lg leading-relaxed mb-6">ATP/WTA tour players and legends are paired with amateur teams of all levels in a handicapped scoring format. Teams of up to two amateurs partner with pros and legends to reach the finals and compete for the Necker Cup trophy.</p>
-              <p className="font-body text-stone-600 text-lg leading-relaxed mb-10">As well as great tennis, enjoy Necker Island activities: sailing, kiteboarding, wakeboarding, snorkeling, beach tennis—and nightly parties. Through the live auction and other initiatives, the 2026 Necker Cup benefits the National Tennis Foundation and Virgin Unite.</p>
+              <p className="font-body text-stone-600 text-lg leading-relaxed mb-6">The Necker Cup is a six-day, five-night all-inclusive pro-am tennis tournament on Sir Richard Branson's private Necker Island in the British Virgin Islands. Founded in 2011 by <strong>Remington Reynolds</strong>, <strong>Trevor Short</strong>, and <strong>Mike Richards (DJ Mehow)</strong>, the event is organized by <strong>Premier Live</strong> and <strong>Mehow</strong>—part vacation, part networking summit, part music festival, and part charity fundraiser.</p>
+              <p className="font-body text-stone-600 text-lg leading-relaxed mb-6">ATP and WTA tour players and legends are paired with amateur teams of all skill levels. A handicapped scoring format keeps things competitive for everyone. Teams of up to two amateurs partner with a pro; over several days of round-robin play, the top teams advance to compete for the coveted Necker Cup trophy. The tournament director is <strong>Vasek Pospisil</strong>, 2014 Wimbledon doubles champion and Davis Cup winner.</p>
+              <p className="font-body text-stone-600 text-lg leading-relaxed mb-10">The week builds toward a Pro Exhibition match on the final day, then the Charity Dinner & Auction and the legendary End of the World party. The 2026 Necker Cup benefits the National Tennis Foundation and Virgin Unite.</p>
               <div className="flex gap-12">
                 {[['5', 'Nights'], ['6', 'Days'], ['Pro-Am', 'Tennis']].map(([num, label]) => (
                   <div key={label}><p className="font-display text-5xl text-emerald-800 mb-1">{num}</p><p className="font-body text-stone-500 text-sm">{label}</p></div>
@@ -101,8 +102,8 @@ export function HomePage() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-emerald-800/20 to-teal-700/30 overflow-hidden shadow-2xl bg-cover bg-center hover:scale-[1.02] transition-transform duration-500" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1767634854859-db8255389e64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjB0ZW5uaXMlMjBjb3VydHxlbnwxfHx8fDE3Njk0NTMzNjN8MA&ixlib=rb-4.1.0&q=80&w=1080')` }} />
-              <div className="absolute -bottom-8 -left-8 w-48 h-64 rounded-2xl shadow-xl hidden lg:block bg-cover bg-center hover:scale-105 transition-transform duration-500" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1622816951464-df6fc7ab2ced?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJpYmJlYW4lMjBiZWFjaCUyMHN1bnNldHxlbnwxfHx8fDE3Njk0NTMzNjN8MA&ixlib=rb-4.1.0&q=80&w=1080')` }} />
+              <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-emerald-800/20 to-teal-700/30 overflow-hidden shadow-2xl bg-cover bg-center hover:scale-[1.02] transition-transform duration-500" style={{ backgroundImage: `url('https://www.virgin.com/sites/virgin.com/files/necker-cup-2019-courts-night.jpg')` }} />
+              <div className="absolute -bottom-8 -left-8 w-48 h-64 rounded-2xl shadow-xl hidden lg:block bg-cover bg-center hover:scale-105 transition-transform duration-500" style={{ backgroundImage: `url('https://www.virginlimitededition.com/media/kz0fgcjl/necker-island-great-house-exterior.jpg')` }} />
             </div>
           </div>
         </div>
@@ -135,8 +136,8 @@ export function HomePage() {
 
       <section className="py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <p className="font-body text-emerald-800 text-sm tracking-[0.2em] uppercase mb-6">Go for the Excitement</p>
-          <p className="font-body text-stone-600 text-lg md:text-xl leading-relaxed max-w-3xl">As well as playing or spectating at the Necker Cup, guests enjoy dinners and parties, intimate musical performances, networking opportunities, and numerous beach activities such as paddleboarding, kitesurfing, sailing, snorkeling, and more while enjoying Necker Island.</p>
+          <p className="font-body text-emerald-800 text-sm tracking-[0.2em] uppercase mb-6">Activities Beyond Tennis</p>
+          <p className="font-body text-stone-600 text-lg md:text-xl leading-relaxed max-w-3xl mb-8">When they say "at leisure," guests have full access to everything the island has to offer: kiteboarding and kite surfing, sailing (including Hobie Cat races), wakeboarding, snorkeling and scuba diving, paddleboarding, beach tennis and pickleball, swimming pools and hot tubs, lemur feeding, tortoise encounters, island walks and hiking. Spa services are one of the few things not included.</p>
         </div>
       </section>
 
@@ -144,26 +145,46 @@ export function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <p className="font-body text-emerald-800 text-sm tracking-[0.2em] uppercase mb-8">Accommodations</p>
           <div className="grid md:grid-cols-2 gap-12">
-            <div><h3 className="font-display text-2xl text-stone-900 mb-4">Necker Island</h3><p className="font-body text-stone-600 leading-relaxed">Accommodations will be available for guests on Necker Island. As with past years, all tennis, lunch, dinner and parties take place on Necker Island.</p></div>
-            <div><h3 className="font-display text-2xl text-stone-900 mb-4">The Branson Beach Estate on Moskito Island</h3><p className="font-body text-stone-600 leading-relaxed">The Branson Beach Estate on Moskito Island offers magnificent accommodation options just a 5 to 7 minute boat ride from Necker Island.</p></div>
+            <div>
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-stone-200">
+                <img src="https://www.virginlimitededition.com/media/kz0fgcjl/necker-island-great-house-exterior.jpg" alt="Necker Island Great House" className="w-full h-full object-cover" />
+              </div>
+              <h3 className="font-display text-2xl text-stone-900 mb-4">Necker Island</h3>
+              <p className="font-body text-stone-600 leading-relaxed">Necker Island is a 74-acre private island owned by Sir Richard Branson, with turquoise Caribbean waters, coral reefs, and white sandy beaches. The island features the iconic Great House, multiple Balinese-style villas, championship tennis courts, and endless activities. All tennis, meals, dinners, and parties take place on Necker Island.</p>
+            </div>
+            <div>
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-stone-200">
+                <img src="https://www.virginlimitededition.com/media/r1qphnpn/moskito-island-aerial.jpg" alt="Moskito Island - The Branson Beach Estate" className="w-full h-full object-cover" />
+              </div>
+              <h3 className="font-display text-2xl text-stone-900 mb-4">The Branson Beach Estate on Moskito Island</h3>
+              <p className="font-body text-stone-600 leading-relaxed">Moskito Island is Branson's neighboring private island, home to The Branson Beach Estate. The property offers stunning accommodation with private pools, ocean views, and the same level of luxury you'd expect—just a 5–7 minute boat ride from Necker Island.</p>
+            </div>
           </div>
         </div>
       </section>
 
       <section id="artists" className="py-24 lg:py-40 bg-stone-900 text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <p className="font-body text-stone-400 text-sm tracking-[0.2em] uppercase mb-8">Past Pros, Musicians & Celebrity Guests</p>
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            <div>
-              <h3 className="font-display text-2xl text-white mb-6">Tennis Legends & Pros</h3>
-              <div className="space-y-2">{['Bjorn Borg', 'Juan Martin Del Potro', 'Tommy Haas', 'Rod Laver', 'Caroline Wozniacki', 'Heather Watson', 'Rafael Nadal', 'Novak Djokovic', 'Jack Sock', 'Vasek Pospisil (Tournament Director)'].map(name => <p key={name} className="font-body text-lg text-stone-300 hover:text-white transition-colors">{name}</p>)}</div>
-            </div>
-            <div>
-              <h3 className="font-display text-2xl text-white mb-6">Musicians & Celebrities</h3>
-              <div className="space-y-2">{['Andrea Bocelli', 'Florida Georgia Line', 'Jamie Foxx', 'Kate Upton', 'Pitbull', 'Kenny Chesney', 'Jimmy Buffett'].map(name => <p key={name} className="font-body text-lg text-stone-300 hover:text-white transition-colors">{name}</p>)}</div>
-              <p className="font-body text-stone-500 text-sm mt-6">For a complete list of past guests, visit <a href="https://premierlive.com" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 underline">premierlive.com</a></p>
-            </div>
+          <p className="font-body text-stone-400 text-sm tracking-[0.2em] uppercase mb-6">Past Pros, Musicians & Celebrity Guests</p>
+          <h2 className="font-display text-3xl md:text-4xl text-white mb-10">Tennis Legends & Pros</h2>
+          <div className="flex flex-wrap gap-4 justify-start mb-16">
+            {['Novak Djokovic', 'Rafael Nadal', 'Bjorn Borg', 'Rod Laver', 'Caroline Wozniacki', 'Juan Martin Del Potro', 'Dominic Thiem', 'Martina Navratilova', 'Jack Sock', 'Mike Bryan', 'Stefan Edberg', 'Boris Becker', 'Tommy Haas', 'Heather Watson', 'Vasek Pospisil (Tournament Director)', 'Kim Clijsters', 'Grigor Dimitrov', 'Eugenie Bouchard', 'Kevin Anderson', 'Arantxa Sanchez-Vicario'].map(name => (
+              <div key={name} className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-300 text-center shrink-0" style={{ width: 200, height: 200 }}>
+                <span className="font-body text-white font-medium text-sm leading-tight">{name}</span>
+              </div>
+            ))}
           </div>
+          <h2 className="font-display text-3xl md:text-4xl text-white mb-10">Musicians & Celebrities</h2>
+          <div className="flex flex-wrap gap-4 justify-start">
+            {['Andrea Bocelli', 'Kenny Chesney', 'Florida Georgia Line', 'Pitbull', 'Jamie Foxx', 'Jimmy Buffett', 'Darius Rucker', 'Jewel', 'Michael Franti', 'Redfoo (LMFAO)', 'Sean Paul', 'Kate Upton', 'Kevin Costner'].map(name => (
+              <div key={name} className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-300 text-center shrink-0" style={{ width: 200, height: 200 }}>
+                <span className="font-body text-white font-medium text-sm leading-tight">{name}</span>
+              </div>
+            ))}
+          </div>
+          <p className="font-body text-stone-400 text-sm mt-10">
+            For the full list with details, visit <Link to="/talent" className="text-emerald-400 hover:text-emerald-300 underline">Talent</Link> or <a href="https://premierlive.com" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 underline">premierlive.com</a>
+          </p>
         </div>
       </section>
 
