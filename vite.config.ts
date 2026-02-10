@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   server: {
-    host: true, // listen on 0.0.0.0 so Docker/browser can connect
+    host: 'localhost', // use localhost to avoid uv_interface_addresses in restricted envs
     port: 5173,
   },
   preview: {

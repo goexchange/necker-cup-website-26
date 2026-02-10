@@ -46,7 +46,7 @@ All packages include 5 nights of accommodation, all meals, events, and parties i
 
 ## Necker Island
 
-![Necker Island Great House](https://www.virginlimitededition.com/media/kz0fgcjl/necker-island-great-house-exterior.jpg)
+![necker.jp](/images/necker.jpg)
 
 Necker Island is a 74-acre private island owned by Sir Richard Branson, sitting in turquoise Caribbean waters surrounded by coral reefs and white sandy beaches. The island features the iconic Great House, multiple Balinese-style villas, championship tennis courts, and enough activities to fill a week without breaking a sweat (or breaking all of it, depending on how hard you go).
 

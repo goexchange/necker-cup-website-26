@@ -23,13 +23,13 @@ const experiences = [
   {
     title: 'Necker Island',
     description: 'A 74-acre private island in turquoise Caribbean waters with the iconic Great House, Balinese-style villas, championship tennis courts, coral reefs, and white sandy beaches. All tennis, meals, dinners, and parties take place on Necker.',
-    image: 'https://www.virginlimitededition.com/media/kz0fgcjl/necker-island-great-house-exterior.jpg',
+    image: '/images/necker.jpg',
     features: ['Great House & villas', 'Championship courts', 'Beach and water activities', 'All events on-island']
   },
   {
     title: 'Moskito Island & Beyond',
     description: 'Guests can stay at The Branson Beach Estate on Moskito Island—just a 5–7 minute boat ride away. The Necker Open Pro-Am golf runs alongside the tennis at Nail Bay\'s private course; past participants include Sir Nick Faldo, Greg Norman, and Bryson DeChambeau.',
-    image: 'https://www.virginlimitededition.com/media/r1qphnpn/moskito-island-aerial.jpg',
+    image: '/images/moskito.jpg',
     features: ['Branson Beach Estate option', 'Necker Open golf', 'Boat transfer to Necker', 'Private pools & ocean views']
   },
 ];

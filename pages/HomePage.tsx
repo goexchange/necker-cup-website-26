@@ -13,8 +13,8 @@ const packages = [
 const galleryImages = [
   'https://www.virginlimitededition.com/media/fqxjncjn/necker-island-aerial-6.jpg',
   'https://www.virgin.com/sites/virgin.com/files/necker-cup-2019-courts-night.jpg',
-  'https://www.virginlimitededition.com/media/kz0fgcjl/necker-island-great-house-exterior.jpg',
-  'https://www.virginlimitededition.com/media/r1qphnpn/moskito-island-aerial.jpg',
+  '/images/necker.jpg',
+  '/images/moskito.jpg',
   'https://www.virgin.com/sites/virgin.com/files/necker-cup-2022-group.jpg',
   'https://www.virgin.com/sites/virgin.com/files/necker-cup-end-of-world-party.jpg',
 ];
@@ -103,7 +103,7 @@ export function HomePage() {
             </div>
             <div className="relative">
               <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-emerald-800/20 to-teal-700/30 overflow-hidden shadow-2xl bg-cover bg-center hover:scale-[1.02] transition-transform duration-500" style={{ backgroundImage: `url('https://www.virgin.com/sites/virgin.com/files/necker-cup-2019-courts-night.jpg')` }} />
-              <div className="absolute -bottom-8 -left-8 w-48 h-64 rounded-2xl shadow-xl hidden lg:block bg-cover bg-center hover:scale-105 transition-transform duration-500" style={{ backgroundImage: `url('https://www.virginlimitededition.com/media/kz0fgcjl/necker-island-great-house-exterior.jpg')` }} />
+              <div className="absolute -bottom-8 -left-8 w-48 h-64 rounded-2xl shadow-xl hidden lg:block bg-cover bg-center hover:scale-105 transition-transform duration-500" style={{ backgroundImage: `url('/images/necker.jpg')` }} />
             </div>
           </div>
         </div>
@@ -147,14 +147,14 @@ export function HomePage() {
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-stone-200">
-                <img src="https://www.virginlimitededition.com/media/kz0fgcjl/necker-island-great-house-exterior.jpg" alt="Necker Island Great House" className="w-full h-full object-cover" />
+                <img src="/images/necker.jpg" alt="necker.jp" className="w-full h-full object-cover" />
               </div>
               <h3 className="font-display text-2xl text-stone-900 mb-4">Necker Island</h3>
               <p className="font-body text-stone-600 leading-relaxed">Necker Island is a 74-acre private island owned by Sir Richard Branson, with turquoise Caribbean waters, coral reefs, and white sandy beaches. The island features the iconic Great House, multiple Balinese-style villas, championship tennis courts, and endless activities. All tennis, meals, dinners, and parties take place on Necker Island.</p>
             </div>
             <div>
               <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-stone-200">
-                <img src="https://www.virginlimitededition.com/media/r1qphnpn/moskito-island-aerial.jpg" alt="Moskito Island - The Branson Beach Estate" className="w-full h-full object-cover" />
+                <img src="/images/moskito.jpg" alt="Moskito Island - The Branson Beach Estate" className="w-full h-full object-cover" />
               </div>
               <h3 className="font-display text-2xl text-stone-900 mb-4">The Branson Beach Estate on Moskito Island</h3>
               <p className="font-body text-stone-600 leading-relaxed">Moskito Island is Branson's neighboring private island, home to The Branson Beach Estate. The property offers stunning accommodation with private pools, ocean views, and the same level of luxury you'd expect—just a 5–7 minute boat ride from Necker Island.</p>

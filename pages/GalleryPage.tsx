@@ -5,8 +5,8 @@ import { useReservationForm } from '@/app/context/ReservationFormContext';
 // All image URLs from docs/NECKER-CUP-CONTENT.md
 const GALLERY_IMAGES = {
   neckerAerial: 'https://www.virginlimitededition.com/media/fqxjncjn/necker-island-aerial-6.jpg',
-  greatHouse: 'https://www.virginlimitededition.com/media/kz0fgcjl/necker-island-great-house-exterior.jpg',
-  moskitoAerial: 'https://www.virginlimitededition.com/media/r1qphnpn/moskito-island-aerial.jpg',
+  greatHouse: '/images/necker.jpg',
+  moskitoAerial: '/images/moskito.jpg',
   courtsNight: 'https://www.virgin.com/sites/virgin.com/files/necker-cup-2019-courts-night.jpg',
   groupPhoto: 'https://www.virgin.com/sites/virgin.com/files/necker-cup-2022-group.jpg',
   endOfWorldParty: 'https://www.virgin.com/sites/virgin.com/files/necker-cup-end-of-world-party.jpg',
