@@ -17,8 +17,8 @@ export function SponsorshipPage({ onNavigateHome, onNavigate }: SponsorshipPageP
 
   const sponsors = {
     presenting: [
-      { name: 'Virgin Limited Edition', tier: 'Presenting Sponsor' },
-      { name: 'Rolex', tier: 'Presenting Sponsor' }
+      { name: 'Virgin Limited Edition', tier: 'Platinum Sponsor' },
+      { name: 'Rolex', tier: 'Platinum Sponsor' }
     ],
     premier: [
       { name: 'NetJets', tier: 'Premier Partner' },
@@ -33,7 +33,7 @@ export function SponsorshipPage({ onNavigateHome, onNavigate }: SponsorshipPageP
 
   const tiers = [
     {
-      name: 'Presenting Sponsor',
+      name: 'Platinum Sponsor',
       price: '$500,000+',
       icon: Award,
       benefits: [
@@ -170,9 +170,9 @@ export function SponsorshipPage({ onNavigateHome, onNavigate }: SponsorshipPageP
             </p>
           </div>
 
-          {/* Presenting Sponsors */}
+          {/* Platinum Sponsors */}
           <div className="mb-16">
-            <p className="font-body text-stone-400 text-xs tracking-[0.25em] uppercase text-center mb-8">Presenting Sponsors</p>
+            <p className="font-body text-stone-400 text-xs tracking-[0.25em] uppercase text-center mb-8">Platinum Sponsors</p>
             <div className="flex flex-wrap justify-center items-center gap-12 lg:gap-20">
               {sponsors.presenting.map((sponsor) => (
                 <div 
