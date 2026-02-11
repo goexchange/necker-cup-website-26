@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Play, ChevronDown, Check } from 'lucide-react';
+import { Play, ChevronDown, Check, X } from 'lucide-react';
 import { useReservationForm } from '@/app/context/ReservationFormContext';
 import { publicImages } from '@/app/lib/publicImages';
 
@@ -33,6 +33,7 @@ const sponsors = { presenting: ['Virgin Limited Edition', 'Rolex'], premier: ['N
 
 export function HomePage() {
   const [activePackage, setActivePackage] = useState(1);
+  const [showVideo, setShowVideo] = useState(false);
   const { openForm } = useReservationForm();
 
   useEffect(() => {
@@ -73,7 +74,7 @@ export function HomePage() {
             <p className="font-body text-lg md:text-xl text-white/90 leading-relaxed max-w-xl mb-10 animate-fade-up-delay-2">Will you join us for the 15th Annual Necker Cup? World-class pro-am tennis, golf, music, charity dinner & End of the World party—and much more.</p>
             <div className="flex flex-wrap gap-4 animate-fade-up-delay-3">
               <button onClick={openForm} className="font-body bg-white text-stone-900 px-8 py-4 rounded-full text-sm font-medium tracking-wide hover:bg-stone-100 transition-all duration-300 hover:shadow-xl hover:scale-105">Explore Packages</button>
-              <button className="font-body border-2 border-white/40 text-white px-8 py-4 rounded-full text-sm tracking-wide hover:bg-white/10 transition-all duration-300 backdrop-blur-sm flex items-center gap-2 hover:shadow-lg"><Play className="w-4 h-4" />Watch Film</button>
+              <button onClick={() => setShowVideo(true)} className="font-body border-2 border-white/40 text-white px-8 py-4 rounded-full text-sm tracking-wide hover:bg-white/10 transition-all duration-300 backdrop-blur-sm flex items-center gap-2 hover:shadow-lg"><Play className="w-4 h-4" />Watch Film</button>
             </div>
           </div>
           <div className="absolute right-6 lg:right-12 bottom-20 lg:bottom-32 hidden lg:block animate-fade-up-delay-3">
@@ -86,6 +87,23 @@ export function HomePage() {
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float"><ChevronDown className="w-6 h-6 text-white/60" /></div>
         </div>
       </section>
+
+      {showVideo && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm" onClick={() => setShowVideo(false)}>
+          <button onClick={() => setShowVideo(false)} className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors" aria-label="Close video">
+            <X className="w-8 h-8" />
+          </button>
+          <div className="relative w-full max-w-5xl mx-4 aspect-video" onClick={(e) => e.stopPropagation()}>
+            <iframe
+              src="https://www.youtube.com/embed/Jlj-Egj1aTI?autoplay=1&rel=0"
+              title="Necker Cup Film"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full rounded-2xl"
+            />
+          </div>
+        </div>
+      )}
 
       <section id="experience" className="py-24 lg:py-40">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
