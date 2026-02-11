@@ -4,16 +4,16 @@ import { useReservationForm } from '@/app/context/ReservationFormContext';
 const sponsors = {
   presenting: [
     { name: 'Virgin Limited Edition', tier: 'Presenting Sponsor' },
-    { name: 'Rolex', tier: 'Presenting Sponsor' }
+    { name: 'Premier Live', tier: 'Presenting Sponsor' }
   ],
   premier: [
-    { name: 'NetJets', tier: 'Premier Partner' },
-    { name: 'Dom Pérignon', tier: 'Premier Partner' },
+    { name: 'MarineMax', tier: 'Premier Partner' },
+    { name: 'Dom Périgno', tier: 'Premier Partner' },
     { name: 'American Express', tier: 'Premier Partner' },
     { name: 'Four Seasons', tier: 'Premier Partner' }
   ],
   partners: [
-    'Wilson', 'Lacoste', 'Molton Brown', 'Land Rover', 'Bose', 'Tiffany & Co.'
+    'Inglot Cosmetics', 'Mallory Agency', 'Red Hospitality'
   ]
 };
 
