@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Play, ChevronDown, Check } from 'lucide-react';
 import { useReservationForm } from '@/app/context/ReservationFormContext';
+import { publicImages } from '@/app/lib/publicImages';
 
 const packages = [
   { name: 'Pro-Am: Player — Necker Island', price: '$109,750', nights: '5 Nights / couple', desc: 'Stay on Necker Island for 5 nights (November 29 - December 4, 2026). Enjoy meals, events and parties, including the End of the World party, on Necker Island. One 2-person playing team spot to play in the Necker Cup.' },
@@ -11,12 +12,12 @@ const packages = [
 ];
 
 const galleryImages = [
-  'https://www.virginlimitededition.com/media/fqxjncjn/necker-island-aerial-6.jpg',
-  'https://www.virgin.com/sites/virgin.com/files/necker-cup-2019-courts-night.jpg',
-  '/images/necker.jpg',
-  '/images/moskito.jpg',
-  'https://www.virgin.com/sites/virgin.com/files/necker-cup-2022-group.jpg',
-  'https://www.virgin.com/sites/virgin.com/files/necker-cup-end-of-world-party.jpg',
+  publicImages.necker,
+  publicImages.banner,
+  publicImages.moskito,
+  publicImages.necker,
+  publicImages.banner,
+  publicImages.moskito,
 ];
 
 const agenda = [
@@ -59,7 +60,7 @@ export function HomePage() {
       `}</style>
 
       <section className="relative h-screen min-h-[700px] flex items-end overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('https://www.virginlimitededition.com/media/fqxjncjn/necker-island-aerial-6.jpg')` }}>
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${publicImages.necker}')` }}>
           <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/60 via-teal-800/50 to-cyan-900/60" />
           <div className="absolute inset-0 gradient-radial" />
           <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/40 to-transparent" />
@@ -102,8 +103,8 @@ export function HomePage() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-emerald-800/20 to-teal-700/30 overflow-hidden shadow-2xl bg-cover bg-center hover:scale-[1.02] transition-transform duration-500" style={{ backgroundImage: `url('https://www.virgin.com/sites/virgin.com/files/necker-cup-2019-courts-night.jpg')` }} />
-              <div className="absolute -bottom-8 -left-8 w-48 h-64 rounded-2xl shadow-xl hidden lg:block bg-cover bg-center hover:scale-105 transition-transform duration-500" style={{ backgroundImage: `url('/images/necker.jpg')` }} />
+              <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-emerald-800/20 to-teal-700/30 overflow-hidden shadow-2xl bg-cover bg-center hover:scale-[1.02] transition-transform duration-500" style={{ backgroundImage: `url('${publicImages.necker}')` }} />
+              <div className="absolute -bottom-8 -left-8 w-48 h-64 rounded-2xl shadow-xl hidden lg:block bg-cover bg-center hover:scale-105 transition-transform duration-500" style={{ backgroundImage: `url('${publicImages.necker}')` }} />
             </div>
           </div>
         </div>
@@ -145,16 +146,16 @@ export function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <p className="font-body text-emerald-800 text-sm tracking-[0.2em] uppercase mb-8">Accommodations</p>
           <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-stone-200">
-                <img src="/images/necker.jpg" alt="necker.jp" className="w-full h-full object-cover" />
+            <div className="min-h-0">
+              <div className="aspect-[4/3] max-h-[420px] w-full rounded-2xl overflow-hidden mb-6 bg-stone-200 shrink-0">
+                <img src={publicImages.necker} alt="Necker Island" className="block w-full h-full object-cover min-h-0" />
               </div>
               <h3 className="font-display text-2xl text-stone-900 mb-4">Necker Island</h3>
               <p className="font-body text-stone-600 leading-relaxed">Necker Island is a 74-acre private island owned by Sir Richard Branson, with turquoise Caribbean waters, coral reefs, and white sandy beaches. The island features the iconic Great House, multiple Balinese-style villas, championship tennis courts, and endless activities. All tennis, meals, dinners, and parties take place on Necker Island.</p>
             </div>
-            <div>
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden mb-6 bg-stone-200">
-                <img src="/images/moskito.jpg" alt="Moskito Island - The Branson Beach Estate" className="w-full h-full object-cover" />
+            <div className="min-h-0">
+              <div className="aspect-[4/3] max-h-[420px] w-full rounded-2xl overflow-hidden mb-6 bg-stone-200 shrink-0">
+                <img src={publicImages.moskito} alt="Moskito Island - The Branson Beach Estate" className="block w-full h-full object-cover min-h-0" />
               </div>
               <h3 className="font-display text-2xl text-stone-900 mb-4">The Branson Beach Estate on Moskito Island</h3>
               <p className="font-body text-stone-600 leading-relaxed">Moskito Island is Branson's neighboring private island, home to The Branson Beach Estate. The property offers stunning accommodation with private pools, ocean views, and the same level of luxury you'd expect—just a 5–7 minute boat ride from Necker Island.</p>

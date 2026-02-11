@@ -11,8 +11,8 @@ const beneficiaries = [
 ];
 
 const stories = [
-  { year: '2022', title: 'Single Edition Impact', description: 'In 2022 alone, over $900,000 was raised in a single edition of the Necker Cup through the Charity Dinner & Auction and guest generosity.', image: 'https://www.virgin.com/sites/virgin.com/files/necker-cup-charity-auction.jpg' },
-  { year: '2017', title: 'Hurricane Irma & BVI Rebuilding', description: 'When Hurricane Irma destroyed much of Necker Island, the Cup temporarily relocated to Baha Mar Resort in Nassau, Bahamas, and directed the majority of that year\'s fundraising toward Virgin Unite\'s BVI Community Support Appeal for rebuilding efforts.', image: 'https://www.virgin.com/sites/virgin.com/files/necker-cup-charity-auction.jpg' },
+  { year: '2022', title: 'Single Edition Impact', description: 'In 2022 alone, over $900,000 was raised in a single edition of the Necker Cup through the Charity Dinner & Auction and guest generosity.', image: '/images/necker.jpg' },
+  { year: '2017', title: 'Hurricane Irma & BVI Rebuilding', description: 'When Hurricane Irma destroyed much of Necker Island, the Cup temporarily relocated to Baha Mar Resort in Nassau, Bahamas, and directed the majority of that year\'s fundraising toward Virgin Unite\'s BVI Community Support Appeal for rebuilding efforts.', image: '/images/necker.jpg' },
 ];
 
 export function CharityPage() {
@@ -30,7 +30,7 @@ export function CharityPage() {
       <section className="relative h-[70vh] min-h-[500px] flex items-end overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('https://www.virgin.com/sites/virgin.com/files/necker-cup-charity-auction.jpg')` }}
+          style={{ backgroundImage: `url('/images/necker.jpg')` }}
         >
           <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/80 via-teal-800/70 to-cyan-900/80" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

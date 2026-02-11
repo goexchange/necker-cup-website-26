@@ -1,4 +1,5 @@
 import { useReservationForm } from '@/app/context/ReservationFormContext';
+import { publicImages } from '@/app/lib/publicImages';
 
 const tennisPros = [
   { name: 'Novak Djokovic', achievement: '24-time Grand Slam champion' },
@@ -70,7 +71,7 @@ export function TalentPage() {
 
       {/* HERO */}
       <section className="relative py-24 lg:py-40 bg-stone-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-40" style={{ backgroundImage: `url('https://www.virgin.com/sites/virgin.com/files/necker-cup-2022-group.jpg')` }} />
+        <div className="absolute inset-0 bg-cover bg-center opacity-40" style={{ backgroundImage: `url('${publicImages.necker}')` }} />
         <div className="absolute inset-0 bg-gradient-to-br from-stone-900 via-stone-800/95 to-stone-900" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
           <p className="font-body text-stone-400 text-sm tracking-[0.2em] uppercase mb-8">Past Pros, Musicians & Celebrity Guests</p>

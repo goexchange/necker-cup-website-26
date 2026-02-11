@@ -1,16 +1,17 @@
 import { X } from 'lucide-react';
 import { useState } from 'react';
 import { useReservationForm } from '@/app/context/ReservationFormContext';
+import { publicImages } from '@/app/lib/publicImages';
 
-// All image URLs from docs/NECKER-CUP-CONTENT.md
+// All images from public/images for reliable loading
 const GALLERY_IMAGES = {
-  neckerAerial: 'https://www.virginlimitededition.com/media/fqxjncjn/necker-island-aerial-6.jpg',
-  greatHouse: '/images/necker.jpg',
-  moskitoAerial: '/images/moskito.jpg',
-  courtsNight: 'https://www.virgin.com/sites/virgin.com/files/necker-cup-2019-courts-night.jpg',
-  groupPhoto: 'https://www.virgin.com/sites/virgin.com/files/necker-cup-2022-group.jpg',
-  endOfWorldParty: 'https://www.virgin.com/sites/virgin.com/files/necker-cup-end-of-world-party.jpg',
-  charityAuction: 'https://www.virgin.com/sites/virgin.com/files/necker-cup-charity-auction.jpg',
+  neckerAerial: publicImages.necker,
+  greatHouse: publicImages.necker,
+  moskitoAerial: publicImages.moskito,
+  courtsNight: publicImages.banner,
+  groupPhoto: publicImages.necker,
+  endOfWorldParty: publicImages.banner,
+  charityAuction: publicImages.moskito,
 };
 
 const galleryCategories = [
