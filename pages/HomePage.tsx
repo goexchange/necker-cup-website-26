@@ -70,7 +70,7 @@ export function HomePage() {
           <div className="max-w-3xl">
             <p className="font-body text-white/70 text-sm tracking-[0.3em] uppercase mb-6 animate-fade-up">November 29 – December 4, 2026</p>
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-white leading-[0.95] mb-4 animate-fade-up-delay-1 text-shadow-hero">Necker Cup 26</h1>
-            <p className="font-display text-xl md:text-2xl text-white/90 mb-8 animate-fade-up-delay-1">Tennis Pro-Am | Necker Island, BVI</p>
+            <p className="font-display text-xl md:text-2xl text-white/90 mb-8 animate-fade-up-delay-1">Fun, friendship, charity - and tennis</p>
             <p className="font-body text-lg md:text-xl text-white/90 leading-relaxed max-w-xl mb-10 animate-fade-up-delay-2">Will you join us for the 15th Annual Necker Cup? World-class pro-am tennis, golf, music, charity dinner & End of the World party—and much more.</p>
             <div className="flex flex-wrap gap-4 animate-fade-up-delay-3">
               <button onClick={openForm} className="font-body bg-white text-stone-900 px-8 py-4 rounded-full text-sm font-medium tracking-wide hover:bg-stone-100 transition-all duration-300 hover:shadow-xl hover:scale-105">Explore Packages</button>
