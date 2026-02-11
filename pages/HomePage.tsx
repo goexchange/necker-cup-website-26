@@ -233,18 +233,12 @@ export function HomePage() {
           <h2 className="font-display text-4xl md:text-5xl mb-6">Join Us at the 2026 Necker Cup</h2>
           <p className="font-body text-white/80 text-lg mb-10">November 29 – December 4, 2026 · Necker Island, BVI</p>
           <button onClick={openForm} className="font-body bg-white text-stone-900 px-10 py-4 rounded-full font-medium hover:bg-stone-100 transition-all duration-300 hover:shadow-2xl hover:scale-105">Reserve Your Spot Now</button>
-          <div className="mt-12 pt-12 border-t border-white/20 text-left max-w-2xl mx-auto">
-            <p className="font-body text-white/90 font-medium mb-4">Contact</p>
-            <p className="font-body text-white/80 text-sm mb-2"><strong>Remington Reynolds</strong> · <a href="mailto:rem@premierlive.com" className="underline hover:text-white">rem@premierlive.com</a> · <a href="tel:+16784786649" className="underline hover:text-white">+1 678.478.6649</a></p>
-            <p className="font-body text-white/80 text-sm mb-2"><strong>Trevor Short</strong> · <a href="mailto:trevor@inspiringdreams.com" className="underline hover:text-white">trevor@inspiringdreams.com</a> · <a href="tel:+16154989087" className="underline hover:text-white">+1 615.498.9087</a></p>
-            <p className="font-body text-white/80 text-sm"><strong>Mike Richards</strong> · <a href="mailto:mike@djmehow.com" className="underline hover:text-white">mike@djmehow.com</a> · <a href="tel:+447956305647" className="underline hover:text-white">+44 (0) 7956 305 647</a></p>
-          </div>
         </div>
       </section>
 
       <footer className="py-16 bg-stone-900 text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid md:grid-cols-3 gap-12 mb-16">
+          <div className="grid md:grid-cols-2 gap-12 mb-16">
             <div>
               <div className="flex items-center gap-3 mb-6"><div className="w-10 h-10 rounded-full bg-emerald-800 flex items-center justify-center"><span className="font-display text-lg font-semibold">N</span></div><span className="font-display text-xl">Necker Cup 26</span></div>
               <p className="font-body text-stone-400 text-sm leading-relaxed">Tennis Pro-Am · November 29 – December 4, 2026 · Necker Island, BVI. Benefits National Tennis Foundation & Virgin Unite.</p>
@@ -259,14 +253,7 @@ export function HomePage() {
                 <Link to="/charity" className="font-body text-stone-300 hover:text-white transition-colors block">Charity</Link>
               </div>
             </div>
-            <div>
-              <h3 className="font-body text-sm tracking-wider uppercase mb-4 text-stone-500">Contact</h3>
-              <div className="space-y-2 text-sm">
-                <p className="font-body text-stone-300">Remington Reynolds · <a href="mailto:rem@premierlive.com" className="hover:text-white transition-colors">rem@premierlive.com</a></p>
-                <p className="font-body text-stone-300">Trevor Short · <a href="mailto:trevor@inspiringdreams.com" className="hover:text-white transition-colors">trevor@inspiringdreams.com</a></p>
-                <p className="font-body text-stone-300">Mike Richards · <a href="mailto:mike@djmehow.com" className="hover:text-white transition-colors">mike@djmehow.com</a></p>
-              </div>
-            </div>
+
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-10 border-t border-stone-800">
             <div className="flex gap-8">{['Privacy Policy', 'Terms & Conditions', 'Contact'].map(link => <a key={link} href="#" className="font-body text-sm text-stone-400 hover:text-white transition-colors">{link}</a>)}</div>

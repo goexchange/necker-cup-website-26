@@ -32,7 +32,7 @@ const agenda = [
       { time: '3:15 PM', title: 'Amateur Tennis Tryout and Rating for Pro-Am', desc: 'If you are playing in the pro-am for the first time, please come to the courts to get rated. You can join the tennis clinic afterward at 3 PM.', icon: '🎾', location: 'Tennis Courts' },
       { time: '4:00 PM', title: 'Tipsy Team Tennis', desc: 'Enjoy lighthearted, cocktail-inspired tennis games with a mix of fun activities, open to all levels from 4 p.m. onwards.', icon: '🎾', location: 'Centre Court' },
       { time: '5:00 PM', title: 'Soul Bowl Hot Tub Meet Up', desc: 'Casual meet-up at the Soul Bowl hot tub for guests to relax and connect.', icon: '🛁', location: 'Crocodile Pool' },
-      { time: '7:00 PM', title: 'Poker', desc: 'If you like Poker contact rem@premierlive.com and we will add you to the game. (Limited to 8 Guests)', icon: '🃏', location: 'Beach House Pavilion' },
+      { time: '7:00 PM', title: 'Poker', desc: 'If you like Poker, let us know and we will add you to the game. (Limited to 8 Guests)', icon: '🃏', location: 'Beach House Pavilion' },
       { time: '7:00 PM', title: 'Cocktails at Palm Beach', desc: 'Evening cocktails at Palm Beach', icon: '🍹', location: 'Beach House Pavilion' },
       { time: '8:00 PM', title: 'Dinner – Palm Beach', desc: 'Mexican Inspired, Buffet', icon: '🌮', location: 'Palm Beach' },
       { time: '9:00 PM', title: 'Sax & DJ Afterparty', desc: 'Kam and his DJ bring energy to any party. Get ready to dance.', icon: '🎷', location: 'Palm Beach' },
