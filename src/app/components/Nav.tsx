@@ -74,6 +74,18 @@ export function Nav() {
           >
             <Menu className="w-6 h-6" />
           </button>
+          <a
+            href="https://portal.neckercup.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`hidden sm:inline-flex font-body text-sm px-4 py-2.5 rounded-full transition-all duration-300 whitespace-nowrap ${
+              floating
+                ? 'border border-white/40 text-white hover:bg-white/10'
+                : 'border border-stone-300 text-stone-600 hover:text-emerald-800 hover:border-emerald-800'
+            }`}
+          >
+            Client Login
+          </a>
           <button
             onClick={openForm}
             className={`font-body text-sm px-4 py-2.5 sm:px-6 rounded-full transition-all duration-300 whitespace-nowrap ${
@@ -115,9 +127,17 @@ export function Nav() {
                 </Link>
               ))}
             </div>
+            <a
+              href="https://portal.neckercup.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-body mt-6 w-full py-3 rounded-full border border-stone-300 text-stone-700 hover:text-emerald-800 hover:border-emerald-800 text-center block"
+            >
+              Client Login
+            </a>
             <button
               onClick={() => { setMobileMenuOpen(false); openForm(); }}
-              className="font-body mt-6 w-full py-3 rounded-full bg-emerald-800 text-white hover:bg-emerald-900"
+              className="font-body mt-3 w-full py-3 rounded-full bg-emerald-800 text-white hover:bg-emerald-900"
             >
               Reserve Your Spot
             </button>

@@ -156,9 +156,7 @@ export function PackagesPage() {
               Reserve Your Spot Now
             </button>
           </div>
-          <p className="font-body text-white/60 text-sm mt-6">
-            Contact: <a href="mailto:rem@premierlive.com" className="underline hover:text-white">rem@premierlive.com</a> · <a href="mailto:trevor@inspiringdreams.com" className="underline hover:text-white">trevor@inspiringdreams.com</a> · <a href="mailto:mike@djmehow.com" className="underline hover:text-white">mike@djmehow.com</a>
-          </p>
+
         </div>
       </section>
     </div>

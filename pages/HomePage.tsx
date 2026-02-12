@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Play, ChevronDown, Check } from 'lucide-react';
+import { Play, ChevronDown, Check, X } from 'lucide-react';
 import { useReservationForm } from '@/app/context/ReservationFormContext';
 import { publicImages } from '@/app/lib/publicImages';
 
@@ -33,6 +33,7 @@ const sponsors = { presenting: ['Virgin Limited Edition', 'Rolex'], premier: ['N
 
 export function HomePage() {
   const [activePackage, setActivePackage] = useState(1);
+  const [showVideo, setShowVideo] = useState(false);
   const { openForm } = useReservationForm();
 
   useEffect(() => {
@@ -69,11 +70,11 @@ export function HomePage() {
           <div className="max-w-3xl">
             <p className="font-body text-white/70 text-sm tracking-[0.3em] uppercase mb-6 animate-fade-up">November 29 – December 4, 2026</p>
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-white leading-[0.95] mb-4 animate-fade-up-delay-1 text-shadow-hero">Necker Cup 26</h1>
-            <p className="font-display text-xl md:text-2xl text-white/90 mb-8 animate-fade-up-delay-1">Tennis Pro-Am | Necker Island, BVI</p>
-            <p className="font-body text-lg md:text-xl text-white/90 leading-relaxed max-w-xl mb-10 animate-fade-up-delay-2">Will you join us on Necker Island? World-class pro-am tennis, charity dinner & End of the World party—and much more.</p>
+            <p className="font-display text-xl md:text-2xl text-white/90 mb-8 animate-fade-up-delay-1">Fun, friendship, charity - and tennis</p>
+            <p className="font-body text-lg md:text-xl text-white/90 leading-relaxed max-w-xl mb-10 animate-fade-up-delay-2">Will you join us for the 15th Annual Necker Cup? World-class pro-am tennis, golf, music, charity dinner & End of the World party—and much more.</p>
             <div className="flex flex-wrap gap-4 animate-fade-up-delay-3">
               <button onClick={openForm} className="font-body bg-white text-stone-900 px-8 py-4 rounded-full text-sm font-medium tracking-wide hover:bg-stone-100 transition-all duration-300 hover:shadow-xl hover:scale-105">Explore Packages</button>
-              <button className="font-body border-2 border-white/40 text-white px-8 py-4 rounded-full text-sm tracking-wide hover:bg-white/10 transition-all duration-300 backdrop-blur-sm flex items-center gap-2 hover:shadow-lg"><Play className="w-4 h-4" />Watch Film</button>
+              <button onClick={() => setShowVideo(true)} className="font-body border-2 border-white/40 text-white px-8 py-4 rounded-full text-sm tracking-wide hover:bg-white/10 transition-all duration-300 backdrop-blur-sm flex items-center gap-2 hover:shadow-lg"><Play className="w-4 h-4" />Watch Last Year's Video</button>
             </div>
           </div>
           <div className="absolute right-6 lg:right-12 bottom-20 lg:bottom-32 hidden lg:block animate-fade-up-delay-3">
@@ -87,15 +88,32 @@ export function HomePage() {
         </div>
       </section>
 
+      {showVideo && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm" onClick={() => setShowVideo(false)}>
+          <button onClick={() => setShowVideo(false)} className="absolute top-6 right-6 text-white/80 hover:text-white transition-colors" aria-label="Close video">
+            <X className="w-8 h-8" />
+          </button>
+          <div className="relative w-full max-w-5xl mx-4 aspect-video" onClick={(e) => e.stopPropagation()}>
+            <iframe
+              src="https://www.youtube.com/embed/Jlj-Egj1aTI?autoplay=1&rel=0"
+              title="Necker Cup Film"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full rounded-2xl"
+            />
+          </div>
+        </div>
+      )}
+
       <section id="experience" className="py-24 lg:py-40">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div>
               <p className="font-body text-emerald-800 text-sm tracking-[0.2em] uppercase mb-6">About the Necker Cup</p>
-              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-stone-900 leading-[1.1] mb-8">Fun, friendship, networking—<br /><span className="italic text-emerald-800">and tennis.</span></h2>
-              <p className="font-body text-stone-600 text-lg leading-relaxed mb-6">The Necker Cup is a six-day, five-night all-inclusive pro-am tennis tournament on Sir Richard Branson's private Necker Island in the British Virgin Islands. Founded in 2011 by <strong>Remington Reynolds</strong>, <strong>Trevor Short</strong>, and <strong>Mike Richards (DJ Mehow)</strong>, the event is organized by <strong>Premier Live</strong> and <strong>Mehow</strong>—part vacation, part networking summit, part music festival, and part charity fundraiser.</p>
-              <p className="font-body text-stone-600 text-lg leading-relaxed mb-6">ATP and WTA tour players and legends are paired with amateur teams of all skill levels. A handicapped scoring format keeps things competitive for everyone. Teams of up to two amateurs partner with a pro; over several days of round-robin play, the top teams advance to compete for the coveted Necker Cup trophy. The tournament director is <strong>Vasek Pospisil</strong>, 2014 Wimbledon doubles champion and Davis Cup winner.</p>
-              <p className="font-body text-stone-600 text-lg leading-relaxed mb-10">The week builds toward a Pro Exhibition match on the final day, then the Charity Dinner & Auction and the legendary End of the World party. The 2026 Necker Cup benefits the National Tennis Foundation and Virgin Unite.</p>
+              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-stone-900 leading-[1.1] mb-8">Fun, friendship, charity—<br /><span className="italic text-emerald-800">and tennis.</span></h2>
+              <p className="font-body text-stone-600 text-lg leading-relaxed mb-6">The Necker Cup is a six-day, five-night all-inclusive pro-am tennis tournament on Sir Richard Branson's private Necker Island in the British Virgin Islands. Founded in 2012 the event is organized by Premier Live and sells out each year.</p>
+              <p className="font-body text-stone-600 text-lg leading-relaxed mb-6">ATP and WTA tour players and legends are paired with amateur teams of all skill levels. A handicapped scoring format keeps things competitive for everyone. Teams of up to two amateurs partner with a pro; over several days of round-robin play, the top teams advance to compete for the coveted Necker Cup trophy.</p>
+              <p className="font-body text-stone-600 text-lg leading-relaxed mb-10">The week builds toward a Pro Exhibition match on the final day, then the Charity Dinner & Auction and the legendary End of the World party. The 2026 Necker Cup benefits the National Tennis Foundation and Virgin Unite and number of other worthy charities.</p>
               <div className="flex gap-12">
                 {[['5', 'Nights'], ['6', 'Days'], ['Pro-Am', 'Tennis']].map(([num, label]) => (
                   <div key={label}><p className="font-display text-5xl text-emerald-800 mb-1">{num}</p><p className="font-body text-stone-500 text-sm">{label}</p></div>
@@ -221,7 +239,7 @@ export function HomePage() {
       <section id="sponsors" className="py-24 lg:py-32 bg-stone-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16"><p className="font-body text-emerald-800 text-sm tracking-[0.2em] uppercase mb-4">Partners</p><h2 className="font-display text-4xl md:text-5xl text-stone-900 mb-4">In Partnership with <span className="italic">Excellence</span></h2><p className="font-body text-stone-600 max-w-2xl mx-auto">The Necker Cup is proudly supported by world-class brands that share our commitment to exceptional experiences.</p></div>
-          <div className="mb-16"><p className="font-body text-stone-400 text-xs tracking-[0.25em] uppercase text-center mb-8">Presenting Sponsors</p><div className="flex flex-wrap justify-center items-center gap-12 lg:gap-20">{sponsors.presenting.map(sp => <div key={sp} className="group relative bg-white rounded-2xl px-12 py-8 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105"><p className="font-display text-2xl md:text-3xl text-stone-800 group-hover:text-emerald-800 transition-colors">{sp}</p></div>)}</div></div>
+          <div className="mb-16"><p className="font-body text-stone-400 text-xs tracking-[0.25em] uppercase text-center mb-8">Platinum Sponsors</p><div className="flex flex-wrap justify-center items-center gap-12 lg:gap-20">{sponsors.presenting.map(sp => <div key={sp} className="group relative bg-white rounded-2xl px-12 py-8 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105"><p className="font-display text-2xl md:text-3xl text-stone-800 group-hover:text-emerald-800 transition-colors">{sp}</p></div>)}</div></div>
           <div className="mb-16"><p className="font-body text-stone-400 text-xs tracking-[0.25em] uppercase text-center mb-8">Premier Partners</p><div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">{sponsors.premier.map(sp => <div key={sp} className="group relative bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center hover:scale-105"><p className="font-display text-lg md:text-xl text-stone-700 group-hover:text-emerald-800 transition-colors text-center">{sp}</p></div>)}</div></div>
           <div><p className="font-body text-stone-400 text-xs tracking-[0.25em] uppercase text-center mb-8">Event Partners</p><div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12">{sponsors.partners.map(sp => <div key={sp} className="group relative"><p className="font-body text-sm md:text-base text-stone-500 group-hover:text-emerald-800 transition-colors">{sp}</p></div>)}</div></div>
           <div className="text-center mt-16 pt-12 border-t border-stone-200"><p className="font-body text-stone-600 mb-4">Interested in partnering with the Necker Cup?</p><Link to="/sponsorship" className="font-body bg-emerald-800 text-white px-8 py-4 rounded-full font-medium hover:bg-emerald-900 transition-all hover:shadow-lg hover:scale-105 inline-block">View Partnership Opportunities</Link></div>
@@ -233,18 +251,12 @@ export function HomePage() {
           <h2 className="font-display text-4xl md:text-5xl mb-6">Join Us at the 2026 Necker Cup</h2>
           <p className="font-body text-white/80 text-lg mb-10">November 29 – December 4, 2026 · Necker Island, BVI</p>
           <button onClick={openForm} className="font-body bg-white text-stone-900 px-10 py-4 rounded-full font-medium hover:bg-stone-100 transition-all duration-300 hover:shadow-2xl hover:scale-105">Reserve Your Spot Now</button>
-          <div className="mt-12 pt-12 border-t border-white/20 text-left max-w-2xl mx-auto">
-            <p className="font-body text-white/90 font-medium mb-4">Contact</p>
-            <p className="font-body text-white/80 text-sm mb-2"><strong>Remington Reynolds</strong> · <a href="mailto:rem@premierlive.com" className="underline hover:text-white">rem@premierlive.com</a> · <a href="tel:+16784786649" className="underline hover:text-white">+1 678.478.6649</a></p>
-            <p className="font-body text-white/80 text-sm mb-2"><strong>Trevor Short</strong> · <a href="mailto:trevor@inspiringdreams.com" className="underline hover:text-white">trevor@inspiringdreams.com</a> · <a href="tel:+16154989087" className="underline hover:text-white">+1 615.498.9087</a></p>
-            <p className="font-body text-white/80 text-sm"><strong>Mike Richards</strong> · <a href="mailto:mike@djmehow.com" className="underline hover:text-white">mike@djmehow.com</a> · <a href="tel:+447956305647" className="underline hover:text-white">+44 (0) 7956 305 647</a></p>
-          </div>
         </div>
       </section>
 
       <footer className="py-16 bg-stone-900 text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid md:grid-cols-3 gap-12 mb-16">
+          <div className="grid md:grid-cols-2 gap-12 mb-16">
             <div>
               <div className="flex items-center gap-3 mb-6"><div className="w-10 h-10 rounded-full bg-emerald-800 flex items-center justify-center"><span className="font-display text-lg font-semibold">N</span></div><span className="font-display text-xl">Necker Cup 26</span></div>
               <p className="font-body text-stone-400 text-sm leading-relaxed">Tennis Pro-Am · November 29 – December 4, 2026 · Necker Island, BVI. Benefits National Tennis Foundation & Virgin Unite.</p>
@@ -259,14 +271,7 @@ export function HomePage() {
                 <Link to="/charity" className="font-body text-stone-300 hover:text-white transition-colors block">Charity</Link>
               </div>
             </div>
-            <div>
-              <h3 className="font-body text-sm tracking-wider uppercase mb-4 text-stone-500">Contact</h3>
-              <div className="space-y-2 text-sm">
-                <p className="font-body text-stone-300">Remington Reynolds · <a href="mailto:rem@premierlive.com" className="hover:text-white transition-colors">rem@premierlive.com</a></p>
-                <p className="font-body text-stone-300">Trevor Short · <a href="mailto:trevor@inspiringdreams.com" className="hover:text-white transition-colors">trevor@inspiringdreams.com</a></p>
-                <p className="font-body text-stone-300">Mike Richards · <a href="mailto:mike@djmehow.com" className="hover:text-white transition-colors">mike@djmehow.com</a></p>
-              </div>
-            </div>
+
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-10 border-t border-stone-800">
             <div className="flex gap-8">{['Privacy Policy', 'Terms & Conditions', 'Contact'].map(link => <a key={link} href="#" className="font-body text-sm text-stone-400 hover:text-white transition-colors">{link}</a>)}</div>
