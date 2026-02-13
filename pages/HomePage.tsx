@@ -214,10 +214,27 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="artists" className="py-24 lg:py-40 bg-stone-900 text-white overflow-hidden">
+      {/* 2026 GOLF PROS */}
+      <section id="artists" className="py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <p className="font-body text-stone-400 text-sm tracking-[0.2em] uppercase mb-6">Past Pros, Musicians & Celebrity Guests</p>
-          <h2 className="font-display text-3xl md:text-4xl text-white mb-10">Tennis Legends & Pros</h2>
+          <p className="font-body text-emerald-800 text-sm tracking-[0.2em] uppercase mb-4">2026 Necker Cup</p>
+          <h2 className="font-display text-3xl md:text-4xl text-stone-900 mb-4">This Year's Golf Pros</h2>
+          <p className="font-body text-stone-500 text-lg mb-10">Joining us for the 2026 Necker Cup</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+            {['Greg Norman', 'Sir Nick Faldo', 'Bryson DeChambeau', 'Tommy Fleetwood', 'Sam Burns'].map(name => (
+              <div key={name} className="flex flex-col items-center justify-center p-4 rounded-xl bg-stone-100 border border-stone-200 hover:border-emerald-300 hover:shadow-md transition-all duration-300 text-center aspect-square">
+                <span className="font-body text-stone-900 font-medium text-sm leading-tight">{name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PAST TALENT */}
+      <section className="py-24 lg:py-40 bg-stone-900 text-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <p className="font-body text-stone-400 text-sm tracking-[0.2em] uppercase mb-6">Past Necker Cup Talent</p>
+          <h2 className="font-display text-3xl md:text-4xl text-white mb-10">Past Tennis Legends & Pros</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-16">
             {['Novak Djokovic', 'Rafael Nadal', 'Bjorn Borg', 'Rod Laver', 'Caroline Wozniacki', 'Juan Martin Del Potro', 'Dominic Thiem', 'Martina Navratilova', 'Jack Sock', 'Mike Bryan', 'Stefan Edberg', 'Boris Becker', 'Tommy Haas', 'Heather Watson', 'Vasek Pospisil (Tournament Director)', 'Kim Clijsters', 'Grigor Dimitrov', 'Eugenie Bouchard', 'Kevin Anderson', 'Arantxa Sanchez-Vicario'].map(name => (
               <div key={name} className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-300 text-center aspect-square">
@@ -225,7 +242,7 @@ export function HomePage() {
               </div>
             ))}
           </div>
-          <h2 className="font-display text-3xl md:text-4xl text-white mb-10">Musicians & Celebrities</h2>
+          <h2 className="font-display text-3xl md:text-4xl text-white mb-10">Past Musicians & Celebrities</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {['Andrea Bocelli', 'Kenny Chesney', 'Florida Georgia Line', 'Pitbull', 'Jamie Foxx', 'Jimmy Buffett', 'Darius Rucker', 'Jewel', 'Michael Franti', 'Redfoo (LMFAO)', 'Sean Paul', 'Kate Upton', 'Kevin Costner'].map(name => (
               <div key={name} className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-300 text-center aspect-square">
