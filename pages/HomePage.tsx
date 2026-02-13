@@ -31,9 +31,16 @@ const agenda = [
 
 const sponsors = { presenting: ['Virgin Limited Edition', 'Rolex'], premier: ['NetJets', 'Dom Pérignon', 'American Express', 'Four Seasons'], partners: ['Wilson', 'Lacoste', 'Molton Brown', 'Land Rover', 'Bose', 'Tiffany & Co.'] };
 
+const heroSlides = [
+  publicImages.heroSlide1,
+  publicImages.heroSlide2,
+  publicImages.heroSlide3,
+];
+
 export function HomePage() {
   const [activePackage, setActivePackage] = useState(1);
   const [showVideo, setShowVideo] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const { openForm } = useReservationForm();
 
   useEffect(() => {
@@ -42,6 +49,13 @@ export function HomePage() {
       const el = document.getElementById(hash);
       if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
     }
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
   }, []);
 
   return (
@@ -58,14 +72,22 @@ export function HomePage() {
         .animate-float { animation: float 3s ease-in-out infinite; }
         .text-shadow-hero { text-shadow: 0 2px 40px rgba(0,0,0,0.3); }
         .gradient-radial { background: radial-gradient(ellipse at top right, rgba(255,255,255,0.1) 0%, transparent 50%); }
+        @keyframes kenBurns { 0% { transform: scale(1); } 100% { transform: scale(1.08); } }
+        .hero-slide { transition: opacity 1.5s ease-in-out; }
+        .hero-slide-active { animation: kenBurns 8s ease-out forwards; }
       `}</style>
 
       <section className="relative h-screen min-h-[700px] flex items-end overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${publicImages.necker}')` }}>
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/60 via-teal-800/50 to-cyan-900/60" />
-          <div className="absolute inset-0 gradient-radial" />
-          <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/40 to-transparent" />
-        </div>
+        {heroSlides.map((slide, i) => (
+          <div
+            key={i}
+            className={`absolute inset-0 bg-cover bg-center hero-slide ${currentSlide === i ? 'opacity-100 hero-slide-active' : 'opacity-0'}`}
+            style={{ backgroundImage: `url('${slide}')` }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/60 via-teal-800/50 to-cyan-900/60" />
+        <div className="absolute inset-0 gradient-radial" />
+        <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/40 to-transparent" />
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 pb-20 lg:pb-32">
           <div className="max-w-3xl">
             <p className="font-body text-white/70 text-sm tracking-[0.3em] uppercase mb-6 animate-fade-up">November 29 – December 4, 2026</p>
@@ -83,6 +105,16 @@ export function HomePage() {
               <p className="font-display text-white text-2xl mb-1">Andrea Bocelli</p>
               <p className="font-display text-white/80 text-lg italic">Florida Georgia Line · Jamie Foxx · Pitbull</p>
             </div>
+          </div>
+          <div className="absolute bottom-16 left-1/2 -translate-x-1/2 flex gap-2">
+            {heroSlides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentSlide(i)}
+                className={`w-2 h-2 rounded-full transition-all duration-500 ${currentSlide === i ? 'bg-white w-6' : 'bg-white/40 hover:bg-white/60'}`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
           </div>
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float"><ChevronDown className="w-6 h-6 text-white/60" /></div>
         </div>
