@@ -72,9 +72,9 @@ export function HomePage() {
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-white leading-[0.95] mb-4 animate-fade-up-delay-1 text-shadow-hero">Necker Cup 26</h1>
             <p className="font-display text-xl md:text-2xl text-white/90 mb-8 animate-fade-up-delay-1">Fun, friendship, charity - and tennis</p>
             <p className="font-body text-lg md:text-xl text-white/90 leading-relaxed max-w-xl mb-10 animate-fade-up-delay-2">Will you join us for the 15th Annual Necker Cup? World-class pro-am tennis, golf, music, charity dinner & End of the World party—and much more.</p>
-            <div className="flex flex-wrap gap-4 animate-fade-up-delay-3">
-              <button onClick={openForm} className="font-body bg-white text-stone-900 px-8 py-4 rounded-full text-sm font-medium tracking-wide hover:bg-stone-100 transition-all duration-300 hover:shadow-xl hover:scale-105">Explore Packages</button>
-              <button onClick={() => setShowVideo(true)} className="font-body border-2 border-white/40 text-white px-8 py-4 rounded-full text-sm tracking-wide hover:bg-white/10 transition-all duration-300 backdrop-blur-sm flex items-center gap-2 hover:shadow-lg"><Play className="w-4 h-4" />Watch Last Year's Video</button>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-up-delay-3">
+              <button onClick={openForm} className="font-body bg-white text-stone-900 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm font-medium tracking-wide hover:bg-stone-100 transition-all duration-300 hover:shadow-xl hover:scale-105">Explore Packages</button>
+              <button onClick={() => setShowVideo(true)} className="font-body border-2 border-white/40 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm tracking-wide hover:bg-white/10 transition-all duration-300 backdrop-blur-sm flex items-center justify-center gap-2 hover:shadow-lg"><Play className="w-4 h-4 flex-shrink-0" />Watch Last Year's Video</button>
             </div>
           </div>
           <div className="absolute right-6 lg:right-12 bottom-20 lg:bottom-32 hidden lg:block animate-fade-up-delay-3">
@@ -135,9 +135,9 @@ export function HomePage() {
             <h2 className="font-display text-4xl md:text-5xl text-stone-900 mb-4">Necker Cup Pro-Am <span className="italic">Player & Spectator</span></h2>
             <p className="font-body text-stone-600 max-w-2xl mx-auto">November 29 – December 4, 2026. Stay on Necker Island or at the Branson Beach Estate on Moskito Island (5–7 min boat ride).</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {packages.map((pkg, i) => (
-              <div key={i} className={`group relative bg-white rounded-3xl p-8 lg:p-10 transition-all duration-500 cursor-pointer ${activePackage === i ? 'shadow-2xl shadow-emerald-900/10 scale-[1.02] ring-2 ring-emerald-800/20' : 'shadow-lg hover:shadow-xl hover:scale-[1.01]'}`} onClick={() => setActivePackage(i)}>
+              <div key={i} className={`group relative bg-white rounded-3xl p-6 sm:p-8 lg:p-10 transition-all duration-500 cursor-pointer ${activePackage === i ? 'shadow-2xl shadow-emerald-900/10 scale-[1.02] ring-2 ring-emerald-800/20' : 'shadow-lg hover:shadow-xl hover:scale-[1.01]'}`} onClick={() => setActivePackage(i)}>
                 {activePackage === i && <div className="absolute top-6 right-6 w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center"><Check className="w-5 h-5 text-white" /></div>}
                 <p className="font-body text-stone-400 text-xs tracking-widest uppercase mb-4">{pkg.nights}</p>
                 <h3 className="font-display text-2xl lg:text-3xl text-stone-900 mb-4 leading-tight">{pkg.name}</h3>
@@ -186,17 +186,17 @@ export function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <p className="font-body text-stone-400 text-sm tracking-[0.2em] uppercase mb-6">Past Pros, Musicians & Celebrity Guests</p>
           <h2 className="font-display text-3xl md:text-4xl text-white mb-10">Tennis Legends & Pros</h2>
-          <div className="flex flex-wrap gap-4 justify-start mb-16">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-16">
             {['Novak Djokovic', 'Rafael Nadal', 'Bjorn Borg', 'Rod Laver', 'Caroline Wozniacki', 'Juan Martin Del Potro', 'Dominic Thiem', 'Martina Navratilova', 'Jack Sock', 'Mike Bryan', 'Stefan Edberg', 'Boris Becker', 'Tommy Haas', 'Heather Watson', 'Vasek Pospisil (Tournament Director)', 'Kim Clijsters', 'Grigor Dimitrov', 'Eugenie Bouchard', 'Kevin Anderson', 'Arantxa Sanchez-Vicario'].map(name => (
-              <div key={name} className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-300 text-center shrink-0" style={{ width: 200, height: 200 }}>
+              <div key={name} className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-300 text-center aspect-square">
                 <span className="font-body text-white font-medium text-sm leading-tight">{name}</span>
               </div>
             ))}
           </div>
           <h2 className="font-display text-3xl md:text-4xl text-white mb-10">Musicians & Celebrities</h2>
-          <div className="flex flex-wrap gap-4 justify-start">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {['Andrea Bocelli', 'Kenny Chesney', 'Florida Georgia Line', 'Pitbull', 'Jamie Foxx', 'Jimmy Buffett', 'Darius Rucker', 'Jewel', 'Michael Franti', 'Redfoo (LMFAO)', 'Sean Paul', 'Kate Upton', 'Kevin Costner'].map(name => (
-              <div key={name} className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-300 text-center shrink-0" style={{ width: 200, height: 200 }}>
+              <div key={name} className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-300 text-center aspect-square">
                 <span className="font-body text-white font-medium text-sm leading-tight">{name}</span>
               </div>
             ))}

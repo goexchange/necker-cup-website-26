@@ -240,24 +240,24 @@ export function SponsorshipPage() {
                 </div>
               </div>
             </div>
-            <div className="bg-stone-800/50 rounded-3xl p-10 border border-stone-700">
+            <div className="bg-stone-800/50 rounded-3xl p-6 md:p-10 border border-stone-700">
               <h3 className="font-display text-3xl text-white mb-6">Past Event Highlights</h3>
               <div className="space-y-4">
-                <div className="flex justify-between items-end border-b border-stone-700 pb-3">
-                  <span className="font-body text-stone-400">Media Coverage</span>
-                  <span className="font-display text-2xl text-emerald-400">150+ outlets</span>
+                <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-1 border-b border-stone-700 pb-3">
+                  <span className="font-body text-stone-400 text-sm sm:text-base">Media Coverage</span>
+                  <span className="font-display text-xl sm:text-2xl text-emerald-400">150+ outlets</span>
                 </div>
-                <div className="flex justify-between items-end border-b border-stone-700 pb-3">
-                  <span className="font-body text-stone-400">Social Reach</span>
-                  <span className="font-display text-2xl text-emerald-400">5M+ impressions</span>
+                <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-1 border-b border-stone-700 pb-3">
+                  <span className="font-body text-stone-400 text-sm sm:text-base">Social Reach</span>
+                  <span className="font-display text-xl sm:text-2xl text-emerald-400">5M+ impressions</span>
                 </div>
-                <div className="flex justify-between items-end border-b border-stone-700 pb-3">
-                  <span className="font-body text-stone-400">Celebrity Attendees</span>
-                  <span className="font-display text-2xl text-emerald-400">20+</span>
+                <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-1 border-b border-stone-700 pb-3">
+                  <span className="font-body text-stone-400 text-sm sm:text-base">Celebrity Attendees</span>
+                  <span className="font-display text-xl sm:text-2xl text-emerald-400">20+</span>
                 </div>
-                <div className="flex justify-between items-end">
-                  <span className="font-body text-stone-400">Brand Satisfaction</span>
-                  <span className="font-display text-2xl text-emerald-400">100%</span>
+                <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-1">
+                  <span className="font-body text-stone-400 text-sm sm:text-base">Brand Satisfaction</span>
+                  <span className="font-display text-xl sm:text-2xl text-emerald-400">100%</span>
                 </div>
               </div>
             </div>

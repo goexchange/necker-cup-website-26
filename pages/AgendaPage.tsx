@@ -178,24 +178,24 @@ export function AgendaPage() {
                   </div>
                 </div>
 
-                <div className="space-y-6 relative pl-8 md:pl-16">
+                <div className="space-y-6 relative pl-6 md:pl-16">
                   <div className="absolute left-0 md:left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-emerald-800 via-emerald-600 to-transparent" />
 
                   {day.events.map((event, eventIdx) => (
                     <div key={eventIdx} className="group relative">
-                      <div className="absolute -left-[34px] md:-left-[26px] top-3 w-4 h-4 rounded-full bg-emerald-800 ring-4 ring-stone-50 group-hover:ring-emerald-100 transition-all" />
+                      <div className="absolute -left-[26px] md:-left-[26px] top-3 w-3 h-3 md:w-4 md:h-4 rounded-full bg-emerald-800 ring-4 ring-stone-50 group-hover:ring-emerald-100 transition-all" />
 
-                      <div className="bg-white rounded-2xl p-6 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 group-hover:scale-[1.01] border border-stone-100 group-hover:border-emerald-200">
-                        <div className="flex flex-col md:flex-row gap-6">
-                          <div className="flex items-center gap-4 md:flex-col md:items-start md:w-32 flex-shrink-0">
-                            <div className="text-3xl">{event.icon}</div>
-                            <p className="font-body text-emerald-800 font-bold text-lg tracking-wide">{event.time}</p>
+                      <div className="bg-white rounded-2xl p-4 md:p-8 shadow-md hover:shadow-xl transition-all duration-300 group-hover:scale-[1.01] border border-stone-100 group-hover:border-emerald-200">
+                        <div className="flex flex-col md:flex-row gap-4 md:gap-6">
+                          <div className="flex items-center gap-3 md:flex-col md:items-start md:w-32 flex-shrink-0">
+                            <div className="text-2xl md:text-3xl">{event.icon}</div>
+                            <p className="font-body text-emerald-800 font-bold text-base md:text-lg tracking-wide">{event.time}</p>
                           </div>
-                          <div className="flex-grow">
-                            <h4 className="font-display text-2xl md:text-3xl text-stone-900 mb-3 group-hover:text-emerald-800 transition-colors">
+                          <div className="flex-grow min-w-0">
+                            <h4 className="font-display text-xl md:text-3xl text-stone-900 mb-2 md:mb-3 group-hover:text-emerald-800 transition-colors">
                               {event.title}
                             </h4>
-                            <p className="font-body text-stone-600 text-lg leading-relaxed mb-2">{event.desc}</p>
+                            <p className="font-body text-stone-600 text-base md:text-lg leading-relaxed mb-2">{event.desc}</p>
                             {event.location && (
                               <p className="font-body text-stone-500 text-sm italic">📍 {event.location}</p>
                             )}

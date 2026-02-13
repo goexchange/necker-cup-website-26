@@ -48,8 +48,7 @@ const celebrityGuestsText = 'Kate Upton, Kevin Costner, and numerous high-profil
 function TalentCard({ name, subtitle }: { name: string; subtitle?: string }) {
   return (
     <div
-      className="w-[200px] h-[200px] flex flex-col items-center justify-center p-4 rounded-xl bg-stone-100 border border-stone-200 hover:border-emerald-300 hover:shadow-md transition-all duration-300 text-center shrink-0"
-      style={{ width: 200, height: 200 }}
+      className="flex flex-col items-center justify-center p-4 rounded-xl bg-stone-100 border border-stone-200 hover:border-emerald-300 hover:shadow-md transition-all duration-300 text-center aspect-square"
     >
       <span className="font-body text-stone-900 font-medium text-sm leading-tight">{name}</span>
       {subtitle && (
@@ -86,7 +85,7 @@ export function TalentPage() {
       <section className="py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <h2 className="font-display text-3xl md:text-4xl text-stone-900 mb-10">Tennis Legends & Pros</h2>
-          <div className="flex flex-wrap gap-4 justify-start">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {tennisPros.map((row, i) => (
               <TalentCard key={i} name={row.name} subtitle={row.achievement} />
             ))}
@@ -98,7 +97,7 @@ export function TalentPage() {
       <section className="py-24 lg:py-32 bg-stone-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <h2 className="font-display text-3xl md:text-4xl text-stone-900 mb-10">Musicians & Celebrities</h2>
-          <div className="flex flex-wrap gap-4 justify-start">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {musiciansAndEntertainers.map((row, i) => (
               <TalentCard key={i} name={row.name} subtitle={row.knownFor} />
             ))}

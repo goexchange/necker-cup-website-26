@@ -97,13 +97,13 @@ export function CharityPage() {
           <div className="grid md:grid-cols-2 gap-8">
             {beneficiaries.map((charity, idx) => (
               <div key={idx} className="group bg-stone-50 rounded-3xl p-8 lg:p-10 hover:shadow-xl transition-all duration-500 hover:scale-[1.02]">
-                <div className="flex items-start gap-6 mb-6">
+                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mb-6">
                   {charity.logo && (charity.isCircular ? (
-                    <div className={`w-20 h-20 rounded-full ${charity.color} flex items-center justify-center flex-shrink-0 p-3`}>
+                    <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full ${charity.color} flex items-center justify-center flex-shrink-0 p-3`}>
                       <img src={charity.logo} alt={`${charity.name} logo`} className="w-full h-full object-contain" />
                     </div>
                   ) : (
-                    <div className="w-40 h-28 bg-white rounded-xl flex items-center justify-center flex-shrink-0 p-5 shadow-md border border-stone-200 hover:shadow-lg transition-shadow">
+                    <div className="w-32 h-20 sm:w-40 sm:h-28 bg-white rounded-xl flex items-center justify-center flex-shrink-0 p-4 sm:p-5 shadow-md border border-stone-200 hover:shadow-lg transition-shadow">
                       <img src={charity.logo} alt={`${charity.name} logo`} className="max-w-full max-h-full object-contain" />
                     </div>
                   ))}

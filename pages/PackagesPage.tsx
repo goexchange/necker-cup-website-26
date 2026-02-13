@@ -43,11 +43,11 @@ export function PackagesPage() {
       {/* PACKAGES */}
       <section className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {packages.map((pkg, i) => (
               <div
                 key={i}
-                className={`group relative bg-white rounded-3xl p-8 lg:p-10 transition-all duration-500 cursor-pointer ${
+                className={`group relative bg-white rounded-3xl p-6 sm:p-8 lg:p-10 transition-all duration-500 cursor-pointer ${
                   activePackage === i
                     ? 'shadow-2xl shadow-emerald-900/10 scale-[1.02] ring-2 ring-emerald-800/20'
                     : 'shadow-lg hover:shadow-xl hover:scale-[1.01]'
