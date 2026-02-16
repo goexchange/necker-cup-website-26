@@ -3,8 +3,8 @@ import { useReservationForm } from '@/app/context/ReservationFormContext';
 
 const sponsors = {
   presenting: [
-    { name: 'Virgin Limited Edition', tier: 'Platinum Sponsor' },
-    { name: 'Premier Live', tier: 'Platinum Sponsor' }
+    { name: 'Virgin Limited Edition', tier: 'Presenting Partner' },
+    { name: 'Premier Live', tier: 'Presenting Partner' }
   ],
   premier: [
     { name: 'IGY Trident', tier: 'Premier Partner', logo: '/sponsors/trident.png' },
@@ -19,7 +19,7 @@ const sponsors = {
 
 const tiers = [
   {
-    name: 'Platinum Sponsor',
+    name: 'Presenting Partner',
     price: '$500,000+',
     icon: Award,
     benefits: [
@@ -127,7 +127,7 @@ export function SponsorshipPage() {
           </div>
 
           <div className="mb-16">
-            <p className="font-body text-stone-400 text-xs tracking-[0.25em] uppercase text-center mb-8">Platinum Sponsors</p>
+            <p className="font-body text-stone-400 text-xs tracking-[0.25em] uppercase text-center mb-8">Presenting Partners</p>
             <div className="flex flex-wrap justify-center items-center gap-12 lg:gap-20">
               {sponsors.presenting.map((sponsor) => (
                 <div key={sponsor.name} className="group relative bg-white rounded-2xl px-12 py-10 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
