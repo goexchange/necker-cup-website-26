@@ -45,6 +45,9 @@ export function CharityPage() {
             Every serve, every match, every moment contributes to creating lasting change.
             The Necker Cup has distributed over $10 million to charitable causes over its first decade-plus. In 2022 alone, over $900,000 was raised in a single edition.
           </p>
+          <p className="font-body text-base md:text-lg text-white/75 leading-relaxed max-w-2xl mt-6">
+            Although the Necker Cup is a for-profit venture, for the past 15 years we have dedicated the final night Charity Dinner & Auction to benefit our charitable partners. 100% of Sir Richard Branson's profits go directly to Virgin Unite. The team also donates charity spots to worthy causes each year.
+          </p>
         </div>
       </section>
 
