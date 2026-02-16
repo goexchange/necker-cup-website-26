@@ -10,4 +10,7 @@ export const publicImages = {
   necker: '/images/necker.jpg',
   moskito: '/images/moskito.jpg',
   banner: '/images/banner_image.jpg',
+  heroSlide1: '/images/hero-slide-1.jpg',
+  heroSlide2: '/images/hero-slide-2.jpg',
+  heroSlide3: '/images/hero-slide-3.jpg',
 } as const;

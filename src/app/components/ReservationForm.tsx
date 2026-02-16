@@ -127,13 +127,13 @@ export function ReservationForm({ isOpen, onClose }: { isOpen: boolean; onClose:
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4" onClick={onClose}>
+    <div className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center sm:p-4" onClick={onClose}>
       <div
-        className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+        className="bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl max-w-2xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="sticky top-0 bg-white border-b border-stone-200 px-8 py-6 flex items-center justify-between">
-          <h2 className="font-display text-3xl text-stone-900">Reserve Your Spot</h2>
+        <div className="sticky top-0 bg-white border-b border-stone-200 px-5 sm:px-8 py-5 sm:py-6 flex items-center justify-between z-10">
+          <h2 className="font-display text-2xl sm:text-3xl text-stone-900">Reserve Your Spot</h2>
           <button type="button" onClick={onClose} className="w-10 h-10 rounded-full hover:bg-stone-100 flex items-center justify-center transition-colors">
             <X className="w-6 h-6 text-stone-600" />
           </button>
@@ -148,7 +148,7 @@ export function ReservationForm({ isOpen, onClose }: { isOpen: boolean; onClose:
             <p className="font-body text-lg text-stone-700 mb-4">Your reservation has been saved. Our team will contact you within 24 hours.</p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="p-8 space-y-6">
+          <form onSubmit={handleSubmit} className="p-5 sm:p-8 space-y-6">
             <div>
               <h3 className="font-display text-xl text-stone-900 mb-4">Personal Information</h3>
               <div className="grid md:grid-cols-2 gap-4">

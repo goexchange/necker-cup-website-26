@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ReservationFormProvider } from '@/app/context/ReservationFormContext';
 import { Layout } from '@/app/components/Layout';
 import { HomePage } from '@pages/HomePage';
-import { AgendaPage } from '@pages/AgendaPage';
+import { TennisPage } from '@pages/TennisPage';
 import { CharityPage } from '@pages/CharityPage';
 import { ExperiencePage } from '@pages/ExperiencePage';
 import { GalleryPage } from '@pages/GalleryPage';
@@ -23,7 +23,7 @@ export default function App() {
             <Route path="gallery" element={<GalleryPage />} />
             <Route path="sponsorship" element={<SponsorshipPage />} />
             <Route path="charity" element={<CharityPage />} />
-            <Route path="agenda" element={<AgendaPage />} />
+            <Route path="tennis" element={<TennisPage />} />
           </Route>
         </Routes>
       </ReservationFormProvider>

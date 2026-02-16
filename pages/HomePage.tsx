@@ -31,9 +31,16 @@ const agenda = [
 
 const sponsors = { presenting: ['Virgin Limited Edition', 'Rolex'], premier: ['NetJets', 'Dom Pérignon', 'American Express', 'Four Seasons'], partners: ['Wilson', 'Lacoste', 'Molton Brown', 'Land Rover', 'Bose', 'Tiffany & Co.'] };
 
+const heroSlides = [
+  publicImages.heroSlide1,
+  publicImages.heroSlide2,
+  publicImages.heroSlide3,
+];
+
 export function HomePage() {
   const [activePackage, setActivePackage] = useState(1);
   const [showVideo, setShowVideo] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const { openForm } = useReservationForm();
 
   useEffect(() => {
@@ -42,6 +49,13 @@ export function HomePage() {
       const el = document.getElementById(hash);
       if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
     }
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
   }, []);
 
   return (
@@ -58,23 +72,34 @@ export function HomePage() {
         .animate-float { animation: float 3s ease-in-out infinite; }
         .text-shadow-hero { text-shadow: 0 2px 40px rgba(0,0,0,0.3); }
         .gradient-radial { background: radial-gradient(ellipse at top right, rgba(255,255,255,0.1) 0%, transparent 50%); }
+        @keyframes kenBurns { 0% { transform: scale(1); } 100% { transform: scale(1.08); } }
+        .hero-slide { transition: opacity 1.5s ease-in-out; }
+        .hero-slide-active { animation: kenBurns 8s ease-out forwards; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .marquee-track { display: flex; animation: marquee 30s linear infinite; }
+        .marquee-track:hover { animation-play-state: paused; }
       `}</style>
 
       <section className="relative h-screen min-h-[700px] flex items-end overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${publicImages.necker}')` }}>
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/60 via-teal-800/50 to-cyan-900/60" />
-          <div className="absolute inset-0 gradient-radial" />
-          <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/40 to-transparent" />
-        </div>
+        {heroSlides.map((slide, i) => (
+          <div
+            key={i}
+            className={`absolute inset-0 bg-cover bg-center hero-slide ${currentSlide === i ? 'opacity-100 hero-slide-active' : 'opacity-0'}`}
+            style={{ backgroundImage: `url('${slide}')` }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/60 via-teal-800/50 to-cyan-900/60" />
+        <div className="absolute inset-0 gradient-radial" />
+        <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/40 to-transparent" />
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 pb-20 lg:pb-32">
           <div className="max-w-3xl">
             <p className="font-body text-white/70 text-sm tracking-[0.3em] uppercase mb-6 animate-fade-up">November 29 – December 4, 2026</p>
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-white leading-[0.95] mb-4 animate-fade-up-delay-1 text-shadow-hero">Necker Cup 26</h1>
             <p className="font-display text-xl md:text-2xl text-white/90 mb-8 animate-fade-up-delay-1">Fun, friendship, charity - and tennis</p>
             <p className="font-body text-lg md:text-xl text-white/90 leading-relaxed max-w-xl mb-10 animate-fade-up-delay-2">Will you join us for the 15th Annual Necker Cup? World-class pro-am tennis, golf, music, charity dinner & End of the World party—and much more.</p>
-            <div className="flex flex-wrap gap-4 animate-fade-up-delay-3">
-              <button onClick={openForm} className="font-body bg-white text-stone-900 px-8 py-4 rounded-full text-sm font-medium tracking-wide hover:bg-stone-100 transition-all duration-300 hover:shadow-xl hover:scale-105">Explore Packages</button>
-              <button onClick={() => setShowVideo(true)} className="font-body border-2 border-white/40 text-white px-8 py-4 rounded-full text-sm tracking-wide hover:bg-white/10 transition-all duration-300 backdrop-blur-sm flex items-center gap-2 hover:shadow-lg"><Play className="w-4 h-4" />Watch Last Year's Video</button>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-up-delay-3">
+              <button onClick={openForm} className="font-body bg-white text-stone-900 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm font-medium tracking-wide hover:bg-stone-100 transition-all duration-300 hover:shadow-xl hover:scale-105">Explore Packages</button>
+              <button onClick={() => setShowVideo(true)} className="font-body border-2 border-white/40 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm tracking-wide hover:bg-white/10 transition-all duration-300 backdrop-blur-sm flex items-center justify-center gap-2 hover:shadow-lg"><Play className="w-4 h-4 flex-shrink-0" />Watch Last Year's Video</button>
             </div>
           </div>
           <div className="absolute right-6 lg:right-12 bottom-20 lg:bottom-32 hidden lg:block animate-fade-up-delay-3">
@@ -83,6 +108,16 @@ export function HomePage() {
               <p className="font-display text-white text-2xl mb-1">Andrea Bocelli</p>
               <p className="font-display text-white/80 text-lg italic">Florida Georgia Line · Jamie Foxx · Pitbull</p>
             </div>
+          </div>
+          <div className="absolute bottom-16 left-1/2 -translate-x-1/2 flex gap-2">
+            {heroSlides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentSlide(i)}
+                className={`w-2 h-2 rounded-full transition-all duration-500 ${currentSlide === i ? 'bg-white w-6' : 'bg-white/40 hover:bg-white/60'}`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
           </div>
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float"><ChevronDown className="w-6 h-6 text-white/60" /></div>
         </div>
@@ -104,6 +139,41 @@ export function HomePage() {
           </div>
         </div>
       )}
+
+      {/* ACTIVITY MARQUEE */}
+      <div className="bg-stone-900 py-6 overflow-hidden">
+        <div className="marquee-track">
+          {[
+            { src: '/images/activity-tennis.jpg', label: 'Tennis' },
+            { src: '/images/activity-golf.jpg', label: 'Golf' },
+            { src: '/images/activity-party.jpg', label: 'Beach Party' },
+            { src: '/images/activity-sailing.jpg', label: 'Sailing' },
+            { src: '/images/activity-dinner.jpg', label: 'Gala Dinner' },
+            { src: '/images/activity-snorkeling.jpg', label: 'Snorkeling' },
+            { src: '/images/activity-concert.jpg', label: 'Live Music' },
+            { src: '/images/activity-spa.jpg', label: 'Spa & Wellness' },
+            { src: '/images/activity-tennis.jpg', label: 'Tennis' },
+            { src: '/images/activity-golf.jpg', label: 'Golf' },
+            { src: '/images/activity-party.jpg', label: 'Beach Party' },
+            { src: '/images/activity-sailing.jpg', label: 'Sailing' },
+            { src: '/images/activity-dinner.jpg', label: 'Gala Dinner' },
+            { src: '/images/activity-snorkeling.jpg', label: 'Snorkeling' },
+            { src: '/images/activity-concert.jpg', label: 'Live Music' },
+            { src: '/images/activity-spa.jpg', label: 'Spa & Wellness' },
+          ].map((item, i) => (
+            <div key={i} className="flex-shrink-0 mx-2 group relative">
+              <img
+                src={item.src}
+                alt={item.label}
+                className="w-20 h-20 sm:w-24 sm:h-24 rounded-lg object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+              />
+              <div className="absolute inset-0 flex items-end rounded-lg overflow-hidden">
+                <span className="w-full text-center font-body text-white text-[10px] sm:text-xs py-1 bg-gradient-to-t from-black/70 to-transparent">{item.label}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
       <section id="experience" className="py-24 lg:py-40">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -135,9 +205,9 @@ export function HomePage() {
             <h2 className="font-display text-4xl md:text-5xl text-stone-900 mb-4">Necker Cup Pro-Am <span className="italic">Player & Spectator</span></h2>
             <p className="font-body text-stone-600 max-w-2xl mx-auto">November 29 – December 4, 2026. Stay on Necker Island or at the Branson Beach Estate on Moskito Island (5–7 min boat ride).</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {packages.map((pkg, i) => (
-              <div key={i} className={`group relative bg-white rounded-3xl p-8 lg:p-10 transition-all duration-500 cursor-pointer ${activePackage === i ? 'shadow-2xl shadow-emerald-900/10 scale-[1.02] ring-2 ring-emerald-800/20' : 'shadow-lg hover:shadow-xl hover:scale-[1.01]'}`} onClick={() => setActivePackage(i)}>
+              <div key={i} className={`group relative bg-white rounded-3xl p-6 sm:p-8 lg:p-10 transition-all duration-500 cursor-pointer ${activePackage === i ? 'shadow-2xl shadow-emerald-900/10 scale-[1.02] ring-2 ring-emerald-800/20' : 'shadow-lg hover:shadow-xl hover:scale-[1.01]'}`} onClick={() => setActivePackage(i)}>
                 {activePackage === i && <div className="absolute top-6 right-6 w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center"><Check className="w-5 h-5 text-white" /></div>}
                 <p className="font-body text-stone-400 text-xs tracking-widest uppercase mb-4">{pkg.nights}</p>
                 <h3 className="font-display text-2xl lg:text-3xl text-stone-900 mb-4 leading-tight">{pkg.name}</h3>
@@ -182,21 +252,22 @@ export function HomePage() {
         </div>
       </section>
 
+      {/* PAST TALENT */}
       <section id="artists" className="py-24 lg:py-40 bg-stone-900 text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <p className="font-body text-stone-400 text-sm tracking-[0.2em] uppercase mb-6">Past Pros, Musicians & Celebrity Guests</p>
-          <h2 className="font-display text-3xl md:text-4xl text-white mb-10">Tennis Legends & Pros</h2>
-          <div className="flex flex-wrap gap-4 justify-start mb-16">
+          <p className="font-body text-stone-400 text-sm tracking-[0.2em] uppercase mb-6">Past Necker Cup Talent</p>
+          <h2 className="font-display text-3xl md:text-4xl text-white mb-10">Past Tennis Legends & Pros</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-16">
             {['Novak Djokovic', 'Rafael Nadal', 'Bjorn Borg', 'Rod Laver', 'Caroline Wozniacki', 'Juan Martin Del Potro', 'Dominic Thiem', 'Martina Navratilova', 'Jack Sock', 'Mike Bryan', 'Stefan Edberg', 'Boris Becker', 'Tommy Haas', 'Heather Watson', 'Vasek Pospisil (Tournament Director)', 'Kim Clijsters', 'Grigor Dimitrov', 'Eugenie Bouchard', 'Kevin Anderson', 'Arantxa Sanchez-Vicario'].map(name => (
-              <div key={name} className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-300 text-center shrink-0" style={{ width: 200, height: 200 }}>
+              <div key={name} className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-300 text-center aspect-square">
                 <span className="font-body text-white font-medium text-sm leading-tight">{name}</span>
               </div>
             ))}
           </div>
-          <h2 className="font-display text-3xl md:text-4xl text-white mb-10">Musicians & Celebrities</h2>
-          <div className="flex flex-wrap gap-4 justify-start">
+          <h2 className="font-display text-3xl md:text-4xl text-white mb-10">Past Musicians & Celebrities</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {['Andrea Bocelli', 'Kenny Chesney', 'Florida Georgia Line', 'Pitbull', 'Jamie Foxx', 'Jimmy Buffett', 'Darius Rucker', 'Jewel', 'Michael Franti', 'Redfoo (LMFAO)', 'Sean Paul', 'Kate Upton', 'Kevin Costner'].map(name => (
-              <div key={name} className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-300 text-center shrink-0" style={{ width: 200, height: 200 }}>
+              <div key={name} className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-300 text-center aspect-square">
                 <span className="font-body text-white font-medium text-sm leading-tight">{name}</span>
               </div>
             ))}
@@ -204,6 +275,19 @@ export function HomePage() {
           <p className="font-body text-stone-400 text-sm mt-10">
             For the full list with details, visit <Link to="/talent" className="text-emerald-400 hover:text-emerald-300 underline">Talent</Link> or <a href="https://premierlive.com" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 underline">premierlive.com</a>
           </p>
+
+          {/* PAST GOLF PROS */}
+          <div className="mt-16 pt-16 border-t border-white/20">
+            <p className="font-body text-stone-400 text-sm tracking-[0.2em] uppercase mb-4">Past Necker Cup Talent</p>
+            <h2 className="font-display text-3xl md:text-4xl text-white mb-10">Past Golf Pros</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+              {['Greg Norman', 'Sir Nick Faldo', 'Bryson DeChambeau', 'Tommy Fleetwood', 'Sam Burns'].map(name => (
+                <div key={name} className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-300 text-center aspect-square">
+                  <span className="font-body text-white font-medium text-sm leading-tight">{name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -239,7 +323,7 @@ export function HomePage() {
       <section id="sponsors" className="py-24 lg:py-32 bg-stone-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16"><p className="font-body text-emerald-800 text-sm tracking-[0.2em] uppercase mb-4">Partners</p><h2 className="font-display text-4xl md:text-5xl text-stone-900 mb-4">In Partnership with <span className="italic">Excellence</span></h2><p className="font-body text-stone-600 max-w-2xl mx-auto">The Necker Cup is proudly supported by world-class brands that share our commitment to exceptional experiences.</p></div>
-          <div className="mb-16"><p className="font-body text-stone-400 text-xs tracking-[0.25em] uppercase text-center mb-8">Platinum Sponsors</p><div className="flex flex-wrap justify-center items-center gap-12 lg:gap-20">{sponsors.presenting.map(sp => <div key={sp} className="group relative bg-white rounded-2xl px-12 py-8 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105"><p className="font-display text-2xl md:text-3xl text-stone-800 group-hover:text-emerald-800 transition-colors">{sp}</p></div>)}</div></div>
+          <div className="mb-16"><p className="font-body text-stone-400 text-xs tracking-[0.25em] uppercase text-center mb-8">Presenting Partners</p><div className="flex flex-wrap justify-center items-center gap-12 lg:gap-20">{sponsors.presenting.map(sp => <div key={sp} className="group relative bg-white rounded-2xl px-12 py-8 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105"><p className="font-display text-2xl md:text-3xl text-stone-800 group-hover:text-emerald-800 transition-colors">{sp}</p></div>)}</div></div>
           <div className="mb-16"><p className="font-body text-stone-400 text-xs tracking-[0.25em] uppercase text-center mb-8">Premier Partners</p><div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">{sponsors.premier.map(sp => <div key={sp} className="group relative bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex items-center justify-center hover:scale-105"><p className="font-display text-lg md:text-xl text-stone-700 group-hover:text-emerald-800 transition-colors text-center">{sp}</p></div>)}</div></div>
           <div><p className="font-body text-stone-400 text-xs tracking-[0.25em] uppercase text-center mb-8">Event Partners</p><div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12">{sponsors.partners.map(sp => <div key={sp} className="group relative"><p className="font-body text-sm md:text-base text-stone-500 group-hover:text-emerald-800 transition-colors">{sp}</p></div>)}</div></div>
           <div className="text-center mt-16 pt-12 border-t border-stone-200"><p className="font-body text-stone-600 mb-4">Interested in partnering with the Necker Cup?</p><Link to="/sponsorship" className="font-body bg-emerald-800 text-white px-8 py-4 rounded-full font-medium hover:bg-emerald-900 transition-all hover:shadow-lg hover:scale-105 inline-block">View Partnership Opportunities</Link></div>
@@ -274,7 +358,10 @@ export function HomePage() {
 
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-10 border-t border-stone-800">
-            <div className="flex gap-8">{['Privacy Policy', 'Terms & Conditions', 'Contact'].map(link => <a key={link} href="#" className="font-body text-sm text-stone-400 hover:text-white transition-colors">{link}</a>)}</div>
+            <div className="flex flex-wrap items-center gap-6 md:gap-8">
+              <a href="tel:+16784786649" className="font-body text-sm text-stone-300 hover:text-white transition-colors">CALL: 678.478.6649</a>
+              {['Privacy Policy', 'Terms & Conditions', 'Contact'].map(link => <a key={link} href="#" className="font-body text-sm text-stone-400 hover:text-white transition-colors">{link}</a>)}
+            </div>
             <p className="font-body text-sm text-stone-500">© 2026 Necker Cup. All rights reserved. Powered by Premier Live & Mehow</p>
           </div>
         </div>

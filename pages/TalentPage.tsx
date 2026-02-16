@@ -45,11 +45,18 @@ const celebrityGuests = [
 
 const celebrityGuestsText = 'Kate Upton, Kevin Costner, and numerous high-profile entrepreneurs and business leaders from around the world.';
 
+const golfPros = [
+  { name: 'Greg Norman', achievement: '2-time Open Championship winner, "The Great White Shark"' },
+  { name: 'Sir Nick Faldo', achievement: '6-time Major champion, World Golf Hall of Fame' },
+  { name: 'Bryson DeChambeau', achievement: '2-time US Open champion' },
+  { name: 'Tommy Fleetwood', achievement: 'Ryder Cup star, European Tour winner' },
+  { name: 'Sam Burns', achievement: 'PGA Tour multi-winner, Ryder Cup player' },
+];
+
 function TalentCard({ name, subtitle }: { name: string; subtitle?: string }) {
   return (
     <div
-      className="w-[200px] h-[200px] flex flex-col items-center justify-center p-4 rounded-xl bg-stone-100 border border-stone-200 hover:border-emerald-300 hover:shadow-md transition-all duration-300 text-center shrink-0"
-      style={{ width: 200, height: 200 }}
+      className="flex flex-col items-center justify-center p-4 rounded-xl bg-stone-100 border border-stone-200 hover:border-emerald-300 hover:shadow-md transition-all duration-300 text-center aspect-square"
     >
       <span className="font-body text-stone-900 font-medium text-sm leading-tight">{name}</span>
       {subtitle && (
@@ -74,19 +81,20 @@ export function TalentPage() {
         <div className="absolute inset-0 bg-cover bg-center opacity-40" style={{ backgroundImage: `url('${publicImages.necker}')` }} />
         <div className="absolute inset-0 bg-gradient-to-br from-stone-900 via-stone-800/95 to-stone-900" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
-          <p className="font-body text-stone-400 text-sm tracking-[0.2em] uppercase mb-8">Past Pros, Musicians & Celebrity Guests</p>
+          <p className="font-body text-stone-400 text-sm tracking-[0.2em] uppercase mb-8">Talent</p>
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl mb-12 leading-tight">
-            Tennis Legends & Pros · <span className="italic text-emerald-400">Musicians & Celebrities</span>
+            Tennis, Golf & <span className="italic text-emerald-400">Entertainment</span>
           </h1>
-          <p className="font-body text-lg text-white/80 max-w-2xl">Over 14 years, the Necker Cup has attracted an incredible roster of tennis talent and entertainment.</p>
+          <p className="font-body text-lg text-white/80 max-w-2xl">Over 14 years, the Necker Cup has attracted an incredible roster of tennis and golf talent, musicians, and celebrities.</p>
         </div>
       </section>
 
-      {/* TENNIS PROS – 200px SQUARES */}
+      {/* PAST TENNIS PROS */}
       <section className="py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <h2 className="font-display text-3xl md:text-4xl text-stone-900 mb-10">Tennis Legends & Pros</h2>
-          <div className="flex flex-wrap gap-4 justify-start">
+          <p className="font-body text-stone-400 text-sm tracking-[0.2em] uppercase mb-4">Past Necker Cup Talent</p>
+          <h2 className="font-display text-3xl md:text-4xl text-stone-900 mb-10">Past Tennis Legends & Pros</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {tennisPros.map((row, i) => (
               <TalentCard key={i} name={row.name} subtitle={row.achievement} />
             ))}
@@ -94,11 +102,12 @@ export function TalentPage() {
         </div>
       </section>
 
-      {/* MUSICIANS & CELEBRITIES – 200px SQUARES */}
-      <section className="py-24 lg:py-32 bg-stone-50">
+      {/* PAST MUSICIANS & CELEBRITIES */}
+      <section className="py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <h2 className="font-display text-3xl md:text-4xl text-stone-900 mb-10">Musicians & Celebrities</h2>
-          <div className="flex flex-wrap gap-4 justify-start">
+          <p className="font-body text-stone-400 text-sm tracking-[0.2em] uppercase mb-4">Past Necker Cup Talent</p>
+          <h2 className="font-display text-3xl md:text-4xl text-stone-900 mb-10">Past Musicians & Celebrities</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {musiciansAndEntertainers.map((row, i) => (
               <TalentCard key={i} name={row.name} subtitle={row.knownFor} />
             ))}
@@ -110,6 +119,19 @@ export function TalentPage() {
             Plus numerous high-profile entrepreneurs and business leaders from around the world. For more, visit{' '}
             <a href="https://premierlive.com" target="_blank" rel="noopener noreferrer" className="text-emerald-800 hover:text-emerald-900 underline font-medium">premierlive.com</a>
           </p>
+        </div>
+      </section>
+
+      {/* PAST GOLF PROS */}
+      <section className="py-24 lg:py-32 bg-stone-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <p className="font-body text-stone-400 text-sm tracking-[0.2em] uppercase mb-4">Past Necker Cup Talent</p>
+          <h2 className="font-display text-3xl md:text-4xl text-stone-900 mb-10">Past Golf Pros</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+            {golfPros.map((pro, i) => (
+              <TalentCard key={i} name={pro.name} subtitle={pro.achievement} />
+            ))}
+          </div>
         </div>
       </section>
 

@@ -15,7 +15,7 @@ export function ExperiencePage({ onNavigateHome, onNavigate }: ExperiencePagePro
   }, []);
 
   const highlights = [
-    { number: '48', label: 'Exclusive Guests', desc: 'Ultra-high-net-worth individuals and celebrities' },
+    { number: '148', label: 'Elite Guests', desc: 'High-net-worth attendees' },
     { number: '5', label: 'Days of Tennis', desc: 'World-class competition and Pro-Am matches' },
     { number: '2', label: 'World-Class Artists', desc: 'Intimate performances under Caribbean stars' },
     { number: '1', label: 'Private Island', desc: 'Sir Richard Branson\'s exclusive Necker Island' },
@@ -194,7 +194,7 @@ export function ExperiencePage({ onNavigateHome, onNavigate }: ExperiencePagePro
             Ready to experience <span className="italic">paradise</span>?
           </h2>
           <p className="font-body text-white/80 text-lg mb-10">
-            Limited to 48 guests. Spaces fill quickly for this once-in-a-lifetime experience.
+            Limited to 148 guests. Spaces fill quickly for this once-in-a-lifetime experience.
           </p>
           <button className="font-body bg-white text-stone-900 px-10 py-4 rounded-full font-medium hover:bg-stone-100 transition-all duration-300 hover:shadow-2xl hover:scale-105">
             Reserve Your Spot Now

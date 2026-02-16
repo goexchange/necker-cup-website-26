@@ -2,11 +2,12 @@ import { useReservationForm } from '@/app/context/ReservationFormContext';
 import virginUniteLogo from '@/app/logos/virgin_unite.png';
 import ntfLogo from '@/app/logos/ntf.png';
 import icfLogo from '@/app/logos/icf.png';
+import sfctLogo from '@/app/logos/sfct.png';
 
 const beneficiaries = [
-  { name: 'Virgin Unite', logo: virginUniteLogo, description: 'The entrepreneurial foundation of the Virgin Group. Richard Branson and the Virgin Group cover all overheads, meaning 100% of donations go directly to the frontline. Virgin Unite focuses on shining a spotlight on unacceptable issues, incubating disruptive collaborations, and empowering entrepreneurs to change business for good.', link: 'https://www.virgin.com/virgin-unite', color: 'bg-red-600', isCircular: true },
+  { name: 'Virgin Unite', logo: virginUniteLogo, description: 'The entrepreneurial foundation of the Virgin Group. Richard Branson and the Virgin Group cover all overheads, meaning 100% of donations go directly to the frontline. Virgin Unite focuses on shining a spotlight on unacceptable issues, incubating disruptive collaborations, and empowering entrepreneurs to change business for good.', link: 'https://www.virgin.com/virgin-unite', color: 'bg-white', isCircular: false },
   { name: 'National Tennis Foundation (NTF)', logo: ntfLogo, description: 'A nationally recognized 501(c)(3) that provides scholarships and training opportunities to exceptional student athletes regardless of race or economic means. NTF is based in Las Vegas and has been supported at every single Necker Cup since the event\'s founding.', link: 'https://www.nationaltennisfoundation.org', color: 'bg-emerald-600', isCircular: false },
-  { name: 'BVI Lawn Tennis Association', description: 'Dedicated to youth tennis development in the British Virgin Islands territory.', link: null, color: 'bg-amber-600', isCircular: false },
+  { name: 'BVI Lawn Tennis Association', logo: sfctLogo, description: 'Dedicated to youth tennis development in the British Virgin Islands territory.', link: null, color: 'bg-amber-600', isCircular: false },
   { name: 'Inspiring Children Foundation', logo: icfLogo, description: 'Co-founded by Ryan Wolfington, focused on providing comprehensive programs for underprivileged young people in academics, athletics, leadership and character development. Has provided over 70 scholarships to colleges including Harvard, Stanford, West Point, Princeton, and Georgetown.', link: 'https://inspiringchildren.org', color: 'bg-blue-600', isCircular: false },
 ];
 
@@ -42,7 +43,10 @@ export function CharityPage() {
           </h1>
           <p className="font-body text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl">
             Every serve, every match, every moment contributes to creating lasting change.
-            The Necker Cup has distributed over $7 million to charitable causes over its first decade-plus. In 2022 alone, over $900,000 was raised in a single edition.
+            The Necker Cup has distributed over $10 million to charitable causes over its first decade-plus. In 2022 alone, over $900,000 was raised in a single edition.
+          </p>
+          <p className="font-body text-base md:text-lg text-white/75 leading-relaxed max-w-2xl mt-6">
+            Although the Necker Cup is a for-profit venture, for the past 15 years we have dedicated the final night Charity Dinner & Auction to benefit our charitable partners. 100% of Sir Richard Branson's profits go directly to Virgin Unite. The team also donates charity spots to worthy causes each year.
           </p>
         </div>
       </section>
@@ -51,7 +55,7 @@ export function CharityPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid md:grid-cols-4 gap-12">
-            {[['$7M+', 'Total Distributed'], ['$900K+', '2022 Single Edition'], ['15', 'Years of Impact'], ['100%', 'To Frontline (Virgin Unite)']].map(([stat, label], idx) => (
+            {[['$10M+', 'Total Distributed'], ['$900K+', '2022 Single Edition'], ['15', 'Years of Impact'], ['100%', 'To Frontline (Virgin Unite)']].map(([stat, label], idx) => (
               <div key={idx} className="text-center">
                 <p className="font-display text-5xl lg:text-6xl text-emerald-800 mb-3">{stat}</p>
                 <p className="font-body text-stone-600 text-sm tracking-wide uppercase">{label}</p>
@@ -97,13 +101,13 @@ export function CharityPage() {
           <div className="grid md:grid-cols-2 gap-8">
             {beneficiaries.map((charity, idx) => (
               <div key={idx} className="group bg-stone-50 rounded-3xl p-8 lg:p-10 hover:shadow-xl transition-all duration-500 hover:scale-[1.02]">
-                <div className="flex items-start gap-6 mb-6">
+                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6 mb-6">
                   {charity.logo && (charity.isCircular ? (
-                    <div className={`w-20 h-20 rounded-full ${charity.color} flex items-center justify-center flex-shrink-0 p-3`}>
+                    <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full ${charity.color} flex items-center justify-center flex-shrink-0 p-3`}>
                       <img src={charity.logo} alt={`${charity.name} logo`} className="w-full h-full object-contain" />
                     </div>
                   ) : (
-                    <div className="w-40 h-28 bg-white rounded-xl flex items-center justify-center flex-shrink-0 p-5 shadow-md border border-stone-200 hover:shadow-lg transition-shadow">
+                    <div className="w-32 h-20 sm:w-40 sm:h-28 bg-white rounded-xl flex items-center justify-center flex-shrink-0 p-4 sm:p-5 shadow-md border border-stone-200 hover:shadow-lg transition-shadow">
                       <img src={charity.logo} alt={`${charity.name} logo`} className="max-w-full max-h-full object-contain" />
                     </div>
                   ))}
@@ -114,6 +118,36 @@ export function CharityPage() {
                   </div>
                 </div>
                 <p className="font-body text-stone-600 leading-relaxed">{charity.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* OTHER CHARITIES */}
+      <section className="py-24 lg:py-32 bg-stone-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="text-center mb-16">
+            <p className="font-body text-emerald-800 text-sm tracking-[0.2em] uppercase mb-4">Past Beneficiaries</p>
+            <h2 className="font-display text-4xl md:text-5xl text-stone-900 mb-4">
+              Other Charities <span className="italic">We Have Supported</span>
+            </h2>
+            <p className="font-body text-stone-600 max-w-2xl mx-auto">
+              Over the years, the Necker Cup has proudly supported a wide range of charitable organizations.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { name: 'Andrea Bocelli Foundation', desc: 'Empowering people and communities through education, healthcare, and humanitarian projects worldwide.' },
+              { name: 'Rafa Nadal Foundation', desc: 'Supporting socially vulnerable children and young people through sport and education programs.' },
+              { name: 'Novak Djokovic Foundation', desc: 'Providing early childhood education and development opportunities for children in Serbia and beyond.' },
+              { name: 'Bryan Brothers Foundation', desc: 'Growing tennis at the grassroots level and supporting youth development through the sport.' },
+              { name: 'USTA Foundation', desc: 'Using tennis as a vehicle for positive change in the lives of underserved youth across the United States.' },
+              { name: 'Boys & Girls Club of Sarasota', desc: 'Providing safe, enriching after-school programs for young people in the Sarasota community.' },
+            ].map((charity, idx) => (
+              <div key={idx} className="bg-white rounded-2xl p-8 border border-stone-200 hover:shadow-lg hover:border-emerald-200 transition-all duration-300">
+                <h3 className="font-display text-xl text-stone-900 mb-3">{charity.name}</h3>
+                <p className="font-body text-stone-600 text-sm leading-relaxed">{charity.desc}</p>
               </div>
             ))}
           </div>
@@ -135,7 +169,7 @@ export function CharityPage() {
           </div>
           <div className="text-center">
             <p className="font-body text-stone-400 text-lg mb-2">Total distributed over the first decade-plus</p>
-            <p className="font-display text-6xl lg:text-7xl text-emerald-400">$7 Million+</p>
+            <p className="font-display text-6xl lg:text-7xl text-emerald-400">$10 Million+</p>
             <p className="font-body text-stone-400 text-sm mt-4">2022 single edition: $900,000+</p>
           </div>
         </div>

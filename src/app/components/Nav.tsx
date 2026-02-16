@@ -11,7 +11,7 @@ const navLinks = [
   { to: '/gallery', label: 'Gallery' },
   { to: '/sponsorship', label: 'Sponsorship' },
   { to: '/charity', label: 'Charity' },
-  { to: '/agenda', label: 'Agenda' },
+  { to: '/tennis', label: 'Tennis' },
 ];
 
 export function Nav() {
@@ -84,7 +84,7 @@ export function Nav() {
                 : 'border border-stone-300 text-stone-600 hover:text-emerald-800 hover:border-emerald-800'
             }`}
           >
-            Client Login
+            Login
           </a>
           <button
             onClick={openForm}
@@ -133,7 +133,7 @@ export function Nav() {
               rel="noopener noreferrer"
               className="font-body mt-6 w-full py-3 rounded-full border border-stone-300 text-stone-700 hover:text-emerald-800 hover:border-emerald-800 text-center block"
             >
-              Client Login
+              Login
             </a>
             <button
               onClick={() => { setMobileMenuOpen(false); openForm(); }}
