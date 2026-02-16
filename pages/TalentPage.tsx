@@ -122,12 +122,11 @@ export function TalentPage() {
         </div>
       </section>
 
-      {/* 2026 GOLF PROS */}
+      {/* PAST GOLF PROS */}
       <section className="py-24 lg:py-32 bg-stone-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <p className="font-body text-emerald-800 text-sm tracking-[0.2em] uppercase mb-4">2026 Necker Cup</p>
-          <h2 className="font-display text-3xl md:text-4xl text-stone-900 mb-4">This Year's Golf Pros</h2>
-          <p className="font-body text-stone-500 text-lg mb-10">Joining us for the 2026 Necker Cup</p>
+          <p className="font-body text-stone-400 text-sm tracking-[0.2em] uppercase mb-4">Past Necker Cup Talent</p>
+          <h2 className="font-display text-3xl md:text-4xl text-stone-900 mb-10">Past Golf Pros</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
             {golfPros.map((pro, i) => (
               <TalentCard key={i} name={pro.name} subtitle={pro.achievement} />

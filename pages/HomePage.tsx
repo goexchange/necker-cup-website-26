@@ -276,11 +276,10 @@ export function HomePage() {
             For the full list with details, visit <Link to="/talent" className="text-emerald-400 hover:text-emerald-300 underline">Talent</Link> or <a href="https://premierlive.com" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 underline">premierlive.com</a>
           </p>
 
-          {/* 2026 GOLF PROS */}
+          {/* PAST GOLF PROS */}
           <div className="mt-16 pt-16 border-t border-white/20">
-            <p className="font-body text-emerald-400 text-sm tracking-[0.2em] uppercase mb-4">2026 Necker Cup</p>
-            <h2 className="font-display text-3xl md:text-4xl text-white mb-4">This Year's Golf Pros</h2>
-            <p className="font-body text-white/70 text-lg mb-10">Joining us for the 2026 Necker Cup</p>
+            <p className="font-body text-stone-400 text-sm tracking-[0.2em] uppercase mb-4">Past Necker Cup Talent</p>
+            <h2 className="font-display text-3xl md:text-4xl text-white mb-10">Past Golf Pros</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
               {['Greg Norman', 'Sir Nick Faldo', 'Bryson DeChambeau', 'Tommy Fleetwood', 'Sam Burns'].map(name => (
                 <div key={name} className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-300 text-center aspect-square">
