@@ -78,6 +78,8 @@ export function HomePage() {
         @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         .marquee-track { display: flex; animation: marquee 30s linear infinite; }
         .marquee-track:hover { animation-play-state: paused; }
+        .activities-scroll-track { display: flex; animation: marquee 40s linear infinite; }
+        .activities-scroll-track:hover { animation-play-state: paused; }
       `}</style>
 
       <section className="relative h-screen min-h-[700px] flex items-end overflow-hidden">
@@ -227,6 +229,45 @@ export function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <p className="font-body text-emerald-800 text-sm tracking-[0.2em] uppercase mb-6">Activities Beyond Tennis</p>
           <p className="font-body text-stone-600 text-lg md:text-xl leading-relaxed max-w-3xl mb-8">When they say "at leisure," guests have full access to everything the island has to offer: kiteboarding and kite surfing, sailing (including Hobie Cat races), wakeboarding, snorkeling and scuba diving, paddleboarding, beach tennis and pickleball, swimming pools and hot tubs, lemur feeding, tortoise encounters, island walks and hiking. Spa services are one of the few things not included.</p>
+        </div>
+        <div className="mt-10 overflow-hidden">
+          <div className="activities-scroll-track">
+            {[
+              { src: '/images/activity-kiteboarding.jpg', label: 'Kiteboarding' },
+              { src: '/images/activity-hobie-cat.jpg', label: 'Sailing' },
+              { src: '/images/activity-wakeboarding.jpg', label: 'Wakeboarding' },
+              { src: '/images/activity-snorkeling.jpg', label: 'Snorkeling' },
+              { src: '/images/activity-scuba.jpg', label: 'Scuba Diving' },
+              { src: '/images/activity-paddleboard.jpg', label: 'Paddleboarding' },
+              { src: '/images/activity-pickleball.jpg', label: 'Pickleball' },
+              { src: '/images/activity-pool.jpg', label: 'Pools & Hot Tubs' },
+              { src: '/images/activity-lemur.jpg', label: 'Lemur Feeding' },
+              { src: '/images/activity-tortoise.jpg', label: 'Tortoise Encounters' },
+              { src: '/images/activity-hiking.jpg', label: 'Island Hiking' },
+              { src: '/images/activity-kiteboarding.jpg', label: 'Kiteboarding' },
+              { src: '/images/activity-hobie-cat.jpg', label: 'Sailing' },
+              { src: '/images/activity-wakeboarding.jpg', label: 'Wakeboarding' },
+              { src: '/images/activity-snorkeling.jpg', label: 'Snorkeling' },
+              { src: '/images/activity-scuba.jpg', label: 'Scuba Diving' },
+              { src: '/images/activity-paddleboard.jpg', label: 'Paddleboarding' },
+              { src: '/images/activity-pickleball.jpg', label: 'Pickleball' },
+              { src: '/images/activity-pool.jpg', label: 'Pools & Hot Tubs' },
+              { src: '/images/activity-lemur.jpg', label: 'Lemur Feeding' },
+              { src: '/images/activity-tortoise.jpg', label: 'Tortoise Encounters' },
+              { src: '/images/activity-hiking.jpg', label: 'Island Hiking' },
+            ].map((item, i) => (
+              <div key={i} className="flex-shrink-0 mx-2 group relative">
+                <img
+                  src={item.src}
+                  alt={item.label}
+                  className="w-[120px] h-[120px] rounded-lg object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                />
+                <div className="absolute inset-0 flex items-end rounded-lg overflow-hidden">
+                  <span className="w-full text-center font-body text-white text-[10px] sm:text-xs py-1.5 bg-gradient-to-t from-black/70 to-transparent">{item.label}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
