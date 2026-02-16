@@ -21,32 +21,34 @@ export function GalleryPage({ onNavigateHome, onNavigate }: GalleryPageProps) {
       title: 'The Island',
       subtitle: 'Paradise Found',
       images: [
-        '/images/group-photo-court.jpg',
+        '/images/group-photo-moskito.jpg',
         '/images/necker.jpg',
-        '/images/moskito.jpg',
-        '/images/banner_image.jpg',
-        '/images/dinner-wide-palms.jpg',
+        '/images/island-golf-course.jpg',
+        '/images/beach-dock-group.jpg',
+        '/images/island-dog.jpg',
+        '/images/island-dining-guest.jpg',
       ]
     },
     {
       title: 'On Court',
       subtitle: 'Where Legends Play',
       images: [
-        '/images/tennis-action-backhand.jpg',
+        '/images/branson-borg-celebrate.jpg',
+        '/images/tennis-action-blue.jpg',
+        '/images/necker-open-champion.jpg',
         '/images/tennis-court-player.jpg',
-        '/images/pro-portrait-fila.jpg',
-        '/images/pro-portrait-smile.jpg',
         '/images/match-announcer.jpg',
+        '/images/group-photo-court.jpg',
       ]
     },
     {
       title: 'Performances',
       subtitle: 'Music Under the Stars',
       images: [
+        '/images/guitar-performance.jpg',
+        '/images/branson-piano-group.jpg',
         '/images/event-live-music.jpg',
-        '/images/dinner-table-guests.jpg',
         '/images/dinner-beach-evening.jpg',
-        '/images/dinner-wide-palms.jpg',
       ]
     },
     {
@@ -54,10 +56,10 @@ export function GalleryPage({ onNavigateHome, onNavigate }: GalleryPageProps) {
       subtitle: 'Moments to Remember',
       images: [
         '/images/dinner-table-guests.jpg',
-        '/images/group-photo-court.jpg',
-        '/images/dinner-beach-evening.jpg',
-        '/images/event-live-music.jpg',
-        '/images/pro-portrait-smile.jpg',
+        '/images/dinner-wide-palms.jpg',
+        '/images/island-dining-guest.jpg',
+        '/images/beach-dock-group.jpg',
+        '/images/island-dog.jpg',
       ]
     },
   ];

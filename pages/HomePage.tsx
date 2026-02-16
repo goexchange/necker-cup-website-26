@@ -12,12 +12,12 @@ const packages = [
 ];
 
 const galleryImages = [
-  publicImages.groupPhotoCourt,
-  publicImages.banner,
+  publicImages.groupPhotoMoskito,
+  publicImages.bransonBorgCelebrate,
   publicImages.dinnerTableGuests,
-  publicImages.eventLiveMusic,
-  publicImages.dinnerBeachEvening,
-  publicImages.moskito,
+  publicImages.guitarPerformance,
+  publicImages.beachDockGroup,
+  publicImages.neckerOpenChampion,
 ];
 
 const agenda = [
@@ -35,6 +35,7 @@ const heroSlides = [
   publicImages.heroSlide1,
   publicImages.heroSlide2,
   publicImages.heroSlide3,
+  publicImages.bransonBorgCelebrate,
 ];
 
 export function HomePage() {
@@ -146,26 +147,30 @@ export function HomePage() {
       <div className="bg-stone-900 py-6 overflow-hidden">
         <div className="marquee-track">
           {[
-            { src: '/images/tennis-action-backhand.jpg', label: 'Tennis' },
-            { src: '/images/pro-portrait-fila.jpg', label: 'The Pros' },
-            { src: '/images/dinner-wide-palms.jpg', label: 'Island Dining' },
-            { src: '/images/tennis-court-player.jpg', label: 'On Court' },
+            { src: '/images/tennis-action-blue.jpg', label: 'Tennis' },
+            { src: '/images/branson-borg-celebrate.jpg', label: 'Legends' },
+            { src: '/images/guitar-performance.jpg', label: 'Live Music' },
+            { src: '/images/necker-open-champion.jpg', label: 'Champion' },
             { src: '/images/dinner-table-guests.jpg', label: 'Gala Dinner' },
-            { src: '/images/event-live-music.jpg', label: 'Live Music' },
-            { src: '/images/pro-portrait-smile.jpg', label: 'The Pros' },
-            { src: '/images/match-announcer.jpg', label: 'Match Day' },
-            { src: '/images/group-photo-court.jpg', label: 'The Group' },
-            { src: '/images/dinner-beach-evening.jpg', label: 'Beach Evening' },
-            { src: '/images/tennis-action-backhand.jpg', label: 'Tennis' },
+            { src: '/images/beach-dock-group.jpg', label: 'Water Sports' },
             { src: '/images/pro-portrait-fila.jpg', label: 'The Pros' },
-            { src: '/images/dinner-wide-palms.jpg', label: 'Island Dining' },
-            { src: '/images/tennis-court-player.jpg', label: 'On Court' },
+            { src: '/images/island-golf-course.jpg', label: 'Golf' },
+            { src: '/images/group-photo-moskito.jpg', label: 'The Group' },
+            { src: '/images/branson-piano-group.jpg', label: 'Backstage' },
+            { src: '/images/island-dog.jpg', label: 'Island Life' },
+            { src: '/images/island-dining-guest.jpg', label: 'Island Dining' },
+            { src: '/images/tennis-action-blue.jpg', label: 'Tennis' },
+            { src: '/images/branson-borg-celebrate.jpg', label: 'Legends' },
+            { src: '/images/guitar-performance.jpg', label: 'Live Music' },
+            { src: '/images/necker-open-champion.jpg', label: 'Champion' },
             { src: '/images/dinner-table-guests.jpg', label: 'Gala Dinner' },
-            { src: '/images/event-live-music.jpg', label: 'Live Music' },
-            { src: '/images/pro-portrait-smile.jpg', label: 'The Pros' },
-            { src: '/images/match-announcer.jpg', label: 'Match Day' },
-            { src: '/images/group-photo-court.jpg', label: 'The Group' },
-            { src: '/images/dinner-beach-evening.jpg', label: 'Beach Evening' },
+            { src: '/images/beach-dock-group.jpg', label: 'Water Sports' },
+            { src: '/images/pro-portrait-fila.jpg', label: 'The Pros' },
+            { src: '/images/island-golf-course.jpg', label: 'Golf' },
+            { src: '/images/group-photo-moskito.jpg', label: 'The Group' },
+            { src: '/images/branson-piano-group.jpg', label: 'Backstage' },
+            { src: '/images/island-dog.jpg', label: 'Island Life' },
+            { src: '/images/island-dining-guest.jpg', label: 'Island Dining' },
           ].map((item, i) => (
             <div key={i} className="flex-shrink-0 mx-2 group relative">
               <img
@@ -197,8 +202,8 @@ export function HomePage() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-emerald-800/20 to-teal-700/30 overflow-hidden shadow-2xl bg-cover bg-center hover:scale-[1.02] transition-transform duration-500" style={{ backgroundImage: `url('${publicImages.necker}')` }} />
-              <div className="absolute -bottom-8 -left-8 w-48 h-64 rounded-2xl shadow-xl hidden lg:block bg-cover bg-center hover:scale-105 transition-transform duration-500" style={{ backgroundImage: `url('${publicImages.tennisActionBackhand}')` }} />
+              <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-emerald-800/20 to-teal-700/30 overflow-hidden shadow-2xl bg-cover bg-center hover:scale-[1.02] transition-transform duration-500" style={{ backgroundImage: `url('${publicImages.groupPhotoMoskito}')` }} />
+              <div className="absolute -bottom-8 -left-8 w-48 h-64 rounded-2xl shadow-xl hidden lg:block bg-cover bg-center hover:scale-105 transition-transform duration-500" style={{ backgroundImage: `url('${publicImages.tennisActionBlue}')` }} />
             </div>
           </div>
         </div>

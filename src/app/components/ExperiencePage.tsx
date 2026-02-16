@@ -25,25 +25,25 @@ export function ExperiencePage({ onNavigateHome, onNavigate }: ExperiencePagePro
     {
       title: 'Tennis Excellence',
       description: 'Play alongside tennis legends in Pro-Am matches, receive private coaching from world-class professionals, and watch championship-level competition.',
-      image: '/images/tennis-action-backhand.jpg',
+      image: '/images/tennis-action-blue.jpg',
       features: ['Pro-Am tournament participation', 'Private coaching sessions', 'Championship viewing', 'Meet tennis legends']
     },
     {
       title: 'Musical Performances',
       description: 'Experience intimate concerts featuring world-renowned artists in the most exclusive setting imaginable.',
-      image: '/images/event-live-music.jpg',
+      image: '/images/guitar-performance.jpg',
       features: ['Andrea Bocelli concert', 'Darius Rucker performance', 'Exclusive artist meet & greets', 'Behind-the-scenes access']
     },
     {
       title: 'Island Paradise',
       description: 'Relax in private villas, enjoy pristine beaches, world-class dining, and every luxury amenity on Necker Island.',
-      image: '/images/group-photo-court.jpg',
+      image: '/images/beach-dock-group.jpg',
       features: ['Private villa accommodation', 'Beach access and water sports', 'Gourmet dining experiences', 'Spa and wellness facilities']
     },
     {
       title: 'Exclusive Access',
       description: 'Connect with fellow guests, tennis legends, and artists in intimate settings designed for meaningful connections.',
-      image: '/images/dinner-wide-palms.jpg',
+      image: '/images/branson-piano-group.jpg',
       features: ['VIP networking events', 'Private receptions', 'Exclusive island tours', 'Personal concierge service']
     },
   ];

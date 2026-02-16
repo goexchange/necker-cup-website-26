@@ -18,6 +18,16 @@ const GALLERY_IMAGES = {
   announcer: publicImages.matchAnnouncer,
   dinnerTable: publicImages.dinnerTableGuests,
   dinnerBeach: publicImages.dinnerBeachEvening,
+  tennisBlue: publicImages.tennisActionBlue,
+  groupMoskito: publicImages.groupPhotoMoskito,
+  champion: publicImages.neckerOpenChampion,
+  guitar: publicImages.guitarPerformance,
+  diningGuest: publicImages.islandDiningGuest,
+  beachDock: publicImages.beachDockGroup,
+  islandDog: publicImages.islandDog,
+  bransonBorg: publicImages.bransonBorgCelebrate,
+  golfCourse: publicImages.islandGolfCourse,
+  bransonPiano: publicImages.bransonPianoGroup,
 };
 
 const galleryCategories = [
@@ -25,33 +35,45 @@ const galleryCategories = [
     title: 'The Island',
     subtitle: 'Paradise Found',
     images: [
+      GALLERY_IMAGES.groupMoskito,
       GALLERY_IMAGES.neckerAerial,
-      GALLERY_IMAGES.greatHouse,
-      GALLERY_IMAGES.moskitoAerial,
-      GALLERY_IMAGES.groupPhoto,
-      GALLERY_IMAGES.dinnerBeach,
+      GALLERY_IMAGES.golfCourse,
+      GALLERY_IMAGES.beachDock,
+      GALLERY_IMAGES.islandDog,
+      GALLERY_IMAGES.diningGuest,
     ]
   },
   {
     title: 'On Court',
     subtitle: 'Where Legends Play',
     images: [
-      GALLERY_IMAGES.tennisAction,
+      GALLERY_IMAGES.bransonBorg,
+      GALLERY_IMAGES.tennisBlue,
+      GALLERY_IMAGES.champion,
       GALLERY_IMAGES.courtsNight,
-      GALLERY_IMAGES.proFila,
-      GALLERY_IMAGES.proSmile,
       GALLERY_IMAGES.announcer,
       GALLERY_IMAGES.groupPhoto,
     ]
   },
   {
-    title: 'Parties & Events',
-    subtitle: 'End of the World',
+    title: 'Performances',
+    subtitle: 'Music Under the Stars',
     images: [
+      GALLERY_IMAGES.guitar,
+      GALLERY_IMAGES.bransonPiano,
       GALLERY_IMAGES.endOfWorldParty,
-      GALLERY_IMAGES.charityAuction,
-      GALLERY_IMAGES.dinnerTable,
       GALLERY_IMAGES.dinnerBeach,
+    ]
+  },
+  {
+    title: 'The Experience',
+    subtitle: 'Moments to Remember',
+    images: [
+      GALLERY_IMAGES.dinnerTable,
+      GALLERY_IMAGES.charityAuction,
+      GALLERY_IMAGES.diningGuest,
+      GALLERY_IMAGES.beachDock,
+      GALLERY_IMAGES.islandDog,
     ]
   },
 ];
