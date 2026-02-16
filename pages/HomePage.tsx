@@ -75,6 +75,9 @@ export function HomePage() {
         @keyframes kenBurns { 0% { transform: scale(1); } 100% { transform: scale(1.08); } }
         .hero-slide { transition: opacity 1.5s ease-in-out; }
         .hero-slide-active { animation: kenBurns 8s ease-out forwards; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .marquee-track { display: flex; animation: marquee 30s linear infinite; }
+        .marquee-track:hover { animation-play-state: paused; }
       `}</style>
 
       <section className="relative h-screen min-h-[700px] flex items-end overflow-hidden">
@@ -136,6 +139,41 @@ export function HomePage() {
           </div>
         </div>
       )}
+
+      {/* ACTIVITY MARQUEE */}
+      <div className="bg-stone-900 py-6 overflow-hidden">
+        <div className="marquee-track">
+          {[
+            { src: '/images/activity-tennis.jpg', label: 'Tennis' },
+            { src: '/images/activity-golf.jpg', label: 'Golf' },
+            { src: '/images/activity-party.jpg', label: 'Beach Party' },
+            { src: '/images/activity-sailing.jpg', label: 'Sailing' },
+            { src: '/images/activity-dinner.jpg', label: 'Gala Dinner' },
+            { src: '/images/activity-snorkeling.jpg', label: 'Snorkeling' },
+            { src: '/images/activity-concert.jpg', label: 'Live Music' },
+            { src: '/images/activity-spa.jpg', label: 'Spa & Wellness' },
+            { src: '/images/activity-tennis.jpg', label: 'Tennis' },
+            { src: '/images/activity-golf.jpg', label: 'Golf' },
+            { src: '/images/activity-party.jpg', label: 'Beach Party' },
+            { src: '/images/activity-sailing.jpg', label: 'Sailing' },
+            { src: '/images/activity-dinner.jpg', label: 'Gala Dinner' },
+            { src: '/images/activity-snorkeling.jpg', label: 'Snorkeling' },
+            { src: '/images/activity-concert.jpg', label: 'Live Music' },
+            { src: '/images/activity-spa.jpg', label: 'Spa & Wellness' },
+          ].map((item, i) => (
+            <div key={i} className="flex-shrink-0 mx-2 group relative">
+              <img
+                src={item.src}
+                alt={item.label}
+                className="w-20 h-20 sm:w-24 sm:h-24 rounded-lg object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+              />
+              <div className="absolute inset-0 flex items-end rounded-lg overflow-hidden">
+                <span className="w-full text-center font-body text-white text-[10px] sm:text-xs py-1 bg-gradient-to-t from-black/70 to-transparent">{item.label}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
       <section id="experience" className="py-24 lg:py-40">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
