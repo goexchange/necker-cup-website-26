@@ -44,8 +44,8 @@ export function Nav() {
           <img
             src="/images/necker-cup-logo.svg"
             alt="Necker Cup 2026"
-            className={`h-10 w-auto transition-all duration-300 ${
-              floating ? 'brightness-0 invert' : ''
+            className={`h-14 w-auto transition-all duration-300 ${
+              floating ? 'drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]' : ''
             }`}
           />
         </Link>
