@@ -138,10 +138,16 @@ const experiences = [
     features: ['Great House & villas', 'Championship courts', 'Beach and water activities', 'All events on-island']
   },
   {
+    title: 'Golf at Nail Bay',
+    description: 'Head to Red Dock and catch a short boat ride over to Nail Bay Resort on Virgin Gorda for a round of barefoot golf unlike any other. With a personal butler catering to your every need, stunning ocean views from every hole, and some of the biggest names in golf joining the fun, the Necker Open Pro-Am is a highlight of the week. Past participants include Greg Norman, Sir Nick Faldo, and Bryson DeChambeau.',
+    image: '/images/nail-bay-golf.jpg',
+    features: ['Barefoot golf with a butler', 'Short boat ride to Virgin Gorda', 'Necker Open Pro-Am tournament', 'World-class golf pros joining the fun']
+  },
+  {
     title: 'Moskito Island & Beyond',
-    description: 'Guests can stay at The Branson Beach Estate on Moskito Island—just a 5–7 minute boat ride away. The Necker Open Pro-Am golf runs alongside the tennis at Nail Bay\'s private course; past participants include Sir Nick Faldo, Greg Norman, and Bryson DeChambeau.',
+    description: 'Guests can stay at The Branson Beach Estate on Moskito Island -- just a 5-7 minute boat ride away. Moskito offers private pools, ocean views, and a serene retreat between the action on Necker.',
     image: publicImages.moskito,
-    features: ['Branson Beach Estate option', 'Necker Open golf', 'Boat transfer to Necker', 'Private pools & ocean views']
+    features: ['Branson Beach Estate option', 'Boat transfer to Necker', 'Private pools & ocean views', 'Serene island retreat']
   },
 ];
 
