@@ -42,7 +42,7 @@ export function CharityPage() {
           </h1>
           <p className="font-body text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl">
             Every serve, every match, every moment contributes to creating lasting change.
-            The Necker Cup has distributed over $7 million to charitable causes over its first decade-plus. In 2022 alone, over $900,000 was raised in a single edition.
+            The Necker Cup has distributed over $10 million to charitable causes over its first decade-plus. In 2022 alone, over $900,000 was raised in a single edition.
           </p>
         </div>
       </section>
