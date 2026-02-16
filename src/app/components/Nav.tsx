@@ -40,21 +40,14 @@ export function Nav() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3">
-          <div
-            className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
-              floating ? 'bg-white/20 backdrop-blur-sm' : 'bg-emerald-800'
+        <Link to="/" className="flex items-center">
+          <img
+            src="/images/necker-cup-logo.svg"
+            alt="Necker Cup 2026"
+            className={`h-28 w-auto transition-all duration-300 ${
+              floating ? 'drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]' : ''
             }`}
-          >
-            <span className="font-display text-lg font-semibold text-white">N</span>
-          </div>
-          <span
-            className={`font-display text-xl tracking-wide transition-colors ${
-              floating ? 'text-white' : 'text-stone-900'
-            }`}
-          >
-            Necker Cup 26
-          </span>
+          />
         </Link>
 
         {/* Desktop: inline links */}

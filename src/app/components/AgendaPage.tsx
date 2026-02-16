@@ -139,12 +139,9 @@ export function AgendaPage({ onNavigateHome, onNavigate }: AgendaPageProps) {
           <div className="flex items-center justify-between">
             <button 
               onClick={onNavigateHome}
-              className="flex items-center gap-3 group"
+              className="flex items-center group"
             >
-              <div className="w-10 h-10 rounded-full bg-emerald-800 flex items-center justify-center">
-                <span className="font-display text-lg font-semibold text-white">N</span>
-              </div>
-              <span className="font-display text-xl tracking-wide text-stone-900">Necker Cup</span>
+              <img src="/images/necker-cup-logo.svg" alt="Necker Cup 2026" className="h-10 w-auto" />
             </button>
             
             <div className="hidden lg:flex items-center gap-6">

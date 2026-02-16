@@ -12,12 +12,12 @@ const packages = [
 ];
 
 const galleryImages = [
-  publicImages.necker,
-  publicImages.banner,
-  publicImages.moskito,
-  publicImages.necker,
-  publicImages.banner,
-  publicImages.moskito,
+  publicImages.crowdPavilionCourt,
+  publicImages.trophyCeremonyCourt,
+  publicImages.singerGuitarStage,
+  publicImages.golfSwingOcean,
+  publicImages.beachJumpFun,
+  publicImages.dinnerBeachEvening,
 ];
 
 const agenda = [
@@ -32,9 +32,10 @@ const agenda = [
 const sponsors = { presenting: ['Virgin Limited Edition', 'Rolex'], premier: ['NetJets', 'Dom Pérignon', 'American Express', 'Four Seasons'], partners: ['Wilson', 'Lacoste', 'Molton Brown', 'Land Rover', 'Bose', 'Tiffany & Co.'] };
 
 const heroSlides = [
-  publicImages.heroSlide1,
-  publicImages.heroSlide2,
-  publicImages.heroSlide3,
+  publicImages.crowdPavilionCourt,
+  publicImages.groupPhotoMoskito,
+  publicImages.legendsMusicBand,
+  publicImages.bransonBorgCelebrate,
 ];
 
 export function HomePage() {
@@ -78,6 +79,8 @@ export function HomePage() {
         @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         .marquee-track { display: flex; animation: marquee 30s linear infinite; }
         .marquee-track:hover { animation-play-state: paused; }
+        .activities-scroll-track { display: flex; animation: marquee 40s linear infinite; }
+        .activities-scroll-track:hover { animation-play-state: paused; }
       `}</style>
 
       <section className="relative h-screen min-h-[700px] flex items-end overflow-hidden">
@@ -144,22 +147,30 @@ export function HomePage() {
       <div className="bg-stone-900 py-6 overflow-hidden">
         <div className="marquee-track">
           {[
-            { src: '/images/activity-tennis.jpg', label: 'Tennis' },
-            { src: '/images/activity-golf.jpg', label: 'Golf' },
-            { src: '/images/activity-party.jpg', label: 'Beach Party' },
-            { src: '/images/activity-sailing.jpg', label: 'Sailing' },
-            { src: '/images/activity-dinner.jpg', label: 'Gala Dinner' },
-            { src: '/images/activity-snorkeling.jpg', label: 'Snorkeling' },
-            { src: '/images/activity-concert.jpg', label: 'Live Music' },
-            { src: '/images/activity-spa.jpg', label: 'Spa & Wellness' },
-            { src: '/images/activity-tennis.jpg', label: 'Tennis' },
-            { src: '/images/activity-golf.jpg', label: 'Golf' },
-            { src: '/images/activity-party.jpg', label: 'Beach Party' },
-            { src: '/images/activity-sailing.jpg', label: 'Sailing' },
-            { src: '/images/activity-dinner.jpg', label: 'Gala Dinner' },
-            { src: '/images/activity-snorkeling.jpg', label: 'Snorkeling' },
-            { src: '/images/activity-concert.jpg', label: 'Live Music' },
-            { src: '/images/activity-spa.jpg', label: 'Spa & Wellness' },
+            { src: '/images/tennis-action-blue.jpg', label: 'Tennis' },
+            { src: '/images/branson-borg-celebrate.jpg', label: 'Legends' },
+            { src: '/images/guitar-performance.jpg', label: 'Live Music' },
+            { src: '/images/necker-open-champion.jpg', label: 'Champion' },
+            { src: '/images/dinner-table-guests.jpg', label: 'Gala Dinner' },
+            { src: '/images/pro-portrait-fila.jpg', label: 'The Pros' },
+            { src: '/images/group-photo-court.jpg', label: 'The Group' },
+            { src: '/images/branson-piano-group.jpg', label: 'Backstage' },
+            { src: '/images/event-live-music.jpg', label: 'Celebration' },
+            { src: '/images/match-announcer.jpg', label: 'Match Day' },
+            { src: '/images/tennis-action-backhand.jpg', label: 'On Court' },
+            { src: '/images/pro-portrait-smile.jpg', label: 'All Smiles' },
+            { src: '/images/tennis-action-blue.jpg', label: 'Tennis' },
+            { src: '/images/branson-borg-celebrate.jpg', label: 'Legends' },
+            { src: '/images/guitar-performance.jpg', label: 'Live Music' },
+            { src: '/images/necker-open-champion.jpg', label: 'Champion' },
+            { src: '/images/dinner-table-guests.jpg', label: 'Gala Dinner' },
+            { src: '/images/pro-portrait-fila.jpg', label: 'The Pros' },
+            { src: '/images/group-photo-court.jpg', label: 'The Group' },
+            { src: '/images/branson-piano-group.jpg', label: 'Backstage' },
+            { src: '/images/event-live-music.jpg', label: 'Celebration' },
+            { src: '/images/match-announcer.jpg', label: 'Match Day' },
+            { src: '/images/tennis-action-backhand.jpg', label: 'On Court' },
+            { src: '/images/pro-portrait-smile.jpg', label: 'All Smiles' },
           ].map((item, i) => (
             <div key={i} className="flex-shrink-0 mx-2 group relative">
               <img
@@ -191,8 +202,8 @@ export function HomePage() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-emerald-800/20 to-teal-700/30 overflow-hidden shadow-2xl bg-cover bg-center hover:scale-[1.02] transition-transform duration-500" style={{ backgroundImage: `url('${publicImages.necker}')` }} />
-              <div className="absolute -bottom-8 -left-8 w-48 h-64 rounded-2xl shadow-xl hidden lg:block bg-cover bg-center hover:scale-105 transition-transform duration-500" style={{ backgroundImage: `url('${publicImages.necker}')` }} />
+              <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-emerald-800/20 to-teal-700/30 overflow-hidden shadow-2xl bg-cover bg-center hover:scale-[1.02] transition-transform duration-500" style={{ backgroundImage: `url('${publicImages.groupPhotoMoskito}')` }} />
+              <div className="absolute -bottom-8 -left-8 w-48 h-64 rounded-2xl shadow-xl hidden lg:block bg-cover bg-center hover:scale-105 transition-transform duration-500" style={{ backgroundImage: `url('${publicImages.tennisActionBlue}')` }} />
             </div>
           </div>
         </div>
@@ -227,6 +238,47 @@ export function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <p className="font-body text-emerald-800 text-sm tracking-[0.2em] uppercase mb-6">Activities Beyond Tennis</p>
           <p className="font-body text-stone-600 text-lg md:text-xl leading-relaxed max-w-3xl mb-8">When they say "at leisure," guests have full access to everything the island has to offer: kiteboarding and kite surfing, sailing (including Hobie Cat races), wakeboarding, snorkeling and scuba diving, paddleboarding, beach tennis and pickleball, swimming pools and hot tubs, lemur feeding, tortoise encounters, island walks and hiking. Spa services are one of the few things not included.</p>
+        </div>
+        <div className="mt-10 overflow-hidden">
+          <div className="activities-scroll-track">
+            {[
+              { src: '/images/beach-dock-group.jpg', label: 'Water Sports' },
+              { src: '/images/golf-swing-ocean.jpg', label: 'Golf' },
+              { src: '/images/beach-jump-fun.jpg', label: 'Island Fun' },
+              { src: '/images/island-dining-guest.jpg', label: 'Island Dining' },
+              { src: '/images/island-golf-course.jpg', label: 'The Course' },
+              { src: '/images/island-dog.jpg', label: 'Island Life' },
+              { src: '/images/branson-courtside-mic.jpg', label: 'Courtside' },
+              { src: '/images/singer-guitar-stage.jpg', label: 'Performances' },
+              { src: '/images/trophy-ceremony-court.jpg', label: 'Champions' },
+              { src: '/images/dinner-wide-palms.jpg', label: 'Dining' },
+              { src: '/images/dinner-beach-evening.jpg', label: 'Evening' },
+              { src: '/images/dj-legends-music.jpg', label: 'DJ Set' },
+              { src: '/images/beach-dock-group.jpg', label: 'Water Sports' },
+              { src: '/images/golf-swing-ocean.jpg', label: 'Golf' },
+              { src: '/images/beach-jump-fun.jpg', label: 'Island Fun' },
+              { src: '/images/island-dining-guest.jpg', label: 'Island Dining' },
+              { src: '/images/island-golf-course.jpg', label: 'The Course' },
+              { src: '/images/island-dog.jpg', label: 'Island Life' },
+              { src: '/images/branson-courtside-mic.jpg', label: 'Courtside' },
+              { src: '/images/singer-guitar-stage.jpg', label: 'Performances' },
+              { src: '/images/trophy-ceremony-court.jpg', label: 'Champions' },
+              { src: '/images/dinner-wide-palms.jpg', label: 'Dining' },
+              { src: '/images/dinner-beach-evening.jpg', label: 'Evening' },
+              { src: '/images/dj-legends-music.jpg', label: 'DJ Set' },
+            ].map((item, i) => (
+              <div key={i} className="flex-shrink-0 mx-2 group relative">
+                <img
+                  src={item.src}
+                  alt={item.label}
+                  className="w-[120px] h-[120px] rounded-lg object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                />
+                <div className="absolute inset-0 flex items-end rounded-lg overflow-hidden">
+                  <span className="w-full text-center font-body text-white text-[10px] sm:text-xs py-1.5 bg-gradient-to-t from-black/70 to-transparent">{item.label}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -342,7 +394,7 @@ export function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             <div>
-              <div className="flex items-center gap-3 mb-6"><div className="w-10 h-10 rounded-full bg-emerald-800 flex items-center justify-center"><span className="font-display text-lg font-semibold">N</span></div><span className="font-display text-xl">Necker Cup 26</span></div>
+              <div className="flex items-center mb-6"><img src="/images/necker-cup-logo.svg" alt="Necker Cup 2026" className="h-16 w-auto" /></div>
               <p className="font-body text-stone-400 text-sm leading-relaxed">Tennis Pro-Am · November 29 – December 4, 2026 · Necker Island, BVI. Benefits National Tennis Foundation & Virgin Unite.</p>
             </div>
             <div>

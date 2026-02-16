@@ -122,19 +122,19 @@ const experiences = [
   {
     title: 'Tennis Excellence',
     description: 'ATP and WTA tour players and legends are paired with amateur teams of all skill levels. A handicapped scoring format keeps things competitive for everyone. The tournament director is Vasek Pospisil, 2014 Wimbledon doubles champion. The week builds toward a Pro Exhibition match on the final day, then the Charity Dinner & Auction.',
-    image: publicImages.necker,
+    image: publicImages.tennisActionBlue,
     features: ['Pro-Am round-robin tournament', 'Handicapped scoring for all levels', 'Pro Exhibition match', 'Necker Cup trophy finals']
   },
   {
     title: 'The End of the World Party',
     description: 'The signature closing event of every Necker Cup. Past performances have included Florida Georgia Line on the beach, Pitbull, Jamie Foxx DJing and performing, and Kenny Chesney under the stars. Followed by the Charity Dinner & Auction.',
-    image: publicImages.banner,
+    image: publicImages.legendsMusicBand,
     features: ['Exhibition match', 'Charity Dinner & Auction', 'Legendary closing party', 'World-class live performances']
   },
   {
     title: 'Necker Island',
     description: 'A 74-acre private island in turquoise Caribbean waters with the iconic Great House, Balinese-style villas, championship tennis courts, coral reefs, and white sandy beaches. All tennis, meals, dinners, and parties take place on Necker.',
-    image: publicImages.necker,
+    image: publicImages.groupPhotoMoskito,
     features: ['Great House & villas', 'Championship courts', 'Beach and water activities', 'All events on-island']
   },
   {
