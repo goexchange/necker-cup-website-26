@@ -6,12 +6,18 @@ import { publicImages } from '@/app/lib/publicImages';
 // All images from public/images for reliable loading
 const GALLERY_IMAGES = {
   neckerAerial: publicImages.necker,
-  greatHouse: publicImages.necker,
-  moskitoAerial: publicImages.moskito,
-  courtsNight: publicImages.banner,
-  groupPhoto: publicImages.necker,
-  endOfWorldParty: publicImages.banner,
-  charityAuction: publicImages.moskito,
+  greatHouse: publicImages.moskito,
+  moskitoAerial: publicImages.banner,
+  courtsNight: publicImages.tennisCourtPlayer,
+  groupPhoto: publicImages.groupPhotoCourt,
+  endOfWorldParty: publicImages.eventLiveMusic,
+  charityAuction: publicImages.dinnerWidePalms,
+  tennisAction: publicImages.tennisActionBackhand,
+  proFila: publicImages.proPortraitFila,
+  proSmile: publicImages.proPortraitSmile,
+  announcer: publicImages.matchAnnouncer,
+  dinnerTable: publicImages.dinnerTableGuests,
+  dinnerBeach: publicImages.dinnerBeachEvening,
 };
 
 const galleryCategories = [
@@ -22,18 +28,20 @@ const galleryCategories = [
       GALLERY_IMAGES.neckerAerial,
       GALLERY_IMAGES.greatHouse,
       GALLERY_IMAGES.moskitoAerial,
-      GALLERY_IMAGES.courtsNight,
       GALLERY_IMAGES.groupPhoto,
+      GALLERY_IMAGES.dinnerBeach,
     ]
   },
   {
     title: 'On Court',
     subtitle: 'Where Legends Play',
     images: [
+      GALLERY_IMAGES.tennisAction,
       GALLERY_IMAGES.courtsNight,
+      GALLERY_IMAGES.proFila,
+      GALLERY_IMAGES.proSmile,
+      GALLERY_IMAGES.announcer,
       GALLERY_IMAGES.groupPhoto,
-      GALLERY_IMAGES.greatHouse,
-      GALLERY_IMAGES.neckerAerial,
     ]
   },
   {
@@ -42,8 +50,8 @@ const galleryCategories = [
     images: [
       GALLERY_IMAGES.endOfWorldParty,
       GALLERY_IMAGES.charityAuction,
-      GALLERY_IMAGES.groupPhoto,
-      GALLERY_IMAGES.courtsNight,
+      GALLERY_IMAGES.dinnerTable,
+      GALLERY_IMAGES.dinnerBeach,
     ]
   },
 ];

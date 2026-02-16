@@ -12,11 +12,11 @@ const packages = [
 ];
 
 const galleryImages = [
-  publicImages.necker,
+  publicImages.groupPhotoCourt,
   publicImages.banner,
-  publicImages.moskito,
-  publicImages.necker,
-  publicImages.banner,
+  publicImages.dinnerTableGuests,
+  publicImages.eventLiveMusic,
+  publicImages.dinnerBeachEvening,
   publicImages.moskito,
 ];
 
@@ -146,22 +146,26 @@ export function HomePage() {
       <div className="bg-stone-900 py-6 overflow-hidden">
         <div className="marquee-track">
           {[
-            { src: '/images/activity-tennis.jpg', label: 'Tennis' },
-            { src: '/images/activity-golf.jpg', label: 'Golf' },
-            { src: '/images/activity-party.jpg', label: 'Beach Party' },
-            { src: '/images/activity-sailing.jpg', label: 'Sailing' },
-            { src: '/images/activity-dinner.jpg', label: 'Gala Dinner' },
-            { src: '/images/activity-snorkeling.jpg', label: 'Snorkeling' },
-            { src: '/images/activity-concert.jpg', label: 'Live Music' },
-            { src: '/images/activity-spa.jpg', label: 'Spa & Wellness' },
-            { src: '/images/activity-tennis.jpg', label: 'Tennis' },
-            { src: '/images/activity-golf.jpg', label: 'Golf' },
-            { src: '/images/activity-party.jpg', label: 'Beach Party' },
-            { src: '/images/activity-sailing.jpg', label: 'Sailing' },
-            { src: '/images/activity-dinner.jpg', label: 'Gala Dinner' },
-            { src: '/images/activity-snorkeling.jpg', label: 'Snorkeling' },
-            { src: '/images/activity-concert.jpg', label: 'Live Music' },
-            { src: '/images/activity-spa.jpg', label: 'Spa & Wellness' },
+            { src: '/images/tennis-action-backhand.jpg', label: 'Tennis' },
+            { src: '/images/pro-portrait-fila.jpg', label: 'The Pros' },
+            { src: '/images/dinner-wide-palms.jpg', label: 'Island Dining' },
+            { src: '/images/tennis-court-player.jpg', label: 'On Court' },
+            { src: '/images/dinner-table-guests.jpg', label: 'Gala Dinner' },
+            { src: '/images/event-live-music.jpg', label: 'Live Music' },
+            { src: '/images/pro-portrait-smile.jpg', label: 'The Pros' },
+            { src: '/images/match-announcer.jpg', label: 'Match Day' },
+            { src: '/images/group-photo-court.jpg', label: 'The Group' },
+            { src: '/images/dinner-beach-evening.jpg', label: 'Beach Evening' },
+            { src: '/images/tennis-action-backhand.jpg', label: 'Tennis' },
+            { src: '/images/pro-portrait-fila.jpg', label: 'The Pros' },
+            { src: '/images/dinner-wide-palms.jpg', label: 'Island Dining' },
+            { src: '/images/tennis-court-player.jpg', label: 'On Court' },
+            { src: '/images/dinner-table-guests.jpg', label: 'Gala Dinner' },
+            { src: '/images/event-live-music.jpg', label: 'Live Music' },
+            { src: '/images/pro-portrait-smile.jpg', label: 'The Pros' },
+            { src: '/images/match-announcer.jpg', label: 'Match Day' },
+            { src: '/images/group-photo-court.jpg', label: 'The Group' },
+            { src: '/images/dinner-beach-evening.jpg', label: 'Beach Evening' },
           ].map((item, i) => (
             <div key={i} className="flex-shrink-0 mx-2 group relative">
               <img
@@ -194,7 +198,7 @@ export function HomePage() {
             </div>
             <div className="relative">
               <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-emerald-800/20 to-teal-700/30 overflow-hidden shadow-2xl bg-cover bg-center hover:scale-[1.02] transition-transform duration-500" style={{ backgroundImage: `url('${publicImages.necker}')` }} />
-              <div className="absolute -bottom-8 -left-8 w-48 h-64 rounded-2xl shadow-xl hidden lg:block bg-cover bg-center hover:scale-105 transition-transform duration-500" style={{ backgroundImage: `url('${publicImages.necker}')` }} />
+              <div className="absolute -bottom-8 -left-8 w-48 h-64 rounded-2xl shadow-xl hidden lg:block bg-cover bg-center hover:scale-105 transition-transform duration-500" style={{ backgroundImage: `url('${publicImages.tennisActionBackhand}')` }} />
             </div>
           </div>
         </div>

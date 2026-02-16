@@ -25,25 +25,25 @@ export function ExperiencePage({ onNavigateHome, onNavigate }: ExperiencePagePro
     {
       title: 'Tennis Excellence',
       description: 'Play alongside tennis legends in Pro-Am matches, receive private coaching from world-class professionals, and watch championship-level competition.',
-      image: 'https://images.unsplash.com/photo-1767634854859-db8255389e64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjB0ZW5uaXMlMjBjb3VydHxlbnwxfHx8fDE3Njk0NTMzNjN8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      image: '/images/tennis-action-backhand.jpg',
       features: ['Pro-Am tournament participation', 'Private coaching sessions', 'Championship viewing', 'Meet tennis legends']
     },
     {
       title: 'Musical Performances',
       description: 'Experience intimate concerts featuring world-renowned artists in the most exclusive setting imaginable.',
-      image: 'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvdXRkb29yJTIwY29uY2VydCUyMGV2ZW5pbmd8ZW58MXx8fHwxNzM3OTU3MjA1fDA&ixlib=rb-4.1.0&q=80&w=1080',
+      image: '/images/event-live-music.jpg',
       features: ['Andrea Bocelli concert', 'Darius Rucker performance', 'Exclusive artist meet & greets', 'Behind-the-scenes access']
     },
     {
       title: 'Island Paradise',
       description: 'Relax in private villas, enjoy pristine beaches, world-class dining, and every luxury amenity on Necker Island.',
-      image: 'https://images.unsplash.com/photo-1622816951464-df6fc7ab2ced?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJpYmJlYW4lMjBiZWFjaCUyMHN1bnNldHxlbnwxfHx8fDE3Njk0NTMzNjN8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      image: '/images/group-photo-court.jpg',
       features: ['Private villa accommodation', 'Beach access and water sports', 'Gourmet dining experiences', 'Spa and wellness facilities']
     },
     {
       title: 'Exclusive Access',
       description: 'Connect with fellow guests, tennis legends, and artists in intimate settings designed for meaningful connections.',
-      image: 'https://images.unsplash.com/photo-1566737236500-c8ac43014a67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBkaW5pbmclMjBvdXRkb29yfGVufDF8fHx8MTczNzk1NzI5MXww&ixlib=rb-4.1.0&q=80&w=1080',
+      image: '/images/dinner-wide-palms.jpg',
       features: ['VIP networking events', 'Private receptions', 'Exclusive island tours', 'Personal concierge service']
     },
   ];
