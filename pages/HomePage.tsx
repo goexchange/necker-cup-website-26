@@ -12,12 +12,12 @@ const packages = [
 ];
 
 const galleryImages = [
-  publicImages.groupPhotoMoskito,
-  publicImages.bransonBorgCelebrate,
-  publicImages.dinnerTableGuests,
-  publicImages.guitarPerformance,
-  publicImages.beachDockGroup,
-  publicImages.neckerOpenChampion,
+  publicImages.crowdPavilionCourt,
+  publicImages.trophyCeremonyCourt,
+  publicImages.singerGuitarStage,
+  publicImages.golfSwingOcean,
+  publicImages.beachJumpFun,
+  publicImages.dinnerBeachEvening,
 ];
 
 const agenda = [
@@ -32,9 +32,9 @@ const agenda = [
 const sponsors = { presenting: ['Virgin Limited Edition', 'Rolex'], premier: ['NetJets', 'Dom Pérignon', 'American Express', 'Four Seasons'], partners: ['Wilson', 'Lacoste', 'Molton Brown', 'Land Rover', 'Bose', 'Tiffany & Co.'] };
 
 const heroSlides = [
-  publicImages.heroSlide1,
-  publicImages.heroSlide2,
-  publicImages.heroSlide3,
+  publicImages.crowdPavilionCourt,
+  publicImages.groupPhotoMoskito,
+  publicImages.legendsMusicBand,
   publicImages.bransonBorgCelebrate,
 ];
 
@@ -152,25 +152,25 @@ export function HomePage() {
             { src: '/images/guitar-performance.jpg', label: 'Live Music' },
             { src: '/images/necker-open-champion.jpg', label: 'Champion' },
             { src: '/images/dinner-table-guests.jpg', label: 'Gala Dinner' },
-            { src: '/images/beach-dock-group.jpg', label: 'Water Sports' },
             { src: '/images/pro-portrait-fila.jpg', label: 'The Pros' },
-            { src: '/images/island-golf-course.jpg', label: 'Golf' },
-            { src: '/images/group-photo-moskito.jpg', label: 'The Group' },
+            { src: '/images/group-photo-court.jpg', label: 'The Group' },
             { src: '/images/branson-piano-group.jpg', label: 'Backstage' },
-            { src: '/images/island-dog.jpg', label: 'Island Life' },
-            { src: '/images/island-dining-guest.jpg', label: 'Island Dining' },
+            { src: '/images/event-live-music.jpg', label: 'Celebration' },
+            { src: '/images/match-announcer.jpg', label: 'Match Day' },
+            { src: '/images/tennis-action-backhand.jpg', label: 'On Court' },
+            { src: '/images/pro-portrait-smile.jpg', label: 'All Smiles' },
             { src: '/images/tennis-action-blue.jpg', label: 'Tennis' },
             { src: '/images/branson-borg-celebrate.jpg', label: 'Legends' },
             { src: '/images/guitar-performance.jpg', label: 'Live Music' },
             { src: '/images/necker-open-champion.jpg', label: 'Champion' },
             { src: '/images/dinner-table-guests.jpg', label: 'Gala Dinner' },
-            { src: '/images/beach-dock-group.jpg', label: 'Water Sports' },
             { src: '/images/pro-portrait-fila.jpg', label: 'The Pros' },
-            { src: '/images/island-golf-course.jpg', label: 'Golf' },
-            { src: '/images/group-photo-moskito.jpg', label: 'The Group' },
+            { src: '/images/group-photo-court.jpg', label: 'The Group' },
             { src: '/images/branson-piano-group.jpg', label: 'Backstage' },
-            { src: '/images/island-dog.jpg', label: 'Island Life' },
-            { src: '/images/island-dining-guest.jpg', label: 'Island Dining' },
+            { src: '/images/event-live-music.jpg', label: 'Celebration' },
+            { src: '/images/match-announcer.jpg', label: 'Match Day' },
+            { src: '/images/tennis-action-backhand.jpg', label: 'On Court' },
+            { src: '/images/pro-portrait-smile.jpg', label: 'All Smiles' },
           ].map((item, i) => (
             <div key={i} className="flex-shrink-0 mx-2 group relative">
               <img
@@ -246,24 +246,26 @@ export function HomePage() {
               { src: '/images/golf-swing-ocean.jpg', label: 'Golf' },
               { src: '/images/beach-jump-fun.jpg', label: 'Island Fun' },
               { src: '/images/island-dining-guest.jpg', label: 'Island Dining' },
-              { src: '/images/crowd-pavilion-court.jpg', label: 'Match Day' },
               { src: '/images/island-golf-course.jpg', label: 'The Course' },
               { src: '/images/island-dog.jpg', label: 'Island Life' },
               { src: '/images/branson-courtside-mic.jpg', label: 'Courtside' },
               { src: '/images/singer-guitar-stage.jpg', label: 'Performances' },
               { src: '/images/trophy-ceremony-court.jpg', label: 'Champions' },
-              { src: '/images/legends-music-band.jpg', label: 'Live Music' },
+              { src: '/images/dinner-wide-palms.jpg', label: 'Dining' },
+              { src: '/images/dinner-beach-evening.jpg', label: 'Evening' },
+              { src: '/images/dj-legends-music.jpg', label: 'DJ Set' },
               { src: '/images/beach-dock-group.jpg', label: 'Water Sports' },
               { src: '/images/golf-swing-ocean.jpg', label: 'Golf' },
               { src: '/images/beach-jump-fun.jpg', label: 'Island Fun' },
               { src: '/images/island-dining-guest.jpg', label: 'Island Dining' },
-              { src: '/images/crowd-pavilion-court.jpg', label: 'Match Day' },
               { src: '/images/island-golf-course.jpg', label: 'The Course' },
               { src: '/images/island-dog.jpg', label: 'Island Life' },
               { src: '/images/branson-courtside-mic.jpg', label: 'Courtside' },
               { src: '/images/singer-guitar-stage.jpg', label: 'Performances' },
               { src: '/images/trophy-ceremony-court.jpg', label: 'Champions' },
-              { src: '/images/legends-music-band.jpg', label: 'Live Music' },
+              { src: '/images/dinner-wide-palms.jpg', label: 'Dining' },
+              { src: '/images/dinner-beach-evening.jpg', label: 'Evening' },
+              { src: '/images/dj-legends-music.jpg', label: 'DJ Set' },
             ].map((item, i) => (
               <div key={i} className="flex-shrink-0 mx-2 group relative">
                 <img
