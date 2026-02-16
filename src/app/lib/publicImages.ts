@@ -33,4 +33,12 @@ export const publicImages = {
   bransonBorgCelebrate: '/images/branson-borg-celebrate.jpg',
   islandGolfCourse: '/images/island-golf-course.jpg',
   bransonPianoGroup: '/images/branson-piano-group.jpg',
+  singerGuitarStage: '/images/singer-guitar-stage.jpg',
+  golfSwingOcean: '/images/golf-swing-ocean.jpg',
+  trophyCeremonyCourt: '/images/trophy-ceremony-court.jpg',
+  beachJumpFun: '/images/beach-jump-fun.jpg',
+  bransonCourtsideMic: '/images/branson-courtside-mic.jpg',
+  crowdPavilionCourt: '/images/crowd-pavilion-court.jpg',
+  legendsMusicBand: '/images/legends-music-band.jpg',
+  djLegendsMusic: '/images/dj-legends-music.jpg',
 } as const;

@@ -24,7 +24,9 @@ export function GalleryPage({ onNavigateHome, onNavigate }: GalleryPageProps) {
         '/images/group-photo-moskito.jpg',
         '/images/necker.jpg',
         '/images/island-golf-course.jpg',
+        '/images/golf-swing-ocean.jpg',
         '/images/beach-dock-group.jpg',
+        '/images/beach-jump-fun.jpg',
         '/images/island-dog.jpg',
         '/images/island-dining-guest.jpg',
       ]
@@ -35,9 +37,11 @@ export function GalleryPage({ onNavigateHome, onNavigate }: GalleryPageProps) {
       images: [
         '/images/branson-borg-celebrate.jpg',
         '/images/tennis-action-blue.jpg',
+        '/images/trophy-ceremony-court.jpg',
         '/images/necker-open-champion.jpg',
+        '/images/crowd-pavilion-court.jpg',
+        '/images/branson-courtside-mic.jpg',
         '/images/tennis-court-player.jpg',
-        '/images/match-announcer.jpg',
         '/images/group-photo-court.jpg',
       ]
     },
@@ -45,10 +49,12 @@ export function GalleryPage({ onNavigateHome, onNavigate }: GalleryPageProps) {
       title: 'Performances',
       subtitle: 'Music Under the Stars',
       images: [
+        '/images/singer-guitar-stage.jpg',
+        '/images/legends-music-band.jpg',
         '/images/guitar-performance.jpg',
         '/images/branson-piano-group.jpg',
+        '/images/dj-legends-music.jpg',
         '/images/event-live-music.jpg',
-        '/images/dinner-beach-evening.jpg',
       ]
     },
     {
@@ -56,6 +62,7 @@ export function GalleryPage({ onNavigateHome, onNavigate }: GalleryPageProps) {
       subtitle: 'Moments to Remember',
       images: [
         '/images/dinner-table-guests.jpg',
+        '/images/dinner-beach-evening.jpg',
         '/images/dinner-wide-palms.jpg',
         '/images/island-dining-guest.jpg',
         '/images/beach-dock-group.jpg',

@@ -31,7 +31,7 @@ export function ExperiencePage({ onNavigateHome, onNavigate }: ExperiencePagePro
     {
       title: 'Musical Performances',
       description: 'Experience intimate concerts featuring world-renowned artists in the most exclusive setting imaginable.',
-      image: '/images/guitar-performance.jpg',
+      image: '/images/legends-music-band.jpg',
       features: ['Andrea Bocelli concert', 'Darius Rucker performance', 'Exclusive artist meet & greets', 'Behind-the-scenes access']
     },
     {
@@ -43,7 +43,7 @@ export function ExperiencePage({ onNavigateHome, onNavigate }: ExperiencePagePro
     {
       title: 'Exclusive Access',
       description: 'Connect with fellow guests, tennis legends, and artists in intimate settings designed for meaningful connections.',
-      image: '/images/branson-piano-group.jpg',
+      image: '/images/crowd-pavilion-court.jpg',
       features: ['VIP networking events', 'Private receptions', 'Exclusive island tours', 'Personal concierge service']
     },
   ];

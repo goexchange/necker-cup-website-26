@@ -85,19 +85,19 @@ export function CharityPage({ onNavigateHome, onNavigate }: CharityPageProps) {
       year: '2024',
       title: 'Caribbean Youth Education Fund',
       description: 'Provided scholarships to 150 students across the British Virgin Islands, enabling access to higher education and vocational training.',
-      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGxlYXJuaW5nfGVufDF8fHx8MTczNzk1NzgzNHww&ixlib=rb-4.1.0&q=80&w=1080'
+      image: '/images/group-photo-moskito.jpg'
     },
     {
       year: '2023',
       title: 'Coral Reef Restoration',
       description: 'Funded the restoration of 5 hectares of coral reef around Necker Island, creating sustainable marine habitats.',
-      image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3JhbCUyMHJlZWYlMjB1bmRlcndhdGVyfGVufDF8fHx8MTczNzk1Nzg1N3ww&ixlib=rb-4.1.0&q=80&w=1080'
+      image: '/images/beach-dock-group.jpg'
     },
     {
       year: '2022',
       title: 'Small Business Recovery',
       description: 'Supported 75 island businesses with recovery grants following hurricane season, preserving local livelihoods.',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWFsbCUyMGJ1c2luZXNzJTIwb3duZXJ8ZW58MXx8fHwxNzM3OTU3ODgyfDA&ixlib=rb-4.1.0&q=80&w=1080'
+      image: '/images/branson-piano-group.jpg'
     },
   ];
 
@@ -116,7 +116,7 @@ export function CharityPage({ onNavigateHome, onNavigate }: CharityPageProps) {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWxwaW5nJTIwaGFuZHMlMjBjb21tdW5pdHl8ZW58MXx8fHwxNzM3OTU3OTA3fDA&ixlib=rb-4.1.0&q=80&w=1080')`
+            backgroundImage: `url('/images/trophy-ceremony-court.jpg')`
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/80 via-teal-800/70 to-cyan-900/80" />

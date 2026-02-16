@@ -28,6 +28,14 @@ const GALLERY_IMAGES = {
   bransonBorg: publicImages.bransonBorgCelebrate,
   golfCourse: publicImages.islandGolfCourse,
   bransonPiano: publicImages.bransonPianoGroup,
+  singerStage: publicImages.singerGuitarStage,
+  golfSwing: publicImages.golfSwingOcean,
+  trophy: publicImages.trophyCeremonyCourt,
+  beachJump: publicImages.beachJumpFun,
+  bransonMic: publicImages.bransonCourtsideMic,
+  crowdPavilion: publicImages.crowdPavilionCourt,
+  legendsBand: publicImages.legendsMusicBand,
+  djSet: publicImages.djLegendsMusic,
 };
 
 const galleryCategories = [
@@ -38,7 +46,9 @@ const galleryCategories = [
       GALLERY_IMAGES.groupMoskito,
       GALLERY_IMAGES.neckerAerial,
       GALLERY_IMAGES.golfCourse,
+      GALLERY_IMAGES.golfSwing,
       GALLERY_IMAGES.beachDock,
+      GALLERY_IMAGES.beachJump,
       GALLERY_IMAGES.islandDog,
       GALLERY_IMAGES.diningGuest,
     ]
@@ -49,9 +59,11 @@ const galleryCategories = [
     images: [
       GALLERY_IMAGES.bransonBorg,
       GALLERY_IMAGES.tennisBlue,
+      GALLERY_IMAGES.trophy,
       GALLERY_IMAGES.champion,
+      GALLERY_IMAGES.crowdPavilion,
+      GALLERY_IMAGES.bransonMic,
       GALLERY_IMAGES.courtsNight,
-      GALLERY_IMAGES.announcer,
       GALLERY_IMAGES.groupPhoto,
     ]
   },
@@ -59,10 +71,12 @@ const galleryCategories = [
     title: 'Performances',
     subtitle: 'Music Under the Stars',
     images: [
+      GALLERY_IMAGES.singerStage,
+      GALLERY_IMAGES.legendsBand,
       GALLERY_IMAGES.guitar,
       GALLERY_IMAGES.bransonPiano,
+      GALLERY_IMAGES.djSet,
       GALLERY_IMAGES.endOfWorldParty,
-      GALLERY_IMAGES.dinnerBeach,
     ]
   },
   {
@@ -70,6 +84,7 @@ const galleryCategories = [
     subtitle: 'Moments to Remember',
     images: [
       GALLERY_IMAGES.dinnerTable,
+      GALLERY_IMAGES.dinnerBeach,
       GALLERY_IMAGES.charityAuction,
       GALLERY_IMAGES.diningGuest,
       GALLERY_IMAGES.beachDock,
