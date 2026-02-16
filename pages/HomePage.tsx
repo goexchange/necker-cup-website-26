@@ -394,7 +394,7 @@ export function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             <div>
-              <div className="flex items-center gap-3 mb-6"><div className="w-10 h-10 rounded-full bg-emerald-800 flex items-center justify-center"><span className="font-display text-lg font-semibold">N</span></div><span className="font-display text-xl">Necker Cup 26</span></div>
+              <div className="flex items-center mb-6"><img src="/images/necker-cup-logo.svg" alt="Necker Cup 2026" className="h-12 w-auto brightness-0 invert" /></div>
               <p className="font-body text-stone-400 text-sm leading-relaxed">Tennis Pro-Am · November 29 – December 4, 2026 · Necker Island, BVI. Benefits National Tennis Foundation & Virgin Unite.</p>
             </div>
             <div>
