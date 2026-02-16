@@ -2,11 +2,12 @@ import { useReservationForm } from '@/app/context/ReservationFormContext';
 import virginUniteLogo from '@/app/logos/virgin_unite.png';
 import ntfLogo from '@/app/logos/ntf.png';
 import icfLogo from '@/app/logos/icf.png';
+import sfctLogo from '@/app/logos/sfct.png';
 
 const beneficiaries = [
-  { name: 'Virgin Unite', logo: virginUniteLogo, description: 'The entrepreneurial foundation of the Virgin Group. Richard Branson and the Virgin Group cover all overheads, meaning 100% of donations go directly to the frontline. Virgin Unite focuses on shining a spotlight on unacceptable issues, incubating disruptive collaborations, and empowering entrepreneurs to change business for good.', link: 'https://www.virgin.com/virgin-unite', color: 'bg-red-600', isCircular: true },
+  { name: 'Virgin Unite', logo: virginUniteLogo, description: 'The entrepreneurial foundation of the Virgin Group. Richard Branson and the Virgin Group cover all overheads, meaning 100% of donations go directly to the frontline. Virgin Unite focuses on shining a spotlight on unacceptable issues, incubating disruptive collaborations, and empowering entrepreneurs to change business for good.', link: 'https://www.virgin.com/virgin-unite', color: 'bg-white', isCircular: false },
   { name: 'National Tennis Foundation (NTF)', logo: ntfLogo, description: 'A nationally recognized 501(c)(3) that provides scholarships and training opportunities to exceptional student athletes regardless of race or economic means. NTF is based in Las Vegas and has been supported at every single Necker Cup since the event\'s founding.', link: 'https://www.nationaltennisfoundation.org', color: 'bg-emerald-600', isCircular: false },
-  { name: 'BVI Lawn Tennis Association', description: 'Dedicated to youth tennis development in the British Virgin Islands territory.', link: null, color: 'bg-amber-600', isCircular: false },
+  { name: 'BVI Lawn Tennis Association', logo: sfctLogo, description: 'Dedicated to youth tennis development in the British Virgin Islands territory.', link: null, color: 'bg-amber-600', isCircular: false },
   { name: 'Inspiring Children Foundation', logo: icfLogo, description: 'Co-founded by Ryan Wolfington, focused on providing comprehensive programs for underprivileged young people in academics, athletics, leadership and character development. Has provided over 70 scholarships to colleges including Harvard, Stanford, West Point, Princeton, and Georgetown.', link: 'https://inspiringchildren.org', color: 'bg-blue-600', isCircular: false },
 ];
 
