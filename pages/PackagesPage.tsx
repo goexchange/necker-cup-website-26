@@ -18,14 +18,14 @@ export function PackagesPage() {
   const { openForm } = useReservationForm();
 
   return (
-    <div className="min-h-screen bg-stone-50 antialiased pt-[72px]">
+    <div className="min-h-screen bg-stone-50 antialiased">
       <style>{`
         .font-display { font-family: 'Playfair Display', Georgia, serif; }
         .font-body { font-family: 'DM Sans', system-ui, sans-serif; }
       `}</style>
 
       {/* HERO */}
-      <section className="relative py-24 lg:py-32 bg-gradient-to-br from-emerald-900 via-teal-800 to-cyan-900 overflow-hidden">
+      <section className="relative pt-40 lg:pt-52 pb-24 lg:pb-32 bg-gradient-to-br from-emerald-900 via-teal-800 to-cyan-900 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,255,255,0.1)_0%,_transparent_50%)]" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12 text-center text-white">
           <p className="font-body text-white/70 text-sm tracking-[0.3em] uppercase mb-6">
