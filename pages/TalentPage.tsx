@@ -89,22 +89,8 @@ export function TalentPage() {
         </div>
       </section>
 
-      {/* 2026 TALENT - GOLF */}
-      <section className="py-24 lg:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <p className="font-body text-emerald-800 text-sm tracking-[0.2em] uppercase mb-4">2026 Necker Cup</p>
-          <h2 className="font-display text-3xl md:text-4xl text-stone-900 mb-4">This Year's Golf Pros</h2>
-          <p className="font-body text-stone-500 text-lg mb-10">Joining us for the 2026 Necker Cup</p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-            {golfPros.map((pro, i) => (
-              <TalentCard key={i} name={pro.name} subtitle={pro.achievement} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* PAST TENNIS PROS */}
-      <section className="py-24 lg:py-32 bg-stone-50">
+      <section className="py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <p className="font-body text-stone-400 text-sm tracking-[0.2em] uppercase mb-4">Past Necker Cup Talent</p>
           <h2 className="font-display text-3xl md:text-4xl text-stone-900 mb-10">Past Tennis Legends & Pros</h2>
@@ -133,6 +119,20 @@ export function TalentPage() {
             Plus numerous high-profile entrepreneurs and business leaders from around the world. For more, visit{' '}
             <a href="https://premierlive.com" target="_blank" rel="noopener noreferrer" className="text-emerald-800 hover:text-emerald-900 underline font-medium">premierlive.com</a>
           </p>
+        </div>
+      </section>
+
+      {/* 2026 GOLF PROS */}
+      <section className="py-24 lg:py-32 bg-stone-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <p className="font-body text-emerald-800 text-sm tracking-[0.2em] uppercase mb-4">2026 Necker Cup</p>
+          <h2 className="font-display text-3xl md:text-4xl text-stone-900 mb-4">This Year's Golf Pros</h2>
+          <p className="font-body text-stone-500 text-lg mb-10">Joining us for the 2026 Necker Cup</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+            {golfPros.map((pro, i) => (
+              <TalentCard key={i} name={pro.name} subtitle={pro.achievement} />
+            ))}
+          </div>
         </div>
       </section>
 
