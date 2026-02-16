@@ -11,7 +11,7 @@ const navLinks = [
   { to: '/gallery', label: 'Gallery' },
   { to: '/sponsorship', label: 'Sponsorship' },
   { to: '/charity', label: 'Charity' },
-  { to: '/agenda', label: 'Agenda' },
+  { to: '/tennis', label: 'Tennis' },
 ];
 
 export function Nav() {
