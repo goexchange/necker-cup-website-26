@@ -145,7 +145,8 @@ export function TennisPage() {
                 The <span className="italic text-emerald-800">Courts</span>
               </h2>
               <p className="font-body text-stone-600 text-lg leading-relaxed mb-8">
-                Play on championship-grade courts with stunning Caribbean ocean views. 
+                We have three tennis courts on Necker Island -- two at the Tennis Pavilion and one at the Branson Residence. 
+                All are championship-grade with stunning Caribbean ocean views. 
                 Whether it's an early morning clinic, afternoon Pro-Am match, or twilight exhibition, 
                 every moment on court is unforgettable.
               </p>
