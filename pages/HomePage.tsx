@@ -362,8 +362,9 @@ export function HomePage() {
               <a href="tel:+16784786649" className="font-body text-sm text-stone-300 hover:text-white transition-colors">CALL: 678.478.6649</a>
               {['Privacy Policy', 'Terms & Conditions', 'Contact'].map(link => <a key={link} href="#" className="font-body text-sm text-stone-400 hover:text-white transition-colors">{link}</a>)}
             </div>
-            <p className="font-body text-sm text-stone-500">© 2026 Necker Cup. All rights reserved. Powered by Premier Live & Mehow</p>
+            <p className="font-body text-sm text-stone-500">© 2026 Necker Cup. All rights reserved.</p>
           </div>
+          <p className="font-body text-sm text-stone-500 text-center mt-6">This event is owned and managed by <a href="https://www.premierlive.com" target="_blank" rel="noopener noreferrer" className="text-stone-300 hover:text-white underline transition-colors">Premier Live</a></p>
         </div>
       </footer>
     </div>
