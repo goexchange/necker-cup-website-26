@@ -207,7 +207,7 @@ export function GalleryPage({ onNavigateHome, onNavigate }: GalleryPageProps) {
             {[
               ['1,000+', 'Captured Moments'],
               ['12', 'Years of History'],
-              ['48', 'Exclusive Guests'],
+              ['148', 'Elite Guests'],
               ['100%', 'Unforgettable']
             ].map(([stat, label], idx) => (
               <div key={idx} className="text-center">

@@ -140,7 +140,7 @@ export function TennisPage() {
             Ready to play in <span className="italic">paradise</span>?
           </h2>
           <p className="font-body text-white/80 text-lg mb-10">
-            Limited to 48 guests. Pro-Am spots fill quickly for this once-in-a-lifetime tournament.
+            Limited to 148 guests. Pro-Am spots fill quickly for this once-in-a-lifetime tournament.
           </p>
           <button
             onClick={openForm}

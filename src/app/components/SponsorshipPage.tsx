@@ -80,7 +80,7 @@ export function SponsorshipPage({ onNavigateHome, onNavigate }: SponsorshipPageP
   ];
 
   const stats = [
-    { value: '48', label: 'Elite Guests', desc: 'High-net-worth attendees' },
+    { value: '148', label: 'Elite Guests', desc: 'High-net-worth attendees' },
     { value: '2M+', label: 'Media Reach', desc: 'Global impressions' },
     { value: '15', label: 'Countries', desc: 'International audience' },
     { value: '$50M+', label: 'Aggregate Wealth', desc: 'Combined net worth' }
