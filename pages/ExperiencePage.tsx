@@ -1,6 +1,46 @@
 import { useReservationForm } from '@/app/context/ReservationFormContext';
 import { publicImages } from '@/app/lib/publicImages';
 import { Calendar, Clock } from 'lucide-react';
+import { useState } from 'react';
+
+const activityCategories = [
+  {
+    title: 'Water Sports',
+    desc: 'Kiteboarding, sailing, wakeboarding, snorkeling, scuba diving, and paddleboarding',
+    images: [
+      { src: publicImages.beachDockGroup, alt: 'Guests at the beach dock ready for water sports' },
+      { src: publicImages.beachJumpFun, alt: 'Beach fun and jumping into the Caribbean' },
+      { src: publicImages.necker, alt: 'Aerial view of Necker Island waters' },
+    ],
+  },
+  {
+    title: 'Golf',
+    desc: 'Barefoot golf at Nail Bay Resort with a personal butler and ocean views from every hole',
+    images: [
+      { src: publicImages.islandGolfCourse, alt: 'Island golf course with ocean views' },
+      { src: publicImages.golfSwingOcean, alt: 'Golf swing with Caribbean ocean backdrop' },
+      { src: publicImages.neckerOpenChampion, alt: 'Necker Open champion with trophy' },
+    ],
+  },
+  {
+    title: 'Island Fun',
+    desc: 'Lemur feeding, tortoise encounters, island walks, yoga, meditation, and pool parties',
+    images: [
+      { src: publicImages.islandDog, alt: 'Island dog relaxing in paradise' },
+      { src: publicImages.bransonPianoGroup, alt: 'Group gathered around the piano with Branson' },
+      { src: publicImages.groupPhotoMoskito, alt: 'Group photo on the island' },
+    ],
+  },
+  {
+    title: 'Island Dining',
+    desc: 'Gourmet meals, beach barbecues, sushi lunches, and unforgettable dinner experiences',
+    images: [
+      { src: publicImages.dinnerBeachEvening, alt: 'Evening dinner on the beach' },
+      { src: publicImages.dinnerTableGuests, alt: 'Guests enjoying dinner together' },
+      { src: publicImages.dinnerWidePalms, alt: 'Wide dinner setting under the palms' },
+    ],
+  },
+];
 
 const agenda = [
   {
@@ -153,6 +193,7 @@ const experiences = [
 
 export function ExperiencePage() {
   const { openForm } = useReservationForm();
+  const [activityLightbox, setActivityLightbox] = useState<{ catIdx: number; imgIdx: number } | null>(null);
 
   return (
     <div className="min-h-screen bg-stone-50 antialiased">
@@ -245,23 +286,103 @@ export function ExperiencePage() {
       {/* ACTIVITIES BEYOND TENNIS */}
       <section className="py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="text-center mb-12">
+          <div className="text-center mb-14">
             <p className="font-body text-emerald-800 text-sm tracking-[0.2em] uppercase mb-4">At Leisure</p>
             <h2 className="font-display text-4xl md:text-5xl text-stone-900 mb-4">
               Activities <span className="italic text-emerald-800">Beyond Tennis</span>
             </h2>
-            <p className="font-body text-stone-600 max-w-2xl mx-auto">
-              When they say "at leisure," guests have full access to everything the island has to offer.
+            <p className="font-body text-stone-600 max-w-3xl mx-auto">
+              When they say "at leisure," guests have full access to everything the island has to offer:
+              kiteboarding, sailing, wakeboarding, snorkeling, scuba diving, paddleboarding, beach tennis,
+              pickleball, swimming pools, hot tubs, lemur feeding, tortoise encounters, island walks, and hiking.
+              Spa services are one of the few things not included.
             </p>
           </div>
-          <div className="flex flex-wrap justify-center gap-4">
-            {['Kiteboarding and kite surfing', 'Sailing (Hobie Cat races)', 'Wakeboarding', 'Snorkeling and scuba diving', 'Paddleboarding', 'Beach tennis and pickleball', 'Swimming pools and hot tubs', 'Lemur feeding', 'Tortoise encounters', 'Island walks and hiking'].map((activity) => (
-              <span key={activity} className="font-body bg-stone-100 text-stone-700 px-5 py-2.5 rounded-full text-sm">{activity}</span>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {activityCategories.map((category, catIdx) => (
+              <button
+                key={catIdx}
+                onClick={() => setActivityLightbox({ catIdx, imgIdx: 0 })}
+                className="group relative aspect-[3/2] rounded-2xl overflow-hidden text-left"
+              >
+                <img
+                  src={category.images[0].src}
+                  alt={category.images[0].alt}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
+                  <h3 className="font-display text-2xl lg:text-3xl text-white mb-2">{category.title}</h3>
+                  <p className="font-body text-white/70 text-sm lg:text-base leading-relaxed">{category.desc}</p>
+                  <p className="font-body text-emerald-300 text-xs mt-3 tracking-wide uppercase group-hover:text-emerald-200 transition-colors">
+                    Click to view gallery ({category.images.length} photos)
+                  </p>
+                </div>
+              </button>
             ))}
           </div>
-          <p className="font-body text-stone-500 text-sm text-center mt-6">Spa services are one of the few things not included.</p>
         </div>
       </section>
+
+      {/* ACTIVITY LIGHTBOX */}
+      {activityLightbox && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+          onClick={() => setActivityLightbox(null)}
+        >
+          <button
+            className="absolute top-6 right-6 text-white/70 hover:text-white text-4xl font-light transition-colors"
+            onClick={() => setActivityLightbox(null)}
+            aria-label="Close lightbox"
+          >
+            &times;
+          </button>
+          <button
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white text-5xl font-light transition-colors"
+            onClick={(e) => {
+              e.stopPropagation();
+              const imgs = activityCategories[activityLightbox.catIdx].images;
+              setActivityLightbox({
+                catIdx: activityLightbox.catIdx,
+                imgIdx: (activityLightbox.imgIdx - 1 + imgs.length) % imgs.length,
+              });
+            }}
+            aria-label="Previous image"
+          >
+            &#8249;
+          </button>
+          <div className="flex flex-col items-center gap-4" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={activityCategories[activityLightbox.catIdx].images[activityLightbox.imgIdx].src}
+              alt={activityCategories[activityLightbox.catIdx].images[activityLightbox.imgIdx].alt}
+              className="max-w-full max-h-[80vh] rounded-lg object-contain"
+            />
+            <div className="text-center">
+              <p className="font-display text-xl text-white">
+                {activityCategories[activityLightbox.catIdx].title}
+              </p>
+              <p className="font-body text-white/50 text-sm mt-1">
+                {activityLightbox.imgIdx + 1} / {activityCategories[activityLightbox.catIdx].images.length}
+              </p>
+            </div>
+          </div>
+          <button
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white text-5xl font-light transition-colors"
+            onClick={(e) => {
+              e.stopPropagation();
+              const imgs = activityCategories[activityLightbox.catIdx].images;
+              setActivityLightbox({
+                catIdx: activityLightbox.catIdx,
+                imgIdx: (activityLightbox.imgIdx + 1) % imgs.length,
+              });
+            }}
+            aria-label="Next image"
+          >
+            &#8250;
+          </button>
+        </div>
+      )}
 
       {/* TESTIMONIAL */}
       <section className="py-24 lg:py-32 bg-stone-100">
