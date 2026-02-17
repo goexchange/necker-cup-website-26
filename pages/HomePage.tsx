@@ -43,7 +43,8 @@ export function HomePage() {
   const [showVideo, setShowVideo] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const { openForm } = useReservationForm();
-
+  const [activityLightbox, setActivityLightbox] = useState<number | null>(null);
+  
   useEffect(() => {
     const hash = window.location.hash?.slice(1);
     if (hash) {
@@ -79,8 +80,7 @@ export function HomePage() {
         @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         .marquee-track { display: flex; animation: marquee 30s linear infinite; }
         .marquee-track:hover { animation-play-state: paused; }
-        .activities-scroll-track { display: flex; animation: marquee 40s linear infinite; }
-        .activities-scroll-track:hover { animation-play-state: paused; }
+
       `}</style>
 
       <section className="relative h-screen min-h-[700px] flex items-end overflow-hidden">
@@ -237,50 +237,92 @@ export function HomePage() {
       <section className="py-24 lg:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <p className="font-body text-emerald-800 text-sm tracking-[0.2em] uppercase mb-6">Activities Beyond Tennis</p>
-          <p className="font-body text-stone-600 text-lg md:text-xl leading-relaxed max-w-3xl mb-8">When they say "at leisure," guests have full access to everything the island has to offer: kiteboarding and kite surfing, sailing (including Hobie Cat races), wakeboarding, snorkeling and scuba diving, paddleboarding, beach tennis and pickleball, swimming pools and hot tubs, lemur feeding, tortoise encounters, island walks and hiking. Spa services are one of the few things not included.</p>
-        </div>
-        <div className="mt-10 overflow-hidden">
-          <div className="activities-scroll-track">
+          <p className="font-body text-stone-600 text-lg md:text-xl leading-relaxed max-w-3xl mb-12">When they say "at leisure," guests have full access to everything the island has to offer: kiteboarding and kite surfing, sailing (including Hobie Cat races), wakeboarding, snorkeling and scuba diving, paddleboarding, beach tennis and pickleball, swimming pools and hot tubs, lemur feeding, tortoise encounters, island walks and hiking. Spa services are one of the few things not included.</p>
+          
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { src: '/images/beach-dock-group.jpg', label: 'Water Sports' },
-              { src: '/images/golf-swing-ocean.jpg', label: 'Golf' },
-              { src: '/images/beach-jump-fun.jpg', label: 'Island Fun' },
-              { src: '/images/island-dining-guest.jpg', label: 'Island Dining' },
-              { src: '/images/island-golf-course.jpg', label: 'The Course' },
-              { src: '/images/island-dog.jpg', label: 'Island Life' },
-              { src: '/images/branson-courtside-mic.jpg', label: 'Courtside' },
-              { src: '/images/singer-guitar-stage.jpg', label: 'Performances' },
-              { src: '/images/trophy-ceremony-court.jpg', label: 'Champions' },
-              { src: '/images/dinner-wide-palms.jpg', label: 'Dining' },
-              { src: '/images/dinner-beach-evening.jpg', label: 'Evening' },
-              { src: '/images/dj-legends-music.jpg', label: 'DJ Set' },
-              { src: '/images/beach-dock-group.jpg', label: 'Water Sports' },
-              { src: '/images/golf-swing-ocean.jpg', label: 'Golf' },
-              { src: '/images/beach-jump-fun.jpg', label: 'Island Fun' },
-              { src: '/images/island-dining-guest.jpg', label: 'Island Dining' },
-              { src: '/images/island-golf-course.jpg', label: 'The Course' },
-              { src: '/images/island-dog.jpg', label: 'Island Life' },
-              { src: '/images/branson-courtside-mic.jpg', label: 'Courtside' },
-              { src: '/images/singer-guitar-stage.jpg', label: 'Performances' },
-              { src: '/images/trophy-ceremony-court.jpg', label: 'Champions' },
-              { src: '/images/dinner-wide-palms.jpg', label: 'Dining' },
-              { src: '/images/dinner-beach-evening.jpg', label: 'Evening' },
-              { src: '/images/dj-legends-music.jpg', label: 'DJ Set' },
+              { src: publicImages.beachDockGroup, label: 'Water Sports', desc: 'Kiteboarding, sailing, wakeboarding, snorkeling, and paddleboarding' },
+              { src: publicImages.golfSwingOcean, label: 'Golf', desc: 'Barefoot golf at Nail Bay Resort with ocean views from every hole' },
+              { src: publicImages.beachJumpFun, label: 'Island Fun', desc: 'Lemur feeding, tortoise encounters, yoga, and island adventures' },
+              { src: publicImages.dinnerBeachEvening, label: 'Island Dining', desc: 'Gourmet meals, beach barbecues, and unforgettable dinner settings' },
             ].map((item, i) => (
-              <div key={i} className="flex-shrink-0 mx-2 group relative">
+              <button
+                key={i}
+                onClick={() => setActivityLightbox(i)}
+                className="group relative aspect-[3/4] rounded-2xl overflow-hidden text-left"
+              >
                 <img
                   src={item.src}
                   alt={item.label}
-                  className="w-[120px] h-[120px] rounded-lg object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 flex items-end rounded-lg overflow-hidden">
-                  <span className="w-full text-center font-body text-white text-[10px] sm:text-xs py-1.5 bg-gradient-to-t from-black/70 to-transparent">{item.label}</span>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <h3 className="font-display text-xl lg:text-2xl text-white mb-1">{item.label}</h3>
+                  <p className="font-body text-white/60 text-xs lg:text-sm leading-relaxed">{item.desc}</p>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         </div>
       </section>
+
+      {/* ACTIVITY LIGHTBOX */}
+      {activityLightbox !== null && (() => {
+        const allActivityImages = [
+          { src: publicImages.beachDockGroup, label: 'Water Sports' },
+          { src: publicImages.golfSwingOcean, label: 'Golf' },
+          { src: publicImages.beachJumpFun, label: 'Island Fun' },
+          { src: publicImages.dinnerBeachEvening, label: 'Island Dining' },
+          { src: publicImages.islandGolfCourse, label: 'The Course' },
+          { src: publicImages.islandDog, label: 'Island Life' },
+          { src: publicImages.bransonCourtsideMic, label: 'Courtside' },
+          { src: publicImages.singerGuitarStage, label: 'Performances' },
+          { src: publicImages.trophyCeremonyCourt, label: 'Champions' },
+          { src: publicImages.dinnerWidePalms, label: 'Dining' },
+          { src: publicImages.djLegendsMusic, label: 'DJ Set' },
+          { src: publicImages.bransonPianoGroup, label: 'Piano Night' },
+        ];
+        return (
+          <div
+            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+            onClick={() => setActivityLightbox(null)}
+          >
+            <button
+              className="absolute top-6 right-6 text-white/70 hover:text-white text-4xl font-light transition-colors z-10"
+              onClick={() => setActivityLightbox(null)}
+              aria-label="Close lightbox"
+            >
+              &times;
+            </button>
+            <button
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white text-5xl font-light transition-colors z-10"
+              onClick={(e) => { e.stopPropagation(); setActivityLightbox((activityLightbox - 1 + allActivityImages.length) % allActivityImages.length); }}
+              aria-label="Previous image"
+            >
+              &#8249;
+            </button>
+            <div className="flex flex-col items-center gap-4" onClick={(e) => e.stopPropagation()}>
+              <img
+                src={allActivityImages[activityLightbox].src}
+                alt={allActivityImages[activityLightbox].label}
+                className="max-w-full max-h-[80vh] rounded-lg object-contain"
+              />
+              <div className="text-center">
+                <p className="font-display text-xl text-white">{allActivityImages[activityLightbox].label}</p>
+                <p className="font-body text-white/50 text-sm mt-1">{activityLightbox + 1} / {allActivityImages.length}</p>
+              </div>
+            </div>
+            <button
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white text-5xl font-light transition-colors z-10"
+              onClick={(e) => { e.stopPropagation(); setActivityLightbox((activityLightbox + 1) % allActivityImages.length); }}
+              aria-label="Next image"
+            >
+              &#8250;
+            </button>
+          </div>
+        );
+      })()}
 
       <section className="py-24 lg:py-32 bg-stone-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
