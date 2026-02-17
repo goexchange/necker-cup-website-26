@@ -4,9 +4,23 @@ import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
+  appType: 'spa',
   server: {
-    host: 'localhost', // use localhost to avoid uv_interface_addresses in restricted envs
+    host: 'localhost',
     port: 5173,
+    watch: {
+      usePolling: false,
+      ignored: [
+        '**/node_modules/**',
+        '**/.git/**',
+        '**/vite.config.ts.timestamp*',
+        '**/public/**',
+        '**/user_read_only_context/**',
+      ],
+    },
+    hmr: {
+      overlay: false,
+    },
   },
   preview: {
     host: true,

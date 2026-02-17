@@ -31,14 +31,14 @@ export function TennisPage() {
   const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-stone-50 antialiased pt-[72px]">
+    <div className="min-h-screen bg-stone-50 antialiased">
       <style>{`
         .font-display { font-family: 'Playfair Display', Georgia, serif; }
         .font-body { font-family: 'DM Sans', system-ui, sans-serif; }
       `}</style>
 
       {/* HERO -- full-bleed tennis banner */}
-      <section className="relative py-24 lg:py-40 bg-stone-900 text-white overflow-hidden">
+      <section className="relative pt-40 lg:pt-52 pb-24 lg:pb-40 bg-stone-900 text-white overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-50" style={{ backgroundImage: `url('${publicImages.crowdPavilionCourt}')` }} />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/60 to-stone-900/30" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12">

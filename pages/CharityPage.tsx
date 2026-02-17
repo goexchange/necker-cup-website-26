@@ -20,7 +20,7 @@ export function CharityPage() {
   const { openForm } = useReservationForm();
 
   return (
-    <div className="min-h-screen bg-stone-50 pt-[72px]">
+    <div className="min-h-screen bg-stone-50">
       <style>{`
         .font-display { font-family: 'Playfair Display', Georgia, serif; }
         .font-body { font-family: 'DM Sans', system-ui, sans-serif; }

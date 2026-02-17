@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { useReservationForm } from '@/app/context/ReservationFormContext';
 
@@ -17,11 +17,9 @@ const navLinks = [
 export function Nav() {
   const { openForm } = useReservationForm();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { pathname } = useLocation();
   const [scrolled, setScrolled] = useState(false);
 
-  const isHome = pathname === '/';
-  const floating = isHome && !scrolled;
+  const floating = !scrolled;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
