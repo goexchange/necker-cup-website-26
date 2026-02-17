@@ -10,7 +10,13 @@ export default defineConfig({
     port: 5173,
     watch: {
       usePolling: false,
-      ignored: ['**/node_modules/**', '**/.git/**', '**/vite.config.ts.timestamp*', '**/public/images/**'],
+      ignored: [
+        '**/node_modules/**',
+        '**/.git/**',
+        '**/vite.config.ts.timestamp*',
+        '**/public/**',
+        '**/user_read_only_context/**',
+      ],
     },
     hmr: {
       overlay: false,
