@@ -4,11 +4,13 @@ import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
+  appType: 'spa',
   server: {
     host: 'localhost',
     port: 5173,
     watch: {
-      ignored: ['**/node_modules/**', '**/.git/**', '**/vite.config.ts.timestamp*'],
+      usePolling: false,
+      ignored: ['**/node_modules/**', '**/.git/**', '**/vite.config.ts.timestamp*', '**/public/images/**'],
     },
     hmr: {
       overlay: false,
