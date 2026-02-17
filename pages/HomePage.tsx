@@ -235,48 +235,43 @@ export function HomePage() {
       </section>
 
       <section className="py-24 lg:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-10">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <p className="font-body text-emerald-800 text-sm tracking-[0.2em] uppercase mb-6">Activities Beyond Tennis</p>
-          <p className="font-body text-stone-600 text-lg md:text-xl leading-relaxed max-w-3xl">When they say "at leisure," guests have full access to everything the island has to offer: kiteboarding and kite surfing, sailing (including Hobie Cat races), wakeboarding, snorkeling and scuba diving, paddleboarding, beach tennis and pickleball, swimming pools and hot tubs, lemur feeding, tortoise encounters, island walks and hiking. Spa services are one of the few things not included.</p>
-        </div>
+          <p className="font-body text-stone-600 text-lg md:text-xl leading-relaxed max-w-3xl mb-10">When they say "at leisure," guests have full access to everything the island has to offer: kiteboarding and kite surfing, sailing (including Hobie Cat races), wakeboarding, snorkeling and scuba diving, paddleboarding, beach tennis and pickleball, swimming pools and hot tubs, lemur feeding, tortoise encounters, island walks and hiking. Spa services are one of the few things not included.</p>
 
-        <div
-          className="flex gap-4 overflow-x-auto px-6 lg:px-12 pb-6 snap-x snap-mandatory scrollbar-thin"
-          style={{ scrollbarColor: '#a8a29e transparent' }}
-        >
-          {[
-            { src: publicImages.beachDockGroup, label: 'Water Sports' },
-            { src: publicImages.golfSwingOcean, label: 'Golf' },
-            { src: publicImages.beachJumpFun, label: 'Island Fun' },
-            { src: publicImages.dinnerBeachEvening, label: 'Island Dining' },
-            { src: publicImages.islandGolfCourse, label: 'The Course' },
-            { src: publicImages.islandDog, label: 'Island Life' },
-            { src: publicImages.bransonCourtsideMic, label: 'Courtside' },
-            { src: publicImages.singerGuitarStage, label: 'Performances' },
-            { src: publicImages.trophyCeremonyCourt, label: 'Champions' },
-            { src: publicImages.dinnerWidePalms, label: 'Dining' },
-            { src: publicImages.djLegendsMusic, label: 'DJ Set' },
-            { src: publicImages.bransonPianoGroup, label: 'Piano Night' },
-            { src: publicImages.groupPhotoMoskito, label: 'Group Photo' },
-            { src: publicImages.crowdPavilionCourt, label: 'Match Day' },
-            { src: publicImages.legendsMusicBand, label: 'Live Music' },
-          ].map((item, i) => (
-            <button
-              key={i}
-              onClick={() => setActivityLightbox(i)}
-              className="group relative flex-shrink-0 w-64 md:w-72 lg:w-80 aspect-[3/4] rounded-2xl overflow-hidden snap-start"
-            >
-              <img
-                src={item.src}
-                alt={item.label}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-5">
-                <h3 className="font-display text-xl text-white">{item.label}</h3>
-              </div>
-            </button>
-          ))}
+          <div
+            className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory"
+            style={{ scrollbarColor: '#a8a29e transparent' }}
+          >
+            {[
+              { src: publicImages.beachDockGroup, label: 'Water Sports' },
+              { src: publicImages.golfSwingOcean, label: 'Golf' },
+              { src: publicImages.beachJumpFun, label: 'Island Fun' },
+              { src: publicImages.dinnerBeachEvening, label: 'Island Dining' },
+              { src: publicImages.islandGolfCourse, label: 'The Course' },
+              { src: publicImages.islandDog, label: 'Island Life' },
+              { src: publicImages.bransonCourtsideMic, label: 'Courtside' },
+              { src: publicImages.singerGuitarStage, label: 'Performances' },
+              { src: publicImages.trophyCeremonyCourt, label: 'Champions' },
+              { src: publicImages.dinnerWidePalms, label: 'Dining' },
+            ].map((item, i) => (
+              <button
+                key={i}
+                onClick={() => setActivityLightbox(i)}
+                className="group relative flex-shrink-0 w-[calc(25%-12px)] min-w-[200px] aspect-[3/4] rounded-2xl overflow-hidden snap-start"
+              >
+                <img
+                  src={item.src}
+                  alt={item.label}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <h3 className="font-display text-xl text-white">{item.label}</h3>
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -293,11 +288,6 @@ export function HomePage() {
           { src: publicImages.singerGuitarStage, label: 'Performances' },
           { src: publicImages.trophyCeremonyCourt, label: 'Champions' },
           { src: publicImages.dinnerWidePalms, label: 'Dining' },
-          { src: publicImages.djLegendsMusic, label: 'DJ Set' },
-          { src: publicImages.bransonPianoGroup, label: 'Piano Night' },
-          { src: publicImages.groupPhotoMoskito, label: 'Group Photo' },
-          { src: publicImages.crowdPavilionCourt, label: 'Match Day' },
-          { src: publicImages.legendsMusicBand, label: 'Live Music' },
         ];
         return (
           <div
