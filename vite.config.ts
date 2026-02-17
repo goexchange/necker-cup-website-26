@@ -5,8 +5,14 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   server: {
-    host: 'localhost', // use localhost to avoid uv_interface_addresses in restricted envs
+    host: 'localhost',
     port: 5173,
+    watch: {
+      ignored: ['**/node_modules/**', '**/.git/**', '**/vite.config.ts.timestamp*'],
+    },
+    hmr: {
+      overlay: false,
+    },
   },
   preview: {
     host: true,
