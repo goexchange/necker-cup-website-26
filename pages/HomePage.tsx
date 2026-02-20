@@ -365,20 +365,19 @@ export function HomePage() {
               { name: 'John McEnroe', image: publicImages.johnmcenroe },
               { name: 'Rod Laver', image: publicImages.rodlaver },
               { name: 'Caroline Wozniacki', image: publicImages.carolinewozniacki },
-              { name: 'Juan Martin Del Potro' },
-              { name: 'Dominic Thiem' },
+              { name: 'Juan Martin Del Potro', image: publicImages.juandelpotro },
+              { name: 'Dominic Thiem', image: publicImages.dominicthiem },
               { name: 'Martina Navratilova', image: publicImages.martina },
-              { name: 'Jack Sock' },
+
               { name: 'Mike Bryan', image: publicImages.mikebryan },
               { name: 'Stefan Edberg' },
               { name: 'Boris Becker', image: publicImages.borisbecker },
               { name: 'Tommy Haas', image: publicImages.tommyhaas },
               { name: 'Brad Gilbert', image: publicImages.bradgilbert },
               { name: 'Donald Young', image: publicImages.donaldyoung },
-              { name: 'Heather Watson' },
               { name: 'Vasek Pospisil', image: publicImages.vasek },
               { name: 'Kim Clijsters', image: publicImages.kim },
-              { name: 'Grigor Dimitrov' },
+
               { name: 'Eugenie Bouchard', image: publicImages.bouchard },
               { name: 'Kevin Anderson', image: publicImages.kevinanderson },
             ] as { name: string; image?: string }[]).map((pro) => (
@@ -402,7 +401,7 @@ export function HomePage() {
           <h2 className="font-display text-3xl md:text-4xl text-white mb-10">Past Musicians & Celebrities</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {([
-              { name: 'Andrea Bocelli' },
+              { name: 'Andrea Bocelli', image: publicImages.andreabocelli },
               { name: 'Kenny Chesney', image: publicImages.kennychesney },
               { name: 'Florida Georgia Line', image: publicImages.floridageorgialine },
               { name: 'Pitbull' },
