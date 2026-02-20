@@ -375,7 +375,6 @@ export function HomePage() {
               { name: 'Tommy Haas', image: publicImages.tommyhaas },
               { name: 'Brad Gilbert', image: publicImages.bradgilbert },
               { name: 'Donald Young', image: publicImages.donaldyoung },
-              { name: 'Heather Watson' },
               { name: 'Vasek Pospisil', image: publicImages.vasek },
               { name: 'Kim Clijsters', image: publicImages.kim },
 

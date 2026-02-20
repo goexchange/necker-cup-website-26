@@ -16,7 +16,7 @@ export function TalentPage({ onNavigateHome, onNavigate }: TalentPageProps) {
 
   const tennisLegendsAndPros = [
     'Bjorn Borg', 'Juan Martin Del Potro', 'Tommy Haas', 'Rod Laver', 'Caroline Wozniacki',
-    'Heather Watson', 'Rafael Nadal', 'Novak Djokovic', 'Jack Sock', 'Vasek Pospisil (Tournament Director)',
+    'Rafael Nadal', 'Novak Djokovic', 'Jack Sock', 'Vasek Pospisil (Tournament Director)',
   ];
   const musiciansAndCelebrities = [
     'Andrea Bocelli', 'Florida Georgia Line', 'Jamie Foxx', 'Kate Upton', 'Pitbull', 'Kenny Chesney', 'Jimmy Buffett',
