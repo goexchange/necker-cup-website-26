@@ -1,15 +1,16 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-const RESEND_API_KEY = process.env.RESEND_API_KEY;
+const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
 const NOTIFICATION_EMAIL = 'rem@goexchange.ai';
+const FROM_EMAIL = process.env.SENDGRID_FROM_EMAIL || 'noreply@neckercup.com';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  if (!RESEND_API_KEY) {
-    console.error('RESEND_API_KEY not configured');
+  if (!SENDGRID_API_KEY) {
+    console.error('SENDGRID_API_KEY not configured');
     return res.status(500).json({ error: 'Email service not configured' });
   }
 
@@ -54,28 +55,27 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       </div>
     `;
 
-    const response = await fetch('https://api.resend.com/emails', {
+    const response = await fetch('https://api.sendgrid.com/v3/mail/send', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${RESEND_API_KEY}`,
+        Authorization: `Bearer ${SENDGRID_API_KEY}`,
       },
       body: JSON.stringify({
-        from: 'Necker Cup <onboarding@resend.dev>',
-        to: [NOTIFICATION_EMAIL],
+        personalizations: [{ to: [{ email: NOTIFICATION_EMAIL }] }],
+        from: { email: FROM_EMAIL, name: 'Necker Cup' },
         subject: `New Reservation: ${first_name} ${last_name} — ${packageLabel}`,
-        html: emailHtml,
+        content: [{ type: 'text/html', value: emailHtml }],
       }),
     });
 
-    const result = await response.json();
-
     if (!response.ok) {
-      console.error('Resend API error:', result);
-      return res.status(response.status).json({ error: 'Failed to send notification', details: result });
+      const errorText = await response.text();
+      console.error('SendGrid API error:', errorText);
+      return res.status(response.status).json({ error: 'Failed to send notification', details: errorText });
     }
 
-    return res.status(200).json({ success: true, id: result.id });
+    return res.status(200).json({ success: true });
   } catch (error) {
     console.error('Email notification error:', error);
     return res.status(500).json({ error: 'Internal server error' });
