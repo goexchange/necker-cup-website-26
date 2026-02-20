@@ -14,7 +14,7 @@ const tennisPros: { name: string; achievement: string; image?: string }[] = [
   { name: 'Jack Sock', achievement: 'Olympic Gold Medalist, 3-time Grand Slam doubles champion' },
   { name: 'Mike Bryan', achievement: 'Most successful doubles player in history', image: publicImages.mikebryan },
   { name: 'Stefan Edberg', achievement: '6-time Grand Slam champion' },
-  { name: 'Boris Becker', achievement: '6-time Grand Slam champion' },
+  { name: 'Boris Becker', achievement: '6-time Grand Slam champion', image: publicImages.borisbecker },
   { name: 'Tommy Haas', achievement: 'Former World No. 2', image: publicImages.tommyhaas },
   { name: 'Brad Gilbert', achievement: 'Former World No. 4, legendary coach', image: publicImages.bradgilbert },
   { name: 'Donald Young', achievement: 'Former ATP pro, Necker Cup champion', image: publicImages.donaldyoung },
@@ -23,7 +23,7 @@ const tennisPros: { name: string; achievement: string; image?: string }[] = [
   { name: 'Kim Clijsters', achievement: '4-time Grand Slam champion', image: publicImages.kim },
   { name: 'Grigor Dimitrov', achievement: 'Former World No. 3' },
   { name: 'Eugenie Bouchard', achievement: '2014 Wimbledon finalist', image: publicImages.bouchard },
-  { name: 'Kevin Anderson', achievement: '2-time Grand Slam finalist' },
+  { name: 'Kevin Anderson', achievement: '2-time Grand Slam finalist', image: publicImages.kevinanderson },
 ];
 
 const musiciansAndEntertainers: { name: string; knownFor: string; image?: string }[] = [

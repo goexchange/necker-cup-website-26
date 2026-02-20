@@ -371,7 +371,7 @@ export function HomePage() {
               { name: 'Jack Sock' },
               { name: 'Mike Bryan', image: publicImages.mikebryan },
               { name: 'Stefan Edberg' },
-              { name: 'Boris Becker' },
+              { name: 'Boris Becker', image: publicImages.borisbecker },
               { name: 'Tommy Haas', image: publicImages.tommyhaas },
               { name: 'Brad Gilbert', image: publicImages.bradgilbert },
               { name: 'Donald Young', image: publicImages.donaldyoung },
@@ -380,7 +380,7 @@ export function HomePage() {
               { name: 'Kim Clijsters', image: publicImages.kim },
               { name: 'Grigor Dimitrov' },
               { name: 'Eugenie Bouchard', image: publicImages.bouchard },
-              { name: 'Kevin Anderson' },
+              { name: 'Kevin Anderson', image: publicImages.kevinanderson },
             ] as { name: string; image?: string }[]).map((pro) => (
               <div key={pro.name} className="group relative rounded-xl overflow-hidden border border-white/20 hover:border-emerald-400/50 transition-all duration-300 aspect-square">
                 {pro.image ? (
