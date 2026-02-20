@@ -31,7 +31,7 @@ const musiciansAndEntertainers: { name: string; knownFor: string; image?: string
   { name: 'Andrea Bocelli', knownFor: 'Legendary Italian tenor, 90M+ records sold', image: publicImages.andreabocelli },
   { name: 'Kenny Chesney', knownFor: 'Country music superstar', image: publicImages.kennychesney },
   { name: 'Florida Georgia Line', knownFor: 'Country music duo', image: publicImages.floridageorgialine },
-  { name: 'Pitbull', knownFor: 'Global pop/hip-hop artist' },
+  { name: 'Pitbull', knownFor: 'Global pop/hip-hop artist', image: publicImages.pitbull },
   { name: 'Jamie Foxx', knownFor: 'Actor, musician, comedian', image: publicImages.jamiefoxx },
   { name: 'Jimmy Buffett', knownFor: 'Singer-songwriter (late)', image: publicImages.jimmybuffett },
   { name: 'Darius Rucker', knownFor: 'Hootie & the Blowfish, country solo career', image: publicImages.dariusrucker },
@@ -44,7 +44,7 @@ const musiciansAndEntertainers: { name: string; knownFor: string; image?: string
 const celebrityGuests: { name: string; image?: string }[] = [
   { name: 'Kate Upton', image: publicImages.kateupton },
   { name: 'Chevy Chase', image: publicImages.chevychase },
-  { name: 'Kevin Costner' },
+  { name: 'Kevin Costner', image: publicImages.kevincostner },
 ];
 
 const celebrityGuestsText = 'Kate Upton, Kevin Costner, and numerous high-profile entrepreneurs and business leaders from around the world.';

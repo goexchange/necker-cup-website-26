@@ -405,7 +405,7 @@ export function HomePage() {
               { name: 'Andrea Bocelli', image: publicImages.andreabocelli },
               { name: 'Kenny Chesney', image: publicImages.kennychesney },
               { name: 'Florida Georgia Line', image: publicImages.floridageorgialine },
-              { name: 'Pitbull' },
+              { name: 'Pitbull', image: publicImages.pitbull },
               { name: 'Jamie Foxx', image: publicImages.jamiefoxx },
               { name: 'Jimmy Buffett', image: publicImages.jimmybuffett },
               { name: 'Darius Rucker', image: publicImages.dariusrucker },
@@ -415,7 +415,7 @@ export function HomePage() {
               { name: 'Sean Paul', image: publicImages.seanpaul },
               { name: 'Kate Upton', image: publicImages.kateupton },
               { name: 'Chevy Chase', image: publicImages.chevychase },
-              { name: 'Kevin Costner' },
+              { name: 'Kevin Costner', image: publicImages.kevincostner },
             ] as { name: string; image?: string }[]).map((artist) => (
               <div key={artist.name} className="group relative rounded-xl overflow-hidden border border-white/20 hover:border-emerald-400/50 transition-all duration-300 aspect-square">
                 {artist.image ? (
