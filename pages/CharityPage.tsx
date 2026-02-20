@@ -28,7 +28,7 @@ export function CharityPage() {
       `}</style>
 
       {/* HERO BANNER */}
-      <section className="relative h-[70vh] min-h-[500px] flex items-end overflow-hidden">
+      <section className="relative h-[70vh] min-h-[500px] flex items-end overflow-hidden pt-24">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url('/images/necker.jpg')` }}
