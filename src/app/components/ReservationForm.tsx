@@ -103,6 +103,17 @@ export function ReservationForm({ isOpen, onClose }: { isOpen: boolean; onClose:
         return;
       }
 
+      // Send email notification (fire-and-forget, don't block the success flow)
+      try {
+        await fetch('/api/send-notification', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(submissionData),
+        });
+      } catch (emailErr) {
+        console.error('[ReservationForm] Email notification failed:', emailErr);
+      }
+
       setSubmitSuccess(true);
       const submissionId = data?.[0]?.id ?? 'N/A';
       alert(`Reservation submitted successfully.\nSubmission ID: ${submissionId}\nOur team will contact you within 24 hours.`);
