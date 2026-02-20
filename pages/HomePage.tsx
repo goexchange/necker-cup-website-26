@@ -407,7 +407,7 @@ export function HomePage() {
               { name: 'Florida Georgia Line', image: publicImages.floridageorgialine },
               { name: 'Pitbull' },
               { name: 'Jamie Foxx', image: publicImages.jamiefoxx },
-              { name: 'Jimmy Buffett' },
+              { name: 'Jimmy Buffett', image: publicImages.jimmybuffett },
               { name: 'Darius Rucker' },
               { name: 'Jewel', image: publicImages.jewel },
               { name: 'Michael Franti' },

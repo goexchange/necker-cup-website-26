@@ -72,4 +72,5 @@ export const publicImages = {
   gregnorman: '/images/gregnorman.jpg',
   tommyfleetwood: '/images/tommyfleetwood.jpg',
   brysondechambeau: '/images/brysondechambeau.jpg',
+  jimmybuffett: '/images/jimmybuffett.jpg',
 } as const;

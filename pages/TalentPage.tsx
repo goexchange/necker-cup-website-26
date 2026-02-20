@@ -32,7 +32,7 @@ const musiciansAndEntertainers: { name: string; knownFor: string; image?: string
   { name: 'Florida Georgia Line', knownFor: 'Country music duo', image: publicImages.floridageorgialine },
   { name: 'Pitbull', knownFor: 'Global pop/hip-hop artist' },
   { name: 'Jamie Foxx', knownFor: 'Actor, musician, comedian', image: publicImages.jamiefoxx },
-  { name: 'Jimmy Buffett', knownFor: 'Singer-songwriter (late)' },
+  { name: 'Jimmy Buffett', knownFor: 'Singer-songwriter (late)', image: publicImages.jimmybuffett },
   { name: 'Darius Rucker', knownFor: 'Hootie & the Blowfish, country solo career' },
   { name: 'Jewel', knownFor: 'Singer-songwriter', image: publicImages.jewel },
   { name: 'Michael Franti', knownFor: 'Singer-songwriter, Spearhead' },
