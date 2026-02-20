@@ -48,4 +48,11 @@ export const publicImages = {
   bouchard: '/images/bouchard.jpg',
   vasek: '/images/vasek.jpg',
   seanpaul: '/images/seanpaul.jpg',
+  johnmcenroe: '/images/johnmcenroe.jpg',
+  jewel: '/images/jewel.jpg',
+  tommyhaas: '/images/tommyhaas.jpg',
+  donaldyoung: '/images/donaldyoung.jpg',
+  martina: '/images/martina.jpg',
+  bradgilbert: '/images/bradgilbert.jpg',
+  mikebryan: '/images/mikebryan.jpg',
 } as const;
