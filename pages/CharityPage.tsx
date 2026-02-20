@@ -28,7 +28,7 @@ export function CharityPage() {
       `}</style>
 
       {/* HERO BANNER */}
-      <section className="relative h-[70vh] min-h-[500px] flex items-end overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-end overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url('/images/necker.jpg')` }}
@@ -240,16 +240,7 @@ export function CharityPage() {
         </div>
       </section>
 
-      {/* FOOTER NOTE */}
-      <section className="py-12 bg-white border-t border-stone-200">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
-          <p className="font-body text-stone-500 text-sm leading-relaxed">
-            The Necker Cup is a registered 501(c)(3) charitable organization. 100% of funds raised
-            go directly to our charitable partners with zero administrative overhead. All operational
-            costs are covered by our generous sponsors.
-          </p>
-        </div>
-      </section>
+
     </div>
   );
 }

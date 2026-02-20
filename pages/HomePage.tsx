@@ -537,12 +537,18 @@ export function HomePage() {
             </div>
 
           </div>
+          <div className="flex flex-col items-center gap-4 pt-10 border-t border-stone-800 mb-10">
+            <p className="font-body text-sm text-stone-400 tracking-wide uppercase">Owned & Produced by</p>
+            <a href="https://premierlive.com" target="_blank" rel="noopener noreferrer">
+              <img src="/images/premier-live-logo.png" alt="Premier Live - Be Your Passion" className="h-20 w-auto" />
+            </a>
+          </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-10 border-t border-stone-800">
             <div className="flex flex-wrap items-center gap-6 md:gap-8">
               <a href="tel:+16784786649" className="font-body text-sm text-stone-300 hover:text-white transition-colors">CALL: 678.478.6649</a>
               {['Privacy Policy', 'Terms & Conditions', 'Contact'].map(link => <a key={link} href="#" className="font-body text-sm text-stone-400 hover:text-white transition-colors">{link}</a>)}
             </div>
-            <p className="font-body text-sm text-stone-500">© 2026 Necker Cup. All rights reserved. Powered by Premier Live & Mehow</p>
+            <p className="font-body text-sm text-stone-500">© 2026 Necker Cup. All rights reserved.</p>
           </div>
         </div>
       </footer>
