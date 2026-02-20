@@ -407,7 +407,7 @@ export function HomePage() {
               { name: 'Pitbull' },
               { name: 'Jamie Foxx', image: publicImages.jamiefoxx },
               { name: 'Jimmy Buffett', image: publicImages.jimmybuffett },
-              { name: 'Darius Rucker' },
+              { name: 'Darius Rucker', image: publicImages.dariusrucker },
               { name: 'Jewel', image: publicImages.jewel },
               { name: 'Michael Franti' },
               { name: 'Redfoo (LMFAO)', image: publicImages.redfoo },

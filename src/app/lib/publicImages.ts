@@ -80,4 +80,5 @@ export const publicImages = {
   nickkyrgios: '/images/nickkyrgios.jpg',
   dominicthiem: '/images/dominicthiem.jpg',
   andreabocelli: '/images/andreabocelli.jpg',
+  dariusrucker: '/images/dariusrucker.jpg',
 } as const;
