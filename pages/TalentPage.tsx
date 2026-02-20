@@ -24,7 +24,6 @@ const tennisPros: { name: string; achievement: string; image?: string }[] = [
   { name: 'Grigor Dimitrov', achievement: 'Former World No. 3' },
   { name: 'Eugenie Bouchard', achievement: '2014 Wimbledon finalist', image: publicImages.bouchard },
   { name: 'Kevin Anderson', achievement: '2-time Grand Slam finalist' },
-  { name: 'Arantxa Sanchez-Vicario', achievement: '4-time Grand Slam champion' },
 ];
 
 const musiciansAndEntertainers: { name: string; knownFor: string; image?: string }[] = [

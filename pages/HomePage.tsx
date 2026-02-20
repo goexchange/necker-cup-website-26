@@ -381,7 +381,6 @@ export function HomePage() {
               { name: 'Grigor Dimitrov' },
               { name: 'Eugenie Bouchard', image: publicImages.bouchard },
               { name: 'Kevin Anderson' },
-              { name: 'Arantxa Sanchez-Vicario' },
             ] as { name: string; image?: string }[]).map((pro) => (
               <div key={pro.name} className="group relative rounded-xl overflow-hidden border border-white/20 hover:border-emerald-400/50 transition-all duration-300 aspect-square">
                 {pro.image ? (
