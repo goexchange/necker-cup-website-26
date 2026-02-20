@@ -36,7 +36,6 @@ const musiciansAndEntertainers: { name: string; knownFor: string; image?: string
   { name: 'Jimmy Buffett', knownFor: 'Singer-songwriter (late)', image: publicImages.jimmybuffett },
   { name: 'Darius Rucker', knownFor: 'Hootie & the Blowfish, country solo career', image: publicImages.dariusrucker },
   { name: 'Jewel', knownFor: 'Singer-songwriter', image: publicImages.jewel },
-  { name: 'Michael Franti', knownFor: 'Singer-songwriter, Spearhead' },
   { name: 'Redfoo (LMFAO)', knownFor: 'DJ, musician', image: publicImages.redfoo },
   { name: 'Sean Paul', knownFor: 'Dancehall/reggae artist', image: publicImages.seanpaul },
 ];

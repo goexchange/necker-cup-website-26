@@ -410,7 +410,6 @@ export function HomePage() {
               { name: 'Jimmy Buffett', image: publicImages.jimmybuffett },
               { name: 'Darius Rucker', image: publicImages.dariusrucker },
               { name: 'Jewel', image: publicImages.jewel },
-              { name: 'Michael Franti' },
               { name: 'Redfoo (LMFAO)', image: publicImages.redfoo },
               { name: 'Sean Paul', image: publicImages.seanpaul },
               { name: 'Kate Upton', image: publicImages.kateupton },
