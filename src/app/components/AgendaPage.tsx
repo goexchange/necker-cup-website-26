@@ -141,7 +141,7 @@ export function AgendaPage({ onNavigateHome, onNavigate }: AgendaPageProps) {
               onClick={onNavigateHome}
               className="flex items-center group"
             >
-              <img src="/images/necker-cup-logo.svg" alt="Necker Cup 2026" className="h-10 w-auto" />
+              <img src="/images/nclogo.png" alt="Necker Cup 2026" className="h-10 w-auto" />
             </button>
             
             <div className="hidden lg:flex items-center gap-6">

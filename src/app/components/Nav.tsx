@@ -40,7 +40,7 @@ export function Nav() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
         <Link to="/" className="flex items-center">
           <img
-            src="/images/necker-cup-logo.svg"
+            src="/images/nclogo.png"
             alt="Necker Cup 2026"
             className={`h-28 w-auto transition-all duration-300 ${
               floating ? 'drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]' : ''
