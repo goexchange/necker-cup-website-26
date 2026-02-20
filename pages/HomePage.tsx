@@ -445,7 +445,7 @@ export function HomePage() {
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
               {([
                 { name: 'Greg Norman', image: publicImages.gregnorman },
-                { name: 'Sir Nick Faldo' },
+                { name: 'Sir Nick Faldo', image: publicImages.nickfaldo },
                 { name: 'Bryson DeChambeau', image: publicImages.brysondechambeau },
                 { name: 'Matt Kuchar', image: publicImages.mattkuchar },
                 { name: 'Tommy Fleetwood', image: publicImages.tommyfleetwood },
