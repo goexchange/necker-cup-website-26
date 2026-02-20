@@ -389,16 +389,7 @@ export function CharityPage({ onNavigateHome, onNavigate }: CharityPageProps) {
         </div>
       </section>
 
-      {/* FOOTER NOTE */}
-      <section className="py-12 bg-white border-t border-stone-200">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
-          <p className="font-body text-stone-500 text-sm leading-relaxed">
-            The Necker Cup is a registered 501(c)(3) charitable organization. 100% of funds raised 
-            go directly to our charitable partners with zero administrative overhead. All operational 
-            costs are covered by our generous sponsors.
-          </p>
-        </div>
-      </section>
+
     </div>
   );
 }
