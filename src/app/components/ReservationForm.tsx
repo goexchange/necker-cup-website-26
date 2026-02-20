@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Check, X } from 'lucide-react';
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL ?? 'https://abhxvgpnwbnfjjdmzqdn.supabase.co';
-const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY ?? 'sb_publishable_wrGJ28Bf77o8q_3oNkia5Q_D0gK74tR';
+const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY ?? 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFiaHh2Z3Bud2JuZmpqZG16cWRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwMjQ2NzcsImV4cCI6MjA2MzYwMDY3N30.qDaQbwmpFJKQwn30gVLZChUd6j_TVLn790XGMTrJG_A';
 
 const PACKAGE_OPTIONS = [
   { value: 'player_necker', label: 'Pro-Am: Player — Necker Island ($109,750 / couple)' },
