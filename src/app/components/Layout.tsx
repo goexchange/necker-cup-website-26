@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { useReservationForm } from '@/app/context/ReservationFormContext';
 import { Nav } from '@/app/components/Nav';
+import { Footer } from '@/app/components/Footer';
 import { ReservationForm } from '@/app/components/ReservationForm';
 
 export function Layout() {
@@ -9,6 +10,7 @@ export function Layout() {
     <>
       <Nav />
       <Outlet />
+      <Footer />
       <ReservationForm isOpen={isOpen} onClose={closeForm} />
     </>
   );
