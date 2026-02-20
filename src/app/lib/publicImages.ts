@@ -41,4 +41,11 @@ export const publicImages = {
   crowdPavilionCourt: '/images/crowd-pavilion-court.jpg',
   legendsMusicBand: '/images/legends-music-band.jpg',
   djLegendsMusic: '/images/dj-legends-music.jpg',
+  borg: '/images/borg.jpg',
+  rafa: '/images/rafa.jpg',
+  kim: '/images/kim.jpg',
+  novak: '/images/novak.jpg',
+  bouchard: '/images/bouchard.jpg',
+  vasek: '/images/vasek.jpg',
+  seanpaul: '/images/seanpaul.jpg',
 } as const;

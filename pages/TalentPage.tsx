@@ -1,10 +1,10 @@
 import { useReservationForm } from '@/app/context/ReservationFormContext';
 import { publicImages } from '@/app/lib/publicImages';
 
-const tennisPros = [
-  { name: 'Novak Djokovic', achievement: '24-time Grand Slam champion' },
-  { name: 'Rafael Nadal', achievement: '22-time Grand Slam champion' },
-  { name: 'Bjorn Borg', achievement: '11-time Grand Slam champion' },
+const tennisPros: { name: string; achievement: string; image?: string }[] = [
+  { name: 'Novak Djokovic', achievement: '24-time Grand Slam champion', image: publicImages.novak },
+  { name: 'Rafael Nadal', achievement: '22-time Grand Slam champion', image: publicImages.rafa },
+  { name: 'Bjorn Borg', achievement: '11-time Grand Slam champion', image: publicImages.borg },
   { name: 'Rod Laver', achievement: 'Only player to win two calendar-year Grand Slams' },
   { name: 'Caroline Wozniacki', achievement: 'Former World No. 1, Australian Open champion' },
   { name: 'Juan Martin Del Potro', achievement: '2009 US Open champion' },
@@ -16,15 +16,15 @@ const tennisPros = [
   { name: 'Boris Becker', achievement: '6-time Grand Slam champion' },
   { name: 'Tommy Haas', achievement: 'Former World No. 2' },
   { name: 'Heather Watson', achievement: 'Grand Slam doubles champion' },
-  { name: 'Vasek Pospisil', achievement: 'Tournament Director, Wimbledon doubles champion' },
-  { name: 'Kim Clijsters', achievement: '4-time Grand Slam champion' },
+  { name: 'Vasek Pospisil', achievement: 'Tournament Director, Wimbledon doubles champion', image: publicImages.vasek },
+  { name: 'Kim Clijsters', achievement: '4-time Grand Slam champion', image: publicImages.kim },
   { name: 'Grigor Dimitrov', achievement: 'Former World No. 3' },
-  { name: 'Eugenie Bouchard', achievement: '2014 Wimbledon finalist' },
+  { name: 'Eugenie Bouchard', achievement: '2014 Wimbledon finalist', image: publicImages.bouchard },
   { name: 'Kevin Anderson', achievement: '2-time Grand Slam finalist' },
   { name: 'Arantxa Sanchez-Vicario', achievement: '4-time Grand Slam champion' },
 ];
 
-const musiciansAndEntertainers = [
+const musiciansAndEntertainers: { name: string; knownFor: string; image?: string }[] = [
   { name: 'Andrea Bocelli', knownFor: 'Legendary Italian tenor, 90M+ records sold' },
   { name: 'Kenny Chesney', knownFor: 'Country music superstar' },
   { name: 'Florida Georgia Line', knownFor: 'Country music duo' },
@@ -35,7 +35,7 @@ const musiciansAndEntertainers = [
   { name: 'Jewel', knownFor: 'Singer-songwriter' },
   { name: 'Michael Franti', knownFor: 'Singer-songwriter, Spearhead' },
   { name: 'Redfoo (LMFAO)', knownFor: 'DJ, musician' },
-  { name: 'Sean Paul', knownFor: 'Dancehall/reggae artist' },
+  { name: 'Sean Paul', knownFor: 'Dancehall/reggae artist', image: publicImages.seanpaul },
 ];
 
 const celebrityGuests = [
@@ -53,14 +53,31 @@ const golfPros = [
   { name: 'Sam Burns', achievement: 'PGA Tour multi-winner, Ryder Cup player' },
 ];
 
-function TalentCard({ name, subtitle }: { name: string; subtitle?: string }) {
+function TalentCard({ name, subtitle, image }: { name: string; subtitle?: string; image?: string }) {
   return (
-    <div
-      className="flex flex-col items-center justify-center p-4 rounded-xl bg-stone-100 border border-stone-200 hover:border-emerald-300 hover:shadow-md transition-all duration-300 text-center aspect-square"
-    >
-      <span className="font-body text-stone-900 font-medium text-sm leading-tight">{name}</span>
-      {subtitle && (
-        <span className="font-body text-stone-500 text-xs mt-2 line-clamp-3">{subtitle}</span>
+    <div className="group relative rounded-xl overflow-hidden border border-stone-200 hover:border-emerald-300 hover:shadow-md transition-all duration-300 aspect-square">
+      {image ? (
+        <>
+          <img
+            src={image}
+            alt={name}
+            className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
+            <span className="font-body text-white font-medium text-sm leading-tight block">{name}</span>
+            {subtitle && (
+              <span className="font-body text-white/60 text-xs mt-1 line-clamp-2 block">{subtitle}</span>
+            )}
+          </div>
+        </>
+      ) : (
+        <div className="flex flex-col items-center justify-center h-full p-4 bg-stone-100 text-center">
+          <span className="font-body text-stone-900 font-medium text-sm leading-tight">{name}</span>
+          {subtitle && (
+            <span className="font-body text-stone-500 text-xs mt-2 line-clamp-3">{subtitle}</span>
+          )}
+        </div>
       )}
     </div>
   );
@@ -96,7 +113,7 @@ export function TalentPage() {
           <h2 className="font-display text-3xl md:text-4xl text-stone-900 mb-10">Past Tennis Legends & Pros</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {tennisPros.map((row, i) => (
-              <TalentCard key={i} name={row.name} subtitle={row.achievement} />
+              <TalentCard key={i} name={row.name} subtitle={row.achievement} image={row.image} />
             ))}
           </div>
         </div>
@@ -109,7 +126,7 @@ export function TalentPage() {
           <h2 className="font-display text-3xl md:text-4xl text-stone-900 mb-10">Past Musicians & Celebrities</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {musiciansAndEntertainers.map((row, i) => (
-              <TalentCard key={i} name={row.name} subtitle={row.knownFor} />
+              <TalentCard key={i} name={row.name} subtitle={row.knownFor} image={row.image} />
             ))}
             {celebrityGuests.map((row, i) => (
               <TalentCard key={`celebrity-${i}`} name={row.name} />
