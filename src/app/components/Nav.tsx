@@ -28,28 +28,28 @@ export function Nav() {
   }, []);
 
   const linkClass = floating
-    ? 'font-body text-sm tracking-wide text-white/90 hover:text-white transition-colors'
-    : 'font-body text-sm tracking-wide text-stone-600 hover:text-emerald-800 transition-colors';
+    ? 'font-body text-sm tracking-wide text-white/90 hover:text-white transition-colors whitespace-nowrap'
+    : 'font-body text-sm tracking-wide text-stone-600 hover:text-emerald-800 transition-colors whitespace-nowrap';
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
-        floating ? 'bg-transparent py-6' : 'bg-white/95 backdrop-blur-md shadow-sm py-4'
+        floating ? 'bg-transparent py-4 xl:py-6' : 'bg-white/95 backdrop-blur-md shadow-sm py-3 xl:py-4'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
-        <Link to="/" className="flex items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between">
+        <Link to="/" className="flex-shrink-0 flex items-center">
           <img
             src="/images/nclogo.png"
             alt="Necker Cup 2026"
-            className={`h-28 w-auto transition-all duration-300 ${
+            className={`h-14 sm:h-16 xl:h-20 w-auto transition-all duration-300 ${
               floating ? 'drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]' : ''
             }`}
           />
         </Link>
 
         {/* Desktop: inline links */}
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden xl:flex items-center gap-5">
           {navLinks.map(({ to, label }) => (
             <Link key={to} to={to} className={linkClass}>
               {label}
@@ -57,10 +57,10 @@ export function Nav() {
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className={`lg:hidden p-2 transition-colors ${floating ? 'text-white/90 hover:text-white' : 'text-stone-600 hover:text-emerald-800'}`}
+            className={`xl:hidden p-2 transition-colors ${floating ? 'text-white/90 hover:text-white' : 'text-stone-600 hover:text-emerald-800'}`}
             aria-label="Open menu"
           >
             <Menu className="w-6 h-6" />
@@ -69,7 +69,7 @@ export function Nav() {
             href="https://portal.neckercup.com"
             target="_blank"
             rel="noopener noreferrer"
-            className={`hidden sm:inline-flex font-body text-sm px-4 py-2.5 rounded-full transition-all duration-300 whitespace-nowrap ${
+            className={`hidden sm:inline-flex font-body text-sm px-4 py-2 rounded-full transition-all duration-300 whitespace-nowrap ${
               floating
                 ? 'border border-white/40 text-white hover:bg-white/10'
                 : 'border border-stone-300 text-stone-600 hover:text-emerald-800 hover:border-emerald-800'
@@ -79,7 +79,7 @@ export function Nav() {
           </a>
           <button
             onClick={openForm}
-            className={`font-body text-sm px-4 py-2.5 sm:px-6 rounded-full transition-all duration-300 whitespace-nowrap ${
+            className={`font-body text-sm px-4 py-2 sm:px-6 rounded-full transition-all duration-300 whitespace-nowrap ${
               floating
                 ? 'bg-white text-stone-900 hover:bg-stone-100 hover:shadow-lg'
                 : 'bg-emerald-800 text-white hover:bg-emerald-900 hover:shadow-lg'
@@ -94,11 +94,11 @@ export function Nav() {
       {mobileMenuOpen && (
         <>
           <div
-            className="fixed inset-0 bg-black/40 z-40 lg:hidden"
+            className="fixed inset-0 bg-black/40 z-40 xl:hidden"
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
-          <div className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-white shadow-xl z-50 lg:hidden flex flex-col p-6 pt-16">
+          <div className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-white shadow-xl z-50 xl:hidden flex flex-col p-6 pt-16">
             <button
               onClick={() => setMobileMenuOpen(false)}
               className="absolute top-4 right-4 p-2 text-stone-500 hover:text-stone-900"
