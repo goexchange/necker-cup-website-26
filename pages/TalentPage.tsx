@@ -11,7 +11,7 @@ const tennisPros: { name: string; achievement: string; image?: string }[] = [
   { name: 'Dominic Thiem', achievement: '2020 US Open champion', image: publicImages.dominicthiem },
   { name: 'John McEnroe', achievement: '7-time Grand Slam champion', image: publicImages.johnmcenroe },
   { name: 'Martina Navratilova', achievement: '18-time Grand Slam singles champion', image: publicImages.martina },
-  { name: 'Jack Sock', achievement: 'Olympic Gold Medalist, 3-time Grand Slam doubles champion' },
+
   { name: 'Mike Bryan', achievement: 'Most successful doubles player in history', image: publicImages.mikebryan },
   { name: 'Stefan Edberg', achievement: '6-time Grand Slam champion', image: publicImages.stefanedberg },
   { name: 'Boris Becker', achievement: '6-time Grand Slam champion', image: publicImages.borisbecker },
@@ -21,7 +21,7 @@ const tennisPros: { name: string; achievement: string; image?: string }[] = [
   { name: 'Nick Kyrgios', achievement: 'ATP singles titlist, Grand Slam finalist', image: publicImages.nickkyrgios },
   { name: 'Vasek Pospisil', achievement: 'Tournament Director, Wimbledon doubles champion', image: publicImages.vasek },
   { name: 'Kim Clijsters', achievement: '4-time Grand Slam champion', image: publicImages.kim },
-  { name: 'Grigor Dimitrov', achievement: 'Former World No. 3' },
+
   { name: 'Eugenie Bouchard', achievement: '2014 Wimbledon finalist', image: publicImages.bouchard },
   { name: 'Kevin Anderson', achievement: '2-time Grand Slam finalist', image: publicImages.kevinanderson },
 ];

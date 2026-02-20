@@ -368,7 +368,7 @@ export function HomePage() {
               { name: 'Juan Martin Del Potro', image: publicImages.juandelpotro },
               { name: 'Dominic Thiem', image: publicImages.dominicthiem },
               { name: 'Martina Navratilova', image: publicImages.martina },
-              { name: 'Jack Sock' },
+
               { name: 'Mike Bryan', image: publicImages.mikebryan },
               { name: 'Stefan Edberg' },
               { name: 'Boris Becker', image: publicImages.borisbecker },
@@ -378,7 +378,7 @@ export function HomePage() {
               { name: 'Heather Watson' },
               { name: 'Vasek Pospisil', image: publicImages.vasek },
               { name: 'Kim Clijsters', image: publicImages.kim },
-              { name: 'Grigor Dimitrov' },
+
               { name: 'Eugenie Bouchard', image: publicImages.bouchard },
               { name: 'Kevin Anderson', image: publicImages.kevinanderson },
             ] as { name: string; image?: string }[]).map((pro) => (
