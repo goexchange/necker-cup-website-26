@@ -29,7 +29,7 @@ const agenda = [
   { day: 'Saturday', date: 'December 5', events: [{ time: '10:00 AM', title: 'Departure Day', desc: 'Breakfast & fond farewells' }] },
 ];
 
-const sponsors = { presenting: ['Virgin Limited Edition', 'Rolex'], premier: ['NetJets', 'Dom Pérignon', 'American Express', 'Four Seasons'], partners: ['Wilson', 'Lacoste', 'Molton Brown', 'Land Rover', 'Bose', 'Tiffany & Co.'] };
+const sponsors = { presenting: ['Virgin Limited Edition', 'Premier Live'], premier: ['IGY Trident', 'Northrop & Johnson', 'Fraser Yachts', 'MarineMax'], partners: ['Inglot Cosmetics', 'Mallory Agency', 'Red Hospitality'] };
 
 const heroSlides = [
   publicImages.crowdPavilionCourt,
