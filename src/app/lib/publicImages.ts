@@ -75,4 +75,9 @@ export const publicImages = {
   jimmybuffett: '/images/jimmybuffett.jpg',
   kevinanderson: '/images/kevinanderson.jpg',
   borisbecker: '/images/borisbecker.jpg',
+  juandelpotro: '/images/juandelpotro.jpg',
+  stefanedberg: '/images/stefanedberg.jpg',
+  nickkyrgios: '/images/nickkyrgios.jpg',
+  dominicthiem: '/images/dominicthiem.jpg',
+  andreabocelli: '/images/andreabocelli.jpg',
 } as const;
