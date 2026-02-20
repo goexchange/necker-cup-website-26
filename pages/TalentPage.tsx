@@ -29,7 +29,7 @@ const tennisPros: { name: string; achievement: string; image?: string }[] = [
 
 const musiciansAndEntertainers: { name: string; knownFor: string; image?: string }[] = [
   { name: 'Andrea Bocelli', knownFor: 'Legendary Italian tenor, 90M+ records sold' },
-  { name: 'Kenny Chesney', knownFor: 'Country music superstar' },
+  { name: 'Kenny Chesney', knownFor: 'Country music superstar', image: publicImages.kennychesney },
   { name: 'Florida Georgia Line', knownFor: 'Country music duo' },
   { name: 'Pitbull', knownFor: 'Global pop/hip-hop artist' },
   { name: 'Jamie Foxx', knownFor: 'Actor, musician, comedian' },

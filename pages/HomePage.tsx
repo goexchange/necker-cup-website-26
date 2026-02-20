@@ -404,7 +404,7 @@ export function HomePage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {([
               { name: 'Andrea Bocelli' },
-              { name: 'Kenny Chesney' },
+              { name: 'Kenny Chesney', image: publicImages.kennychesney },
               { name: 'Florida Georgia Line' },
               { name: 'Pitbull' },
               { name: 'Jamie Foxx' },
