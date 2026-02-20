@@ -90,50 +90,50 @@ export function Nav() {
         </div>
       </div>
 
-      {/* Mobile menu overlay */}
+      {/* Mobile menu - full screen overlay */}
       {mobileMenuOpen && (
-        <>
-          <div
-            className="fixed inset-0 bg-black/40 z-40 xl:hidden"
-            onClick={() => setMobileMenuOpen(false)}
-            aria-hidden="true"
-          />
-          <div className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-white shadow-xl z-50 xl:hidden flex flex-col p-6 pt-16">
+        <div className="fixed inset-0 z-[200] bg-white xl:hidden flex flex-col overflow-y-auto">
+          <div className="flex items-center justify-between px-4 py-4 border-b border-stone-100">
+            <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center">
+              <img src="/images/nclogo.png" alt="Necker Cup 2026" className="h-12 w-auto" />
+            </Link>
             <button
               onClick={() => setMobileMenuOpen(false)}
-              className="absolute top-4 right-4 p-2 text-stone-500 hover:text-stone-900"
+              className="p-2 text-stone-500 hover:text-stone-900"
               aria-label="Close menu"
             >
               <X className="w-6 h-6" />
             </button>
-            <div className="flex flex-col gap-2">
-              {navLinks.map(({ to, label }) => (
-                <Link
-                  key={to}
-                  to={to}
-                  className="font-body text-lg py-3 text-stone-700 hover:text-emerald-800 border-b border-stone-100 last:border-0"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {label}
-                </Link>
-              ))}
-            </div>
+          </div>
+          <div className="flex flex-col px-6 py-4">
+            {navLinks.map(({ to, label }) => (
+              <Link
+                key={to}
+                to={to}
+                className="font-body text-lg py-4 text-stone-700 hover:text-emerald-800 border-b border-stone-100 last:border-0"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+          <div className="px-6 mt-auto pb-8 flex flex-col gap-3">
             <a
               href="https://portal.neckercup.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-body mt-6 w-full py-3 rounded-full border border-stone-300 text-stone-700 hover:text-emerald-800 hover:border-emerald-800 text-center block"
+              className="font-body w-full py-3 rounded-full border border-stone-300 text-stone-700 hover:text-emerald-800 hover:border-emerald-800 text-center block"
             >
               Login
             </a>
             <button
               onClick={() => { setMobileMenuOpen(false); openForm(); }}
-              className="font-body mt-3 w-full py-3 rounded-full bg-emerald-800 text-white hover:bg-emerald-900"
+              className="font-body w-full py-3 rounded-full bg-emerald-800 text-white hover:bg-emerald-900"
             >
               Reserve Your Spot
             </button>
           </div>
-        </>
+        </div>
       )}
     </nav>
   );
