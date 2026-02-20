@@ -370,7 +370,7 @@ export function HomePage() {
               { name: 'Martina Navratilova', image: publicImages.martina },
 
               { name: 'Mike Bryan', image: publicImages.mikebryan },
-              { name: 'Stefan Edberg' },
+              { name: 'Stefan Edberg', image: publicImages.stefanedberg },
               { name: 'Boris Becker', image: publicImages.borisbecker },
               { name: 'Tommy Haas', image: publicImages.tommyhaas },
               { name: 'Brad Gilbert', image: publicImages.bradgilbert },
