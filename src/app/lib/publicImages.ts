@@ -55,4 +55,7 @@ export const publicImages = {
   martina: '/images/martina.jpg',
   bradgilbert: '/images/bradgilbert.jpg',
   mikebryan: '/images/mikebryan.jpg',
+  kennychesney: '/images/kennychesney.jpg',
+  kennyperforming: '/images/kennyperforming.jpg',
+  bransonwinning: '/images/bransonwinning.jpg',
 } as const;
