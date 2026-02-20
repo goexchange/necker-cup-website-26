@@ -29,7 +29,7 @@ const agenda = [
   { day: 'Saturday', date: 'December 5', events: [{ time: '10:00 AM', title: 'Departure Day', desc: 'Breakfast & fond farewells' }] },
 ];
 
-const sponsors = { presenting: ['Virgin Limited Edition', 'Rolex'], premier: ['NetJets', 'Dom Pérignon', 'American Express', 'Four Seasons'], partners: ['Wilson', 'Lacoste', 'Molton Brown', 'Land Rover', 'Bose', 'Tiffany & Co.'] };
+const sponsors = { presenting: ['Virgin Limited Edition', 'Premier Live'], premier: ['IGY Trident', 'Northrop & Johnson', 'Fraser Yachts', 'MarineMax'], partners: ['Inglot Cosmetics', 'Mallory Agency', 'Red Hospitality'] };
 
 const heroSlides = [
   publicImages.crowdPavilionCourt,
@@ -370,7 +370,7 @@ export function HomePage() {
               { name: 'Martina Navratilova', image: publicImages.martina },
 
               { name: 'Mike Bryan', image: publicImages.mikebryan },
-              { name: 'Stefan Edberg' },
+              { name: 'Stefan Edberg', image: publicImages.stefanedberg },
               { name: 'Boris Becker', image: publicImages.borisbecker },
               { name: 'Tommy Haas', image: publicImages.tommyhaas },
               { name: 'Brad Gilbert', image: publicImages.bradgilbert },
@@ -380,6 +380,7 @@ export function HomePage() {
 
               { name: 'Eugenie Bouchard', image: publicImages.bouchard },
               { name: 'Kevin Anderson', image: publicImages.kevinanderson },
+              { name: 'Grigor Dimitrov', image: publicImages.grigordimitrov },
             ] as { name: string; image?: string }[]).map((pro) => (
               <div key={pro.name} className="group relative rounded-xl overflow-hidden border border-white/20 hover:border-emerald-400/50 transition-all duration-300 aspect-square">
                 {pro.image ? (
@@ -404,17 +405,16 @@ export function HomePage() {
               { name: 'Andrea Bocelli', image: publicImages.andreabocelli },
               { name: 'Kenny Chesney', image: publicImages.kennychesney },
               { name: 'Florida Georgia Line', image: publicImages.floridageorgialine },
-              { name: 'Pitbull' },
+              { name: 'Pitbull', image: publicImages.pitbull },
               { name: 'Jamie Foxx', image: publicImages.jamiefoxx },
               { name: 'Jimmy Buffett', image: publicImages.jimmybuffett },
-              { name: 'Darius Rucker' },
+              { name: 'Darius Rucker', image: publicImages.dariusrucker },
               { name: 'Jewel', image: publicImages.jewel },
-              { name: 'Michael Franti' },
               { name: 'Redfoo (LMFAO)', image: publicImages.redfoo },
               { name: 'Sean Paul', image: publicImages.seanpaul },
               { name: 'Kate Upton', image: publicImages.kateupton },
               { name: 'Chevy Chase', image: publicImages.chevychase },
-              { name: 'Kevin Costner' },
+              { name: 'Kevin Costner', image: publicImages.kevincostner },
             ] as { name: string; image?: string }[]).map((artist) => (
               <div key={artist.name} className="group relative rounded-xl overflow-hidden border border-white/20 hover:border-emerald-400/50 transition-all duration-300 aspect-square">
                 {artist.image ? (
@@ -444,7 +444,7 @@ export function HomePage() {
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
               {([
                 { name: 'Greg Norman', image: publicImages.gregnorman },
-                { name: 'Sir Nick Faldo' },
+                { name: 'Sir Nick Faldo', image: publicImages.nickfaldo },
                 { name: 'Bryson DeChambeau', image: publicImages.brysondechambeau },
                 { name: 'Matt Kuchar', image: publicImages.mattkuchar },
                 { name: 'Tommy Fleetwood', image: publicImages.tommyfleetwood },

@@ -24,18 +24,18 @@ const tennisPros: { name: string; achievement: string; image?: string }[] = [
 
   { name: 'Eugenie Bouchard', achievement: '2014 Wimbledon finalist', image: publicImages.bouchard },
   { name: 'Kevin Anderson', achievement: '2-time Grand Slam finalist', image: publicImages.kevinanderson },
+  { name: 'Grigor Dimitrov', achievement: 'Former World No. 3', image: publicImages.grigordimitrov },
 ];
 
 const musiciansAndEntertainers: { name: string; knownFor: string; image?: string }[] = [
   { name: 'Andrea Bocelli', knownFor: 'Legendary Italian tenor, 90M+ records sold', image: publicImages.andreabocelli },
   { name: 'Kenny Chesney', knownFor: 'Country music superstar', image: publicImages.kennychesney },
   { name: 'Florida Georgia Line', knownFor: 'Country music duo', image: publicImages.floridageorgialine },
-  { name: 'Pitbull', knownFor: 'Global pop/hip-hop artist' },
+  { name: 'Pitbull', knownFor: 'Global pop/hip-hop artist', image: publicImages.pitbull },
   { name: 'Jamie Foxx', knownFor: 'Actor, musician, comedian', image: publicImages.jamiefoxx },
   { name: 'Jimmy Buffett', knownFor: 'Singer-songwriter (late)', image: publicImages.jimmybuffett },
-  { name: 'Darius Rucker', knownFor: 'Hootie & the Blowfish, country solo career' },
+  { name: 'Darius Rucker', knownFor: 'Hootie & the Blowfish, country solo career', image: publicImages.dariusrucker },
   { name: 'Jewel', knownFor: 'Singer-songwriter', image: publicImages.jewel },
-  { name: 'Michael Franti', knownFor: 'Singer-songwriter, Spearhead' },
   { name: 'Redfoo (LMFAO)', knownFor: 'DJ, musician', image: publicImages.redfoo },
   { name: 'Sean Paul', knownFor: 'Dancehall/reggae artist', image: publicImages.seanpaul },
 ];
@@ -43,14 +43,14 @@ const musiciansAndEntertainers: { name: string; knownFor: string; image?: string
 const celebrityGuests: { name: string; image?: string }[] = [
   { name: 'Kate Upton', image: publicImages.kateupton },
   { name: 'Chevy Chase', image: publicImages.chevychase },
-  { name: 'Kevin Costner' },
+  { name: 'Kevin Costner', image: publicImages.kevincostner },
 ];
 
 const celebrityGuestsText = 'Kate Upton, Kevin Costner, and numerous high-profile entrepreneurs and business leaders from around the world.';
 
 const golfPros: { name: string; achievement: string; image?: string }[] = [
   { name: 'Greg Norman', achievement: '2-time Open Championship winner, "The Great White Shark"', image: publicImages.gregnorman },
-  { name: 'Sir Nick Faldo', achievement: '6-time Major champion, World Golf Hall of Fame' },
+  { name: 'Sir Nick Faldo', achievement: '6-time Major champion, World Golf Hall of Fame', image: publicImages.nickfaldo },
   { name: 'Bryson DeChambeau', achievement: '2-time US Open champion', image: publicImages.brysondechambeau },
   { name: 'Matt Kuchar', achievement: '9-time PGA Tour winner, Olympic bronze medalist', image: publicImages.mattkuchar },
   { name: 'Tommy Fleetwood', achievement: 'Ryder Cup star, European Tour winner', image: publicImages.tommyfleetwood },

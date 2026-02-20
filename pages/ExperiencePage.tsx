@@ -180,7 +180,7 @@ const experiences = [
   {
     title: 'Golf at Nail Bay',
     description: 'Head to Red Dock and catch a short boat ride over to Nail Bay Resort on Virgin Gorda for a round of barefoot golf unlike any other. With a personal butler catering to your every need, stunning ocean views from every hole, and some of the biggest names in golf joining the fun, the Necker Open Pro-Am is a highlight of the week. Past participants include Greg Norman, Sir Nick Faldo, and Bryson DeChambeau.',
-    image: '/images/nail-bay-golf.jpg',
+    image: '/images/necker-open-group.jpg',
     features: ['Barefoot golf with a butler', 'Short boat ride to Virgin Gorda', 'Necker Open Pro-Am tournament', 'World-class golf pros joining the fun']
   },
   {

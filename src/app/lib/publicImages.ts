@@ -80,4 +80,9 @@ export const publicImages = {
   nickkyrgios: '/images/nickkyrgios.jpg',
   dominicthiem: '/images/dominicthiem.jpg',
   andreabocelli: '/images/andreabocelli.jpg',
+  dariusrucker: '/images/dariusrucker.jpg',
+  grigordimitrov: '/images/grigordimitrov.jpg',
+  pitbull: '/images/pitbull.jpg',
+  kevincostner: '/images/kevincostner.jpg',
+  nickfaldo: '/images/nickfaldo.jpg',
 } as const;
