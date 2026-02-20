@@ -358,17 +358,76 @@ export function HomePage() {
           <p className="font-body text-stone-400 text-sm tracking-[0.2em] uppercase mb-6">Past Necker Cup Talent</p>
           <h2 className="font-display text-3xl md:text-4xl text-white mb-10">Past Tennis Legends & Pros</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-16">
-            {['Novak Djokovic', 'Rafael Nadal', 'Bjorn Borg', 'Rod Laver', 'Caroline Wozniacki', 'Juan Martin Del Potro', 'Dominic Thiem', 'Martina Navratilova', 'Jack Sock', 'Mike Bryan', 'Stefan Edberg', 'Boris Becker', 'Tommy Haas', 'Heather Watson', 'Vasek Pospisil (Tournament Director)', 'Kim Clijsters', 'Grigor Dimitrov', 'Eugenie Bouchard', 'Kevin Anderson', 'Arantxa Sanchez-Vicario'].map(name => (
-              <div key={name} className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-300 text-center aspect-square">
-                <span className="font-body text-white font-medium text-sm leading-tight">{name}</span>
+            {([
+              { name: 'Novak Djokovic', image: publicImages.novak },
+              { name: 'Rafael Nadal', image: publicImages.rafa },
+              { name: 'Bjorn Borg', image: publicImages.borg },
+              { name: 'Rod Laver' },
+              { name: 'Caroline Wozniacki' },
+              { name: 'Juan Martin Del Potro' },
+              { name: 'Dominic Thiem' },
+              { name: 'Martina Navratilova' },
+              { name: 'Jack Sock' },
+              { name: 'Mike Bryan' },
+              { name: 'Stefan Edberg' },
+              { name: 'Boris Becker' },
+              { name: 'Tommy Haas' },
+              { name: 'Heather Watson' },
+              { name: 'Vasek Pospisil', image: publicImages.vasek },
+              { name: 'Kim Clijsters', image: publicImages.kim },
+              { name: 'Grigor Dimitrov' },
+              { name: 'Eugenie Bouchard', image: publicImages.bouchard },
+              { name: 'Kevin Anderson' },
+              { name: 'Arantxa Sanchez-Vicario' },
+            ] as { name: string; image?: string }[]).map((pro) => (
+              <div key={pro.name} className="group relative rounded-xl overflow-hidden border border-white/20 hover:border-emerald-400/50 transition-all duration-300 aspect-square">
+                {pro.image ? (
+                  <>
+                    <img src={pro.image} alt={pro.name} className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
+                      <span className="font-body text-white font-medium text-sm leading-tight">{pro.name}</span>
+                    </div>
+                  </>
+                ) : (
+                  <div className="flex items-center justify-center h-full bg-white/10 p-4 text-center">
+                    <span className="font-body text-white font-medium text-sm leading-tight">{pro.name}</span>
+                  </div>
+                )}
               </div>
             ))}
           </div>
           <h2 className="font-display text-3xl md:text-4xl text-white mb-10">Past Musicians & Celebrities</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {['Andrea Bocelli', 'Kenny Chesney', 'Florida Georgia Line', 'Pitbull', 'Jamie Foxx', 'Jimmy Buffett', 'Darius Rucker', 'Jewel', 'Michael Franti', 'Redfoo (LMFAO)', 'Sean Paul', 'Kate Upton', 'Kevin Costner'].map(name => (
-              <div key={name} className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-300 text-center aspect-square">
-                <span className="font-body text-white font-medium text-sm leading-tight">{name}</span>
+            {([
+              { name: 'Andrea Bocelli' },
+              { name: 'Kenny Chesney' },
+              { name: 'Florida Georgia Line' },
+              { name: 'Pitbull' },
+              { name: 'Jamie Foxx' },
+              { name: 'Jimmy Buffett' },
+              { name: 'Darius Rucker' },
+              { name: 'Jewel' },
+              { name: 'Michael Franti' },
+              { name: 'Redfoo (LMFAO)' },
+              { name: 'Sean Paul', image: publicImages.seanpaul },
+              { name: 'Kate Upton' },
+              { name: 'Kevin Costner' },
+            ] as { name: string; image?: string }[]).map((artist) => (
+              <div key={artist.name} className="group relative rounded-xl overflow-hidden border border-white/20 hover:border-emerald-400/50 transition-all duration-300 aspect-square">
+                {artist.image ? (
+                  <>
+                    <img src={artist.image} alt={artist.name} className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
+                      <span className="font-body text-white font-medium text-sm leading-tight">{artist.name}</span>
+                    </div>
+                  </>
+                ) : (
+                  <div className="flex items-center justify-center h-full bg-white/10 p-4 text-center">
+                    <span className="font-body text-white font-medium text-sm leading-tight">{artist.name}</span>
+                  </div>
+                )}
               </div>
             ))}
           </div>
