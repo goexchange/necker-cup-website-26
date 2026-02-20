@@ -5,10 +5,10 @@ const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL ?? 'https://emfbrenmnqain
 const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY ?? 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVtZmJyZW5tbnFhaW5zcWt2em9xIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk2MTE1MTgsImV4cCI6MjA4NTE4NzUxOH0.q2s6DqKc88xqCpWAnSv4wxm6Qw8hFJetB0KvCdAVuCU';
 
 const PACKAGE_OPTIONS = [
-  { value: 'player_necker', label: 'Pro-Am: Player — Necker Island ($109,750 / couple)' },
-  { value: 'player_moskito', label: 'Pro-Am: Player — Branson Estate, Moskito ($99,250 / couple)' },
-  { value: 'spectator_necker', label: 'Pro-Am: Spectator — Necker Island ($78,750 / couple)' },
-  { value: 'spectator_moskito', label: 'Pro-Am: Spectator — Branson Estate, Moskito ($67,250 / couple)' },
+  { value: 'player_necker', label: 'Pro-Am: Player — Necker Island' },
+  { value: 'player_moskito', label: 'Pro-Am: Player — Branson Estate, Moskito' },
+  { value: 'spectator_necker', label: 'Pro-Am: Spectator — Necker Island' },
+  { value: 'spectator_moskito', label: 'Pro-Am: Spectator — Branson Estate, Moskito' },
 ];
 
 async function insertIntoNeckerCupInquiries(data: {
@@ -65,11 +65,7 @@ const initialFormData = {
   phone: '',
   package: '',
   numberOfGuests: '1',
-  arrivalDate: '',
-  specialRequests: '',
   dietaryRestrictions: '',
-  emergencyContact: '',
-  emergencyPhone: '',
 };
 
 type FormData = typeof initialFormData;
@@ -94,7 +90,7 @@ export function ReservationForm({ isOpen, onClose }: { isOpen: boolean; onClose:
         email: formData.email,
         phone: formData.phone,
         package_interest: formData.package || undefined,
-        message: `Number of Guests: ${formData.numberOfGuests}\nArrival Date: ${formData.arrivalDate || 'Not specified'}\nDietary Restrictions: ${formData.dietaryRestrictions || 'None'}\nSpecial Requests: ${formData.specialRequests || 'None'}\nEmergency Contact: ${formData.emergencyContact || 'Not provided'}\nEmergency Phone: ${formData.emergencyPhone || 'Not provided'}`,
+        message: `Number of Guests: ${formData.numberOfGuests}\nDietary Restrictions: ${formData.dietaryRestrictions || 'None'}`,
         source: 'website_reservation_form',
         status: 'new',
       };
@@ -191,47 +187,21 @@ export function ReservationForm({ isOpen, onClose }: { isOpen: boolean; onClose:
 
             <div>
               <h3 className="font-display text-xl text-stone-900 mb-4">Booking Details</h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="font-body text-sm text-stone-700 mb-2 block">Number of Guests *</label>
-                  <select name="numberOfGuests" value={formData.numberOfGuests} onChange={handleChange} required className="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-emerald-800 focus:ring-2 focus:ring-emerald-800/20 outline-none font-body">
-                    {[1, 2, 3, 4, 5, 6].map((num) => (
-                      <option key={num} value={num}>{num} {num === 1 ? 'Guest' : 'Guests'}</option>
-                    ))}
-                  </select>
-                </div>
-                <div>
-                  <label className="font-body text-sm text-stone-700 mb-2 block">Preferred Arrival Date</label>
-                  <input type="date" name="arrivalDate" value={formData.arrivalDate} onChange={handleChange} min="2026-11-30" max="2026-12-05" className="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-emerald-800 focus:ring-2 focus:ring-emerald-800/20 outline-none font-body" />
-                </div>
+              <div>
+                <label className="font-body text-sm text-stone-700 mb-2 block">Number of Guests *</label>
+                <select name="numberOfGuests" value={formData.numberOfGuests} onChange={handleChange} required className="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-emerald-800 focus:ring-2 focus:ring-emerald-800/20 outline-none font-body">
+                  {[1, 2, 3, 4, 5, 6].map((num) => (
+                    <option key={num} value={num}>{num} {num === 1 ? 'Guest' : 'Guests'}</option>
+                  ))}
+                </select>
               </div>
             </div>
 
             <div>
-              <h3 className="font-display text-xl text-stone-900 mb-4">Additional Information</h3>
-              <div className="space-y-4">
-                <div>
-                  <label className="font-body text-sm text-stone-700 mb-2 block">Dietary Restrictions or Preferences</label>
-                  <textarea name="dietaryRestrictions" value={formData.dietaryRestrictions} onChange={handleChange} rows={3} placeholder="Any dietary restrictions or preferences..." className="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-emerald-800 focus:ring-2 focus:ring-emerald-800/20 outline-none font-body resize-none" />
-                </div>
-                <div>
-                  <label className="font-body text-sm text-stone-700 mb-2 block">Special Requests</label>
-                  <textarea name="specialRequests" value={formData.specialRequests} onChange={handleChange} rows={3} placeholder="Any special requests..." className="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-emerald-800 focus:ring-2 focus:ring-emerald-800/20 outline-none font-body resize-none" />
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-display text-xl text-stone-900 mb-4">Emergency Contact</h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="font-body text-sm text-stone-700 mb-2 block">Contact Name</label>
-                  <input type="text" name="emergencyContact" value={formData.emergencyContact} onChange={handleChange} className="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-emerald-800 focus:ring-2 focus:ring-emerald-800/20 outline-none font-body" />
-                </div>
-                <div>
-                  <label className="font-body text-sm text-stone-700 mb-2 block">Contact Phone</label>
-                  <input type="tel" name="emergencyPhone" value={formData.emergencyPhone} onChange={handleChange} className="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-emerald-800 focus:ring-2 focus:ring-emerald-800/20 outline-none font-body" />
-                </div>
+              <h3 className="font-display text-xl text-stone-900 mb-4">Additional Questions</h3>
+              <div>
+                <label className="font-body text-sm text-stone-700 mb-2 block">Dietary Restrictions or Preferences</label>
+                <textarea name="dietaryRestrictions" value={formData.dietaryRestrictions} onChange={handleChange} rows={3} placeholder="Any dietary restrictions or preferences..." className="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-emerald-800 focus:ring-2 focus:ring-emerald-800/20 outline-none font-body resize-none" />
               </div>
             </div>
 
