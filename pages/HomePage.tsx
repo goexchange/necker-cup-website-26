@@ -447,9 +447,9 @@ export function HomePage() {
               {([
                 { name: 'Greg Norman', image: publicImages.gregnorman },
                 { name: 'Sir Nick Faldo' },
-                { name: 'Bryson DeChambeau' },
+                { name: 'Bryson DeChambeau', image: publicImages.brysondechambeau },
                 { name: 'Matt Kuchar', image: publicImages.mattkuchar },
-                { name: 'Tommy Fleetwood' },
+                { name: 'Tommy Fleetwood', image: publicImages.tommyfleetwood },
                 { name: 'Sam Burns', image: publicImages.samburns },
               ] as { name: string; image?: string }[]).map((pro) => (
                 <div key={pro.name} className="group relative rounded-xl overflow-hidden border border-white/20 hover:border-emerald-400/50 transition-all duration-300 aspect-square">

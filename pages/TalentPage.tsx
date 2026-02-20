@@ -52,9 +52,9 @@ const celebrityGuestsText = 'Kate Upton, Kevin Costner, and numerous high-profil
 const golfPros: { name: string; achievement: string; image?: string }[] = [
   { name: 'Greg Norman', achievement: '2-time Open Championship winner, "The Great White Shark"', image: publicImages.gregnorman },
   { name: 'Sir Nick Faldo', achievement: '6-time Major champion, World Golf Hall of Fame' },
-  { name: 'Bryson DeChambeau', achievement: '2-time US Open champion' },
+  { name: 'Bryson DeChambeau', achievement: '2-time US Open champion', image: publicImages.brysondechambeau },
   { name: 'Matt Kuchar', achievement: '9-time PGA Tour winner, Olympic bronze medalist', image: publicImages.mattkuchar },
-  { name: 'Tommy Fleetwood', achievement: 'Ryder Cup star, European Tour winner' },
+  { name: 'Tommy Fleetwood', achievement: 'Ryder Cup star, European Tour winner', image: publicImages.tommyfleetwood },
   { name: 'Sam Burns', achievement: 'PGA Tour multi-winner, Ryder Cup player', image: publicImages.samburns },
 ];
 

@@ -70,4 +70,6 @@ export const publicImages = {
   bransonfun: '/images/bransonfun.jpg',
   mattkuchar: '/images/mattkuchar.jpg',
   gregnorman: '/images/gregnorman.jpg',
+  tommyfleetwood: '/images/tommyfleetwood.jpg',
+  brysondechambeau: '/images/brysondechambeau.jpg',
 } as const;
