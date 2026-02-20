@@ -5,8 +5,8 @@ const tennisPros: { name: string; achievement: string; image?: string }[] = [
   { name: 'Novak Djokovic', achievement: '24-time Grand Slam champion', image: publicImages.novak },
   { name: 'Rafael Nadal', achievement: '22-time Grand Slam champion', image: publicImages.rafa },
   { name: 'Bjorn Borg', achievement: '11-time Grand Slam champion', image: publicImages.borg },
-  { name: 'Rod Laver', achievement: 'Only player to win two calendar-year Grand Slams' },
-  { name: 'Caroline Wozniacki', achievement: 'Former World No. 1, Australian Open champion' },
+  { name: 'Rod Laver', achievement: 'Only player to win two calendar-year Grand Slams', image: publicImages.rodlaver },
+  { name: 'Caroline Wozniacki', achievement: 'Former World No. 1, Australian Open champion', image: publicImages.carolinewozniacki },
   { name: 'Juan Martin Del Potro', achievement: '2009 US Open champion' },
   { name: 'Dominic Thiem', achievement: '2020 US Open champion' },
   { name: 'John McEnroe', achievement: '7-time Grand Slam champion', image: publicImages.johnmcenroe },
@@ -30,30 +30,32 @@ const tennisPros: { name: string; achievement: string; image?: string }[] = [
 const musiciansAndEntertainers: { name: string; knownFor: string; image?: string }[] = [
   { name: 'Andrea Bocelli', knownFor: 'Legendary Italian tenor, 90M+ records sold' },
   { name: 'Kenny Chesney', knownFor: 'Country music superstar', image: publicImages.kennychesney },
-  { name: 'Florida Georgia Line', knownFor: 'Country music duo' },
+  { name: 'Florida Georgia Line', knownFor: 'Country music duo', image: publicImages.floridageorgialine },
   { name: 'Pitbull', knownFor: 'Global pop/hip-hop artist' },
-  { name: 'Jamie Foxx', knownFor: 'Actor, musician, comedian' },
+  { name: 'Jamie Foxx', knownFor: 'Actor, musician, comedian', image: publicImages.jamiefoxx },
   { name: 'Jimmy Buffett', knownFor: 'Singer-songwriter (late)' },
   { name: 'Darius Rucker', knownFor: 'Hootie & the Blowfish, country solo career' },
   { name: 'Jewel', knownFor: 'Singer-songwriter', image: publicImages.jewel },
   { name: 'Michael Franti', knownFor: 'Singer-songwriter, Spearhead' },
-  { name: 'Redfoo (LMFAO)', knownFor: 'DJ, musician' },
+  { name: 'Redfoo (LMFAO)', knownFor: 'DJ, musician', image: publicImages.redfoo },
   { name: 'Sean Paul', knownFor: 'Dancehall/reggae artist', image: publicImages.seanpaul },
 ];
 
-const celebrityGuests = [
-  { name: 'Kate Upton' },
+const celebrityGuests: { name: string; image?: string }[] = [
+  { name: 'Kate Upton', image: publicImages.kateupton },
+  { name: 'Chevy Chase', image: publicImages.chevychase },
   { name: 'Kevin Costner' },
 ];
 
 const celebrityGuestsText = 'Kate Upton, Kevin Costner, and numerous high-profile entrepreneurs and business leaders from around the world.';
 
-const golfPros = [
-  { name: 'Greg Norman', achievement: '2-time Open Championship winner, "The Great White Shark"' },
+const golfPros: { name: string; achievement: string; image?: string }[] = [
+  { name: 'Greg Norman', achievement: '2-time Open Championship winner, "The Great White Shark"', image: publicImages.gregnorman },
   { name: 'Sir Nick Faldo', achievement: '6-time Major champion, World Golf Hall of Fame' },
   { name: 'Bryson DeChambeau', achievement: '2-time US Open champion' },
+  { name: 'Matt Kuchar', achievement: '9-time PGA Tour winner, Olympic bronze medalist', image: publicImages.mattkuchar },
   { name: 'Tommy Fleetwood', achievement: 'Ryder Cup star, European Tour winner' },
-  { name: 'Sam Burns', achievement: 'PGA Tour multi-winner, Ryder Cup player' },
+  { name: 'Sam Burns', achievement: 'PGA Tour multi-winner, Ryder Cup player', image: publicImages.samburns },
 ];
 
 function TalentCard({ name, subtitle, image }: { name: string; subtitle?: string; image?: string }) {
@@ -132,7 +134,7 @@ export function TalentPage() {
               <TalentCard key={i} name={row.name} subtitle={row.knownFor} image={row.image} />
             ))}
             {celebrityGuests.map((row, i) => (
-              <TalentCard key={`celebrity-${i}`} name={row.name} />
+              <TalentCard key={`celebrity-${i}`} name={row.name} image={row.image} />
             ))}
           </div>
           <p className="font-body text-stone-500 text-sm mt-8">
@@ -149,7 +151,7 @@ export function TalentPage() {
           <h2 className="font-display text-3xl md:text-4xl text-stone-900 mb-10">Past Golf Pros</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
             {golfPros.map((pro, i) => (
-              <TalentCard key={i} name={pro.name} subtitle={pro.achievement} />
+              <TalentCard key={i} name={pro.name} subtitle={pro.achievement} image={pro.image} />
             ))}
           </div>
         </div>

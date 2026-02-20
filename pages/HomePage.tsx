@@ -363,8 +363,8 @@ export function HomePage() {
               { name: 'Rafael Nadal', image: publicImages.rafa },
               { name: 'Bjorn Borg', image: publicImages.borg },
               { name: 'John McEnroe', image: publicImages.johnmcenroe },
-              { name: 'Rod Laver' },
-              { name: 'Caroline Wozniacki' },
+              { name: 'Rod Laver', image: publicImages.rodlaver },
+              { name: 'Caroline Wozniacki', image: publicImages.carolinewozniacki },
               { name: 'Juan Martin Del Potro' },
               { name: 'Dominic Thiem' },
               { name: 'Martina Navratilova', image: publicImages.martina },
@@ -405,16 +405,17 @@ export function HomePage() {
             {([
               { name: 'Andrea Bocelli' },
               { name: 'Kenny Chesney', image: publicImages.kennychesney },
-              { name: 'Florida Georgia Line' },
+              { name: 'Florida Georgia Line', image: publicImages.floridageorgialine },
               { name: 'Pitbull' },
-              { name: 'Jamie Foxx' },
+              { name: 'Jamie Foxx', image: publicImages.jamiefoxx },
               { name: 'Jimmy Buffett' },
               { name: 'Darius Rucker' },
               { name: 'Jewel', image: publicImages.jewel },
               { name: 'Michael Franti' },
-              { name: 'Redfoo (LMFAO)' },
+              { name: 'Redfoo (LMFAO)', image: publicImages.redfoo },
               { name: 'Sean Paul', image: publicImages.seanpaul },
-              { name: 'Kate Upton' },
+              { name: 'Kate Upton', image: publicImages.kateupton },
+              { name: 'Chevy Chase', image: publicImages.chevychase },
               { name: 'Kevin Costner' },
             ] as { name: string; image?: string }[]).map((artist) => (
               <div key={artist.name} className="group relative rounded-xl overflow-hidden border border-white/20 hover:border-emerald-400/50 transition-all duration-300 aspect-square">
@@ -443,9 +444,28 @@ export function HomePage() {
             <p className="font-body text-stone-400 text-sm tracking-[0.2em] uppercase mb-4">Past Necker Cup Talent</p>
             <h2 className="font-display text-3xl md:text-4xl text-white mb-10">Past Golf Pros</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-              {['Greg Norman', 'Sir Nick Faldo', 'Bryson DeChambeau', 'Tommy Fleetwood', 'Sam Burns'].map(name => (
-                <div key={name} className="flex flex-col items-center justify-center p-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 hover:border-emerald-400/50 transition-all duration-300 text-center aspect-square">
-                  <span className="font-body text-white font-medium text-sm leading-tight">{name}</span>
+              {([
+                { name: 'Greg Norman', image: publicImages.gregnorman },
+                { name: 'Sir Nick Faldo' },
+                { name: 'Bryson DeChambeau' },
+                { name: 'Matt Kuchar', image: publicImages.mattkuchar },
+                { name: 'Tommy Fleetwood' },
+                { name: 'Sam Burns', image: publicImages.samburns },
+              ] as { name: string; image?: string }[]).map((pro) => (
+                <div key={pro.name} className="group relative rounded-xl overflow-hidden border border-white/20 hover:border-emerald-400/50 transition-all duration-300 aspect-square">
+                  {pro.image ? (
+                    <>
+                      <img src={pro.image} alt={pro.name} className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
+                        <span className="font-body text-white font-medium text-sm leading-tight">{pro.name}</span>
+                      </div>
+                    </>
+                  ) : (
+                    <div className="flex items-center justify-center h-full bg-white/10 p-4 text-center">
+                      <span className="font-body text-white font-medium text-sm leading-tight">{pro.name}</span>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
