@@ -65,7 +65,7 @@ const initialFormData = {
   phone: '',
   package: '',
   numberOfGuests: '1',
-  dietaryRestrictions: '',
+  additionalComments: '',
 };
 
 type FormData = typeof initialFormData;
@@ -90,7 +90,7 @@ export function ReservationForm({ isOpen, onClose }: { isOpen: boolean; onClose:
         email: formData.email,
         phone: formData.phone,
         package_interest: formData.package || undefined,
-        message: `Number of Guests: ${formData.numberOfGuests}\nDietary Restrictions: ${formData.dietaryRestrictions || 'None'}`,
+        message: `Number of Guests: ${formData.numberOfGuests}\nAdditional Comments: ${formData.additionalComments || 'None'}`,
         source: 'website_reservation_form',
         status: 'new',
       };
@@ -211,8 +211,8 @@ export function ReservationForm({ isOpen, onClose }: { isOpen: boolean; onClose:
             <div>
               <h3 className="font-display text-xl text-stone-900 mb-4">Additional Questions</h3>
               <div>
-                <label className="font-body text-sm text-stone-700 mb-2 block">Dietary Restrictions or Preferences</label>
-                <textarea name="dietaryRestrictions" value={formData.dietaryRestrictions} onChange={handleChange} rows={3} placeholder="Any dietary restrictions or preferences..." className="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-emerald-800 focus:ring-2 focus:ring-emerald-800/20 outline-none font-body resize-none" />
+                <label className="font-body text-sm text-stone-700 mb-2 block">Additional Comments</label>
+                <textarea name="additionalComments" value={formData.additionalComments} onChange={handleChange} rows={3} placeholder="Any additional comments or questions..." className="w-full px-4 py-3 rounded-xl border border-stone-300 focus:border-emerald-800 focus:ring-2 focus:ring-emerald-800/20 outline-none font-body resize-none" />
               </div>
             </div>
 
