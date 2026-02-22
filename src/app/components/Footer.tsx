@@ -25,7 +25,7 @@ export function Footer() {
           </div>
         </div>
         <div className="flex flex-col items-center gap-4 pt-10 border-t border-stone-800 mb-10">
-          <p className="font-body text-sm text-stone-400 tracking-wide uppercase">Owned &amp; Produced by</p>
+          <p className="font-body text-sm text-stone-400 tracking-wide uppercase">Produced by Premier Live</p>
           <a href="https://www.premierlive.com" target="_blank" rel="noopener noreferrer">
             <img src="/images/premier-live-logo.png" alt="Premier Live - Be Your Passion" className="h-20 w-auto" />
           </a>

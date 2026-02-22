@@ -6,7 +6,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   appType: 'spa',
   server: {
-    host: 'localhost',
+    host: true,
     port: 5173,
     watch: {
       usePolling: false,
