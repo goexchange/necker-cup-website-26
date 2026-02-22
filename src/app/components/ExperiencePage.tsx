@@ -32,7 +32,7 @@ export function ExperiencePage({ onNavigateHome, onNavigate }: ExperiencePagePro
       title: 'Musical Performances',
       description: 'Experience intimate concerts featuring world-renowned artists in the most exclusive setting imaginable.',
       image: '/images/legends-music-band.jpg',
-      features: ['Andrea Bocelli concert', 'Darius Rucker performance', 'Exclusive artist meet & greets', 'Behind-the-scenes access']
+      features: ['World-class live performance', 'Darius Rucker performance', 'Exclusive artist meet & greets', 'Behind-the-scenes access']
     },
     {
       title: 'Island Paradise',

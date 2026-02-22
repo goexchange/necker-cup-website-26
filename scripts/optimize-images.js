@@ -32,6 +32,12 @@ async function optimizeImage(filePath) {
   
   if (ext !== '.jpg' && ext !== '.jpeg' && ext !== '.png') return;
 
+  // Skip PNGs — they likely have transparency (logos, icons) that JPEG would destroy
+  if (ext === '.png') {
+    console.log(`  ${filename}: skipped (PNG with potential transparency)`);
+    return { original: 0, optimized: 0 };
+  }
+
   try {
     const originalSize = fs.statSync(filePath).size;
     const metadata = await sharp(filePath).metadata();

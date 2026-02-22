@@ -23,8 +23,8 @@ const galleryImages = [
 const agenda = [
   { day: 'Monday', date: 'November 30', events: [{ time: '2:00 PM', title: 'Guest Arrival & Welcome', desc: 'Check-in to your private villa' }, { time: '6:00 PM', title: 'Opening Reception', desc: 'Champagne welcome on the beach' }, { time: '8:00 PM', title: 'Welcome Dinner', desc: 'Beachside dining under the stars' }] },
   { day: 'Tuesday', date: 'December 1', events: [{ time: '8:00 AM', title: 'Breakfast & Warm-up', desc: 'Light training session' }, { time: '10:00 AM', title: 'Pro-Am Matches Begin', desc: 'Round-robin tournament starts' }, { time: '1:00 PM', title: 'Lunch on the Lawn', desc: 'Casual island cuisine' }, { time: '4:00 PM', title: 'Afternoon Matches', desc: 'Doubles competition' }, { time: '7:00 PM', title: 'Cocktails & Sunset', desc: 'Clifftop bar gathering' }] },
-  { day: 'Wednesday', date: 'December 2', events: [{ time: '9:00 AM', title: 'Tennis Clinic', desc: 'Private coaching with pros' }, { time: '12:00 PM', title: 'Free Time', desc: 'Beach, spa, or water sports' }, { time: '6:00 PM', title: 'Bocelli Rehearsal', desc: 'Exclusive behind-the-scenes access' }, { time: '8:30 PM', title: 'Andrea Bocelli Concert', desc: 'Intimate performance on the Great Lawn' }] },
-  { day: 'Thursday', date: 'December 3', events: [{ time: '10:00 AM', title: 'Semi-Final Matches', desc: 'Championship bracket begins' }, { time: '2:00 PM', title: 'Island Excursion', desc: 'Snorkeling & sailing adventure' }, { time: '7:00 PM', title: 'Darius Rucker Performance', desc: 'Acoustic beachside concert' }, { time: '10:00 PM', title: 'Bonfire & Stargazing', desc: 'Beach celebration' }] },
+  { day: 'Wednesday', date: 'December 2', events: [{ time: '9:00 AM', title: 'Tennis Clinic', desc: 'Private coaching with pros' }, { time: '12:00 PM', title: 'Free Time', desc: 'Beach, spa, or water sports' }, { time: '7:00 PM', title: 'Dinner', desc: 'Special dinner before the evening performance' }, { time: '9:00 PM', title: 'Live Musical Performance', desc: 'Intimate performance at the Great House' }] },
+  { day: 'Thursday', date: 'December 3', events: [{ time: '10:00 AM', title: 'Semi-Final Matches', desc: 'Championship bracket begins' }, { time: '2:00 PM', title: 'Island Excursion', desc: 'Snorkeling & sailing adventure' }, { time: '7:00 PM', title: 'Charity Dinner & Auction', desc: 'Support our charitable partners' }, { time: '9:30 PM', title: 'End of the World Party', desc: 'The ultimate celebration' }] },
   { day: 'Friday', date: 'December 4', events: [{ time: '10:00 AM', title: 'Championship Finals', desc: 'Trophy matches' }, { time: '1:00 PM', title: 'Awards Luncheon', desc: 'Celebration & trophy presentation' }, { time: '4:00 PM', title: 'Free Afternoon', desc: 'Relax and enjoy the island' }, { time: '8:00 PM', title: 'Farewell Gala', desc: 'Black-tie dinner celebration' }] },
   { day: 'Saturday', date: 'December 5', events: [{ time: '10:00 AM', title: 'Departure Day', desc: 'Breakfast & fond farewells' }] },
 ];
@@ -87,7 +87,7 @@ export function HomePage() {
           <div className="absolute right-6 lg:right-12 bottom-20 lg:bottom-32 hidden lg:block animate-fade-up-delay-3">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
               <p className="font-body text-white/60 text-xs tracking-widest uppercase mb-2">Past guests</p>
-              <p className="font-display text-white text-2xl mb-1">Andrea Bocelli</p>
+              <p className="font-display text-white text-2xl mb-1">World-Class Artists</p>
               <p className="font-display text-white/80 text-lg italic">Florida Georgia Line · Jamie Foxx · Pitbull</p>
             </div>
           </div>

@@ -50,8 +50,8 @@ const agenda = [
       { time: '1:30 PM', title: 'Necker Cup - Day 1 - Afternoon Rounds', desc: 'Continue watching the exciting Pro-Am tournament matches.', icon: '🎾', location: 'Tennis Courts' },
       { time: '4:00 PM', title: 'Meditation', desc: 'Afternoon meditation session for relaxation and mindfulness.', icon: '🧘', location: 'Temple' },
       { time: '6:00 PM', title: 'Cocktails – Great House', desc: 'Evening cocktails at the Great House', icon: '🍸', location: 'Great House' },
-      { time: '7:00 PM', title: 'Bocelli Dinner', desc: 'Special dinner before the evening performance', icon: '🍽️', location: 'Great House Upper Roof Deck' },
-      { time: '9:00 PM', title: 'Bocelli Performance', desc: 'Join us in the Great House after dinner for an intimate live performance by Andrea Bocelli. It will be a rare and unforgettable evening of music in one of the most magical settings on Necker Island.', icon: '🎤', location: 'Great House' },
+      { time: '7:00 PM', title: 'Dinner', desc: 'Special dinner before the evening performance', icon: '🍽️', location: 'Great House Upper Roof Deck' },
+      { time: '9:00 PM', title: 'Live Musical Performance', desc: 'Join us in the Great House after dinner for an intimate live performance. It will be a rare and unforgettable evening of music in one of the most magical settings on Necker Island.', icon: '🎤', location: 'Great House' },
     ]
   },
   {
@@ -92,7 +92,7 @@ const agenda = [
       { time: '5:45 PM', title: 'Necker Cup Group Picture', desc: 'Come out to center court right after the Pro-Exo for the Necker Cup all group picture.', icon: '📸', location: 'Centre Court' },
       { time: '6:00 PM', title: 'Cocktails Reception', desc: 'Meet at the Great House after the tennis exhibition to get the Charity Dinner and Auction kicked off.', icon: '🍸', location: 'Great House' },
       { time: '7:00 PM', title: 'Charity Dinner & Live Auction', desc: 'Join us for the charity dinner and live auction to support our charitable partners.', icon: '🎗️', location: 'Great House' },
-      { time: '9:30 PM', title: 'End of the World Party with Darius Rucker and DJ Mehow', desc: 'The ultimate celebration with live performance by Darius Rucker and DJ Mehow', icon: '🎸', location: 'Cabana Stage / Pool Bar' },
+      { time: '9:30 PM', title: 'End of the World Party', desc: 'The ultimate celebration to close out an unforgettable week', icon: '🎸', location: 'Cabana Stage / Pool Bar' },
     ]
   },
   {
