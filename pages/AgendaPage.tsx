@@ -50,8 +50,8 @@ const agenda = [
       { time: '1:30 PM', title: 'Necker Cup - Day 1 - Afternoon Rounds', desc: 'Continue watching the exciting Pro-Am tournament matches.', icon: '🎾', location: 'Tennis Courts' },
       { time: '4:00 PM', title: 'Meditation', desc: 'Afternoon meditation session for relaxation and mindfulness.', icon: '🧘', location: 'Temple' },
       { time: '6:00 PM', title: 'Cocktails – Great House', desc: 'Evening cocktails at the Great House', icon: '🍸', location: 'Great House' },
-      { time: '7:00 PM', title: 'Bocelli Dinner', desc: 'Special dinner before the evening performance', icon: '🍽️', location: 'Great House Upper Roof Deck' },
-      { time: '9:00 PM', title: 'Bocelli Performance', desc: 'Join us in the Great House after dinner for an intimate live performance by Andrea Bocelli. It will be a rare and unforgettable evening of music in one of the most magical settings on Necker Island.', icon: '🎤', location: 'Great House' },
+      { time: '7:00 PM', title: 'Live Musical Performance Dinner', desc: 'Special dinner before the evening performance', icon: '🍽️', location: 'Great House Upper Roof Deck' },
+      { time: '9:00 PM', title: 'Live Musical Performance', desc: 'Join us in the Great House after dinner for an intimate live performance. It will be a rare and unforgettable evening of music in one of the most magical settings on Necker Island.', icon: '🎤', location: 'Great House' },
     ]
   },
   {
