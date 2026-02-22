@@ -62,27 +62,6 @@ export function HomePage() {
 
   return (
     <div className="min-h-screen bg-stone-50 antialiased">
-      <style>{`
-        .font-display { font-family: 'Playfair Display', Georgia, serif; }
-        .font-body { font-family: 'DM Sans', system-ui, sans-serif; }
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
-        .animate-fade-up { animation: fadeUp 1s ease-out forwards; }
-        .animate-fade-up-delay-1 { animation: fadeUp 1s ease-out 0.2s forwards; opacity: 0; }
-        .animate-fade-up-delay-2 { animation: fadeUp 1s ease-out 0.4s forwards; opacity: 0; }
-        .animate-fade-up-delay-3 { animation: fadeUp 1s ease-out 0.6s forwards; opacity: 0; }
-        .animate-float { animation: float 3s ease-in-out infinite; }
-        .text-shadow-hero { text-shadow: 0 2px 40px rgba(0,0,0,0.3); }
-        .gradient-radial { background: radial-gradient(ellipse at top right, rgba(255,255,255,0.1) 0%, transparent 50%); }
-        @keyframes kenBurns { 0% { transform: scale(1); } 100% { transform: scale(1.08); } }
-        .hero-slide { transition: opacity 1.5s ease-in-out; }
-        .hero-slide-active { animation: kenBurns 8s ease-out forwards; }
-        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .marquee-track { display: flex; animation: marquee 30s linear infinite; }
-        .marquee-track:hover { animation-play-state: paused; }
-
-      `}</style>
-
       <section className="relative h-screen min-h-[700px] flex items-end overflow-hidden">
         {heroSlides.map((slide, i) => (
           <div
@@ -176,6 +155,8 @@ export function HomePage() {
               <img
                 src={item.src}
                 alt={item.label}
+                loading="lazy"
+                decoding="async"
                 className="w-20 h-20 sm:w-24 sm:h-24 rounded-lg object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
               />
               <div className="absolute inset-0 flex items-end rounded-lg overflow-hidden">
@@ -263,6 +244,8 @@ export function HomePage() {
                 <img
                   src={item.src}
                   alt={item.label}
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
@@ -336,14 +319,14 @@ export function HomePage() {
           <div className="grid md:grid-cols-2 gap-12">
             <div className="min-h-0">
               <div className="aspect-[4/3] max-h-[420px] w-full rounded-2xl overflow-hidden mb-6 bg-stone-200 shrink-0">
-                <img src={publicImages.necker} alt="Necker Island" className="block w-full h-full object-cover min-h-0" />
+                <img src={publicImages.necker} alt="Necker Island" loading="lazy" decoding="async" className="block w-full h-full object-cover min-h-0" />
               </div>
               <h3 className="font-display text-2xl text-stone-900 mb-4">Necker Island</h3>
               <p className="font-body text-stone-600 leading-relaxed">Necker Island is a 74-acre private island owned by Sir Richard Branson, with turquoise Caribbean waters, coral reefs, and white sandy beaches. The island features the iconic Great House, multiple Balinese-style villas, championship tennis courts, and endless activities. All tennis, meals, dinners, and parties take place on Necker Island.</p>
             </div>
             <div className="min-h-0">
               <div className="aspect-[4/3] max-h-[420px] w-full rounded-2xl overflow-hidden mb-6 bg-stone-200 shrink-0">
-                <img src={publicImages.moskito} alt="Moskito Island - The Branson Beach Estate" className="block w-full h-full object-cover min-h-0" />
+                <img src={publicImages.moskito} alt="Moskito Island - The Branson Beach Estate" loading="lazy" decoding="async" className="block w-full h-full object-cover min-h-0" />
               </div>
               <h3 className="font-display text-2xl text-stone-900 mb-4">The Branson Beach Estate on Moskito Island</h3>
               <p className="font-body text-stone-600 leading-relaxed">Moskito Island is Branson's neighboring private island, home to The Branson Beach Estate. The property offers stunning accommodation with private pools, ocean views, and the same level of luxury you'd expect—just a 5–7 minute boat ride from Necker Island.</p>
@@ -385,7 +368,7 @@ export function HomePage() {
               <div key={pro.name} className="group relative rounded-xl overflow-hidden border border-white/20 hover:border-emerald-400/50 transition-all duration-300 aspect-square">
                 {pro.image ? (
                   <>
-                    <img src={pro.image} alt={pro.name} className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                    <img src={pro.image} alt={pro.name} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
                       <span className="font-body text-white font-medium text-sm leading-tight">{pro.name}</span>
@@ -419,7 +402,7 @@ export function HomePage() {
               <div key={artist.name} className="group relative rounded-xl overflow-hidden border border-white/20 hover:border-emerald-400/50 transition-all duration-300 aspect-square">
                 {artist.image ? (
                   <>
-                    <img src={artist.image} alt={artist.name} className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                    <img src={artist.image} alt={artist.name} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
                       <span className="font-body text-white font-medium text-sm leading-tight">{artist.name}</span>
@@ -453,7 +436,7 @@ export function HomePage() {
                 <div key={pro.name} className="group relative rounded-xl overflow-hidden border border-white/20 hover:border-emerald-400/50 transition-all duration-300 aspect-square">
                   {pro.image ? (
                     <>
-                      <img src={pro.image} alt={pro.name} className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                      <img src={pro.image} alt={pro.name} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
                         <span className="font-body text-white font-medium text-sm leading-tight">{pro.name}</span>
