@@ -20,7 +20,7 @@ const sponsors = {
 const tiers = [
   {
     name: 'Presenting Partner',
-    price: '$500,000+',
+    price: '',
     icon: Award,
     benefits: [
       'Exclusive title partnership of tournament or concert',
@@ -35,7 +35,7 @@ const tiers = [
   },
   {
     name: 'Premier Partner',
-    price: '$250,000',
+    price: '',
     icon: TrendingUp,
     benefits: [
       'Premium brand visibility throughout the week',
@@ -50,7 +50,7 @@ const tiers = [
   },
   {
     name: 'Event Partner',
-    price: '$100,000',
+    price: '',
     icon: Users,
     benefits: [
       'Brand recognition on event website and materials',
@@ -186,8 +186,6 @@ export function SponsorshipPage() {
                     <tier.icon className={`w-8 h-8 ${i === 0 ? 'text-white' : 'text-stone-700'}`} />
                   </div>
                   <h3 className="font-display text-2xl lg:text-3xl text-stone-900 mb-2">{tier.name}</h3>
-                  <p className="font-display text-4xl text-emerald-800 mb-1">{tier.price}</p>
-                  {i === 0 && <p className="font-body text-stone-500 text-sm">Investment</p>}
                 </div>
                 <div className="space-y-4">
                   {tier.benefits.map((benefit, idx) => (
@@ -199,8 +197,11 @@ export function SponsorshipPage() {
                     </div>
                   ))}
                 </div>
-                <button className={`w-full mt-8 px-6 py-3 rounded-full font-body font-medium transition-all ${i === 0 ? 'bg-emerald-800 text-white hover:bg-emerald-900 hover:shadow-lg' : 'bg-white text-stone-900 border-2 border-stone-200 hover:border-emerald-800 hover:text-emerald-800'}`}>
-                  Learn More
+                <button
+                  onClick={openForm}
+                  className="w-full mt-8 px-6 py-3 rounded-full font-body font-medium bg-emerald-800 text-white hover:bg-emerald-700 transition-all duration-300 hover:shadow-lg text-sm tracking-wide"
+                >
+                  Inquire for Partnership
                 </button>
               </div>
             ))}
