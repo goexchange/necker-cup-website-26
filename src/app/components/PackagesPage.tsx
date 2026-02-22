@@ -21,10 +21,10 @@ export function PackagesPage({ onNavigateHome, onNavigate }: PackagesPageProps) 
     'Enjoy meals, events and parties, including the End of the World party, on Necker Island',
   ];
   const packages = [
-    { name: 'Pro-Am: Player — Necker Island', price: '$109,750', nights: '5 Nights / couple', desc: 'Stay on Necker Island. Meals, events & parties including the End of the World party. One 2-person playing team spot in the Necker Cup.', includes: [...sharedIncludes, 'One 2-person playing team spot to play in the Necker Cup'] },
-    { name: 'Pro-Am: Player — Branson Estate, Moskito', price: '$99,250', nights: '5 Nights / couple', desc: 'Stay at the Branson Beach Estate on Moskito Island (5–7 min boat ride). Meals, events & parties on Necker. One 2-person playing team spot.', includes: [...sharedIncludes, 'One 2-person playing team spot to play in the Necker Cup'] },
-    { name: 'Pro-Am: Spectator — Necker Island', price: '$78,750', nights: '5 Nights / couple', desc: 'Stay on Necker Island. Meals, events & parties including the End of the World party. Watch and mix with pros, legends and celebrities.', includes: [...sharedIncludes, 'Watch all the fun of the Necker Cup and mix with pros, legends and celebrities'] },
-    { name: 'Pro-Am: Spectator — Branson Estate, Moskito', price: '$67,250', nights: '5 Nights / couple', desc: 'Stay at the Branson Beach Estate on Moskito Island. Meals, events & parties on Necker. Watch and mix with pros, legends and celebrities.', includes: [...sharedIncludes, 'Watch all the fun of the Necker Cup and mix with pros, legends and celebrities'] },
+    { name: 'Pro-Am: Player — Necker Island', nights: '5 Nights / couple', desc: 'Stay on Necker Island. Meals, events & parties including the End of the World party. One 2-person playing team spot in the Necker Cup.', includes: [...sharedIncludes, 'One 2-person playing team spot to play in the Necker Cup'] },
+    { name: 'Pro-Am: Player — Branson Estate, Moskito', nights: '5 Nights / couple', desc: 'Stay at the Branson Beach Estate on Moskito Island (5–7 min boat ride). Meals, events & parties on Necker. One 2-person playing team spot.', includes: [...sharedIncludes, 'One 2-person playing team spot to play in the Necker Cup'] },
+    { name: 'Pro-Am: Spectator — Necker Island', nights: '5 Nights / couple', desc: 'Stay on Necker Island. Meals, events & parties including the End of the World party. Watch and mix with pros, legends and celebrities.', includes: [...sharedIncludes, 'Watch all the fun of the Necker Cup and mix with pros, legends and celebrities'] },
+    { name: 'Pro-Am: Spectator — Branson Estate, Moskito', nights: '5 Nights / couple', desc: 'Stay at the Branson Beach Estate on Moskito Island. Meals, events & parties on Necker. Watch and mix with pros, legends and celebrities.', includes: [...sharedIncludes, 'Watch all the fun of the Necker Cup and mix with pros, legends and celebrities'] },
   ];
 
   return (
@@ -112,13 +112,9 @@ export function PackagesPage({ onNavigateHome, onNavigate }: PackagesPageProps) 
                   ))}
                 </div>
 
-                <div className="flex items-end justify-between pt-6 border-t border-stone-100">
-                  <div>
-                    <p className="font-body text-stone-400 text-xs uppercase tracking-wider mb-1">From</p>
-                    <p className="font-display text-3xl lg:text-4xl text-emerald-800">{pkg.price}</p>
-                  </div>
-                  <button className="font-body text-sm text-emerald-800 font-medium flex items-center gap-2 group-hover:gap-3 transition-all hover:text-emerald-900">
-                    Details →
+                <div className="pt-6 border-t border-stone-100">
+                  <button className="font-body w-full bg-emerald-800 text-white px-6 py-3 rounded-full font-medium hover:bg-emerald-700 transition-all duration-300 hover:shadow-lg text-sm tracking-wide">
+                    Inquire for Pricing
                   </button>
                 </div>
               </div>
@@ -130,7 +126,7 @@ export function PackagesPage({ onNavigateHome, onNavigate }: PackagesPageProps) 
               When we say at leisure—amenities and activities are included (except the Spa). Day 6: depart after breakfast; boats to Terrance B. Lettsome Airport (Beef Island) by 12 noon.
             </p>
             <p className="font-body text-stone-400 text-xs">
-              All prices per couple. Powered by Premier Live & Mehow.
+              All packages per couple. Produced by Premier Live.
             </p>
           </div>
         </div>

@@ -5,10 +5,10 @@ import { useReservationForm } from '@/app/context/ReservationFormContext';
 import { publicImages } from '@/app/lib/publicImages';
 
 const packages = [
-  { name: 'Pro-Am: Player — Necker Island', price: '$109,750', nights: '5 Nights / couple', desc: 'Stay on Necker Island for 5 nights (November 29 - December 4, 2026). Enjoy meals, events and parties, including the End of the World party, on Necker Island. One 2-person playing team spot to play in the Necker Cup.' },
-  { name: 'Pro-Am: Player — Branson Estate, Moskito', price: '$99,250', nights: '5 Nights / couple', desc: 'Stay at the Branson Estate on Moskito Island for 5 nights (November 29 - December 4, 2026). Enjoy meals, events and parties, including the End of the World party, on Necker Island. One 2-person playing team spot to play in the Necker Cup.' },
-  { name: 'Pro-Am: Spectator — Necker Island', price: '$78,750', nights: '5 Nights / couple', desc: 'Stay on Necker Island for 5 nights (November 29 - December 4, 2026). Enjoy meals, events and parties, including the End of the World party, on Necker Island. Watch all the fun of the Necker Cup while mixing and mingling with pros, legends and celebrities.' },
-  { name: 'Pro-Am: Spectator — Branson Estate, Moskito', price: '$67,250', nights: '5 Nights / couple', desc: 'Stay at the Branson Estate on Moskito Island for 5 nights (November 29 - December 4, 2026). Enjoy meals, events and parties, including the End of the World party, on Necker Island. Watch all the fun of the Necker Cup while mixing and mingling with pros, legends and celebrities.' },
+  { name: 'Pro-Am: Player — Necker Island', nights: '5 Nights / couple', desc: 'Stay on Necker Island for 5 nights (November 29 - December 4, 2026). Enjoy meals, events and parties, including the End of the World party, on Necker Island. One 2-person playing team spot to play in the Necker Cup.' },
+  { name: 'Pro-Am: Player — Branson Estate, Moskito', nights: '5 Nights / couple', desc: 'Stay at the Branson Estate on Moskito Island for 5 nights (November 29 - December 4, 2026). Enjoy meals, events and parties, including the End of the World party, on Necker Island. One 2-person playing team spot to play in the Necker Cup.' },
+  { name: 'Pro-Am: Spectator — Necker Island', nights: '5 Nights / couple', desc: 'Stay on Necker Island for 5 nights (November 29 - December 4, 2026). Enjoy meals, events and parties, including the End of the World party, on Necker Island. Watch all the fun of the Necker Cup while mixing and mingling with pros, legends and celebrities.' },
+  { name: 'Pro-Am: Spectator — Branson Estate, Moskito', nights: '5 Nights / couple', desc: 'Stay at the Branson Estate on Moskito Island for 5 nights (November 29 - December 4, 2026). Enjoy meals, events and parties, including the End of the World party, on Necker Island. Watch all the fun of the Necker Cup while mixing and mingling with pros, legends and celebrities.' },
 ];
 
 const galleryImages = [
@@ -193,7 +193,7 @@ export function HomePage() {
       <section id="packages" className="py-24 lg:py-32 bg-stone-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
-            <p className="font-body text-emerald-800 text-sm tracking-[0.2em] uppercase mb-4">Event Packages & Pricing</p>
+            <p className="font-body text-emerald-800 text-sm tracking-[0.2em] uppercase mb-4">Event Packages</p>
             <h2 className="font-display text-4xl md:text-5xl text-stone-900 mb-4">Necker Cup Pro-Am <span className="italic">Player & Spectator</span></h2>
             <p className="font-body text-stone-600 max-w-2xl mx-auto">November 29 – December 4, 2026. Stay on Necker Island or at the Branson Beach Estate on Moskito Island (5–7 min boat ride).</p>
           </div>
@@ -204,9 +204,13 @@ export function HomePage() {
                 <p className="font-body text-stone-400 text-xs tracking-widest uppercase mb-4">{pkg.nights}</p>
                 <h3 className="font-display text-2xl lg:text-3xl text-stone-900 mb-4 leading-tight">{pkg.name}</h3>
                 <p className="font-body text-stone-500 mb-8 leading-relaxed text-sm">{pkg.desc}</p>
-                <div className="flex items-end justify-between pt-6 border-t border-stone-100">
-                  <div><p className="font-body text-stone-400 text-xs uppercase tracking-wider mb-1">From</p><p className="font-display text-3xl lg:text-4xl text-emerald-800">{pkg.price}</p></div>
-                  <Link to="/packages" className="font-body text-sm text-emerald-800 font-medium flex items-center gap-2 group-hover:gap-3 transition-all hover:text-emerald-900">Details →</Link>
+                <div className="pt-6 border-t border-stone-100">
+                  <button
+                    onClick={(e) => { e.stopPropagation(); openForm(); }}
+                    className="font-body w-full bg-emerald-800 text-white px-6 py-3 rounded-full font-medium hover:bg-emerald-700 transition-all duration-300 hover:shadow-lg text-sm tracking-wide"
+                  >
+                    Inquire for Pricing
+                  </button>
                 </div>
               </div>
             ))}
