@@ -184,7 +184,7 @@ export function HomePage() {
             </div>
             <div className="relative">
               <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-emerald-800/20 to-teal-700/30 overflow-hidden shadow-2xl bg-cover bg-center hover:scale-[1.02] transition-transform duration-500" style={{ backgroundImage: `url('${publicImages.groupPhotoMoskito}')` }} />
-              <div className="absolute -bottom-8 -left-8 w-48 h-64 rounded-2xl shadow-xl hidden lg:block bg-cover bg-center hover:scale-105 transition-transform duration-500" style={{ backgroundImage: `url('${publicImages.tennisActionBlue}')` }} />
+              <div className="absolute -bottom-8 -left-8 w-48 h-64 rounded-2xl shadow-xl hidden lg:block bg-cover bg-center hover:scale-105 transition-transform duration-500" style={{ backgroundImage: `url('${publicImages.tennisActionBackhand}')` }} />
             </div>
           </div>
         </div>
