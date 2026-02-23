@@ -11,6 +11,7 @@ import { PackagesPage } from '@pages/PackagesPage';
 import { SponsorshipPage } from '@pages/SponsorshipPage';
 import { TalentPage } from '@pages/TalentPage';
 import { SponsorEmailPage } from '@pages/SponsorEmailPage';
+import { SponsorThankYouPage } from '@pages/SponsorThankYouPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -37,6 +38,7 @@ export default function App() {
             <Route path="tennis" element={<TennisPage />} />
           </Route>
           <Route path="sponsor-email" element={<SponsorEmailPage />} />
+          <Route path="sponsor/thank-you" element={<SponsorThankYouPage />} />
         </Routes>
       </ReservationFormProvider>
     </BrowserRouter>
