@@ -9,6 +9,7 @@ import { GalleryPage } from '@pages/GalleryPage';
 import { PackagesPage } from '@pages/PackagesPage';
 import { SponsorshipPage } from '@pages/SponsorshipPage';
 import { TalentPage } from '@pages/TalentPage';
+import { EmailResponsePage } from '@pages/EmailResponsePage';
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
             <Route path="charity" element={<CharityPage />} />
             <Route path="tennis" element={<TennisPage />} />
           </Route>
+          <Route path="email-response" element={<EmailResponsePage />} />
         </Routes>
       </ReservationFormProvider>
     </BrowserRouter>
