@@ -39,152 +39,233 @@ function ArtistCard({ artist }: { artist: Artist }) {
 
 export function ArtistInvitePage() {
   return (
-    <div className="min-h-screen bg-stone-50 antialiased">
+    <div className="min-h-screen bg-stone-100 antialiased">
       <style>{`
         .font-display { font-family: 'Playfair Display', Georgia, serif; }
         .font-body { font-family: 'DM Sans', system-ui, sans-serif; }
       `}</style>
+      <main className="mx-auto max-w-[780px] bg-white shadow-[0_18px_60px_rgba(10,26,31,0.10)]">
+        {/* HERO */}
+        <section className="relative flex h-[560px] items-center justify-center">
+          <img
+            src={publicImages.islandGolfCourse}
+            alt="Necker Island"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a1a1f]/35 to-[#0a1a1f]/75" />
+          <div className="relative max-w-[620px] px-8 text-center text-white">
+            <p className="font-body mb-7 text-[11px] font-medium uppercase tracking-[0.25em] text-[#4ecdc4]">
+              Private Artist Invitation
+            </p>
+            <h1 className="font-display mb-6 text-4xl leading-tight md:text-5xl">
+              A week on Richard Branson&apos;s private island.
+              <br />
+              <em className="font-normal italic">One performance. The rest is yours.</em>
+            </h1>
+            <p className="font-body mx-auto mb-8 max-w-[520px] text-base leading-7 text-white/90">
+              Six days in the British Virgin Islands. Tennis, golf, ocean, and a charity dinner with one of the most
+              interesting rooms you&apos;ll walk into all year. Bring your plus-one. Unplug.
+            </p>
+            <p className="font-display inline-block border-t border-white/25 px-8 pt-5 text-base uppercase tracking-[0.12em] text-white/90 md:px-16 md:text-lg">
+              November 29 – December 4, 2026
+            </p>
+          </div>
+        </section>
 
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-emerald-950 via-teal-900 to-cyan-900 pb-24 pt-40 lg:pb-32 lg:pt-52">
-        <div className="absolute inset-0 opacity-20">
-          <img src={publicImages.necker} alt="" className="h-full w-full object-cover" />
-        </div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(255,255,255,0.18)_0%,_transparent_55%)]" />
-        <div className="relative mx-auto max-w-6xl px-6 text-center text-white lg:px-12">
-          <p className="font-body mb-6 text-sm uppercase tracking-[0.28em] text-white/70">Private Artist Invitation</p>
-          <h1 className="font-display mx-auto max-w-4xl text-5xl leading-[0.95] md:text-7xl lg:text-8xl">
-            Play the <span className="italic text-emerald-300">Necker Cup</span>
-          </h1>
-          <p className="font-body mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-white/90">
-            A one-of-a-kind performance opportunity on Richard Branson&apos;s Necker Island with a curated, high-impact
-            audience of founders, investors, and global leaders.
+        {/* STATS */}
+        <section className="grid grid-cols-3 border-y border-stone-200">
+          <div className="px-3 py-9 text-center">
+            <p className="font-display text-4xl font-semibold text-[#1a3a3f]">15</p>
+            <p className="font-body mt-2 text-[11px] uppercase tracking-[0.16em] text-stone-500">Years</p>
+          </div>
+          <div className="border-x border-stone-200 px-3 py-9 text-center">
+            <p className="font-display text-4xl font-semibold text-[#1a3a3f]">$12M+</p>
+            <p className="font-body mt-2 text-[11px] uppercase tracking-[0.16em] text-stone-500">Raised for Charity</p>
+          </div>
+          <div className="px-3 py-9 text-center">
+            <p className="font-display text-4xl font-semibold text-[#1a3a3f]">150–200</p>
+            <p className="font-body mt-2 text-[11px] uppercase tracking-[0.16em] text-stone-500">Guests</p>
+          </div>
+        </section>
+
+        {/* THE INVITATION */}
+        <section className="px-7 py-14 md:px-[60px] md:py-[70px]">
+          <p className="font-body mb-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-[#4ecdc4]">The Invitation</p>
+          <h2 className="font-display mb-6 text-3xl leading-tight text-[#1a3a3f] md:text-4xl">
+            A week off the grid, with a room worth showing up for.
+          </h2>
+          <p className="font-body mb-5 text-base leading-7 text-stone-700">
+            Some of the best performances most people have never seen happen on a private island in the BVI every
+            December. Andrea Bocelli, Jimmy Buffett, Kenny Chesney, Jamie Foxx, Pitbull. All on Richard Branson&apos;s
+            Necker.
           </p>
-          <div className="mt-10 inline-flex rounded-full border border-white/35 bg-white/10 px-6 py-2 backdrop-blur-sm">
-            <p className="font-body text-xs uppercase tracking-[0.22em] text-emerald-200">November 29 to December 4, 2026</p>
-          </div>
-        </div>
-      </section>
+          <p className="font-body text-base leading-7 text-stone-700">
+            We&apos;re booking music for the 15th Necker Cup and would love to discuss one of your artists. This isn&apos;t a
+            tour stop or a corporate booking. It&apos;s a week with their family on a private island, with one performance
+            slot on the final night.
+          </p>
+        </section>
 
-      {/* INTRO + STATS */}
-      <section className="border-b border-stone-200 bg-white py-16">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 lg:grid-cols-[1.2fr_1fr] lg:px-12">
-          <div>
-            <p className="font-body mb-4 text-sm uppercase tracking-[0.22em] text-stone-400">The Opportunity</p>
-            <p className="font-body text-lg leading-8 text-stone-700">
-              Some of the best performances most people have never seen happen on a private island in the BVI every
-              December. Andrea Bocelli, Jimmy Buffett, Kenny Chesney, Jamie Foxx, Pitbull, and more. All on Richard
-              Branson&apos;s Necker.
-            </p>
-            <p className="font-body mt-5 text-lg leading-8 text-stone-700">
-              We&apos;re booking music for the 15th Necker Cup and would love to discuss one of your artists.
-            </p>
+        {/* THE WEEK */}
+        <section className="bg-[#0a1a1f] px-7 py-14 text-[#e8e5df] md:px-[60px] md:py-[70px]">
+          <p className="font-body mb-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-[#4ecdc4]">The Week</p>
+          <h2 className="font-display mb-6 text-3xl leading-tight text-white md:text-4xl">
+            A vacation that happens to include
+            <br />
+            <em className="font-normal italic">one unforgettable night.</em>
+          </h2>
+          <p className="font-body text-base leading-7 text-stone-300">
+            Artists stay on the island with everyone else. They bring a guest, they get a villa, and they have the
+            week. No press. No schedules. No early lobby calls. Just six days on Necker with the kind of quiet most
+            touring artists can&apos;t find at home.
+          </p>
+          <div className="mt-9 grid gap-5 md:grid-cols-2">
+            {[
+              {
+                title: 'Tennis & Golf',
+                text: 'Pro-am tennis with touring players and legends. Rounds on one of the Caribbean’s most beautiful championship courses nearby.'
+              },
+              {
+                title: 'The Water',
+                text: 'Snorkeling, sailing, paddleboarding, kiteboarding. Beach hours that do not end until you say so.'
+              },
+              {
+                title: 'Island Life',
+                text: 'Great House dinners, beach bonfires, and walking trails across 74 acres of private island.'
+              },
+              {
+                title: 'The Performance',
+                text: 'Closing night, the End of the World party after the charity auction. The whole island in one place.'
+              }
+            ].map((item) => (
+              <div key={item.title} className="rounded border border-[#4ecdc4]/20 bg-white/[0.04] px-6 py-6">
+                <h3 className="font-display mb-2 text-2xl text-white">{item.title}</h3>
+                <p className="font-body text-sm leading-6 text-stone-400">{item.text}</p>
+              </div>
+            ))}
           </div>
-          <div className="grid grid-cols-3 gap-3 rounded-3xl border border-emerald-100 bg-gradient-to-br from-emerald-50 to-teal-50 p-6">
-            <div className="text-center">
-              <p className="font-display text-4xl text-emerald-900">15</p>
-              <p className="font-body mt-1 text-[11px] uppercase tracking-[0.1em] text-stone-500">Years</p>
-            </div>
-            <div className="text-center">
-              <p className="font-display text-4xl text-emerald-900">$12M+</p>
-              <p className="font-body mt-1 text-[11px] uppercase tracking-[0.1em] text-stone-500">Raised</p>
-            </div>
-            <div className="text-center">
-              <p className="font-display text-4xl text-emerald-900">150-200</p>
-              <p className="font-body mt-1 text-[11px] uppercase tracking-[0.1em] text-stone-500">Guests</p>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* ARTISTS */}
-      <section className="bg-stone-50 py-24 lg:py-28">
-        <div className="mx-auto max-w-6xl px-6 lg:px-12">
-          <div className="mb-10 text-center">
-            <p className="font-body mb-3 text-sm uppercase tracking-[0.24em] text-stone-400">Who has played the island</p>
-            <h2 className="font-display text-4xl text-stone-900 md:text-5xl">
-              Past <span className="italic text-emerald-800">Performers</span>
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 gap-5 md:grid-cols-4">
+        {/* ARTISTS */}
+        <section className="px-7 py-14 md:px-[60px] md:py-[70px]">
+          <p className="font-body mb-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-[#4ecdc4]">Past Performers</p>
+          <h2 className="font-display mb-8 text-3xl leading-tight text-[#1a3a3f] md:text-4xl">Who has played the island.</h2>
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
             {pastArtists.map((artist) => (
               <ArtistCard key={artist.name} artist={artist} />
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* DETAILS */}
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-5xl px-6 lg:px-12">
-          <div className="rounded-3xl border border-stone-200 bg-stone-50/70 p-8 md:p-10">
-            <p className="font-body text-base leading-8 text-stone-700">
-              Here&apos;s what the week actually is: six days, one private island, 150 to 200 guests. Golf on a nearby
-              championship course, snorkeling, sailing, beach dinners, and music every night. It&apos;s a vacation, not a
-              traditional gig schedule.
-            </p>
-            <p className="font-body mt-5 text-base leading-8 text-stone-700">
-              <strong className="text-stone-900">Past tennis guests include:</strong> Novak Djokovic, Rafael Nadal, Bjorn
-              Borg, John McEnroe, Rod Laver, Martina Navratilova, Boris Becker, Dominic Thiem, Caroline Wozniacki, Kim
-              Clijsters, and Grigor Dimitrov.
-            </p>
-            <p className="font-body mt-3 text-base leading-8 text-stone-700">
-              <strong className="text-stone-900">Past golf guests include:</strong> Greg Norman, Sir Nick Faldo, Bryson
-              DeChambeau, Matt Kuchar, Tommy Fleetwood, and Sam Burns.
-            </p>
-            <p className="font-body mt-3 text-base leading-8 text-stone-700">
-              <strong className="text-stone-900">Past celebrities include:</strong> Kevin Costner, Chevy Chase, Kate
-              Upton, and Sean Paul.
-            </p>
-            <p className="font-body mt-5 text-base leading-8 text-stone-700">
-              Artists stay on the island with everyone else and bring a guest. The performance slot is the closing
-              night, the end-of-the-world party after the charity auction.
-            </p>
+        {/* THE ROOM */}
+        <section className="bg-stone-50 px-7 py-14 md:px-[60px] md:py-[70px]">
+          <p className="font-body mb-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-[#4ecdc4]">The Room</p>
+          <h2 className="font-display mb-6 text-3xl leading-tight text-[#1a3a3f] md:text-4xl">A guest list worth flying for.</h2>
+          <p className="font-body mb-4 text-base leading-7 text-stone-700">
+            The audience is founders, CEOs, family offices, and industry leaders. The kind of room where artists leave
+            with real business relationships, brand partnerships, and friendships that outlast the week.
+          </p>
+          <p className="font-body text-base leading-7 text-stone-700">On court and on course over the years:</p>
+          <div className="mt-8">
+            {[
+              {
+                label: 'Tennis',
+                names: 'Novak Djokovic, Rafael Nadal, Bjorn Borg, John McEnroe, Rod Laver, Martina Navratilova, Boris Becker, Dominic Thiem, Caroline Wozniacki, Kim Clijsters, Grigor Dimitrov'
+              },
+              {
+                label: 'Golf',
+                names: 'Greg Norman, Sir Nick Faldo, Bryson DeChambeau, Matt Kuchar, Tommy Fleetwood, Sam Burns'
+              },
+              {
+                label: 'Celebrities',
+                names: 'Kevin Costner, Chevy Chase, Kate Upton, Sean Paul'
+              }
+            ].map((group, index) => (
+              <div
+                key={group.label}
+                className={`py-5 ${index === 0 ? 'border-t border-stone-200' : ''} border-b border-stone-200`}
+              >
+                <p className="font-body mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#4ecdc4]">{group.label}</p>
+                <p className="font-display text-xl leading-8 text-[#1a3a3f]">{group.names}</p>
+              </div>
+            ))}
           </div>
+        </section>
 
-          <div className="mt-8 rounded-r-2xl border-l-4 border-emerald-500 bg-emerald-50/60 p-7">
-            <p className="font-display text-2xl italic leading-9 text-emerald-950">
-              The audience is founders, CEOs, family offices, and industry leaders. Artists often leave with real
-              business relationships, brand partnerships, and friendships that outlast the week.
-            </p>
+        {/* TESTIMONIAL */}
+        <section className="bg-[#f5f2ed] px-7 py-14 text-center md:px-[60px] md:py-[70px]">
+          <p className="font-display mx-auto max-w-[620px] text-3xl italic leading-[1.45] text-[#1a3a3f]">
+            &ldquo;[Testimonial placeholder — a quote from a past performer about what the week was really like. One or
+            two sentences. Something human, not polished.]&rdquo;
+          </p>
+          <p className="font-body mt-6 text-xs uppercase tracking-[0.16em] text-stone-500">Past Necker Cup Performer</p>
+        </section>
+
+        {/* THE CAUSE */}
+        <section className="bg-stone-100 px-7 py-14 md:px-[60px] md:py-[70px]">
+          <p className="font-body mb-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-[#4ecdc4]">The Cause</p>
+          <h2 className="font-display mb-6 text-3xl leading-tight text-[#1a3a3f] md:text-4xl">Why the week matters.</h2>
+          <p className="font-body text-base leading-7 text-stone-700">
+            Over 15 years, the Necker Cup has raised more than $12M for causes the guests and hosts care deeply about.
+            Every year, a portion of what&apos;s raised at the closing night auction goes directly to these partners.
+          </p>
+          <div className="mt-7">
+            {[
+              {
+                name: 'Virgin Unite',
+                desc: 'Richard Branson’s nonprofit foundation, funding frontline entrepreneurs and leaders tackling global challenges.'
+              },
+              {
+                name: 'National Tennis Foundation',
+                desc: 'Growing the game through grassroots programs that put tennis in reach for kids who otherwise would not get near a court.'
+              }
+            ].map((item, index) => (
+              <div
+                key={item.name}
+                className={`flex flex-col gap-1 py-4 md:flex-row md:gap-6 ${index === 0 ? 'border-t border-stone-200' : ''} border-b border-stone-200`}
+              >
+                <p className="font-display w-full shrink-0 text-xl font-semibold text-[#1a3a3f] md:w-[220px]">{item.name}</p>
+                <p className="font-body text-[15px] leading-7 text-stone-700">{item.desc}</p>
+              </div>
+            ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA */}
-      <section className="bg-gradient-to-br from-emerald-900 to-teal-800 py-24 text-white">
-        <div className="mx-auto max-w-4xl px-6 text-center lg:px-12">
-          <h2 className="font-display text-4xl md:text-5xl">
-            Bring Your Artist to the <span className="italic">Island</span>
-          </h2>
-          <p className="font-body mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/85">
-            If you have an artist who would love this kind of week with this kind of room, grab 15 minutes and we can
-            walk through fees, dates, and how past artists have approached it.
+        {/* CTA */}
+        <section className="px-7 py-16 text-center md:px-[60px] md:py-20">
+          <p className="font-body mb-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-[#4ecdc4]">Let&apos;s Talk</p>
+          <h2 className="font-display mb-5 text-4xl leading-tight text-[#1a3a3f]">Bring your artist to the island.</h2>
+          <p className="font-body mx-auto mb-8 max-w-[540px] text-[17px] leading-8 text-stone-700">
+            If you think this is a week your artist would actually enjoy, let&apos;s have a real conversation. No deck,
+            no pitch. Just 15 minutes to see if it fits.
           </p>
           <a
             href="https://calendly.com/rem-goexchange"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-body mt-9 inline-block rounded-full bg-white px-10 py-4 text-sm font-semibold uppercase tracking-[0.16em] text-stone-900 transition-all duration-300 hover:scale-105 hover:bg-stone-100 hover:shadow-2xl"
+            className="font-body inline-block rounded bg-[#1a3a3f] px-10 py-4 text-xs font-semibold uppercase tracking-[0.16em] text-white transition hover:bg-[#0a1a1f]"
           >
             Schedule a Conversation
           </a>
-          <p className="font-body mt-9 text-base text-white">Rem Reynolds</p>
-          <p className="font-body mt-1 text-sm leading-6 text-white/70">
-            Co-Founder, Necker Cup
-            <br />
-            rem@premierlive.com · 678.478.6649
-          </p>
-          <p className="font-body mt-8 text-xs uppercase tracking-[0.18em] text-white/55">
-            Necker Cup · Necker Island, BVI · 15th Annual
-          </p>
-          <p className="font-body mt-2 text-xs text-white/55">
-            <a href="https://neckercup.com" className="text-emerald-200 hover:text-white">
-              Visit Website
-            </a>
-          </p>
-        </div>
-      </section>
+          <div className="mx-auto mt-12 max-w-[420px] border-t border-stone-200 pt-8">
+            <p className="font-display text-2xl font-semibold text-[#1a3a3f]">Rem Reynolds</p>
+            <p className="font-body mt-1 text-sm leading-6 text-stone-500">
+              Co-Founder, Necker Cup
+              <br />
+              rem@premierlive.com · 678.478.6649
+            </p>
+          </div>
+        </section>
+
+        {/* FOOTER */}
+        <footer className="bg-[#0a1a1f] px-7 py-10 text-center text-xs tracking-[0.08em] text-stone-500 md:px-[60px]">
+          Necker Cup · Necker Island, BVI · 15th Annual
+          <br />
+          <a href="https://neckercup.com" className="text-[#4ecdc4] hover:underline">
+            neckercup.com
+          </a>
+        </footer>
+      </main>
     </div>
   );
 }
