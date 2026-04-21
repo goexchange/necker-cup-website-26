@@ -195,10 +195,10 @@ export function ArtistInvitePage() {
         {/* TESTIMONIAL */}
         <section className="bg-[#f5f2ed] px-7 py-14 text-center md:px-[60px] md:py-[70px]">
           <p className="font-display mx-auto max-w-[620px] text-3xl italic leading-[1.45] text-[#1a3a3f]">
-            &ldquo;[Testimonial placeholder — a quote from a past performer about what the week was really like. One or
-            two sentences. Something human, not polished.]&rdquo;
+            &ldquo;Necker is a place where some of the world&apos;s biggest stars can decompress for a week in a perfect
+            island setting - then share one unforgettable night of music.&rdquo;
           </p>
-          <p className="font-body mt-6 text-xs uppercase tracking-[0.16em] text-stone-500">Past Necker Cup Performer</p>
+          <p className="font-body mt-6 text-xs uppercase tracking-[0.16em] text-stone-500">Richard Branson</p>
         </section>
 
         {/* THE CAUSE */}
