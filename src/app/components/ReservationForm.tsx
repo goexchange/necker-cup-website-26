@@ -37,6 +37,10 @@ async function insertIntoNeckerCupInquiries(data: {
   const url = `${SUPABASE_URL}/rest/v1/necker_cup_inquiries`;
   console.log('[ReservationForm] POST', url, 'payload keys:', Object.keys(data));
 
+  // Fire-and-forget insert. We do NOT request return=representation because
+  // anon has no SELECT policy on necker_cup_inquiries (intentional — visitors
+  // shouldn't be able to read other people's submissions). PostgREST would
+  // surface the post-insert SELECT failure as a misleading 42501 RLS error.
   const response = await fetch(url, {
     method: 'POST',
     mode: 'cors',
@@ -44,24 +48,17 @@ async function insertIntoNeckerCupInquiries(data: {
       apikey: SUPABASE_KEY,
       Authorization: `Bearer ${SUPABASE_KEY}`,
       'Content-Type': 'application/json',
-      Prefer: 'return=representation',
     },
     body: JSON.stringify(data),
   });
 
-  const text = await response.text();
   if (!response.ok) {
+    const text = await response.text();
     console.error('[ReservationForm] Supabase error', response.status, response.statusText, text);
     throw new Error(`Supabase ${response.status}: ${text.slice(0, 200)}`);
   }
 
-  let json: unknown;
-  try {
-    json = text ? JSON.parse(text) : [];
-  } catch {
-    json = [];
-  }
-  return { data: json, error: null };
+  return { data: null, error: null };
 }
 
 const initialFormData = {
@@ -101,7 +98,7 @@ export function ReservationForm({ isOpen, onClose }: { isOpen: boolean; onClose:
         status: 'new',
       };
 
-      const { data, error } = await insertIntoNeckerCupInquiries(submissionData);
+      const { error } = await insertIntoNeckerCupInquiries(submissionData);
 
       if (error) {
         alert(`Error submitting reservation: ${error}`);
@@ -121,8 +118,7 @@ export function ReservationForm({ isOpen, onClose }: { isOpen: boolean; onClose:
       }
 
       setSubmitSuccess(true);
-      const submissionId = data?.[0]?.id ?? 'N/A';
-      alert(`Reservation submitted successfully.\nSubmission ID: ${submissionId}\nOur team will contact you within 24 hours.`);
+      alert('Reservation submitted successfully.\nOur team will contact you within 24 hours.');
       setTimeout(() => {
         setSubmitSuccess(false);
         setFormData(initialFormData);
