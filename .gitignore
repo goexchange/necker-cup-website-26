@@ -44,3 +44,4 @@ temp/
 docker-compose.override.yml
 .docker/
 *.dockerfile.local
+.vercel
