@@ -5,13 +5,13 @@ import { Footer } from '@/app/components/Footer';
 import { ReservationForm } from '@/app/components/ReservationForm';
 
 export function Layout() {
-  const { isOpen, closeForm } = useReservationForm();
+  const { isOpen, closeForm, selectedPackageId } = useReservationForm();
   return (
     <>
       <Nav />
       <Outlet />
       <Footer />
-      <ReservationForm isOpen={isOpen} onClose={closeForm} />
+      <ReservationForm isOpen={isOpen} onClose={closeForm} initialPackageId={selectedPackageId} />
     </>
   );
 }

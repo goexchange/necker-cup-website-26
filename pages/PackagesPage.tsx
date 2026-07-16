@@ -1,17 +1,8 @@
 import { Check } from 'lucide-react';
 import { useState } from 'react';
 import { useReservationForm } from '@/app/context/ReservationFormContext';
-
-const sharedIncludes = [
-  'Stay on Necker Island or Branson Beach Estate on Moskito Island (5 nights, Nov 29 – Dec 4, 2026)',
-  'Enjoy meals, events and parties, including the End of the World party, on Necker Island',
-];
-const packages = [
-  { name: 'Pro-Am: Player — Necker Island', nights: '5 Nights / couple', desc: 'Stay on Necker Island. Meals, events & parties including the End of the World party. One 2-person playing team spot in the Necker Cup.', includes: [...sharedIncludes, 'One 2-person playing team spot to play in the Necker Cup'] },
-  { name: 'Pro-Am: Player — Branson Estate, Moskito', nights: '5 Nights / couple', desc: 'Stay at the Branson Beach Estate on Moskito Island (5–7 min boat ride). Meals, events & parties on Necker. One 2-person playing team spot.', includes: [...sharedIncludes, 'One 2-person playing team spot to play in the Necker Cup'] },
-  { name: 'Pro-Am: Spectator — Necker Island', nights: '5 Nights / couple', desc: 'Stay on Necker Island. Meals, events & parties including the End of the World party. Watch and mix with pros, legends and celebrities.', includes: [...sharedIncludes, 'Watch all the fun of the Necker Cup and mix with pros, legends and celebrities'] },
-  { name: 'Pro-Am: Spectator — Branson Estate, Moskito', nights: '5 Nights / couple', desc: 'Stay at the Branson Beach Estate on Moskito Island. Meals, events & parties on Necker. Watch and mix with pros, legends and celebrities.', includes: [...sharedIncludes, 'Watch all the fun of the Necker Cup and mix with pros, legends and celebrities'] },
-];
+import { packages } from '@/app/data/packages';
+import { PackageCardFooter } from '@/app/components/PackageCardFooter';
 
 export function PackagesPage() {
   const [activePackage, setActivePackage] = useState(1);
@@ -46,7 +37,7 @@ export function PackagesPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {packages.map((pkg, i) => (
               <div
-                key={i}
+                key={pkg.id}
                 className={`group relative bg-white rounded-3xl p-6 sm:p-8 lg:p-10 transition-all duration-500 cursor-pointer ${
                   activePackage === i
                     ? 'shadow-2xl shadow-emerald-900/10 scale-[1.02] ring-2 ring-emerald-800/20'
@@ -74,14 +65,7 @@ export function PackagesPage() {
                   ))}
                 </div>
 
-                <div className="pt-6 border-t border-stone-100">
-                  <button
-                    onClick={(e) => { e.stopPropagation(); openForm(); }}
-                    className="font-body w-full bg-emerald-800 text-white px-6 py-3 rounded-full font-medium hover:bg-emerald-700 transition-all duration-300 hover:shadow-lg text-sm tracking-wide"
-                  >
-                    Inquire for Pricing
-                  </button>
-                </div>
+                <PackageCardFooter pkg={pkg} onReserve={openForm} />
               </div>
             ))}
           </div>
@@ -149,7 +133,7 @@ export function PackagesPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              onClick={openForm}
+              onClick={() => openForm()}
               className="font-body bg-white text-stone-900 px-10 py-4 rounded-full font-medium hover:bg-stone-100 transition-all duration-300 hover:shadow-2xl hover:scale-105"
             >
               Reserve Your Spot Now

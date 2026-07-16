@@ -3,13 +3,8 @@ import { Link } from 'react-router-dom';
 import { Play, ChevronDown, Check, X } from 'lucide-react';
 import { useReservationForm } from '@/app/context/ReservationFormContext';
 import { publicImages } from '@/app/lib/publicImages';
-
-const packages = [
-  { name: 'Pro-Am: Player — Necker Island', nights: '5 Nights / couple', desc: 'Stay on Necker Island for 5 nights (November 29 - December 4, 2026). Enjoy meals, events and parties, including the End of the World party, on Necker Island. One 2-person playing team spot to play in the Necker Cup.' },
-  { name: 'Pro-Am: Player — Branson Estate, Moskito', nights: '5 Nights / couple', desc: 'Stay at the Branson Estate on Moskito Island for 5 nights (November 29 - December 4, 2026). Enjoy meals, events and parties, including the End of the World party, on Necker Island. One 2-person playing team spot to play in the Necker Cup.' },
-  { name: 'Pro-Am: Spectator — Necker Island', nights: '5 Nights / couple', desc: 'Stay on Necker Island for 5 nights (November 29 - December 4, 2026). Enjoy meals, events and parties, including the End of the World party, on Necker Island. Watch all the fun of the Necker Cup while mixing and mingling with pros, legends and celebrities.' },
-  { name: 'Pro-Am: Spectator — Branson Estate, Moskito', nights: '5 Nights / couple', desc: 'Stay at the Branson Estate on Moskito Island for 5 nights (November 29 - December 4, 2026). Enjoy meals, events and parties, including the End of the World party, on Necker Island. Watch all the fun of the Necker Cup while mixing and mingling with pros, legends and celebrities.' },
-];
+import { packages } from '@/app/data/packages';
+import { PackageCardFooter } from '@/app/components/PackageCardFooter';
 
 const galleryImages = [
   publicImages.crowdPavilionCourt,
@@ -199,19 +194,12 @@ export function HomePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {packages.map((pkg, i) => (
-              <div key={i} className={`group relative bg-white rounded-3xl p-6 sm:p-8 lg:p-10 transition-all duration-500 cursor-pointer ${activePackage === i ? 'shadow-2xl shadow-emerald-900/10 scale-[1.02] ring-2 ring-emerald-800/20' : 'shadow-lg hover:shadow-xl hover:scale-[1.01]'}`} onClick={() => setActivePackage(i)}>
+              <div key={pkg.id} className={`group relative bg-white rounded-3xl p-6 sm:p-8 lg:p-10 transition-all duration-500 cursor-pointer ${activePackage === i ? 'shadow-2xl shadow-emerald-900/10 scale-[1.02] ring-2 ring-emerald-800/20' : 'shadow-lg hover:shadow-xl hover:scale-[1.01]'}`} onClick={() => setActivePackage(i)}>
                 {activePackage === i && <div className="absolute top-6 right-6 w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center"><Check className="w-5 h-5 text-white" /></div>}
                 <p className="font-body text-stone-400 text-xs tracking-widest uppercase mb-4">{pkg.nights}</p>
                 <h3 className="font-display text-2xl lg:text-3xl text-stone-900 mb-4 leading-tight">{pkg.name}</h3>
                 <p className="font-body text-stone-500 mb-8 leading-relaxed text-sm">{pkg.desc}</p>
-                <div className="pt-6 border-t border-stone-100">
-                  <button
-                    onClick={(e) => { e.stopPropagation(); openForm(); }}
-                    className="font-body w-full bg-emerald-800 text-white px-6 py-3 rounded-full font-medium hover:bg-emerald-700 transition-all duration-300 hover:shadow-lg text-sm tracking-wide"
-                  >
-                    Inquire for Pricing
-                  </button>
-                </div>
+                <PackageCardFooter pkg={pkg} onReserve={openForm} />
               </div>
             ))}
           </div>

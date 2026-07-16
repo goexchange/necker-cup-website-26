@@ -1,21 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Check, X } from 'lucide-react';
+import { formatPackagePrice, packages } from '@/app/data/packages';
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL ?? 'https://abhxvgpnwbnfjjdmzqdn.supabase.co';
 const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY ?? 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFiaHh2Z3Bud2JuZmpqZG16cWRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwMjQ2NzcsImV4cCI6MjA2MzYwMDY3N30.qDaQbwmpFJKQwn30gVLZChUd6j_TVLn790XGMTrJG_A';
-
-const PACKAGE_OPTIONS = [
-  {
-    value: 'pro_am_player',
-    label: 'Pro-Am Player',
-    description: 'Play alongside tennis legends on Necker Island. Includes daily Pro-Am matches, coaching clinics, all meals, entertainment, and full island access.',
-  },
-  {
-    value: 'spectator',
-    label: 'Spectator',
-    description: 'Experience the magic of Necker Cup courtside. Enjoy world-class tennis, live entertainment, gourmet dining, and island activities without stepping on the court.',
-  },
-];
 
 async function insertIntoNeckerCupInquiries(data: {
   first_name: string;
@@ -73,10 +61,28 @@ const initialFormData = {
 
 type FormData = typeof initialFormData;
 
-export function ReservationForm({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+export function ReservationForm({
+  isOpen,
+  onClose,
+  initialPackageId = null,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+  initialPackageId?: string | null;
+}) {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    setFormData((prev) => ({
+      ...prev,
+      package: initialPackageId && packages.some((pkg) => pkg.id === initialPackageId)
+        ? initialPackageId
+        : prev.package,
+    }));
+  }, [isOpen, initialPackageId]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -189,12 +195,29 @@ export function ReservationForm({ isOpen, onClose }: { isOpen: boolean; onClose:
             <div>
               <h3 className="font-display text-xl text-stone-900 mb-4">Package Selection</h3>
               <div className="space-y-3">
-                {PACKAGE_OPTIONS.map((pkg) => (
-                  <label key={pkg.value} className={`flex items-start gap-3 p-4 border-2 rounded-xl cursor-pointer transition-colors ${formData.package === pkg.value ? 'border-emerald-800 bg-emerald-50/50' : 'border-stone-200 hover:border-emerald-800'}`}>
-                    <input type="radio" name="package" value={pkg.value} checked={formData.package === pkg.value} onChange={handleChange} className="mt-1 w-5 h-5 text-emerald-800 focus:ring-emerald-800" />
+                {packages.map((pkg) => (
+                  <label
+                    key={pkg.id}
+                    className={`flex items-start gap-3 p-4 border-2 rounded-xl cursor-pointer transition-colors ${
+                      formData.package === pkg.id
+                        ? 'border-emerald-800 bg-emerald-50/50'
+                        : 'border-stone-200 hover:border-emerald-800'
+                    }`}
+                  >
+                    <input
+                      type="radio"
+                      name="package"
+                      value={pkg.id}
+                      checked={formData.package === pkg.id}
+                      onChange={handleChange}
+                      className="mt-1 w-5 h-5 text-emerald-800 focus:ring-emerald-800"
+                    />
                     <div>
-                      <span className="font-body font-medium text-stone-900 block">{pkg.label}</span>
-                      <span className="font-body text-sm text-stone-500 mt-1 block leading-relaxed">{pkg.description}</span>
+                      <span className="font-body font-medium text-stone-900 block">{pkg.name}</span>
+                      <span className="font-body text-sm text-emerald-800 mt-1 block">
+                        {formatPackagePrice(pkg.price)} per couple
+                      </span>
+                      <span className="font-body text-sm text-stone-500 mt-1 block leading-relaxed">{pkg.desc}</span>
                     </div>
                   </label>
                 ))}
