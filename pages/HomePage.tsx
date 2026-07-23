@@ -185,6 +185,33 @@ export function HomePage() {
         </div>
       </section>
 
+      <section className="bg-stone-900 py-24 text-white lg:py-32">
+        <div className="mx-auto max-w-6xl px-6 lg:px-12">
+          <div className="mb-10 text-center">
+            <p className="mb-4 font-body text-sm uppercase tracking-[0.2em] text-teal-300">
+              Watch the Film
+            </p>
+            <h2 className="mb-5 font-display text-4xl leading-tight md:text-5xl">
+              Experience the <span className="italic text-teal-300">Necker Cup</span>
+            </h2>
+            <p className="mx-auto max-w-2xl font-body text-lg leading-relaxed text-white/70">
+              Six unforgettable days of world-class tennis, island adventure, live music, and giving back.
+            </p>
+          </div>
+          <div className="aspect-video overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl">
+            <iframe
+              className="h-full w-full"
+              src="https://www.youtube-nocookie.com/embed/Jlj-Egj1aTI?rel=0"
+              title="Necker Cup 2025"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </section>
+
       <section id="packages" className="py-24 lg:py-32 bg-stone-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">

@@ -277,6 +277,31 @@ export function ArtistInvitePage() {
           </div>
         </section>
 
+        {/* VIDEO */}
+        <section className="bg-[#0a1a1f] px-7 py-14 text-white md:px-[60px] md:py-[70px]">
+          <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.28em] text-[#28c4bd]">
+            Watch the Film
+          </p>
+          <h2 className="mb-4 font-serif text-[34px] leading-tight md:text-[44px]">
+            See the Necker Cup come to life.
+          </h2>
+          <p className="mb-8 max-w-2xl text-sm leading-6 text-white/70">
+            Experience the music, competition, community, and unforgettable island moments that make
+            the Necker Cup unlike any other event.
+          </p>
+          <div className="aspect-video overflow-hidden rounded-xl border border-white/10 bg-black shadow-2xl">
+            <iframe
+              className="h-full w-full"
+              src="https://www.youtube-nocookie.com/embed/Jlj-Egj1aTI?rel=0"
+              title="Necker Cup 2025"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+        </section>
+
         {/* GALLERY */}
         <section className="bg-white px-7 py-14 md:px-[60px] md:py-[70px]">
           <p className="font-body mb-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-[#4ecdc4]">The Experience</p>
