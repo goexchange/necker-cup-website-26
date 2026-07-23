@@ -12,7 +12,7 @@ import { SponsorshipPage } from '@pages/SponsorshipPage';
 import { TalentPage } from '@pages/TalentPage';
 import { SponsorEmailPage } from '@pages/SponsorEmailPage';
 import { ArtistInvitePage } from '@pages/ArtistInvitePage';
-import { LucaFaloniProposalPage } from '@pages/LucaFaloniProposalPage';
+import { LucaFaloniExactPage } from '@pages/LucaFaloniExactPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -41,7 +41,7 @@ export default function App() {
           <Route path="sponsor-email" element={<SponsorEmailPage />} />
           <Route path="artist" element={<ArtistInvitePage />} />
           <Route path="artist-invite-2026" element={<Navigate to="/artist" replace />} />
-          <Route path="partnerships/luca-faloni-2026" element={<LucaFaloniProposalPage />} />
+          <Route path="partnerships/luca-faloni-2026" element={<LucaFaloniExactPage />} />
         </Routes>
       </ReservationFormProvider>
     </BrowserRouter>
