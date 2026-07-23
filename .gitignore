@@ -45,4 +45,7 @@ docker-compose.override.yml
 .docker/
 *.dockerfile.local
 .vercel
+<<<<<<< Updated upstream
 .env*
+=======
+>>>>>>> Stashed changes
