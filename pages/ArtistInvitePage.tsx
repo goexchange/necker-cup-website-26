@@ -28,7 +28,10 @@ const eventGallery = [
   { src: publicImages.bransonBorgCelebrate, title: 'One Remarkable Room', caption: 'A relaxed gathering hosted in the unmistakable spirit of Necker.' },
   { src: publicImages.singerGuitarStage, title: 'An Intimate Performance', caption: 'One unforgettable closing-night set for the guests of the island.' },
   { src: publicImages.trophyCeremonyCourt, title: 'The Celebration', caption: 'A week of competition, connection, and moments worth celebrating.' },
-  { src: publicImages.legendsMusicBand, title: 'The Final Night', caption: 'Music and the charity auction bring the entire island together.' }
+  { src: publicImages.legendsMusicBand, title: 'The Final Night', caption: 'Music and the charity auction bring the entire island together.' },
+  { src: publicImages.activitySailing, title: 'Set Sail', caption: 'Take to the Caribbean for an afternoon of sailing around the island.' },
+  { src: publicImages.activityKiteboarding, title: 'Kiteboarding', caption: 'Catch the trade winds for one of Necker’s signature ocean adventures.' },
+  { src: publicImages.activityGolf, title: 'A Round of Golf', caption: 'Enjoy a relaxed round with fellow guests amid the beauty of the British Virgin Islands.' }
 ];
 
 function ArtistCard({ artist }: { artist: Artist }) {
@@ -192,7 +195,7 @@ export function ArtistInvitePage() {
         {/* ARTISTS */}
         <section className="px-7 py-14 md:px-[60px] md:py-[70px]">
           <p className="font-body mb-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-[#4ecdc4]">Past Performers</p>
-          <h2 className="font-display mb-8 text-3xl leading-tight text-[#1a3a3f] md:text-4xl">Who has played the island.</h2>
+          <h2 className="font-display mb-8 text-3xl leading-tight text-[#1a3a3f] md:text-4xl">Who has played the Necker Cup</h2>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
             {pastArtists.map((artist) => (
               <ArtistCard key={artist.name} artist={artist} />
