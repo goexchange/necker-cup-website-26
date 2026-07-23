@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { ReservationFormProvider } from '@/app/context/ReservationFormContext';
 import { Layout } from '@/app/components/Layout';
@@ -38,7 +38,8 @@ export default function App() {
             <Route path="tennis" element={<TennisPage />} />
           </Route>
           <Route path="sponsor-email" element={<SponsorEmailPage />} />
-          <Route path="artist-invite-2026" element={<ArtistInvitePage />} />
+          <Route path="artist" element={<ArtistInvitePage />} />
+          <Route path="artist-invite-2026" element={<Navigate to="/artist" replace />} />
         </Routes>
       </ReservationFormProvider>
     </BrowserRouter>

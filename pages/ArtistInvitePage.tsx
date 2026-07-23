@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { publicImages } from '@/app/lib/publicImages';
 
 type Artist = {
@@ -15,6 +17,18 @@ const pastArtists: Artist[] = [
   { name: 'Darius Rucker', genre: 'Country / Rock', image: publicImages.dariusrucker },
   { name: 'Jewel', genre: 'Folk / Singer-Songwriter', image: publicImages.jewel },
   { name: 'Florida Georgia Line', genre: 'Country', image: publicImages.floridageorgialine }
+];
+
+const eventGallery = [
+  { src: publicImages.artistIslandAerial, title: 'Your Island Home', caption: 'Six days on Necker Island in the British Virgin Islands.' },
+  { src: publicImages.tennisActionBackhand, title: 'Play With the Pros', caption: 'Friendly competition alongside touring players and tennis legends.' },
+  { src: publicImages.golfSwingOcean, title: 'Golf Above the Sea', caption: 'Championship golf surrounded by unforgettable Caribbean views.' },
+  { src: publicImages.beachDockGroup, title: 'Days on the Water', caption: 'Sailing, snorkeling, paddleboarding, and unhurried beach time.' },
+  { src: publicImages.dinnerWidePalms, title: 'Island Dinners', caption: 'Intimate evenings shared with founders, athletes, artists, and friends.' },
+  { src: publicImages.bransonBorgCelebrate, title: 'One Remarkable Room', caption: 'A relaxed gathering hosted in the unmistakable spirit of Necker.' },
+  { src: publicImages.singerGuitarStage, title: 'An Intimate Performance', caption: 'One unforgettable closing-night set for the guests of the island.' },
+  { src: publicImages.trophyCeremonyCourt, title: 'The Celebration', caption: 'A week of competition, connection, and moments worth celebrating.' },
+  { src: publicImages.legendsMusicBand, title: 'The Final Night', caption: 'Music and the charity auction bring the entire island together.' }
 ];
 
 function ArtistCard({ artist }: { artist: Artist }) {
@@ -38,6 +52,35 @@ function ArtistCard({ artist }: { artist: Artist }) {
 }
 
 export function ArtistInvitePage() {
+  const [activeImage, setActiveImage] = useState<number | null>(null);
+
+  const showPrevious = () => {
+    setActiveImage((current) => (current === null ? null : (current - 1 + eventGallery.length) % eventGallery.length));
+  };
+
+  const showNext = () => {
+    setActiveImage((current) => (current === null ? null : (current + 1) % eventGallery.length));
+  };
+
+  useEffect(() => {
+    if (activeImage === null) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setActiveImage(null);
+      if (event.key === 'ArrowLeft') showPrevious();
+      if (event.key === 'ArrowRight') showNext();
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [activeImage]);
+
   return (
     <div className="min-h-screen bg-stone-100 antialiased">
       <style>{`
@@ -48,8 +91,8 @@ export function ArtistInvitePage() {
         {/* HERO */}
         <section className="relative flex h-[560px] items-center justify-center">
           <img
-            src={publicImages.islandGolfCourse}
-            alt="Necker Island"
+            src={publicImages.artistIslandAerial}
+            alt="Aerial view of Necker Island"
             className="absolute inset-0 h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0a1a1f]/35 to-[#0a1a1f]/75" />
@@ -231,6 +274,40 @@ export function ArtistInvitePage() {
           </div>
         </section>
 
+        {/* GALLERY */}
+        <section className="bg-white px-7 py-14 md:px-[60px] md:py-[70px]">
+          <p className="font-body mb-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-[#4ecdc4]">The Experience</p>
+          <h2 className="font-display mb-5 text-3xl leading-tight text-[#1a3a3f] md:text-4xl">A glimpse of the week.</h2>
+          <p className="font-body mb-9 max-w-[600px] text-base leading-7 text-stone-700">
+            From mornings on the court to closing-night music, every part of Necker Cup is designed to feel personal,
+            relaxed, and unlike any other event.
+          </p>
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
+            {eventGallery.map((image, index) => (
+              <button
+                key={image.title}
+                type="button"
+                onClick={() => setActiveImage(index)}
+                className="group relative aspect-square overflow-hidden rounded-lg bg-stone-200 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4ecdc4] focus-visible:ring-offset-2"
+                aria-label={`Open ${image.title} in gallery viewer`}
+              >
+                <img
+                  src={image.src}
+                  alt={image.title}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
+                <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-4 pb-4 pt-12">
+                  <span className="font-display block text-lg leading-tight text-white">{image.title}</span>
+                </span>
+              </button>
+            ))}
+          </div>
+          <p className="font-body mt-5 text-center text-xs uppercase tracking-[0.14em] text-stone-400">
+            Select an image to open the gallery
+          </p>
+        </section>
+
         {/* CTA */}
         <section className="px-7 py-16 text-center md:px-[60px] md:py-20">
           <p className="font-body mb-4 text-[11px] font-semibold uppercase tracking-[0.25em] text-[#4ecdc4]">Let&apos;s Talk</p>
@@ -266,6 +343,64 @@ export function ArtistInvitePage() {
           </a>
         </footer>
       </main>
+
+      {activeImage !== null && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#061014]/95 px-4 py-8"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Necker Cup event gallery"
+          onClick={() => setActiveImage(null)}
+        >
+          <button
+            type="button"
+            onClick={() => setActiveImage(null)}
+            className="absolute right-4 top-4 rounded-full bg-white/10 p-3 text-white transition hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4ecdc4] md:right-7 md:top-7"
+            aria-label="Close gallery"
+          >
+            <X size={24} />
+          </button>
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation();
+              showPrevious();
+            }}
+            className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4ecdc4] md:left-7"
+            aria-label="Previous image"
+          >
+            <ChevronLeft size={28} />
+          </button>
+          <figure
+            className="mx-auto flex max-h-full w-full max-w-5xl flex-col items-center"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <img
+              src={eventGallery[activeImage].src}
+              alt={eventGallery[activeImage].title}
+              className="max-h-[72vh] max-w-full rounded-lg object-contain shadow-2xl"
+            />
+            <figcaption className="mt-5 max-w-2xl px-12 text-center text-white">
+              <p className="font-display text-2xl">{eventGallery[activeImage].title}</p>
+              <p className="font-body mt-2 text-sm leading-6 text-white/70">{eventGallery[activeImage].caption}</p>
+              <p className="font-body mt-3 text-[11px] uppercase tracking-[0.18em] text-[#4ecdc4]">
+                {activeImage + 1} / {eventGallery.length}
+              </p>
+            </figcaption>
+          </figure>
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation();
+              showNext();
+            }}
+            className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-3 text-white transition hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4ecdc4] md:right-7"
+            aria-label="Next image"
+          >
+            <ChevronRight size={28} />
+          </button>
+        </div>
+      )}
     </div>
   );
 }

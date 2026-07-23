@@ -8,6 +8,7 @@
  */
 export const publicImages = {
   necker: '/images/necker.jpg',
+  artistIslandAerial: '/images/artist-island-aerial.jpg',
   moskito: '/images/moskito.jpg',
   banner: '/images/banner_image.jpg',
   heroSlide1: '/images/hero-slide-1.jpg',
