@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import deckHtml from '../src/app/content/luca-faloni-deck.html?raw';
 
 export function LucaFaloniExactPage() {
   const frameRef = useRef<HTMLIFrameElement>(null);
@@ -29,7 +30,7 @@ export function LucaFaloniExactPage() {
   return (
     <iframe
       ref={frameRef}
-      src="/luca-faloni-necker-cup.html"
+      srcDoc={deckHtml}
       title="Luca Faloni x Necker Cup partnership deck"
       onLoad={syncHeight}
       style={{

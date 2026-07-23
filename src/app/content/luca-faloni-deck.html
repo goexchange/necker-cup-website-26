@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luca Faloni x Necker Cup | Partnership Deck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f8f6f1;
+      --white: #fffefa;
+      --bone: #ebe4d8;
+      --ink: #1e1c18;
+      --text: #454139;
+      --muted: #777168;
+      --line: rgba(30, 28, 24, .14);
+      --red: #9a2e2b;
+      --tan: #9a7d54;
+      --blue: #8eacb6;
+      --green: #56685b;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #efebe4;
+      color: var(--text);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+    img { display: block; max-width: 100%; }
+    .deck { width: min(1180px, 96vw); margin: 0 auto; padding: 12px 0 48px; }
+    .slide {
+      min-height: 640px;
+      margin-bottom: 14px;
+      position: relative;
+      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(52, 48, 41, .08);
+    }
+    .sitebar {
+      height: 58px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 18px;
+      padding: 0 28px;
+      border-bottom: 1px solid rgba(30, 28, 24, .1);
+      background: #fbfaf6;
+      color: #69635b;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .nav { display: flex; gap: 17px; align-items: center; }
+    .nav.right { justify-content: flex-end; }
+    .brand {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      color: var(--red);
+      font-size: 23px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      white-space: nowrap;
+    }
+    .top {
+      position: absolute;
+      z-index: 5;
+      top: 58px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 28px;
+      color: rgba(69, 65, 57, .64);
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .top b { color: var(--ink); }
+    .hero { min-height: 745px; background: #fbfaf6; }
+    .look-grid {
+      height: 520px;
+      display: grid;
+      grid-template-columns: 1.55fr .8fr .8fr;
+      gap: 1px;
+      padding-top: 58px;
+      background: #fbfaf6;
+    }
+    .look {
+      position: relative;
+      overflow: hidden;
+      background: var(--bone);
+    }
+    .look.featured { grid-row: span 2; }
+    .look img { width: 100%; height: 100%; object-fit: cover; }
+    .look span,
+    .look i {
+      position: absolute;
+      z-index: 2;
+      bottom: 12px;
+      color: var(--ink);
+      font-style: normal;
+      line-height: 1;
+    }
+    .look span {
+      left: 14px;
+      padding: 7px 10px;
+      background: rgba(255,254,250,.9);
+      border: 1px solid rgba(30,28,24,.1);
+      font-size: 10px;
+      font-weight: 600;
+    }
+    .look i {
+      right: 14px;
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,254,250,.9);
+      border: 1px solid rgba(30,28,24,.1);
+      font-size: 19px;
+    }
+    .hero-copy {
+      display: grid;
+      grid-template-columns: 1.22fr .78fr;
+      gap: 44px;
+      align-items: end;
+      padding: 34px 58px 44px;
+      background: #fbfaf6;
+    }
+    .split,
+    .jacket-wrap { min-height: 640px; display: grid; grid-template-columns: 1fr 1fr; }
+    .copy,
+    .content { padding: 104px 58px 54px; position: relative; z-index: 2; }
+    .copy { display: flex; flex-direction: column; justify-content: center; }
+    .image-panel { min-height: 640px; position: relative; background: var(--bone); }
+    .image-panel img,
+    .jacket-board { width: 100%; height: 100%; object-fit: cover; }
+    .eyebrow,
+    .pill {
+      color: var(--tan);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .pill {
+      display: inline-flex;
+      width: max-content;
+      max-width: 100%;
+      padding: 8px 15px;
+      margin-bottom: 22px;
+      border: 1px solid rgba(154, 125, 84, .44);
+      border-radius: 999px;
+      background: var(--white);
+    }
+    h1,
+    h2,
+    h3 { margin: 0; color: var(--ink); letter-spacing: 0; }
+    h1,
+    h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 600;
+      line-height: .98;
+    }
+    h1 { font-size: clamp(54px, 7.2vw, 88px); }
+    h2 { margin-top: 12px; font-size: clamp(42px, 5.2vw, 64px); }
+    h3 {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    em { color: var(--tan); font-style: italic; }
+    p { max-width: 680px; margin: 18px 0 0; color: #5b564e; font-size: 15px; }
+    .small { font-size: 12px; color: var(--muted); }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 30px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+    .hero-copy .stats { grid-column: 1 / -1; margin-top: -4px; }
+    .stat { min-height: 108px; padding: 18px 14px; background: var(--white); }
+    .stat b {
+      display: block;
+      color: var(--tan);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 34px;
+      font-weight: 600;
+      line-height: 1;
+    }
+    .stat span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+    .grid3,
+    .grid2,
+    .tiers,
+    .timeline { display: grid; gap: 14px; margin-top: 28px; }
+    .grid3 { grid-template-columns: repeat(3, 1fr); }
+    .grid2 { grid-template-columns: repeat(2, 1fr); }
+    .card,
+    .tier,
+    .step {
+      min-height: 160px;
+      padding: 22px;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+    .card p,
+    .step p { margin-top: 10px; color: var(--muted); font-size: 13px; }
+    .photo-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 14px; margin-top: 28px; }
+    .photo-tile { min-height: 230px; position: relative; overflow: hidden; border: 1px solid var(--line); }
+    .photo-tile img { width: 100%; height: 100%; object-fit: cover; }
+    .icon-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 30px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+    .icon-card {
+      min-height: 390px;
+      position: relative;
+      overflow: hidden;
+      background: var(--white);
+    }
+    .icon-card img { width: 100%; height: 100%; object-fit: cover; }
+    .icon-card .caption { bottom: 18px; }
+    .caption {
+      position: absolute;
+      z-index: 2;
+      left: 18px;
+      right: 18px;
+      bottom: 16px;
+      width: max-content;
+      max-width: calc(100% - 36px);
+      padding: 9px 11px;
+      background: rgba(255,254,250,.92);
+      border: 1px solid rgba(30,28,24,.1);
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .jacket-visual { background: #f1ebe1; }
+    .wardrobe-slide { background: #f4f0e8; }
+    .wardrobe-wrap { padding: 92px 42px 42px; }
+    .wardrobe-head {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 46px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+    .wardrobe-head p { margin: 0; }
+    .wardrobe-gallery {
+      display: grid;
+      grid-template-columns: 1.15fr .9fr .9fr;
+      gap: 12px;
+    }
+    .wardrobe-look {
+      min-height: 405px;
+      position: relative;
+      overflow: hidden;
+      background: var(--bone);
+    }
+    .wardrobe-look img { width: 100%; height: 100%; object-fit: cover; }
+    .wardrobe-look .caption { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
+    .wardrobe-bottom {
+      display: grid;
+      grid-template-columns: 1.3fr .85fr .85fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .wardrobe-bottom .card { min-height: 150px; }
+    .wardrobe-bottom .concept { background: #6f2525; border-color: #6f2525; }
+    .wardrobe-bottom .concept h3,
+    .wardrobe-bottom .concept p { color: #fff8ee; }
+    .tiers { grid-template-columns: 1fr 1.18fr 1fr; gap: 12px; }
+    .tier.featured { background: #f7f0e5; border-color: rgba(154,125,84,.54); }
+    .tier small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .tier h3 {
+      margin-top: 8px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 25px;
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: 1;
+      text-transform: none;
+    }
+    .price {
+      margin: 14px 0 10px;
+      color: var(--tan);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 34px;
+      font-weight: 600;
+      line-height: 1;
+    }
+    ul { margin: 14px 0 0; padding: 0; list-style: none; }
+    li {
+      padding: 7px 0;
+      border-top: 1px solid rgba(30,28,24,.08);
+      color: #5b564e;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+    li:before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      margin: 0 9px 2px 0;
+      border-radius: 50%;
+      background: var(--tan);
+    }
+    .timeline { grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .proof-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .proof-card {
+      padding: 20px;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+    .proof-card h3 { margin-bottom: 12px; }
+    .proof-card .metric {
+      display: grid;
+      grid-template-columns: .52fr 1fr;
+      gap: 12px;
+      padding: 10px 0;
+      border-top: 1px solid rgba(30,28,24,.08);
+      color: #5b564e;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    .proof-card .metric:first-of-type { border-top: 0; padding-top: 0; }
+    .proof-card .metric b {
+      color: var(--tan);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 1;
+    }
+    .proof-card .metric span { color: var(--muted); }
+    .step b {
+      color: var(--tan);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 34px;
+      font-weight: 600;
+    }
+    .step span { display: block; margin-top: 12px; color: var(--ink); font-weight: 600; }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 28px;
+      border-top: 1px solid var(--line);
+      color: rgba(69,65,57,.54);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 860px) {
+      .sitebar { height: auto; grid-template-columns: 1fr; padding: 12px 18px; text-align: center; }
+      .nav,
+      .nav.right { justify-content: center; flex-wrap: wrap; }
+      .top { top: 108px; padding: 14px 18px; }
+      .look-grid { height: auto; min-height: 960px; grid-template-columns: 1fr; grid-template-rows: repeat(4, 240px); }
+      .look.featured { grid-row: span 1; }
+      .hero-copy,
+      .split,
+      .jacket-wrap,
+      .wardrobe-head,
+      .wardrobe-gallery,
+      .wardrobe-bottom,
+      .photo-grid { grid-template-columns: 1fr; }
+      .wardrobe-wrap { padding: 82px 18px 28px; }
+      .wardrobe-look { min-height: 430px; }
+      .copy,
+      .content,
+      .hero-copy { padding: 82px 28px 40px; }
+      .stats,
+      .icon-strip,
+      .grid3,
+      .grid2,
+      .proof-grid,
+      .tiers,
+      .timeline { grid-template-columns: 1fr; }
+      .slide { min-height: auto; }
+      .image-panel { min-height: 360px; }
+      h1 { font-size: clamp(46px, 15vw, 68px); }
+    }
+  </style>
+</head>
+<body>
+<main class="deck">
+  <section class="slide hero">
+    <div class="sitebar">
+      <div class="nav"><span>Shirts</span><span>Polos</span><span>Pants</span><span>Jackets</span></div>
+      <div class="brand">LUCA FALONI</div>
+      <div class="nav right"><span>Necker Cup</span><span>2026</span></div>
+    </div>
+    <div class="top"><b>LUCA FALONI x NECKER CUP</b><span>Confidential partnership concept</span></div>
+    <div class="look-grid" aria-label="Necker Cup lookbook imagery">
+      <div class="look featured"><img src="/images/necker.jpg" alt="Aerial view of Necker Island and its turquoise coastline"><span>Necker Island</span><i>+</i></div>
+      <div class="look"><img src="/images/rafa.jpg" alt="Rafa Nadal at Necker Cup"><span>Rafa</span><i>+</i></div>
+      <div class="look"><img src="/images/novak.jpg" alt="Novak Djokovic at Necker Cup"><span>Novak</span><i>+</i></div>
+      <div class="look"><img src="/images/andreabocelli.jpg" alt="Andrea Bocelli performing at Necker Cup"><span>Bocelli</span><i>+</i></div>
+      <div class="look"><img src="/images/golf-swing-ocean.jpg" alt="Golf swing with ocean backdrop during Necker Cup week"><span>Island Golf</span><i>+</i></div>
+    </div>
+    <div class="hero-copy">
+      <div>
+        <span class="pill">Official Apparel Partner &middot; 2026</span>
+        <h1>Private-island tennis, dressed with Italian restraint.</h1>
+        <p>A Luca Faloni partnership platform built around the official November 29-December 4, 2026 Necker Cup week: pro-am tennis, island golf, sailing, live music, founder access, guest gifting, and a limited-edition Necker Cup jacket guests will remember.</p>
+      </div>
+      <div>
+        <p class="small">A lifestyle-apparel partnership, distinct from technical sportswear, built for the island moments where Luca Faloni naturally belongs.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>Nov 29</b><span>Opening day</span></div>
+        <div class="stat"><b>Dec 4</b><span>Final gala</span></div>
+        <div class="stat"><b>$40K-$140K</b><span>Guest couple buy-in</span></div>
+        <div class="stat"><b>$12M+</b><span>Raised for charity</span></div>
+      </div>
+    </div>
+    <div class="footer"><span>Prepared for James Turner and Luca Faloni</span><span>Rem Reynolds &middot; GoExchange</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="top"><b>The Fit</b><span>Why this is not a generic sponsorship</span></div>
+    <div class="content">
+      <span class="eyebrow">Strategic alignment</span>
+      <h2>Tennis is already your language. <em>Necker is the sentence.</em></h2>
+      <p>Luca Faloni has been leaning into tennis through Mallorca, Gstaad, Munich, and country-club storytelling. Necker Cup concentrates that world into a private island environment: courts, sailing, evening dress, founder-led hospitality, and guests paying $40,000 to $140,000 per couple to attend.</p>
+      <div class="grid3">
+        <div class="card"><h3>Founder Story</h3><p>Luca personally loves tennis. The strongest version puts him on court in the pro-am, not just on a logo wall.</p></div>
+        <div class="card"><h3>Category White Space</h3><p>Ring-fence apparel as a non-technical menswear category: no Hugo Boss-style conflict, no loud sportswear noise.</p></div>
+        <div class="card"><h3>US Growth</h3><p>Necker content can feed Miami, New York, California, and Austin priorities with a premium story that does not look bought.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="top"><b>The Property</b><span>Official Necker Cup context</span></div>
+    <div class="split">
+      <div class="image-panel"><img src="/images/group-photo-court.jpg" alt="Necker Cup group gathered on the island tennis court"></div>
+      <div class="copy">
+        <span class="eyebrow">The Necker Cup</span>
+        <h2>The world's most exclusive six days in tennis.</h2>
+        <p>An invitation-only pro-am on Sir Richard Branson's private Necker Island, held November 29 through December 4, 2026. Guests compete and socialize with tennis legends, founders, principals, cultural figures, and philanthropists in a closed island environment.</p>
+        <div class="grid2">
+          <div class="card"><h3>Private Access</h3><p>Closed island, intimate guest count, high-trust introductions, and full-week brand immersion.</p></div>
+          <div class="card"><h3>Charity Engine</h3><p>The week benefits Virgin Unite and the National Tennis Foundation, with more than $12,000,000 raised and directed since inception.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><span>Past sponsor set includes Rolls Royce, Dom Perignon, Hublot, Bentley, Inglot, SeaDream, Quintessentially, Metal</span><span>Necker Island &middot; BVI</span></div>
+  </section>
+
+  <section class="slide">
+    <div class="top"><b>The Audience</b><span>The room Luca wants</span></div>
+    <div class="content">
+      <span class="eyebrow">Guest profile</span>
+      <h2>High-net-worth buyers with six days to live inside the brand.</h2>
+      <div class="stats">
+        <div class="stat"><b>$40K-$140K</b><span>Per couple to attend</span></div>
+        <div class="stat"><b>2026</b><span>Bocelli, Thiem, Rucker, Kyrgios</span></div>
+        <div class="stat"><b>6</b><span>Days captive</span></div>
+        <div class="stat"><b>1</b><span>Apparel category</span></div>
+      </div>
+      <div class="photo-grid">
+        <div class="photo-tile"><img src="/images/nickkyrgios.jpg" alt="Nick Kyrgios at Necker Cup"><div class="caption">Recognizable tennis names make the invite feel real.</div></div>
+        <div class="photo-tile"><img src="/images/dariusrucker.jpg" alt="Darius Rucker performing at Necker Cup"><div class="caption">Music and gala moments carry the luxury story.</div></div>
+      </div>
+      <div class="icon-strip" aria-label="Past Necker Cup celebrity and athlete presence">
+        <div class="icon-card"><img src="/images/kevinanderson.jpg" alt="Kevin Anderson at Necker Cup"><div class="caption">Past: Kevin Anderson</div></div>
+        <div class="icon-card"><img src="/images/jewel.jpg" alt="Jewel at Necker Cup"><div class="caption">Past: Jewel</div></div>
+        <div class="icon-card"><img src="/images/nickfaldo.jpg" alt="Nick Faldo at Necker Cup"><div class="caption">Past: Nick Faldo</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide wardrobe-slide">
+    <div class="top"><b>The Necker Wardrobe</b><span>Men's outfitting + limited collection</span></div>
+    <div class="wardrobe-wrap">
+      <div class="wardrobe-head">
+        <div>
+          <span class="eyebrow">A week dressed by Luca Faloni</span>
+          <h2>Outfit the men for every Necker moment.</h2>
+        </div>
+        <p>Build a considered island wardrobe around Luca Faloni's Summer 2026 collection: breathable linen for the day, relaxed tailoring for dinner, and refined layers after sunset. Each guest experiences the brand as it is meant to be worn - not as a logo, but as part of the week.</p>
+      </div>
+      <div class="wardrobe-gallery">
+        <div class="wardrobe-look"><img src="/images/luca-faloni/sand-linen-blazer.jpg" alt="Luca Faloni sand linen blazer summer look"><div class="caption">Dinner &amp; Gala - Linen tailoring</div></div>
+        <div class="wardrobe-look"><img src="/images/luca-faloni/portofino-linen-shirts.jpg" alt="Luca Faloni Portofino linen shirt summer look"><div class="caption">Island Days - Portofino linen</div></div>
+        <div class="wardrobe-look"><img src="/images/luca-faloni/linen-cotton-bomber.jpg" alt="Luca Faloni linen cotton bomber summer look"><div class="caption">After Sunset - Refined layers</div></div>
+      </div>
+      <div class="wardrobe-bottom">
+        <div class="card concept"><h3>Limited Necker Collection</h3><p>Create a tightly edited capsule in island tones—sea blue, sand, palm and weathered crimson—with discreet Necker Cup detailing. A numbered hero jacket with a silk island lining becomes the champion prize, auction piece and editorial reveal.</p></div>
+        <div class="card"><h3>Guest Outfitting</h3><p>Pre-arrival fittings and curated looks for select players, hosts and male guests turn six days on Necker into a living Luca Faloni campaign.</p></div>
+        <div class="card"><h3>Content Moment</h3><p>Capture arrivals, courtside style, dinner portraits and the lining reveal in one short film and a polished post-event lookbook.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="top"><b>Activation Platform</b><span>How Luca shows up</span></div>
+    <div class="content">
+      <span class="eyebrow">On-island execution</span>
+      <h2>Make the partnership visible without making it loud.</h2>
+      <div class="grid3">
+        <div class="card"><h3>Retail Pop-Up</h3><p>A refined island boutique for linen shirts, resort tailoring, knitwear, and the Necker capsule story, supported by pre-arrival guest communications.</p></div>
+        <div class="card"><h3>Founder Pro-Am Slot</h3><p>Give Luca the story he cannot buy elsewhere: playing tennis on Necker with pros and Richard's circle.</p></div>
+        <div class="card"><h3>Pro Masterclass</h3><p>Host an intimate tennis or style session with attending pros, giving guests a useful, social, and highly ownable Luca moment.</p></div>
+        <div class="card"><h3>Officials + Ball Crew</h3><p>Dress the court team in tasteful Luca looks where practical, keeping the tournament relaxed and premium.</p></div>
+        <div class="card"><h3>Dinner + Coin Toss</h3><p>Anchor the partnership with an intimate hosted dinner, ceremonial coin toss, sailing race element, or End of the World party integration.</p></div>
+        <div class="card"><h3>Gift Bag / Room Drop</h3><p>Place a Luca item or private fitting invitation into the beloved Necker Cup gift bag or room gift program.</p></div>
+        <div class="card"><h3>Media Rights</h3><p>Receive pre-approved photos and videos of Luca's presence for social, retail, press, and post-event recap use.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="top"><b>Numbers</b><span>What the COO will want</span></div>
+    <div class="content">
+      <span class="eyebrow">Measurement plan</span>
+      <h2>Give the COO a measurable business case.</h2>
+      <p>The business case is direct: who is in the room, what the brand receives, where the content travels, and how the week is reported after the event.</p>
+      <div class="stats">
+        <div class="stat"><b>$40K-$140K</b><span>Guest couple buy-in</span></div>
+        <div class="stat"><b>6</b><span>Days on island</span></div>
+        <div class="stat"><b>12+</b><span>Official sponsor rights</span></div>
+        <div class="stat"><b>$12M+</b><span>Raised since inception</span></div>
+      </div>
+      <div class="proof-grid">
+        <div class="proof-card">
+          <h3>Audience Proof</h3>
+          <div class="metric"><b>HNW/UHNW</b><span>Official draft describes the audience as exclusive, targeted, high-net-worth and ultra-high-net-worth clientele.</span></div>
+          <div class="metric"><b>2026</b><span>Confirmed names in the draft include Andrea Bocelli, Kim Clijsters, Dominic Thiem, Darius Rucker, Nick Kyrgios, Stefan Edberg, Juan Martin del Potro, Mike Bryan, and Sir Richard Branson.</span></div>
+          <div class="metric"><b>Direct</b><span>Guest, celebrity, and pro interaction is an explicit activation opportunity, not a passive logo placement.</span></div>
+        </div>
+        <div class="proof-card">
+          <h3>Content + Visibility</h3>
+          <div class="metric"><b>100"</b><span>Sponsor-provided videos and commercials can run on the tennis pavilion screen, the main congregation point for guests, pros, and celebrities.</span></div>
+          <div class="metric"><b>Court</b><span>Main-court wrap placement creates branded exposure in action photo and video footage.</span></div>
+          <div class="metric"><b>12 mo.</b><span>Package Luca with pre-approved event photos, video, court action, sponsor announcements, and a post-event content recap.</span></div>
+        </div>
+        <div class="proof-card">
+          <h3>Social Media · Fully Customizable</h3>
+          <div class="metric"><b>Story</b><span>Build a tailored content narrative around Luca Faloni outfitting the men of Necker Cup, from arrival and island moments to tennis, dinners, and the limited-edition reveal.</span></div>
+          <div class="metric"><b>Content</b><span>Customize the mix of photography, short-form video, talent posts, behind-the-scenes moments, product features, and collaborative social content.</span></div>
+          <div class="metric"><b>Reach</b><span>Shape the channel plan, posting cadence, featured guests, brand tags, calls to action, and amplification around Luca Faloni's campaign goals.</span></div>
+        </div>
+        <div class="proof-card">
+          <h3>PR + Reporting · Fully Customizable</h3>
+          <div class="metric"><b>PR</b><span>Tailor announcements, story angles, talent moments, charity positioning, media outreach, and event coverage to Luca Faloni's priorities.</span></div>
+          <div class="metric"><b>Rights</b><span>Customize the combination of Necker Cup and Premier Live channels, approved sponsor messaging, on-site mentions, guest content, and post-event usage.</span></div>
+          <div class="metric"><b>Report</b><span>Define the final reporting package together, including delivered content, social reach, engagement, media pickup, audience insights, and sponsor-visibility highlights.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="top"><b>Investment</b><span>Pricing and commercial frame</span></div>
+    <div class="content">
+      <span class="eyebrow">Three ways in</span>
+      <h2>Three partnership paths, from official apparel presence to title-level integration.</h2>
+      <p>Each route keeps Luca Faloni in the lifestyle-apparel lane: refined retail, private hospitality, on-court credibility, and content that feels earned rather than forced.</p>
+      <div class="tiers">
+        <div class="tier">
+          <small>Target investment</small>
+          <h3>Supporting Apparel Partner</h3>
+          <div class="price">$100K</div>
+          <ul>
+            <li>Apparel category exclusivity</li>
+            <li>VIP attendance for 2 guests</li>
+            <li>Charity gala auction donation</li>
+            <li>Brand presence in event materials</li>
+            <li>Content photography access</li>
+          </ul>
+        </div>
+        <div class="tier featured">
+          <small>Target investment</small>
+          <h3>Official Apparel Partner</h3>
+          <div class="price">$200K</div>
+          <ul>
+            <li>Official apparel partner designation</li>
+            <li>Retail pop-up across the week</li>
+            <li>Pro-led style or tennis masterclass</li>
+            <li>Custom Necker Cup jacket activation</li>
+            <li>CEO attends and plays in the pro-am</li>
+            <li>Ceremonial coin toss moment</li>
+            <li>Officials / ball crew wardrobe where practical</li>
+            <li>Content package licensed for 12 months</li>
+            <li>Guest communications and recap inclusion</li>
+          </ul>
+        </div>
+        <div class="tier">
+          <small>Multi-year deal</small>
+          <h3>Presenting Partner</h3>
+          <div class="price">$300K-$500K</div>
+          <ul>
+            <li>Presenting partner designation</li>
+            <li>Premium pop-up placement</li>
+            <li>Intimate hosted dinner moment</li>
+            <li>Founder pro-am + VIP hospitality</li>
+            <li>Custom jacket for winner and/or gala auction</li>
+            <li>Dedicated highlight reel and PR package</li>
+            <li>Title-level integration across guest communications</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="top"><b>Path Forward</b><span>Keep momentum</span></div>
+    <div class="content">
+      <span class="eyebrow">Next steps</span>
+      <h2>Fast path to a confirmed Luca Faloni partnership.</h2>
+      <div class="timeline">
+        <div class="step"><b>01</b><span>Select lane</span><p>Choose official apparel partner, presenting partner, or title-level structure.</p></div>
+        <div class="step"><b>02</b><span>Shape activation</span><p>Finalize pop-up footprint, masterclass format, hosted dinner, coin toss, and content rights.</p></div>
+        <div class="step"><b>03</b><span>Confirm presence</span><p>Lock guest slots, founder participation, gifting, wardrobe scope, and hospitality schedule.</p></div>
+        <div class="step"><b>04</b><span>Move to agreement</span><p>Convert the selected package into the final partnership agreement and production timeline.</p></div>
+      </div>
+      <div class="photo-grid">
+        <div class="photo-tile"><img src="/images/island-golf-course.jpg" alt="Island golf course near the water"><div class="caption">The lifestyle: golf, ocean, and private-island access.</div></div>
+        <div class="photo-tile"><img src="/images/tennis-action-backhand.jpg" alt="Tennis backhand action at Necker Cup"><div class="caption">The proof: real court action, not a static logo buy.</div></div>
+      </div>
+    </div>
+    <div class="footer"><span>Luca Faloni x Necker Cup 2026</span><span>Prepared by Rem Reynolds &middot; Tyler Navarro</span></div>
+  </section>
+</main>
+</body>
+</html>
+
+
