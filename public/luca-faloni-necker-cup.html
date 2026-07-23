@@ -225,6 +225,71 @@
     .photo-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 14px; margin-top: 28px; }
     .photo-tile { min-height: 230px; position: relative; overflow: hidden; border: 1px solid var(--line); }
     .photo-tile img { width: 100%; height: 100%; object-fit: cover; }
+    .event-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 190px;
+      gap: 10px;
+      margin-top: 26px;
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      padding: 0;
+      border: 0;
+      background: var(--bone);
+      cursor: zoom-in;
+      color: white;
+      text-align: left;
+    }
+    .gallery-item.wide { grid-column: span 2; }
+    .gallery-item.tall { grid-row: span 2; }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+    .gallery-item:hover img,
+    .gallery-item:focus-visible img { transform: scale(1.035); }
+    .gallery-item:focus-visible { outline: 3px solid var(--tan); outline-offset: 2px; }
+    .gallery-label {
+      position: absolute;
+      inset: auto 0 0;
+      padding: 44px 14px 13px;
+      background: linear-gradient(transparent, rgba(12, 17, 17, .78));
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .gallery-lightbox {
+      position: fixed;
+      z-index: 100;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 38px;
+      background: rgba(8, 13, 14, .94);
+    }
+    .gallery-lightbox.open { display: flex; }
+    .gallery-lightbox figure { width: min(1080px, 92vw); margin: 0; }
+    .gallery-lightbox img { width: 100%; max-height: 78vh; object-fit: contain; }
+    .gallery-lightbox figcaption { margin-top: 14px; color: #fffefa; font-size: 14px; }
+    .gallery-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 50%;
+      background: rgba(255,255,255,.1);
+      color: white;
+      cursor: pointer;
+      font-size: 24px;
+    }
     .icon-strip {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -408,6 +473,9 @@
       .wardrobe-gallery,
       .wardrobe-bottom,
       .photo-grid { grid-template-columns: 1fr; }
+      .event-gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; }
+      .gallery-item.wide { grid-column: span 2; }
+      .gallery-item.tall { grid-row: span 1; }
       .wardrobe-wrap { padding: 82px 18px 28px; }
       .wardrobe-look { min-height: 430px; }
       .copy,
@@ -513,6 +581,26 @@
         <div class="icon-card"><img src="/images/nickfaldo.jpg" alt="Nick Faldo at Necker Cup"><div class="caption">Past: Nick Faldo</div></div>
       </div>
     </div>
+  </section>
+
+  <section class="slide">
+    <div class="top"><b>The Experience</b><span>Six days beyond the court</span></div>
+    <div class="content">
+      <span class="eyebrow">Inside Necker Cup week</span>
+      <h2>A private island. A full social calendar. <em>A story in every frame.</em></h2>
+      <p>The partnership lives across the whole week—not only during matches. Guests move between the sea, tennis, golf, intimate dinners, live music, and the closing celebration, giving Luca Faloni a natural wardrobe and content moment from morning through evening.</p>
+      <div class="event-gallery" aria-label="Necker Cup event gallery">
+        <button class="gallery-item wide" type="button" data-full="/images/artist-island-aerial.jpg" data-title="Your island home — six days on Necker Island"><img src="/images/artist-island-aerial.jpg" alt="Aerial view of Necker Island"><span class="gallery-label">Your Island Home</span></button>
+        <button class="gallery-item" type="button" data-full="/images/tennis-action-backhand.jpg" data-title="Play alongside touring professionals and tennis legends"><img src="/images/tennis-action-backhand.jpg" alt="Tennis action at Necker Cup"><span class="gallery-label">Play With the Pros</span></button>
+        <button class="gallery-item tall" type="button" data-full="/images/beach-dock-group.jpg" data-title="Sailing, snorkeling, paddleboarding, and beach time"><img src="/images/beach-dock-group.jpg" alt="Guests gathering beside the water"><span class="gallery-label">Days on the Water</span></button>
+        <button class="gallery-item" type="button" data-full="/images/golf-swing-ocean.jpg" data-title="Island golf surrounded by Caribbean views"><img src="/images/golf-swing-ocean.jpg" alt="Golf above the sea"><span class="gallery-label">Golf Above the Sea</span></button>
+        <button class="gallery-item" type="button" data-full="/images/dinner-wide-palms.jpg" data-title="Intimate island dinners with founders, athletes, artists, and friends"><img src="/images/dinner-wide-palms.jpg" alt="Dinner tables beneath island palms"><span class="gallery-label">Island Dinners</span></button>
+        <button class="gallery-item wide" type="button" data-full="/images/singer-guitar-stage.jpg" data-title="Live music in an intimate private-island setting"><img src="/images/singer-guitar-stage.jpg" alt="Live musical performance at Necker Cup"><span class="gallery-label">Live Music</span></button>
+        <button class="gallery-item" type="button" data-full="/images/branson-borg-celebrate.jpg" data-title="A relaxed gathering in the unmistakable spirit of Necker"><img src="/images/branson-borg-celebrate.jpg" alt="Richard Branson celebrating with guests"><span class="gallery-label">One Remarkable Room</span></button>
+        <button class="gallery-item" type="button" data-full="/images/trophy-ceremony-court.jpg" data-title="Competition, connection, and a week worth celebrating"><img src="/images/trophy-ceremony-court.jpg" alt="Necker Cup trophy celebration"><span class="gallery-label">The Celebration</span></button>
+      </div>
+    </div>
+    <div class="footer"><span>Select any image to open the gallery</span><span>Necker Island &middot; BVI</span></div>
   </section>
 
   <section class="slide wardrobe-slide">
@@ -668,5 +756,38 @@
     <div class="footer"><span>Luca Faloni x Necker Cup 2026</span><span>Prepared by Rem Reynolds &middot; Tyler Navarro</span></div>
   </section>
 </main>
+<div class="gallery-lightbox" id="eventLightbox" role="dialog" aria-modal="true" aria-label="Necker Cup event gallery viewer">
+  <button class="gallery-close" type="button" aria-label="Close gallery">&times;</button>
+  <figure>
+    <img src="" alt="">
+    <figcaption></figcaption>
+  </figure>
+</div>
+<script>
+  (() => {
+    const lightbox = document.getElementById('eventLightbox');
+    const image = lightbox.querySelector('img');
+    const caption = lightbox.querySelector('figcaption');
+    const close = () => {
+      lightbox.classList.remove('open');
+      image.src = '';
+    };
+    document.querySelectorAll('.gallery-item').forEach((item) => {
+      item.addEventListener('click', () => {
+        image.src = item.dataset.full;
+        image.alt = item.querySelector('img').alt;
+        caption.textContent = item.dataset.title;
+        lightbox.classList.add('open');
+      });
+    });
+    lightbox.querySelector('.gallery-close').addEventListener('click', close);
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) close();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') close();
+    });
+  })();
+</script>
 </body>
 </html>
