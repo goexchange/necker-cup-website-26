@@ -6,6 +6,7 @@
     "dev": "vite",
     "optimize-images": "node scripts/optimize-images.js",
     "build": "node scripts/optimize-images.js && vite build",
+    "build:sites": "vite build && node scripts/prepare-sites-build.js",
     "preview": "vite preview",
     "docker:dev": "docker-compose up dev",
     "docker:prod": "docker-compose --profile production up prod",
