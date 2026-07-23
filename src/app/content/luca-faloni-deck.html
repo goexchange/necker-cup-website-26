@@ -278,7 +278,15 @@
       overflow: hidden;
       background: var(--bone);
     }
-    .wardrobe-look img { width: 100%; height: 100%; object-fit: cover; }
+    .wardrobe-look img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .wardrobe-look:nth-child(2) img { object-position: 52% center; }
+    .wardrobe-look:nth-child(3) img { object-position: 38% center; }
     .wardrobe-look .caption { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
     .wardrobe-bottom {
       display: grid;
@@ -518,9 +526,9 @@
         <p>Build a considered island wardrobe around Luca Faloni's Summer 2026 collection: breathable linen for the day, relaxed tailoring for dinner, and refined layers after sunset. Each guest experiences the brand as it is meant to be worn - not as a logo, but as part of the week.</p>
       </div>
       <div class="wardrobe-gallery">
-        <div class="wardrobe-look"><img src="/images/luca-faloni/sand-linen-blazer.jpg" alt="Luca Faloni sand linen blazer summer look"><div class="caption">Dinner &amp; Gala - Linen tailoring</div></div>
-        <div class="wardrobe-look"><img src="/images/luca-faloni/portofino-linen-shirts.jpg" alt="Luca Faloni Portofino linen shirt summer look"><div class="caption">Island Days - Portofino linen</div></div>
-        <div class="wardrobe-look"><img src="/images/luca-faloni/linen-cotton-bomber.jpg" alt="Luca Faloni linen cotton bomber summer look"><div class="caption">After Sunset - Refined layers</div></div>
+        <div class="wardrobe-look"><img src="/images/luca-faloni/sand-linen-blazer.jpg" alt="Luca Faloni summer linen look aboard a sailboat"><div class="caption">Island arrival - Portofino linen</div></div>
+        <div class="wardrobe-look"><img src="/images/luca-faloni/portofino-linen-shirts.jpg" alt="Luca Faloni pink linen shirt beside the sea"><div class="caption">Beach days - Summer linen</div></div>
+        <div class="wardrobe-look"><img src="/images/luca-faloni/linen-cotton-bomber.jpg" alt="Luca Faloni rust polo overlooking a Mediterranean bay"><div class="caption">Golden hour - Coastal layers</div></div>
       </div>
       <div class="wardrobe-bottom">
         <div class="card concept"><h3>Limited Necker Collection</h3><p>Create a tightly edited capsule in island tones—sea blue, sand, palm and weathered crimson—with discreet Necker Cup detailing. A numbered hero jacket with a silk island lining becomes the champion prize, auction piece and editorial reveal.</p></div>
@@ -662,5 +670,4 @@
 </main>
 </body>
 </html>
-
 
