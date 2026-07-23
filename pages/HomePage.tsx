@@ -209,6 +209,33 @@ export function HomePage() {
               allowFullScreen
             />
           </div>
+          <div className="mt-6 grid gap-6 md:grid-cols-2">
+            {[
+              {
+                id: 'a6WGP9lHPx0',
+                title: 'Necker Cup Broadcast',
+              },
+              {
+                id: 'rdPDdn-vEVA',
+                title: '2013 Necker Cup with Sir Richard Branson, Rafa Nadal and Jimmy Buffett',
+              },
+            ].map((video) => (
+              <div key={video.id}>
+                <div className="aspect-video overflow-hidden rounded-xl border border-white/10 bg-black shadow-xl">
+                  <iframe
+                    className="h-full w-full"
+                    src={`https://www.youtube-nocookie.com/embed/${video.id}?rel=0`}
+                    title={video.title}
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+                <p className="mt-3 font-body text-sm leading-relaxed text-white/70">{video.title}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
