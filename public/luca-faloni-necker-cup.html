@@ -460,11 +460,27 @@
     }
 
     @media (max-width: 860px) {
+      .deck { width: 100%; padding: 0 0 24px; }
+      .slide { margin-bottom: 10px; border-left: 0; border-right: 0; }
       .sitebar { height: auto; grid-template-columns: 1fr; padding: 12px 18px; text-align: center; }
       .nav,
       .nav.right { justify-content: center; flex-wrap: wrap; }
-      .top { top: 108px; padding: 14px 18px; }
-      .look-grid { height: auto; min-height: 960px; grid-template-columns: 1fr; grid-template-rows: repeat(4, 240px); }
+      .top {
+        position: static;
+        top: auto;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--line);
+      }
+      .top span { margin-left: auto; text-align: right; }
+      .look-grid {
+        height: auto;
+        min-height: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 220px);
+        padding-top: 0;
+      }
       .look.featured { grid-row: span 1; }
       .hero-copy,
       .split,
@@ -476,12 +492,15 @@
       .event-gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; }
       .gallery-item.wide { grid-column: span 2; }
       .gallery-item.tall { grid-row: span 1; }
-      .wardrobe-wrap { padding: 82px 18px 28px; }
+      .wardrobe-wrap { padding: 34px 18px 28px; }
       .wardrobe-look { min-height: 430px; }
       .copy,
-      .content,
-      .hero-copy { padding: 82px 28px 40px; }
-      .stats,
+      .content { padding: 38px 22px 40px; }
+      .hero-copy { padding: 38px 22px 40px; gap: 8px; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .stat { min-height: 96px; padding: 16px 12px; }
+      .stat b { font-size: 28px; overflow-wrap: anywhere; }
+      .stat span { font-size: 9px; }
       .icon-strip,
       .grid3,
       .grid2,
@@ -490,7 +509,9 @@
       .timeline { grid-template-columns: 1fr; }
       .slide { min-height: auto; }
       .image-panel { min-height: 360px; }
-      h1 { font-size: clamp(46px, 15vw, 68px); }
+      h1 { font-size: clamp(44px, 12vw, 58px); }
+      h2 { font-size: clamp(38px, 10vw, 48px); line-height: 1.02; }
+      .footer { flex-direction: column; gap: 5px; padding: 16px 18px; }
     }
   </style>
 </head>
