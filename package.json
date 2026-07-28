@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite",
     "optimize-images": "node scripts/optimize-images.js",
+    "pdf:luca-faloni": "node scripts/generate-luca-faloni-pdf.mjs",
     "build": "node scripts/optimize-images.js && vite build",
     "build:sites": "vite build && node scripts/prepare-sites-build.js",
     "preview": "vite preview",

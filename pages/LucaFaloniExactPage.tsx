@@ -196,6 +196,29 @@ export function LucaFaloniExactPage() {
               View proposal
             </button>
           </form>
+          <a
+            href="/luca-faloni-necker-cup-2026.pdf"
+            download="Luca-Faloni-x-Necker-Cup-2026.pdf"
+            style={{
+              display: 'block',
+              width: '100%',
+              minHeight: '52px',
+              marginTop: '10px',
+              border: '1px solid rgba(30, 28, 24, 0.24)',
+              background: 'transparent',
+              color: '#1e1c18',
+              cursor: 'pointer',
+              fontSize: '12px',
+              fontWeight: 700,
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              textDecoration: 'none',
+              textAlign: 'center',
+              lineHeight: '52px',
+            }}
+          >
+            Download PDF
+          </a>
           <p
             style={{
               margin: '24px 0 0',
@@ -214,18 +237,44 @@ export function LucaFaloniExactPage() {
   }
 
   return (
-    <iframe
-      ref={frameRef}
-      srcDoc={deckHtml}
-      title="Luca Faloni x Necker Cup partnership deck"
-      onLoad={syncHeight}
-      style={{
-        display: 'block',
-        width: '100%',
-        height,
-        border: 0,
-        background: '#efebe4',
-      }}
-    />
+    <>
+      <a
+        href="/luca-faloni-necker-cup-2026.pdf"
+        download="Luca-Faloni-x-Necker-Cup-2026.pdf"
+        style={{
+          position: 'fixed',
+          zIndex: 20,
+          top: 16,
+          right: 16,
+          minHeight: 40,
+          padding: '0 16px',
+          border: '1px solid rgba(30, 28, 24, 0.18)',
+          background: 'rgba(251, 250, 246, 0.94)',
+          color: '#1e1c18',
+          fontSize: 11,
+          fontWeight: 700,
+          letterSpacing: '0.1em',
+          textTransform: 'uppercase',
+          textDecoration: 'none',
+          lineHeight: '40px',
+          backdropFilter: 'blur(8px)',
+        }}
+      >
+        Download PDF
+      </a>
+      <iframe
+        ref={frameRef}
+        srcDoc={deckHtml}
+        title="Luca Faloni x Necker Cup partnership deck"
+        onLoad={syncHeight}
+        style={{
+          display: 'block',
+          width: '100%',
+          height,
+          border: 0,
+          background: '#efebe4',
+        }}
+      />
+    </>
   );
 }

@@ -459,7 +459,7 @@
       text-transform: uppercase;
     }
 
-    @media (max-width: 860px) {
+    @media screen and (max-width: 860px) {
       .deck { width: 100%; padding: 0 0 24px; }
       .slide { margin-bottom: 10px; border-left: 0; border-right: 0; }
       .sitebar { height: auto; grid-template-columns: 1fr; padding: 12px 18px; text-align: center; }
@@ -512,6 +512,95 @@
       h1 { font-size: clamp(44px, 12vw, 58px); }
       h2 { font-size: clamp(38px, 10vw, 48px); line-height: 1.02; }
       .footer { flex-direction: column; gap: 5px; padding: 16px 18px; }
+    }
+
+    /* Digital PDF / print — landscape 16:9, one slide per page */
+    @page {
+      size: 13.333in 7.5in;
+      margin: 0;
+    }
+
+    @media print {
+      html, body {
+        width: 13.333in;
+        background: #efebe4 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .deck {
+        width: 13.333in;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+      }
+      .slide {
+        width: 13.333in;
+        height: 7.5in;
+        min-height: 7.5in;
+        max-height: 7.5in;
+        margin: 0;
+        border: 0;
+        box-shadow: none;
+        overflow: hidden;
+        page-break-after: always;
+        break-after: page;
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+      .slide:last-of-type {
+        page-break-after: auto;
+        break-after: auto;
+      }
+      .gallery-lightbox { display: none !important; }
+      .gallery-item { cursor: default; }
+      .gallery-item:hover img,
+      .gallery-item:focus-visible img { transform: none; }
+
+      /* Tighten dense slides so they fit one digital page */
+      .sitebar { height: 48px; padding: 0 22px; font-size: 9px; }
+      .brand { font-size: 20px; }
+      .top { top: 48px; padding: 12px 22px; }
+      .look-grid { height: 300px; padding-top: 48px; }
+      .hero { min-height: 0; }
+      .hero-copy { padding: 18px 36px 20px; gap: 24px; }
+      .hero-copy h1 { font-size: 46px; }
+      .hero-copy p { margin-top: 10px; font-size: 13px; }
+      .pill { margin-bottom: 12px; padding: 6px 12px; }
+      .stats { margin-top: 16px; }
+      .stat { min-height: 72px; padding: 12px 10px; }
+      .stat b { font-size: 26px; }
+      .copy, .content { padding: 72px 40px 36px; }
+      .split, .jacket-wrap { min-height: 7.5in; }
+      .image-panel { min-height: 7.5in; }
+      h1 { font-size: 48px; }
+      h2 { font-size: 40px; margin-top: 8px; }
+      p { margin-top: 12px; font-size: 13px; }
+      .grid3, .grid2, .tiers, .timeline { margin-top: 18px; gap: 10px; }
+      .card, .tier, .step { min-height: 0; padding: 16px; }
+      .card p, .step p { margin-top: 8px; font-size: 12px; }
+      .photo-grid { margin-top: 16px; gap: 10px; }
+      .photo-tile { min-height: 160px; }
+      .event-gallery {
+        margin-top: 14px;
+        gap: 8px;
+        grid-auto-rows: 118px;
+      }
+      .icon-strip { margin-top: 14px; }
+      .icon-card { min-height: 220px; }
+      .wardrobe-wrap { padding: 68px 32px 28px; }
+      .wardrobe-head { margin-bottom: 16px; gap: 28px; }
+      .wardrobe-look { min-height: 280px; }
+      .wardrobe-bottom { margin-top: 10px; }
+      .wardrobe-bottom .card { min-height: 0; padding: 14px; }
+      .proof-grid { margin-top: 14px; gap: 10px; }
+      .proof-card { padding: 14px; }
+      .proof-card .metric { padding: 7px 0; font-size: 11px; gap: 10px; }
+      .proof-card .metric b { font-size: 22px; }
+      .price { font-size: 28px; margin: 10px 0 6px; }
+      .tier h3 { font-size: 22px; }
+      li { padding: 5px 0; font-size: 11px; }
+      .footer { padding: 12px 22px; }
+      .footer .print-hide { display: none; }
     }
   </style>
 </head>
@@ -621,7 +710,7 @@
         <button class="gallery-item" type="button" data-full="/images/trophy-ceremony-court.jpg" data-title="Competition, connection, and a week worth celebrating"><img src="/images/trophy-ceremony-court.jpg" alt="Necker Cup trophy celebration"><span class="gallery-label">The Celebration</span></button>
       </div>
     </div>
-    <div class="footer"><span>Select any image to open the gallery</span><span>Necker Island &middot; BVI</span></div>
+    <div class="footer"><span class="print-hide">Select any image to open the gallery</span><span>Necker Island &middot; BVI</span></div>
   </section>
 
   <section class="slide wardrobe-slide">
