@@ -76,7 +76,7 @@ export function HomePage() {
             <p className="font-display text-xl md:text-2xl text-white/90 mb-8 animate-fade-up-delay-1">Fun, friendship, charity - and tennis</p>
             <p className="font-body text-lg md:text-xl text-white/90 leading-relaxed max-w-xl mb-10 animate-fade-up-delay-2">Will you join us for the 15th Annual Necker Cup? World-class pro-am tennis, golf, music, charity dinner & End of the World party—and much more.</p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-up-delay-3">
-              <button onClick={openForm} className="font-body bg-white text-stone-900 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm font-medium tracking-wide hover:bg-stone-100 transition-all duration-300 hover:shadow-xl hover:scale-105">Explore Packages</button>
+              <Link to="/packages" className="font-body bg-white text-stone-900 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm font-medium tracking-wide hover:bg-stone-100 transition-all duration-300 hover:shadow-xl hover:scale-105 text-center">Explore Packages</Link>
               <button onClick={() => setShowVideo(true)} className="font-body border-2 border-white/40 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm tracking-wide hover:bg-white/10 transition-all duration-300 backdrop-blur-sm flex items-center justify-center gap-2 hover:shadow-lg"><Play className="w-4 h-4 flex-shrink-0" />Watch Last Year's Video</button>
             </div>
           </div>

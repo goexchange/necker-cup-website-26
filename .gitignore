@@ -1,3 +1,4 @@
+# .gitignore conflict markers + design-pick
 # Dependencies
 node_modules/
 npm-debug.log*
@@ -15,6 +16,7 @@ build/
 .env
 .env.local
 .env.*.local
+.env*
 
 # Editor directories
 .vscode/
@@ -45,7 +47,6 @@ docker-compose.override.yml
 .docker/
 *.dockerfile.local
 .vercel
-<<<<<<< Updated upstream
-.env*
-=======
->>>>>>> Stashed changes
+
+# UX Designer generated pick (local only)
+.cursor/design-pick.md

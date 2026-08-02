@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { ReservationFormProvider } from '@/app/context/ReservationFormContext';
 import { Layout } from '@/app/components/Layout';
 import { HomePage } from '@pages/HomePage';
@@ -13,6 +13,10 @@ import { TalentPage } from '@pages/TalentPage';
 import { SponsorEmailPage } from '@pages/SponsorEmailPage';
 import { ArtistInvitePage } from '@pages/ArtistInvitePage';
 import { LucaFaloniExactPage } from '@pages/LucaFaloniExactPage';
+
+const AgentPagePicker = import.meta.env.DEV
+  ? React.lazy(() => import('@/components/dev/AgentPagePicker'))
+  : null;
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -44,6 +48,11 @@ export default function App() {
           <Route path="partnerships/luca-faloni-2026" element={<LucaFaloniExactPage />} />
         </Routes>
       </ReservationFormProvider>
+      {AgentPagePicker ? (
+        <React.Suspense fallback={null}>
+          <AgentPagePicker />
+        </React.Suspense>
+      ) : null}
     </BrowserRouter>
   );
 }

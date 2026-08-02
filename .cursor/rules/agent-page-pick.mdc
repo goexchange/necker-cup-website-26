@@ -1,0 +1,24 @@
+---
+description: >-
+  When Rem uses live UI edit mode — UX Designer, /pick, edit mode, div editor,
+  page pick, or pastes an "Agent page pick:" block — read agent-page-pick skill
+  and implement from Source hint + Live preview CSS.
+alwaysApply: true
+---
+
+# Agent Page Pick — edit mode trigger
+
+If Rem's message matches **any** of:
+
+- **`/pick`** or **`/edit-mode`**
+- **edit mode**, **div editor**, **page pick**, **agent picker**, **design pick**
+- Pastes a block with **`Source hint:`** and optional **`Change requested:`** / **`Live preview CSS:`**
+- References **`@.cursor/design-pick.md`**
+
+**Read** `.cursor/skills/agent-page-pick/SKILL.md`.
+
+**Default:** open the Source hint file, apply the requested UI change in production React/Tailwind, keep scope minimal.
+
+**Rem toggles edit mode:** **⌘⇧E** on any `http://localhost:5180/` (or active Vite) page in development, or `?agentPick=1`. Mode persists across routes until Exit or ⌘⇧E again.
+
+**Do not** treat Live preview CSS as permanent — translate it into component code.

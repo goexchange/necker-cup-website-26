@@ -2,8 +2,9 @@ import { defineConfig } from 'vite'
 import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
+import { agentPagePickApiPlugin } from './vite-plugins/agentPagePickApi'
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   appType: 'spa',
   server: {
     host: true,
@@ -31,6 +32,7 @@ export default defineConfig({
     // Tailwind is not being actively used – do not remove them
     react(),
     tailwindcss(),
+    ...(mode === 'development' ? [agentPagePickApiPlugin()] : []),
   ],
   resolve: {
     alias: {
@@ -40,4 +42,4 @@ export default defineConfig({
       '@pages': path.resolve(__dirname, './pages'),
     },
   },
-})
+}))
