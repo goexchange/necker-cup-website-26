@@ -17,6 +17,8 @@ export type EventPackage = {
   spotsRemaining: number;
   /** ISO date (YYYY-MM-DD) used for “expected sellout” display */
   expectedSelloutDate: string;
+  /** When sold out, keep a CTA for the following year (e.g. “Reserve for 2027”) */
+  nextYearCta?: string;
 };
 
 /** Site-wide package display toggles */
@@ -40,8 +42,9 @@ export const packages: EventPackage[] = [
     desc: 'Stay on Necker Island for 5 nights (November 29 - December 4, 2026). Enjoy meals, events and parties, including the End of the World party, on Necker Island. One 2-person playing team spot to play in the Necker Cup.',
     includes: [...sharedIncludes, 'One 2-person playing team spot to play in the Necker Cup'],
     price: 109750,
-    spotsRemaining: 6,
+    spotsRemaining: 0,
     expectedSelloutDate: '2026-09-15',
+    nextYearCta: 'Reserve for 2027',
   },
   {
     id: 'player_moskito',
@@ -50,8 +53,9 @@ export const packages: EventPackage[] = [
     desc: 'Stay at the Branson Estate on Moskito Island for 5 nights (November 29 - December 4, 2026). Enjoy meals, events and parties, including the End of the World party, on Necker Island. One 2-person playing team spot to play in the Necker Cup.',
     includes: [...sharedIncludes, 'One 2-person playing team spot to play in the Necker Cup'],
     price: 99250,
-    spotsRemaining: 5,
+    spotsRemaining: 0,
     expectedSelloutDate: '2026-09-30',
+    nextYearCta: 'Reserve for 2027',
   },
   {
     id: 'spectator_necker',
@@ -95,4 +99,8 @@ export function getPackageCtaLabel(): string {
 export function getPackageById(id: string | null | undefined): EventPackage | undefined {
   if (!id) return undefined;
   return packages.find((pkg) => pkg.id === id);
+}
+
+export function isPackageSoldOut(pkg: EventPackage): boolean {
+  return pkg.spotsRemaining <= 0;
 }

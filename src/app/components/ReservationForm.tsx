@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Check, X } from 'lucide-react';
-import { formatPackagePrice, packages } from '@/app/data/packages';
+import { formatPackagePrice, isPackageSoldOut, packages } from '@/app/data/packages';
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL ?? 'https://abhxvgpnwbnfjjdmzqdn.supabase.co';
 const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY ?? 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFiaHh2Z3Bud2JuZmpqZG16cWRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwMjQ2NzcsImV4cCI6MjA2MzYwMDY3N30.qDaQbwmpFJKQwn30gVLZChUd6j_TVLn790XGMTrJG_A';
@@ -213,7 +213,10 @@ export function ReservationForm({
                       className="mt-1 w-5 h-5 text-emerald-800 focus:ring-emerald-800"
                     />
                     <div>
-                      <span className="font-body font-medium text-stone-900 block">{pkg.name}</span>
+                      <span className="font-body font-medium text-stone-900 block">
+                        {pkg.name}
+                        {isPackageSoldOut(pkg) ? ' (Sold out 2026 — 2027 interest)' : ''}
+                      </span>
                       <span className="font-body text-sm text-emerald-800 mt-1 block">
                         {formatPackagePrice(pkg.price)} per couple
                       </span>

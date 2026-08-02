@@ -1,8 +1,9 @@
 import { Check } from 'lucide-react';
 import { useState } from 'react';
 import { useReservationForm } from '@/app/context/ReservationFormContext';
-import { packages } from '@/app/data/packages';
+import { packages, isPackageSoldOut } from '@/app/data/packages';
 import { PackageCardFooter } from '@/app/components/PackageCardFooter';
+import { PackageSoldOutBanner } from '@/app/components/PackageSoldOutBanner';
 
 export function PackagesPage() {
   const [activePackage, setActivePackage] = useState(1);
@@ -38,14 +39,15 @@ export function PackagesPage() {
             {packages.map((pkg, i) => (
               <div
                 key={pkg.id}
-                className={`group relative bg-white rounded-3xl p-6 sm:p-8 lg:p-10 transition-all duration-500 cursor-pointer ${
+                className={`group relative overflow-hidden bg-white rounded-3xl p-6 sm:p-8 lg:p-10 transition-all duration-500 cursor-pointer ${
                   activePackage === i
                     ? 'shadow-2xl shadow-emerald-900/10 scale-[1.02] ring-2 ring-emerald-800/20'
                     : 'shadow-lg hover:shadow-xl hover:scale-[1.01]'
                 }`}
                 onClick={() => setActivePackage(i)}
               >
-                {activePackage === i && (
+                {isPackageSoldOut(pkg) && <PackageSoldOutBanner />}
+                {activePackage === i && !isPackageSoldOut(pkg) && (
                   <div className="absolute top-6 right-6 w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center">
                     <Check className="w-5 h-5 text-white" />
                   </div>

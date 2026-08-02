@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import { Play, ChevronDown, Check, X } from 'lucide-react';
 import { useReservationForm } from '@/app/context/ReservationFormContext';
 import { publicImages } from '@/app/lib/publicImages';
-import { packages } from '@/app/data/packages';
+import { packages, isPackageSoldOut } from '@/app/data/packages';
 import { PackageCardFooter } from '@/app/components/PackageCardFooter';
+import { PackageSoldOutBanner } from '@/app/components/PackageSoldOutBanner';
 
 const galleryImages = [
   publicImages.crowdPavilionCourt,
@@ -248,8 +249,9 @@ export function HomePage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {packages.map((pkg, i) => (
-              <div key={pkg.id} className={`group relative bg-white rounded-3xl p-6 sm:p-8 lg:p-10 transition-all duration-500 cursor-pointer ${activePackage === i ? 'shadow-2xl shadow-emerald-900/10 scale-[1.02] ring-2 ring-emerald-800/20' : 'shadow-lg hover:shadow-xl hover:scale-[1.01]'}`} onClick={() => setActivePackage(i)}>
-                {activePackage === i && <div className="absolute top-6 right-6 w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center"><Check className="w-5 h-5 text-white" /></div>}
+              <div key={pkg.id} className={`group relative overflow-hidden bg-white rounded-3xl p-6 sm:p-8 lg:p-10 transition-all duration-500 cursor-pointer ${activePackage === i ? 'shadow-2xl shadow-emerald-900/10 scale-[1.02] ring-2 ring-emerald-800/20' : 'shadow-lg hover:shadow-xl hover:scale-[1.01]'}`} onClick={() => setActivePackage(i)}>
+                {isPackageSoldOut(pkg) && <PackageSoldOutBanner />}
+                {activePackage === i && !isPackageSoldOut(pkg) && <div className="absolute top-6 right-6 w-8 h-8 rounded-full bg-emerald-600 flex items-center justify-center"><Check className="w-5 h-5 text-white" /></div>}
                 <p className="font-body text-stone-400 text-xs tracking-widest uppercase mb-4">{pkg.nights}</p>
                 <h3 className="font-display text-2xl lg:text-3xl text-stone-900 mb-4 leading-tight">{pkg.name}</h3>
                 <p className="font-body text-stone-500 mb-8 leading-relaxed text-sm">{pkg.desc}</p>
