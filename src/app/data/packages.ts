@@ -64,8 +64,9 @@ export const packages: EventPackage[] = [
     desc: 'Stay on Necker Island for 5 nights (November 29 - December 4, 2026). Enjoy meals, events and parties, including the End of the World party, on Necker Island. Watch all the fun of the Necker Cup while mixing and mingling with pros, legends and celebrities.',
     includes: [...sharedIncludes, 'Watch all the fun of the Necker Cup and mix with pros, legends and celebrities'],
     price: 78750,
-    spotsRemaining: 10,
+    spotsRemaining: 0,
     expectedSelloutDate: '2026-10-15',
+    nextYearCta: 'Reserve for 2027',
   },
   {
     id: 'spectator_moskito',

@@ -96,16 +96,19 @@ export function ReservationForm({
   useEffect(() => {
     if (!isOpen) return;
     const nextPromoCode = getPromoCodeFromUrl();
-    const nextPackageId = initialPackageId && packages.some((pkg) => pkg.id === initialPackageId)
+    const requestedPackageId = initialPackageId && packages.some((pkg) => pkg.id === initialPackageId)
       ? initialPackageId
       : null;
+    const nextPackageId = nextPromoCode === MOSKITO_PROMO_CODE
+      ? MOSKITO_PROMO_PACKAGE_ID
+      : requestedPackageId;
 
     setPromoCode(nextPromoCode);
     setFormData((prev) => ({
       ...prev,
       package: nextPackageId ?? prev.package,
       numberOfGuests:
-        nextPromoCode === MOSKITO_PROMO_CODE && nextPackageId === MOSKITO_PROMO_PACKAGE_ID
+        nextPromoCode === MOSKITO_PROMO_CODE
           ? '2'
           : prev.numberOfGuests,
     }));
