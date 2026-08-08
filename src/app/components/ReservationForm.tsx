@@ -4,6 +4,24 @@ import { formatPackagePrice, isPackageSoldOut, packages } from '@/app/data/packa
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL ?? 'https://abhxvgpnwbnfjjdmzqdn.supabase.co';
 const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY ?? 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFiaHh2Z3Bud2JuZmpqZG16cWRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDgwMjQ2NzcsImV4cCI6MjA2MzYwMDY3N30.qDaQbwmpFJKQwn30gVLZChUd6j_TVLn790XGMTrJG_A';
+const MOSKITO_PROMO_CODE = 'MOSKITO10';
+const MOSKITO_PROMO_PACKAGE_ID = 'spectator_moskito';
+const MOSKITO_PROMO_DISCOUNT = 0.1;
+
+function getPromoCodeFromUrl(): string {
+  const rawPromoCode = new URLSearchParams(window.location.search).get('promo');
+  const normalizedPromoCode = rawPromoCode?.trim().toUpperCase() ?? '';
+  return /^[A-Z0-9_-]{1,40}$/.test(normalizedPromoCode) ? normalizedPromoCode : '';
+}
+
+function getPackagePrice(price: number, packageId: string, promoCode: string): number {
+  const qualifiesForMoskitoPromo =
+    promoCode === MOSKITO_PROMO_CODE && packageId === MOSKITO_PROMO_PACKAGE_ID;
+
+  return qualifiesForMoskitoPromo
+    ? Math.round(price * (1 - MOSKITO_PROMO_DISCOUNT))
+    : price;
+}
 
 async function insertIntoNeckerCupInquiries(data: {
   first_name: string;
@@ -73,34 +91,69 @@ export function ReservationForm({
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [promoCode, setPromoCode] = useState('');
 
   useEffect(() => {
     if (!isOpen) return;
+    const nextPromoCode = getPromoCodeFromUrl();
+    const nextPackageId = initialPackageId && packages.some((pkg) => pkg.id === initialPackageId)
+      ? initialPackageId
+      : null;
+
+    setPromoCode(nextPromoCode);
     setFormData((prev) => ({
       ...prev,
-      package: initialPackageId && packages.some((pkg) => pkg.id === initialPackageId)
-        ? initialPackageId
-        : prev.package,
+      package: nextPackageId ?? prev.package,
+      numberOfGuests:
+        nextPromoCode === MOSKITO_PROMO_CODE && nextPackageId === MOSKITO_PROMO_PACKAGE_ID
+          ? '2'
+          : prev.numberOfGuests,
     }));
   }, [isOpen, initialPackageId]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+      ...(name === 'package' &&
+      value === MOSKITO_PROMO_PACKAGE_ID &&
+      promoCode === MOSKITO_PROMO_CODE
+        ? { numberOfGuests: '2' }
+        : {}),
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
+      const selectedPackage = packages.find((pkg) => pkg.id === formData.package);
+      const hasMoskitoPromotion =
+        promoCode === MOSKITO_PROMO_CODE && selectedPackage?.id === MOSKITO_PROMO_PACKAGE_ID;
+      const selectedPackagePrice = hasMoskitoPromotion && selectedPackage
+        ? getPackagePrice(selectedPackage.price, selectedPackage.id, promoCode)
+        : null;
+      const messageLines = [
+        ...(promoCode ? [`Promotion Code: ${promoCode}`] : []),
+        ...(selectedPackagePrice !== null
+          ? [
+              `Package Price: ${formatPackagePrice(selectedPackagePrice)} per couple${
+                hasMoskitoPromotion ? ' (2 guests)' : ''
+              }`,
+            ]
+          : []),
+        `Number of Guests: ${formData.numberOfGuests}`,
+        `Additional Comments: ${formData.additionalComments || 'None'}`,
+      ];
       const submissionData = {
         first_name: formData.firstName,
         last_name: formData.lastName,
         email: formData.email,
         phone: formData.phone,
         package_interest: formData.package || undefined,
-        message: `Number of Guests: ${formData.numberOfGuests}\nAdditional Comments: ${formData.additionalComments || 'None'}`,
-        source: 'website_reservation_form',
+        message: messageLines.join('\n'),
+        source: promoCode ? `newsletter_promo_${promoCode}` : 'website_reservation_form',
         status: 'new',
       };
 
@@ -164,6 +217,18 @@ export function ReservationForm({
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="p-5 sm:p-8 space-y-6">
+            {promoCode && (
+              <div className="rounded-2xl border border-amber-300 bg-amber-50 px-5 py-4" role="status">
+                <p className="font-body text-xs font-semibold tracking-[0.16em] uppercase text-amber-800 mb-1">
+                  Promotion applied: {promoCode}
+                </p>
+                <p className="font-body text-sm text-stone-700">
+                  {promoCode === MOSKITO_PROMO_CODE
+                    ? 'Your inquiry is tagged for the limited 10% Moskito Island spectator promotion.'
+                    : 'Your inquiry will include this promotion code for our reservations team.'}
+                </p>
+              </div>
+            )}
             <div>
               <h3 className="font-display text-xl text-stone-900 mb-4">Personal Information</h3>
               <div className="grid md:grid-cols-2 gap-4">
@@ -195,35 +260,50 @@ export function ReservationForm({
             <div>
               <h3 className="font-display text-xl text-stone-900 mb-4">Package Selection</h3>
               <div className="space-y-3">
-                {packages.map((pkg) => (
-                  <label
-                    key={pkg.id}
-                    className={`flex items-start gap-3 p-4 border-2 rounded-xl cursor-pointer transition-colors ${
-                      formData.package === pkg.id
-                        ? 'border-emerald-800 bg-emerald-50/50'
-                        : 'border-stone-200 hover:border-emerald-800'
-                    }`}
-                  >
-                    <input
-                      type="radio"
-                      name="package"
-                      value={pkg.id}
-                      checked={formData.package === pkg.id}
-                      onChange={handleChange}
-                      className="mt-1 w-5 h-5 text-emerald-800 focus:ring-emerald-800"
-                    />
-                    <div>
-                      <span className="font-body font-medium text-stone-900 block">
-                        {pkg.name}
-                        {isPackageSoldOut(pkg) ? ' (Sold out 2026 — 2027 interest)' : ''}
-                      </span>
-                      <span className="font-body text-sm text-emerald-800 mt-1 block">
-                        {formatPackagePrice(pkg.price)} per couple
-                      </span>
-                      <span className="font-body text-sm text-stone-500 mt-1 block leading-relaxed">{pkg.desc}</span>
-                    </div>
-                  </label>
-                ))}
+                {packages.map((pkg) => {
+                  const displayedPrice = getPackagePrice(pkg.price, pkg.id, promoCode);
+                  const isDiscounted = displayedPrice !== pkg.price;
+
+                  return (
+                    <label
+                      key={pkg.id}
+                      className={`flex items-start gap-3 p-4 border-2 rounded-xl cursor-pointer transition-colors ${
+                        formData.package === pkg.id
+                          ? 'border-emerald-800 bg-emerald-50/50'
+                          : 'border-stone-200 hover:border-emerald-800'
+                      }`}
+                    >
+                      <input
+                        type="radio"
+                        name="package"
+                        value={pkg.id}
+                        checked={formData.package === pkg.id}
+                        onChange={handleChange}
+                        className="mt-1 w-5 h-5 text-emerald-800 focus:ring-emerald-800"
+                      />
+                      <div>
+                        <span className="font-body font-medium text-stone-900 block">
+                          {pkg.name}
+                          {isPackageSoldOut(pkg) ? ' (Sold out 2026 — 2027 interest)' : ''}
+                        </span>
+                        <span className="font-body text-sm text-emerald-800 mt-1 flex flex-wrap items-center gap-2">
+                          {isDiscounted ? (
+                            <>
+                              <span className="text-stone-500 line-through">{formatPackagePrice(pkg.price)}</span>
+                              <span className="font-semibold">{formatPackagePrice(displayedPrice)} per couple (2 guests)</span>
+                              <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-semibold text-amber-800">
+                                10% off
+                              </span>
+                            </>
+                          ) : (
+                            <>{formatPackagePrice(pkg.price)} per couple</>
+                          )}
+                        </span>
+                        <span className="font-body text-sm text-stone-500 mt-1 block leading-relaxed">{pkg.desc}</span>
+                      </div>
+                    </label>
+                  );
+                })}
               </div>
             </div>
 
