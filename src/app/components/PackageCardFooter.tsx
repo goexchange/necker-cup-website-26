@@ -1,7 +1,6 @@
 import type { EventPackage } from '@/app/data/packages';
 import {
   formatPackagePrice,
-  formatSelloutDate,
   getPackageCtaLabel,
   isPackageSoldOut,
   packageDisplaySettings,
@@ -34,15 +33,11 @@ export function PackageCardFooter({ pkg, onReserve }: PackageCardFooterProps) {
           <p className={`font-body text-sm font-medium ${soldOut ? 'text-rose-700' : 'text-stone-700'}`}>
             {soldOut
               ? 'Sold out for 2026'
-              : `${pkg.spotsRemaining} spot${pkg.spotsRemaining === 1 ? '' : 's'} remaining`}
+              : 'Limited availability'}
           </p>
-          {soldOut ? (
+          {soldOut && (
             <p className="font-body text-stone-500 text-xs">
               We are sold out of this package — reserve interest for 2027.
-            </p>
-          ) : (
-            <p className="font-body text-stone-500 text-xs">
-              Expected sellout {formatSelloutDate(pkg.expectedSelloutDate)}
             </p>
           )}
         </div>
